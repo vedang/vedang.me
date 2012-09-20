@@ -112,6 +112,7 @@ task :new_post, :title, :foldername do |t, args|
     post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
     post.puts "comments: true"
     post.puts "categories: "
+    post.puts "published: false"
     post.puts "---"
   end
 end
