@@ -4,6 +4,7 @@ title: "About Me"
 date: 2011-07-28 23:11
 comments: false
 sharing: false
+sidebar: "collapse"
 footer: true
 ---
 
