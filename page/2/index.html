@@ -9,7 +9,18 @@
   <meta name="author" content="Vedang Manerikar">
 
   
-  <meta name="description" content="Caveat: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don&#8217;t understand what &hellip;">
+  <meta name="description" content="Today I went through some old Python code and noticed this pattern through out: messy-ifs.py 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+response, data = somefunc()
+if &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +29,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://vedang.me/">
+  <link rel="canonical" href="http://vedang.me/page/2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -84,7 +95,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/techlog/2012/02/23/composability-and-compojure/">Composability and Compojure</a></h1>
+      <h1 class="entry-title"><a href="/techlog/2011/08/07/switch-statements-in-python/">Switch Statements in Python</a></h1>
       
     
     
@@ -101,24 +112,48 @@
   
 
 
-<time datetime="2012-02-23T23:57:00+05:30" pubdate data-updated="true">Feb 23<span>rd</span>, 2012</time>
+<time datetime="2011-08-07T13:21:00+05:30" pubdate data-updated="true">Aug 7<span>th</span>, 2011</time>
         
-         | <a href="/techlog/2012/02/23/composability-and-compojure/#disqus_thread">Comments</a>
+         | <a href="/techlog/2011/08/07/switch-statements-in-python/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Caveat: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don&#8217;t understand what that means, then you should probably head over to the <a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>. Compojure exposes us to a beautifully <em>composable</em> abstraction, and this post is an attempt to show why that is a great thing.</p>
+  <div class="entry-content"><p>Today I went through some old Python code and noticed this pattern through out:</p>
 
-<p>In order to understand the Compojure framework, let us write a small <code>cello world</code> app. The code snippets in this post are a means to explain a concept, they may not work as-is. The full, working code is available at <a href="https://gist.github.com/1893532/">this</a> gist. Okay then, let&#8217;s get started.</p>
+<figure class='code'><figcaption><span>messy-ifs.py </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="n">response</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">somefunc</span><span class="p">()</span>
+</span><span class='line'><span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s">&quot;this&quot;</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">do_this_with</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="k">elif</span> <span class="n">response</span> <span class="o">==</span> <span class="s">&quot;that&quot;</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">do_that_with</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="k">elif</span> <span class="n">response</span> <span class="o">==</span> <span class="s">&quot;huh&quot;</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">duh</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="c"># lots more elifs.</span>
+</span><span class='line'><span class="k">else</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">prevent_horrible_crash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This code should ideally have been a switch-case, but Python does not support a <code>switch</code> statement. Proponents of OOP believe that <code>switch</code> is <em>bad</em> - second only to <code>goto</code>. This is not strictly true - both goto and switch can be used elegantly and with great effect. Goto, for example, is great for undoing stacked changes and switch&#8217;s fall-through behavior allows nicely for &#8216;do things according to the stage I&#8217;m at&#8217;. However, if you&#8217;re doing OOP, consider using polymorphism instead.</p>
 
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/techlog/2012/02/23/composability-and-compojure/">Read on &rarr;</a>
+      <a rel="full-article" href="/techlog/2011/08/07/switch-statements-in-python/">Read on &rarr;</a>
     </footer>
   
 
@@ -127,9 +162,11 @@
   
   <div class="pagination">
     
-      <a class="prev" href="/page/2/">&larr; Older</a>
+      <a class="prev" href="/page/3/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
     
   </div>
 </div>

@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Why I Quit StumpWM  - Vedang Manerikar</title>
+  <meta name="author" content="Vedang Manerikar">
+
+  
+  <meta name="description" content="After using StumpWM for nearly a year, I&#8217;m finally quitting and moving back to Gnome. I came to love StumpWM&#8217;s minimalistic approach, and &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vedang.me/techlog/2011/08/04/why-i-quit-stumpwm/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/vedang/VtyI" rel="alternate" title="Vedang Manerikar" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2086352-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vedang Manerikar</a></h1>
+  
+    <h2>My corner on the Internet.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/vedang/VtyI" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vedang.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="/techlog/">Techlog</a></li>
+  <li><a href="/weblog/">Weblog</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Why I Quit StumpWM</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-04T13:41:00+05:30" pubdate data-updated="true">Aug 4<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>After using <a href="http://www.nongnu.org/stumpwm/">StumpWM</a> for nearly a year, I&#8217;m finally quitting and moving back to Gnome. I came to love StumpWM&#8217;s minimalistic approach, and this isn&#8217;t an easy decision. So why am I doing it?</p>
+
+<ol>
+<li><p><strong>Pinky Hell</strong></p>
+
+<p>I am (was) a heavy user of Emacs, Tmux and StumpWM. These programs rely heavily on the <code>Ctrl</code> key. This means that the <code>Ctrl</code> key and my left pinky finger are pretty much destroyed at this point. With the spectre of RSI looming over my head, StumpWM is the easiest tool to get rid off. I might have less screen-space now, but my fingers will thank me for it.
+<!--more--></p></li>
+<li><p><strong>What you gain in Functionality, you lose in Integration</strong></p>
+
+<p>StumpWM is infinitely configurable. If you have the patience, you can get it to do things that are simply impossible with other Windows Managers. For example, there is a <code>mpd.lisp</code> module inside the contrib directory which converts StumpWM into a MPD client. A <em>full-fledged client</em>. This means that all music operations are entirely unobtrusive and <em>always</em> at your beck and call. MPD with StumpWM has without a doubt been the best music setup I&#8217;ve ever used.</p>
+
+<p>However, I missed Gnome&#8217;s integration with Ubuntu - Ubuntu One, Gwibber, Pidgin, event notifications. Even if I <em>could</em> configure StumpWM for these things, there was too much effort involved.</p></li>
+<li><p><strong>Dead processes, High temperatures</strong></p>
+
+<p><em>Disclaimer</em> : Everything I&#8217;m about to say now is conjecture. There is no proof that StumpWM is responsible for any of this.</p>
+
+<p>At 5 days uptime, my system load was touching 2, and my system temperature was at 65 degrees C. <a href="http://about.me/kiran_kulkarni/">KK</a> had a similar number of programs running on his system - this is a guy who uses full-blown <a href="http://www.compiz.org/">compiz</a> effects - his system temperature was 36 degrees and load average was around 1.15. Furthermore, he had a 48 day uptime. KK gleefully told me that it had to be StumpWM that was the problem! He was kidding, but some inquiry around the office showed that my laptop was much worse than the other guys on Ubuntu.</p>
+
+<p>I also found that Chrome was leaving behind loads of defunct processes on my machine. There were 41 defunct chromium-browser processes when I decided to reboot the laptop and do some monitoring. Within an hour of the reboot, I had 7 defunct processes, CPU temperature was at 45 degrees and the load average was hovering around 1.8. That was the proverbial straw that broke the camel&#8217;s back. I switched back to Gnome. Later in the day, I thought about actually investigating the behavior of my laptop, but it&#8217;s been behaving well on Gnome. As I write, I have a day&#8217;s uptime, a load average of 1.03 and CPU temperature at 37.5 degrees C. Unscientific, but fine by me.</p></li>
+</ol>
+
+
+<h2>How I got over the Withdrawal Symptoms:</h2>
+
+<p>Of all the StumpWM features, there was just one that I simply could not do without - &#8216;run-or-raise&#8217;. On StumpWM, you can define hot-keys to behave as follows:</p>
+
+<ol>
+<li>Launch the program if it is not running</li>
+<li>Move focus to the program if it is already running.</li>
+</ol>
+
+
+<p>I use one Emacs instance, one terminal instance (tmux&#8217;ed) and one Chrome instance. I <em>need</em> to be able to access them with minimal friction. Turns out, a little hackery on compiz is all we need - <code>compiz-send.py</code> is a nifty little script that sends messages to DBus and interacts with compiz. I can use it along with <code>xdtool</code> to implement my run-or-raise behavior. Here is a look at my <code>run-or-raise-emacs.sh</code> script:</p>
+
+<div><script src='https://gist.github.com/1130303.js?file=run-or-raise-emacs.sh'></script>
+<noscript><pre><code>#!/bin/bash
+# get id of emacs
+win=$(xdotool search --onlyvisible --class emacs | head -1)
+
+if [ &quot;x$win&quot; = x ]; then
+    # Emacs is not running
+    # switch to viewport 1, which is my coding viewport
+    ~/incoming-src/dotfiles/scripts/compiz-send.py vpswitch switch_to_1_key
+    gxmessage -center -timeout 2 -nofocus -buttons &quot;&quot; -borderless &quot;loading emacs...&quot;&amp;
+    # start Emacs
+    exec /usr/local/bin/emacs &amp;
+else
+    # Emacs is already running...
+    if [ $win = $(xdotool getwindowfocus) ]; then
+        # ...and focused
+        # do nothing
+        sleep 0.2;
+    else
+        # switch to it
+        xdotool windowactivate $win
+    fi
+fi</code></pre></noscript></div>
+
+
+<p>You can download <code>compiz-send</code> from <a href="http://wiki.compiz.org/Plugins/Dbus?action=AttachFile&amp;do=get&amp;target=compiz-send.py">here</a>.</p>
+
+<p>So there you have it. At the moment, life is back to Gnome+Compiz. If you know any nifty hacks for Gnome+Compiz, please let me know in the comments.</p>
+
+<h4>References:</h4>
+
+<p><a href="http://wiki.compiz.org/Plugins/Dbus">wiki.compiz.org</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vedang Manerikar</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-04T13:41:00+05:30" pubdate data-updated="true">Aug 4<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/techlog/'>techlog</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vedang.me/techlog/2011/08/04/why-i-quit-stumpwm/" data-via="vedang" data-counturl="http://vedang.me/techlog/2011/08/04/why-i-quit-stumpwm/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="small"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/weblog/2011/07/30/reboot/" title="Previous Post: Reboot.">&laquo; Reboot.</a>
+      
+      
+        <a class="basic-alignment right" href="/techlog/2011/08/07/switch-statements-in-python/" title="Next Post: Switch Statements in Python">Switch Statements in Python &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/techlog/2012/02/23/composability-and-compojure/">Composability and Compojure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/techlog/2011/08/07/switch-statements-in-python/">Switch Statements in Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/techlog/2011/08/04/why-i-quit-stumpwm/">Why I Quit StumpWM </a>
+      </li>
+    
+      <li class="post">
+        <a href="/weblog/2011/07/30/reboot/">Reboot.</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vedang", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vedang" class="twitter-follow-button" data-show-count="false">Follow @vedang</a>
+  
+</section>
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vedang">@vedang</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vedang',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/109150000354070646037?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+    </a>
+  </h1>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vedang Manerikar -
+  <span class="credit">Content written in <a href="http://www.gnu.org/software/emacs/">Emacs</a>, managed via <a href="http://git-scm.com/">Git</a>, and powered by <a href="http://octopress.org">Octopress</a> and <a href="http://github.com/vedang/vedang.github.com/">GitHub.</span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'vedang';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://vedang.me/techlog/2011/08/04/why-i-quit-stumpwm/';
+        var disqus_url = 'http://vedang.me/techlog/2011/08/04/why-i-quit-stumpwm/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

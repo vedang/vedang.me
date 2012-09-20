@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Composability and Compojure - Vedang Manerikar</title>
+  <meta name="author" content="Vedang Manerikar">
+
+  
+  <meta name="description" content="Caveat: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don&#8217;t understand what &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vedang.me/techlog/2012/02/23/composability-and-compojure/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/vedang/VtyI" rel="alternate" title="Vedang Manerikar" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2086352-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vedang Manerikar</a></h1>
+  
+    <h2>My corner on the Internet.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/vedang/VtyI" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vedang.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="/techlog/">Techlog</a></li>
+  <li><a href="/weblog/">Weblog</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Composability and Compojure</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-23T23:57:00+05:30" pubdate data-updated="true">Feb 23<span>rd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Caveat: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don&#8217;t understand what that means, then you should probably head over to the <a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>. Compojure exposes us to a beautifully <em>composable</em> abstraction, and this post is an attempt to show why that is a great thing.</p>
+
+<p>In order to understand the Compojure framework, let us write a small <code>cello world</code> app. The code snippets in this post are a means to explain a concept, they may not work as-is. The full, working code is available at <a href="https://gist.github.com/1893532/">this</a> gist. Okay then, let&#8217;s get started.</p>
+
+<!--more-->
+
+
+<p>Here is what the basic routes function would look like:</p>
+
+<figure class='code'><figcaption><span>basic_routes.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">main-routes</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                   <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Cello World&lt;/h1&gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/bye/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                      <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Goodbye World&lt;/h1&gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">route/not-found</span> <span class="s">&quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Compojure uses Ring to handle requests and responses. These terms (request/response) don&#8217;t mean &#8216;objects&#8217; (to those of you from the OOP world) of any kind, they are just hash-maps used to <em>represent</em> the idea. They are data, and as such, can be manipulated in any way we want. Ring has a simple philosophy: write functions which accept a request and return a response. Such functions are called <em>handlers</em>.</p>
+
+<p>The <code>cc/GET</code> helper macro - and it&#8217;s ilk - asks the user for a request-method (specified by the GET in the name cc/GET), a route (string representing uri), and a handler(H1). The macro becomes a handler (H2) which returns the result of <code>(H1 req)</code> if the route and the method of the incoming request match the specified route and request-method, otherwise it returns nil. Wow, that was a mouthful, wasn&#8217;t it?. Stop snickering and saying &#8220;That&#8217;s what she said&#8221;. So anyway, this is our first introduction to composability in Compojure. We have a macro that takes a handler and gives us another handler. As long as we are dealing in handlers, composability allows us to ignore any implementation complexity.</p>
+
+<p>The <code>cc/defroutes</code> macro takes a name and a list of handlers and returns a handler (H3) which runs all the handlers in the list on the request until one of them returns a non-nil value, else it returns nil. Finally, it binds the name to the handler so that we can call it. Simple, isn&#8217;t it?</p>
+
+<p>So if you think you&#8217;ve understood it so far, tell me if adding this route to our main routes will work or not:</p>
+
+<figure class='code'><figcaption><span>composability-one-oh-one.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello*&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">hello-routes</span>
+</span><span class='line'>                         <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/name/&quot;</span> <span class="p">[]</span>
+</span><span class='line'>                                 <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                                   <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'>                         <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/city/&quot;</span> <span class="p">[]</span>
+</span><span class='line'>                                 <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                                   <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&quot;</span><span class="p">)))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Well, yes! <code>cc/defroutes</code> gives us a handler<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>, and that&#8217;s really all cc/GET cares about!</p>
+
+<p>Having an abstraction of this form allows us to do many things easily, knowing that stuff <em>just works</em>. For example, let us write some <em>middleware</em>. What is middleware? Middleware modifies the incoming request or outgoing response in some way that makes us happy. How does this fit into our abstraction? - As a function that takes a handler(H1) and, wait for it, returns another handler(H2). Boom! Confused? Here is what a middleware function looks like:</p>
+
+<figure class='code'><figcaption><span>middleware.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">verify-secret</span>
+</span><span class='line'>  <span class="s">&quot;Verify that secret-key has been sent as a parameter s in the request&quot;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">handler</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">request</span><span class="p">]</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;s=please&quot;</span> <span class="p">(</span><span class="ss">:query-string</span> <span class="nv">request</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="nf">handler</span> <span class="nv">request</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">{</span><span class="ss">:status</span> <span class="mi">403</span>
+</span><span class='line'>       <span class="ss">:body</span> <span class="s">&quot;You don&#39;t know the secret word&quot;</span><span class="p">})))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This function gets a handler(H1). It doesn&#8217;t know or care what that handler is going to do to the request. It returns a new handler(H2) which does the following: it checks to see if the incoming request knows that the secret word s is &#8220;please&#8221;. If it does, great. Execute H1 on the request and call it a day. Otherwise, return a nil - meaning the request in not valid. Now H2 could go through as many other middleware functions as we want, all of them agnostic of any other middleware functions. Each middleware will return a modified handler(H3, H4, &#8230; Hn), and we will run the final handler on the request.</p>
+
+<p>Here is what the final code would look like<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup>:</p>
+
+<figure class='code'><figcaption><span>compojure-middleware.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="c1">;; Define some Hello routes</span>
+</span><span class='line'><span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">hello-routes</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/name/&quot;</span> <span class="p">[]</span>
+</span><span class='line'>          <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>            <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/city/&quot;</span> <span class="p">[]</span>
+</span><span class='line'>          <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>            <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&quot;</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">;; Our main routes function.</span>
+</span><span class='line'><span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">main-routes*</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                   <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Cello World&lt;/h1&gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/bye/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                      <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&lt;h1&gt;Goodbye World&lt;/h1&gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello*&quot;</span> <span class="p">[]</span> <span class="nv">hello-routes</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">route/not-found</span> <span class="s">&quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">;; A middleware function</span>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">verify-secret</span>
+</span><span class='line'>  <span class="s">&quot;Verify that secret-key has been sent as a parameter s in the request&quot;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">handler</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">request</span><span class="p">]</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;s=please&quot;</span> <span class="p">(</span><span class="ss">:query-string</span> <span class="nv">request</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="nf">handler</span> <span class="nv">request</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">{</span><span class="ss">:status</span> <span class="mi">403</span>
+</span><span class='line'>       <span class="ss">:body</span> <span class="s">&quot;You don&#39;t know the secret word&quot;</span><span class="p">})))</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">;;; Wrap my main routes in middleware</span>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">main-routes</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="o">#</span><span class="ss">&#39;main-routes*</span>
+</span><span class='line'>                     <span class="nv">verify-secret</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">;;; Start app with main routes</span>
+</span><span class='line'><span class="p">(</span><span class="nf">run-jetty</span> <span class="o">#</span><span class="ss">&#39;main-routes</span> <span class="p">{</span><span class="ss">:port</span> <span class="nv">port</span> <span class="ss">:join?</span> <span class="nv">false</span><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>main-routes*</code> is a handler which matches the incoming uris to ones we support, <code>verify-secret</code> will make sure that the incoming requests know the secret word. We can go a really long way with functions that take a request and return a response. Compojure gives us a great DSL to deal with the web. It&#8217;s composability facilitates building elegant systems and frameworks.</p>
+
+<div class="footnotes">
+    <ol>
+        <li id='fn:1'>Actually, we got lucky in this case. `cc/defroutes` is a macro. When we say `(cc/defroutes name & handlers)` the code is replaced to become `(def name handlerfn)`. Luckily for us though, def returns the variable which was just defined, and it works out okay in the end. The aim was to show composability in action, not to espouse a coding style. Never do this in actual code. <a href='#fnref:1' rev='footnote'>↩</a></li><li id='fn:2'>Apparently, we can&#8217;t get line spacing in the octopress codeblock <a href='#fnref:2' rev='footnote'>↩</a></li>
+    </ol>
+</div>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vedang Manerikar</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-23T23:57:00+05:30" pubdate data-updated="true">Feb 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/techlog/'>techlog</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vedang.me/techlog/2012/02/23/composability-and-compojure/" data-via="vedang" data-counturl="http://vedang.me/techlog/2012/02/23/composability-and-compojure/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="small"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/techlog/2011/08/07/switch-statements-in-python/" title="Previous Post: Switch Statements in Python">&laquo; Switch Statements in Python</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/techlog/2012/02/23/composability-and-compojure/">Composability and Compojure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/techlog/2011/08/07/switch-statements-in-python/">Switch Statements in Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/techlog/2011/08/04/why-i-quit-stumpwm/">Why I Quit StumpWM </a>
+      </li>
+    
+      <li class="post">
+        <a href="/weblog/2011/07/30/reboot/">Reboot.</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vedang", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vedang" class="twitter-follow-button" data-show-count="false">Follow @vedang</a>
+  
+</section>
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vedang">@vedang</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vedang',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/109150000354070646037?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+    </a>
+  </h1>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vedang Manerikar -
+  <span class="credit">Content written in <a href="http://www.gnu.org/software/emacs/">Emacs</a>, managed via <a href="http://git-scm.com/">Git</a>, and powered by <a href="http://octopress.org">Octopress</a> and <a href="http://github.com/vedang/vedang.github.com/">GitHub.</span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'vedang';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://vedang.me/techlog/2012/02/23/composability-and-compojure/';
+        var disqus_url = 'http://vedang.me/techlog/2012/02/23/composability-and-compojure/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

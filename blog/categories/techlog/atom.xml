@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: techlog | Vedang Manerikar]]></title>
+  <link href="http://vedang.me/blog/categories/techlog/atom.xml" rel="self"/>
+  <link href="http://vedang.me/"/>
+  <updated>2012-09-21T00:55:01+05:30</updated>
+  <id>http://vedang.me/</id>
+  <author>
+    <name><![CDATA[Vedang Manerikar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Composability and Compojure]]></title>
+    <link href="http://vedang.me/techlog/2012/02/23/composability-and-compojure/"/>
+    <updated>2012-02-23T23:57:00+05:30</updated>
+    <id>http://vedang.me/techlog/2012/02/23/composability-and-compojure</id>
+    <content type="html"><![CDATA[<p>Caveat: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don't understand what that means, then you should probably head over to the <a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>. Compojure exposes us to a beautifully <em>composable</em> abstraction, and this post is an attempt to show why that is a great thing.</p>
+
+<p>In order to understand the Compojure framework, let us write a small <code>cello world</code> app. The code snippets in this post are a means to explain a concept, they may not work as-is. The full, working code is available at <a href="https://gist.github.com/1893532/">this</a> gist. Okay then, let's get started.</p>
+
+<!--more-->
+
+
+<p>Here is what the basic routes function would look like:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>basic_routes.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">main-routes</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>               <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Cello World&amp;lt;/h1&amp;gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/bye/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>                  <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Goodbye World&amp;lt;/h1&amp;gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="nf">route/not-found</span> <span class="s">&quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Compojure uses Ring to handle requests and responses. These terms (request/response) don't mean 'objects' (to those of you from the OOP world) of any kind, they are just hash-maps used to <em>represent</em> the idea. They are data, and as such, can be manipulated in any way we want. Ring has a simple philosophy: write functions which accept a request and return a response. Such functions are called <em>handlers</em>.</p>
+
+<p>The <code>cc/GET</code> helper macro - and it's ilk - asks the user for a request-method (specified by the GET in the name cc/GET), a route (string representing uri), and a handler(H1). The macro becomes a handler (H2) which returns the result of <code>(H1 req)</code> if the route and the method of the incoming request match the specified route and request-method, otherwise it returns nil. Wow, that was a mouthful, wasn't it?. Stop snickering and saying "That's what she said". So anyway, this is our first introduction to composability in Compojure. We have a macro that takes a handler and gives us another handler. As long as we are dealing in handlers, composability allows us to ignore any implementation complexity.</p>
+
+<p>The <code>cc/defroutes</code> macro takes a name and a list of handlers and returns a handler (H3) which runs all the handlers in the list on the request until one of them returns a non-nil value, else it returns nil. Finally, it binds the name to the handler so that we can call it. Simple, isn't it?</p>
+
+<p>So if you think you've understood it so far, tell me if adding this route to our main routes will work or not:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>composability-one-oh-one.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello*&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">hello-routes&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>                     <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/name/&quot;</span> <span class="p">[]</span>
+</span><span class='line'>                             <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                               <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Cello Vedang&amp;lt;/h1&amp;gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'>                     <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/city/&quot;</span> <span class="p">[]</span>
+</span><span class='line'>                             <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>                               <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Cello from Pune!&amp;lt;/h1&amp;gt;&quot;</span><span class="p">)))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Well, yes! <code>cc/defroutes</code> gives us a handler<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>, and that's really all cc/GET cares about!</p>
+
+<p>Having an abstraction of this form allows us to do many things easily, knowing that stuff <em>just works</em>. For example, let us write some <em>middleware</em>. What is middleware? Middleware modifies the incoming request or outgoing response in some way that makes us happy. How does this fit into our abstraction? - As a function that takes a handler(H1) and, wait for it, returns another handler(H2). Boom! Confused? Here is what a middleware function looks like:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>middleware.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">verify-secret</span>
+</span><span class='line'>  <span class="s">&quot;Verify that secret-key has been sent as a parameter s in the request&quot;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">handler</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">request</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;s=please&quot;</span> <span class="p">(</span><span class="ss">:query-string</span> <span class="nv">request</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">handler</span> <span class="nv">request</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span><span class="ss">:status</span> <span class="mi">403</span>
+</span><span class='line'>   <span class="ss">:body</span> <span class="s">&quot;You don&#39;t know the secret word&quot;</span><span class="p">})))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This function gets a handler(H1). It doesn't know or care what that handler is going to do to the request. It returns a new handler(H2) which does the following: it checks to see if the incoming request knows that the secret word s is "please". If it does, great. Execute H1 on the request and call it a day. Otherwise, return a nil - meaning the request in not valid. Now H2 could go through as many other middleware functions as we want, all of them agnostic of any other middleware functions. Each middleware will return a modified handler(H3, H4, ... Hn), and we will run the final handler on the request.</p>
+
+<p>Here is what the final code would look like<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup>:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>compojure-middleware.clj </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Define some Hello routes</span>
+</span><span class='line'><span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">hello-routes</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/name/&quot;</span> <span class="p">[]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>      <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>        <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Cello Vedang&amp;lt;/h1&amp;gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello/city/&quot;</span> <span class="p">[]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>      <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span>
+</span><span class='line'>        <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Cello from Pune!&amp;lt;/h1&amp;gt;&quot;</span><span class="p">))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Our main routes function.</span>
+</span><span class='line'><span class="p">(</span><span class="nf">cc/defroutes</span> <span class="nv">main-routes*</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>               <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Cello World&amp;lt;/h1&amp;gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/bye/&quot;</span> <span class="p">[]</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">req</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>                  <span class="p">(</span><span class="nf">rur/response</span> <span class="s">&quot;&amp;lt;h1&amp;gt;Goodbye World&amp;lt;/h1&amp;gt;&quot;</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="nf">cc/GET</span> <span class="s">&quot;/hello*&quot;</span> <span class="p">[]</span> <span class="nv">hello-routes</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">route/not-found</span> <span class="s">&quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; A middleware function</span>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">verify-secret</span>
+</span><span class='line'>  <span class="s">&quot;Verify that secret-key has been sent as a parameter s in the request&quot;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">handler</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">request</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;s=please&quot;</span> <span class="p">(</span><span class="ss">:query-string</span> <span class="nv">request</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">handler</span> <span class="nv">request</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span><span class="ss">:status</span> <span class="mi">403</span>
+</span><span class='line'>   <span class="ss">:body</span> <span class="s">&quot;You don&#39;t know the secret word&quot;</span><span class="p">})))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;;; Wrap my main routes in middleware</span>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">main-routes</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="o">#</span><span class="ss">&#39;main-routes*&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>                 <span class="nv">verify-secret</span><span class="p">))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;;; Start app with main routes</span>
+</span><span class='line'><span class="p">(</span><span class="nf">run-jetty</span> <span class="o">#</span><span class="ss">&#39;main-routes</span> <span class="p">{</span><span class="ss">:port</span> <span class="nv">port</span> <span class="ss">:join?</span> <span class="nv">false</span><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><code>main-routes*</code> is a handler which matches the incoming uris to ones we support, <code>verify-secret</code> will make sure that the incoming requests know the secret word. We can go a really long way with functions that take a request and return a response. Compojure gives us a great DSL to deal with the web. It's composability facilitates building elegant systems and frameworks.</p>
+
+<p><div class="footnotes">
+	<ol>
+		<li id='fn:1'>Actually, we got lucky in this case. <code>cc/defroutes</code> is a macro. When we say <code>(cc/defroutes name &amp; handlers)</code> the code is replaced to become <code>(def name handlerfn)</code>. Luckily for us though, def returns the variable which was just defined, and it works out okay in the end. The aim was to show composability in action, not to espouse a coding style. Never do this in actual code. <a href='#fnref:1' rev='footnote'>↩</a></li><li id='fn:2'>Apparently, we can't get line spacing in the octopress codeblock <a href='#fnref:2' rev='footnote'>↩</a></li>
+	</ol>
+</div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Switch Statements in Python]]></title>
+    <link href="http://vedang.me/techlog/2011/08/07/switch-statements-in-python/"/>
+    <updated>2011-08-07T13:21:00+05:30</updated>
+    <id>http://vedang.me/techlog/2011/08/07/switch-statements-in-python</id>
+    <content type="html"><![CDATA[<p>Today I went through some old Python code and noticed this pattern through out:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>messy-ifs.py </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="n">response</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">somefunc</span><span class="p">()</span>
+</span><span class='line'><span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s">&quot;this&quot;</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">do_this_with</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">elif</span> <span class="n">response</span> <span class="o">==</span> <span class="s">&quot;that&quot;</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">do_that_with</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">elif</span> <span class="n">response</span> <span class="o">==</span> <span class="s">&quot;huh&quot;</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">duh</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">lots</span> <span class="n">more</span> <span class="n">elifs</span><span class="o">.&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">else</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">prevent_horrible_crash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This code should ideally have been a switch-case, but Python does not support a <code>switch</code> statement. Proponents of OOP believe that <code>switch</code> is <em>bad</em> - second only to <code>goto</code>. This is not strictly true - both goto and switch can be used elegantly and with great effect. Goto, for example, is great for undoing stacked changes and switch's fall-through behavior allows nicely for 'do things according to the stage I'm at'. However, if you're doing OOP, consider using polymorphism instead.</p>
+
+<!--more-->
+
+
+<p>I'm not doing OOP, so polymorphism does not apply to me, but I was looking for a way to optimize this code. I was on a code-cleanup spree, in the "flow", and I thought, "Why don't I use maps to do this?". Brilliant! It was a really neat idea. Later I found out that this is the accepted way of doing switch-case in Python and I'd done nothing special. So anyway, the code now looked like this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>maps-as-switch.py </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="n">response_map</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;this&quot;</span><span class="p">:</span> <span class="n">do_this_with</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>            <span class="s">&quot;that&quot;</span><span class="p">:</span> <span class="n">do_that_with</span><span class="p">,</span>
+</span><span class='line'>            <span class="s">&quot;huh&quot;</span><span class="p">:</span> <span class="n">duh</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">response_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">prevent_horrible_crash</span><span class="p">)(</span><span class="n">data</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And that would have been that, had I not suddenly developed a conscience. I had replaced perfectly working, mostly readable code with some other code. What if my map solution was slower? What if it was <em>much slower</em>? I'd done a sizable amount of refactoring, and I did not relish throwing it away. I needed to test my solution, so I wrote some sample code:</p>
+
+<p><div><script src='https://gist.github.com/1130352.js?file=switch-speed.py'></script>
+<noscript><pre><code>from timeit import Timer
+from random import randint
+
+
+def switch_if():
+    value = randint(1, 10)
+    if value == 1:
+        return '1'
+    elif value == 2:
+        return '2'
+    elif value == 3:
+        return '3'
+    elif value == 4:
+        return '4'
+    elif value == 5:
+        return '5'
+    elif value == 6:
+        return '6'
+    elif value == 7:
+        return '7'
+    elif value == 8:
+        return '8'
+    elif value == 9:
+        return '9'
+    else:
+        return '10'
+
+
+def switch_map():
+    value = randint(1, 10)
+    smap = {1: '1',
+            2: '2',
+            3: '3',
+            4: '4',
+            5: '5',
+            6: '6',
+            7: '7',
+            8: '8',
+            9: '9',
+            10: '10'}
+    return smap[value]
+
+
+t = Timer(setup='from __main__ import switch_if', stmt='switch_if()')
+print &quot;if - &quot;, t.timeit()
+
+t = Timer(setup='from __main__ import switch_map', stmt='switch_map()')
+print &quot;map - &quot;, t.timeit()
+</code></pre></noscript></div>
+</p>
+
+<p>The results were disheartening. My replacement code was slower - though only just.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ python switch-speed.py
+</span><span class='line'>if - 2.08906793594
+</span><span class='line'>map - 2.88215684891</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>I tweaked the code a little and moved the creation of the map outside of the <code>switch_map</code> function. Python can access local variables faster than it can access global variables, but I figured a global dict would still beat the cost of creating the dict every time.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ python switch-speed.py
+</span><span class='line'>if -  2.08955693245
+</span><span class='line'>map -  2.00381493568</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>I breathed a sigh of relief. There was a lesson to be learnt here - test/profile <em>before</em> you optimize!</p>
+
+<h4>References and articles:</h4>
+
+<ul>
+<li>More information about switch statements smell - <a href="http://c2.com/cgi/wiki?SwitchStatementsSmell">c2.com</a></li>
+<li>Goto is not evil - <a href="http://kerneltrap.org/node/553/2131">kerneltrap.org</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why I Quit StumpWM ]]></title>
+    <link href="http://vedang.me/techlog/2011/08/04/why-i-quit-stumpwm/"/>
+    <updated>2011-08-04T13:41:00+05:30</updated>
+    <id>http://vedang.me/techlog/2011/08/04/why-i-quit-stumpwm</id>
+    <content type="html"><![CDATA[<p>After using <a href="http://www.nongnu.org/stumpwm/">StumpWM</a> for nearly a year, I'm finally quitting and moving back to Gnome. I came to love StumpWM's minimalistic approach, and this isn't an easy decision. So why am I doing it?</p>
+
+<ol>
+<li><p><strong>Pinky Hell</strong></p>
+
+<p>I am (was) a heavy user of Emacs, Tmux and StumpWM. These programs rely heavily on the <code>Ctrl</code> key. This means that the <code>Ctrl</code> key and my left pinky finger are pretty much destroyed at this point. With the spectre of RSI looming over my head, StumpWM is the easiest tool to get rid off. I might have less screen-space now, but my fingers will thank me for it.
+<!--more--></p></li>
+<li><p><strong>What you gain in Functionality, you lose in Integration</strong></p>
+
+<p>StumpWM is infinitely configurable. If you have the patience, you can get it to do things that are simply impossible with other Windows Managers. For example, there is a <code>mpd.lisp</code> module inside the contrib directory which converts StumpWM into a MPD client. A <em>full-fledged client</em>. This means that all music operations are entirely unobtrusive and <em>always</em> at your beck and call. MPD with StumpWM has without a doubt been the best music setup I've ever used.</p>
+
+<p>However, I missed Gnome's integration with Ubuntu - Ubuntu One, Gwibber, Pidgin, event notifications. Even if I <em>could</em> configure StumpWM for these things, there was too much effort involved.</p></li>
+<li><p><strong>Dead processes, High temperatures</strong></p>
+
+<p><em>Disclaimer</em> : Everything I'm about to say now is conjecture. There is no proof that StumpWM is responsible for any of this.</p>
+
+<p>At 5 days uptime, my system load was touching 2, and my system temperature was at 65 degrees C. <a href="http://about.me/kiran_kulkarni/">KK</a> had a similar number of programs running on his system - this is a guy who uses full-blown <a href="http://www.compiz.org/">compiz</a> effects - his system temperature was 36 degrees and load average was around 1.15. Furthermore, he had a 48 day uptime. KK gleefully told me that it had to be StumpWM that was the problem! He was kidding, but some inquiry around the office showed that my laptop was much worse than the other guys on Ubuntu.</p>
+
+<p>I also found that Chrome was leaving behind loads of defunct processes on my machine. There were 41 defunct chromium-browser processes when I decided to reboot the laptop and do some monitoring. Within an hour of the reboot, I had 7 defunct processes, CPU temperature was at 45 degrees and the load average was hovering around 1.8. That was the proverbial straw that broke the camel's back. I switched back to Gnome. Later in the day, I thought about actually investigating the behavior of my laptop, but it's been behaving well on Gnome. As I write, I have a day's uptime, a load average of 1.03 and CPU temperature at 37.5 degrees C. Unscientific, but fine by me.</p></li>
+</ol>
+
+
+<h2>How I got over the Withdrawal Symptoms:</h2>
+
+<p>Of all the StumpWM features, there was just one that I simply could not do without - 'run-or-raise'. On StumpWM, you can define hot-keys to behave as follows:</p>
+
+<ol>
+<li>Launch the program if it is not running</li>
+<li>Move focus to the program if it is already running.</li>
+</ol>
+
+
+<p>I use one Emacs instance, one terminal instance (tmux'ed) and one Chrome instance. I <em>need</em> to be able to access them with minimal friction. Turns out, a little hackery on compiz is all we need - <code>compiz-send.py</code> is a nifty little script that sends messages to DBus and interacts with compiz. I can use it along with <code>xdtool</code> to implement my run-or-raise behavior. Here is a look at my <code>run-or-raise-emacs.sh</code> script:</p>
+
+<p><div><script src='https://gist.github.com/1130303.js?file=run-or-raise-emacs.sh'></script>
+<noscript><pre><code>#!/bin/bash
+# get id of emacs
+win=$(xdotool search --onlyvisible --class emacs | head -1)
+
+if [ &quot;x$win&quot; = x ]; then
+    # Emacs is not running
+    # switch to viewport 1, which is my coding viewport
+    ~/incoming-src/dotfiles/scripts/compiz-send.py vpswitch switch_to_1_key
+    gxmessage -center -timeout 2 -nofocus -buttons &quot;&quot; -borderless &quot;loading emacs...&quot;&amp;
+    # start Emacs
+    exec /usr/local/bin/emacs &amp;
+else
+    # Emacs is already running...
+    if [ $win = $(xdotool getwindowfocus) ]; then
+        # ...and focused
+        # do nothing
+        sleep 0.2;
+    else
+        # switch to it
+        xdotool windowactivate $win
+    fi
+fi</code></pre></noscript></div>
+</p>
+
+<p>You can download <code>compiz-send</code> from <a href="http://wiki.compiz.org/Plugins/Dbus?action=AttachFile&amp;do=get&amp;target=compiz-send.py">here</a>.</p>
+
+<p>So there you have it. At the moment, life is back to Gnome+Compiz. If you know any nifty hacks for Gnome+Compiz, please let me know in the comments.</p>
+
+<h4>References:</h4>
+
+<p><a href="http://wiki.compiz.org/Plugins/Dbus">wiki.compiz.org</a></p>
+]]></content>
+  </entry>
+  
+</feed>
