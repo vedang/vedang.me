@@ -42,6 +42,9 @@ article {
     font-size: 2.0em; font-style: italic;
     line-height: 1.3em;
   }
+  h3 {
+    &.entry-subtitle { text-align: right; }
+  }
   img, video, .flash-video {
     @extend .flex-content;
     @extend .basic-alignment;
