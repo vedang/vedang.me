@@ -99,6 +99,7 @@ Here is what the final code would look like{% fn_ref 2 %}:
 
 `main-routes*` is a handler which matches the incoming uris to ones we support, `verify-secret` will make sure that the incoming requests know the secret word. We can go a really long way with functions that take a request and return a response. Compojure gives us a great DSL to deal with the web. It's composability facilitates building elegant systems and frameworks.
 
+#### Footnotes:
 {% footnotes %}
    {% fn Actually, we got lucky in this case. `cc/defroutes` is a macro. When we say `(cc/defroutes name & handlers)` the code is replaced to become `(def name handlerfn)`. Luckily for us though, def returns the variable which was just defined, and it works out okay in the end. The aim was to show composability in action, not to espouse a coding style. Never do this in actual code. %}
    {% fn Apparently, we can't get line spacing in the octopress codeblock %}
