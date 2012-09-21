@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: techlog | Vedang Manerikar]]></title>
-  <link href="http://vedang.me/blog/categories/techlog/atom.xml" rel="self"/>
+  <link href="http://vedang.me/categories/techlog/atom.xml" rel="self"/>
   <link href="http://vedang.me/"/>
-  <updated>2012-09-21T00:59:50+05:30</updated>
+  <updated>2012-09-21T23:54:57+05:30</updated>
   <id>http://vedang.me/</id>
   <author>
     <name><![CDATA[Vedang Manerikar]]></name>
@@ -228,6 +228,8 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><code>main-routes*</code> is a handler which matches the incoming uris to ones we support, <code>verify-secret</code> will make sure that the incoming requests know the secret word. We can go a really long way with functions that take a request and return a response. Compojure gives us a great DSL to deal with the web. It's composability facilitates building elegant systems and frameworks.</p>
+
+<h4>Footnotes:</h4>
 
 <p><div class="footnotes">
 	<ol>
