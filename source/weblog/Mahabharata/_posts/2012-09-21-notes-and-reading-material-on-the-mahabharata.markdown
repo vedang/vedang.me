@@ -145,3 +145,17 @@ These books are gems in Mahabharata literature (from what I've heard), and they 
 *  **Parva - S L Bhyrappa [Kannada]**  
    (Suggested by Akshay Patki)  
    A retelling of the Mahabharata that eliminates all divine elements.
+
+* **Jyeshtha - Anant Manohar [Marathi]**  
+  (Suggested by Sushrut Bidwai)  
+  From the POV of Yudhishthira
+
+* **The Mahabharata - Bibek Debroy [English]**  
+  (Suggested by Makarand Sahasrabuddhe)  
+
+* **Vyasaparva - Durgabai Bhagwat [Marathi]**  
+  (Suggested by Aditya Kulkarni)  
+
+* **Mahabharata na Patro - Moolshanker Bhatt [Gujrathi]**  
+  (Suggested by Rachana Sudharshan)  
+  A series of stories from the POV of various characters
