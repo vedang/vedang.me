@@ -3,7 +3,7 @@ title: For the love of Cooking
 date: 2016-08-15T13:41:41+05:30
 tags: [recipes, lily]
 ---
-[[file:~/src/vedang.github.com/images/ajji.jpg][My Ajji - Lila Manerikar :)]]
+{{< figure src="/images/ajji.jpg" caption="My Ajji - Lila Manerikar :)" >}}
 
 The photo you see here is my 96 year old ajji (grandmother) Lila
 Manerikar - lovingly referred to as Lily by her numerous

@@ -1,4 +1,9 @@
+# Full config options: https://gohugo.io/getting-started/configuration/#toml-configuration
 baseURL = "https://vedang.me/"
 languageCode = "en-us"
 title = "Vedang Manerikar"
 theme = "ananke"
+enableRobotsTXT = true
+paginate = 3
+[params]
+ subtitle = "My corner on the Inter webs."
