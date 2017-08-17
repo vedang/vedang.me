@@ -1,9 +1,8 @@
-#+TITLE: For the love of Cooking
-#+AUTHOR: Vedang Manerikar
-#+EMAIL: vedang.manerikar@gmail.com
-#+DATE: [2016-08-15 Mon]
-#+KEYWORDS: recipes lily
-
+---
+title: For the love of Cooking
+date: 2016-08-15T13:41:41+05:30
+tags: [recipes, lily]
+---
 [[file:~/src/vedang.github.com/images/ajji.jpg][My Ajji - Lila Manerikar :)]]
 
 The photo you see here is my 96 year old ajji (grandmother) Lila
@@ -17,10 +16,11 @@ computer or the internet).
 
 I moved out of my parents' home a year and a half ago, and learnt two
 things quickly:
-  1. I was an ungrateful son who never truly appreciated the work that
-     goes into setting a dinner table everyday.
-  2. I liked cooking. I liked the ritual of it, I loved the flavours,
-     and it helped me relax.
+
+1. I was an ungrateful son who never truly appreciated the work that
+   goes into setting a dinner table everyday.
+2. I liked cooking. I liked the ritual of it, I loved the flavours,
+   and it helped me relax.
 
 My grandmother - and my parents - were pleasantly surprised to hear
 about my newfound love of cooking. And then Lily said, "Are you
@@ -39,12 +39,7 @@ Some to poor storage and some to bookworms. As she handed over this
 final box of recipes to me, she said,
 
 #+BEGIN_QUOTE
-"I used to collect these recipes obsessively when I was young. You
-kids have it easy: look at your phone and it will tell you how to
-cook something, how it should look, what it should smell like. In my
-time, gathering this knowledge was harder. These scraps may or may
-not be useful to you, what with your fancy phone. If you find
-something useful, great. Otherwise, throw them away."
+  "I used to collect these recipes obsessively when I was young. You kids have it easy: look at your phone and it will tell you how to cook something, how it should look, what it should smell like. In my time, gathering this knowledge was harder. These scraps may or may not be useful to you, what with your fancy phone. If you find something useful, great. Otherwise, throw them away."
 #+END_QUOTE
 
 That last bit about "throwing them away" comes from a sense of drama
