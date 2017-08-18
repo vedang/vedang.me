@@ -2,9 +2,85 @@
 baseURL = "https://vedang.me/"
 languageCode = "en-us"
 title = "Vedang Manerikar"
-theme = "ananke"
+theme = "tranquilpeak"
 enableRobotsTXT = true
 paginate = 3
+disqusShortname = "vedang"
+
+[author]
+  name = "Vedang Manerikar"
+  bio = "sings badly and at the top of his voice. writes Clojure code for [@Helpshift](https://twitter.com/helpshift/). will work for chocolate."
+  location = "Pune, India"
+  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+  gravatarEmail = "ved.manerikar@gmail.com"
+  # Your Twitter username without the @. E.g : thibaudlepretre
+  twitter = "vedang"
+
+# Menu Configuration
+[[menu.main]]
+  weight = 0
+  identifier = "home"
+  name = "Home"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
+  url = "/"
+[[menu.main]]
+  weight = 1
+  identifier = "techlog"
+  name = "Techlog"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-floppy-o\"></i>"
+  url = "/techlog"
+[[menu.main]]
+  weight = 2
+  identifier = "weblog"
+  name = "Weblog"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file-text\"></i>"
+  url = "/weblog"
+[[menu.main]]
+  weight = 3
+  identifier = "recipes"
+  name = "Lily's Recipes"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-cutlery\"></i>"
+  url = "/recipes"
+[[menu.main]]
+  weight = 4
+  identifier = "mahabharat"
+  name = "Mahabharat"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-podcast\"></i>"
+  url = "/mahabharat"
+[[menu.main]]
+  weight = 5
+  identifier = "tags"
+  name = "Tags"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
+  url = "/tags"
+[[menu.main]]
+  weight = 6
+  identifier = "about"
+  name = "About Me"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
+  url = "/#about"
+
+[[menu.links]]
+  weight = 1
+  identifier = "twitter"
+  name = "Twitter"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-twitter\"></i>"
+  url = "https://twitter.com/vedang"
+
+[[menu.links]]
+  weight = 0
+  identifier = "github"
+  name = "GitHub"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
+  url = "https://github.com/vedang"
+
+[[menu.misc]]
+  weight = 0
+  identifier = "rss"
+  name = "RSS"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
+  url = "/index.xml"
+
 [params]
     # Params needed by Manis
     # ----------
@@ -35,3 +111,25 @@ paginate = 3
 	github = "https://github.com/vedang/"
 	twitter = "https://twitter.com/vedang"
     # ----------
+
+    # Params needed by Tranquilpeak
+    # ----------
+    clearReading = true
+    hierarchicalCategories = false
+    sidebarBehavior = 4
+    coverImage = "peace.jpg"
+    thumbnailImage = true
+    thumbnailImagePosition = "right"
+
+  [params.header.rightLink]
+    class = ""
+    icon = ""
+    url = "/#about"
+
+  # Customize link of author avatar in sidebar
+  [params.sidebar.profile]
+    url = "/#about"
+
+  # Customize copyright value "© 2016 <CUSTOMIZATION>. All Rights Reserved"
+  [params.footer]
+    copyright = "<a href=\"https://twitter.com/vedang\">Vedang Manerikar</a>"
