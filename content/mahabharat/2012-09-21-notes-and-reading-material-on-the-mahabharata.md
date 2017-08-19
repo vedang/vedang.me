@@ -4,15 +4,21 @@ date: 2012-09-21T20:19:19+05:30
 comments: true
 published: true
 ---
-
 _Cross-posted from my note: [Notes and Reading Material on the Mahabharata](http://www.quora.com/Vedang-Manerikar/The-Mahabharata/Notes-and-Reading-material-on-the-Mahabharata) on [Quora](http://quora.com)_
 
-
-People have shown some interest in reading material for the Mahabharata, this post should save me from repeatedly typing the same things
+People have shown some interest in reading material for the
+Mahabharata, this post should save me from repeatedly typing the same
+things.
+<!--more-->
 
 ### Introductory books
 
-These books are straight-forward narrations of the Mahabharata. They introduce the reader to all the major characters and plot turns. In my experience, people are not even aware of the major players in the Mahabharata. To them, it's simply the story of 5 good Pandavas vs 100 evil Kauravas. If you have never read the Mahabharata, or are unsure about what you have read, one of these books is a good place to start.
+These books are straight-forward narrations of the Mahabharata. They
+introduce the reader to all the major characters and plot turns. In my
+experience, people are not even aware of the major players in the
+Mahabharata. To them, it's simply the story of 5 good Pandavas vs 100
+evil Kauravas. If you have never read the Mahabharata, or are unsure
+about what you have read, one of these books is a good place to start.
 
 *  **The Mahabharata - Amar Chitra Katha. [English, Comic]**
    This book, accompanied by my grandfather's stories, is my
@@ -25,10 +31,20 @@ These books are straight-forward narrations of the Mahabharata. They introduce t
 *  **The Mahabharata - Kamala Subramaniam [English]**
    (I recommend reading this book)
 
-<!--more-->
 ### Point of View (POV) Narrations
 
-Now we come to the interesting part of the Mahabharata. If you choose to abandon a Sanjaya-esque all-knowing view of the Mahabharata, and read it from the point of view of a single character as it interacts with the Mahabharata world, you will discover that every character was right in every action they took. This is the real beauty of the Mahabharata. The whole is greater than the sum of it's parts. The characters behave as human beings would behave. They make decisions based on incomplete/incorrect knowledge. They are driven by lust, ambition, revenge and other human emotions. Unfortunately, I've come across precious few English books that take this approach. The bulk of the great writing related to the Mahabharata is in regional languages. (In my case, Marathi, my mother-tongue)
+Now we come to the interesting part of the Mahabharata. If you choose
+to abandon a Sanjaya-esque all-knowing view of the Mahabharata, and
+read it from the point of view of a single character as it interacts
+with the Mahabharata world, you will discover that every character was
+right in every action they took. This is the real beauty of the
+Mahabharata. The whole is greater than the sum of it's parts. The
+characters behave as human beings would behave. They make decisions
+based on incomplete/incorrect knowledge. They are driven by lust,
+ambition, revenge and other human emotions. Unfortunately, I've come
+across precious few English books that take this approach. The bulk of
+the great writing related to the Mahabharata is in regional languages.
+(In my case, Marathi, my mother-tongue)
 
 *  **Bhimsen - Prem Panicker [English]**
    (from the POV of Bhima)
@@ -58,10 +74,10 @@ Now we come to the interesting part of the Mahabharata. If you choose to abandon
    (from the POV of Karna)
    'Son of Radha'
 
-
 ### Short stories and analyses. (Intermediate level)
 
-We should now turn to books that explain the Mahabharata (or parts of it) in detail.
+We should now turn to books that explain the Mahabharata (or parts of
+it) in detail.
 
 *  **Yugant - Irawati Karve [Marathi]**
    'The End of an Era'
@@ -76,10 +92,10 @@ We should now turn to books that explain the Mahabharata (or parts of it) in det
 *  **Kapatneeti - Daji Panashikar [Marathi]**
    'Politics of treachery'
 
-
 ### Short stories and analyses. (Expert Level)
 
-I've separated these books from those in the previous section because I think they are better books. This is my personal opinion
+I've separated these books from those in the previous section because
+I think they are better books. This is my personal opinion
 
 *  **Mahabharat: Ek Sudacha Pravas - Daji Panashikar [Marathi]**
    'A Journey of Revenge'
@@ -110,16 +126,24 @@ These books are utter bunkum. Do yourself a favor and don't read them.
 
 ### The Reference Book
 
-Kisari Mohan Ganguly [1883-1896] translated the original Sanskrit texts into English word-for-word. He has done a great service to idiots like me, providing a ready reference that I can look up anytime I want. You can find the translated text here:
+Kisari Mohan Ganguly [1883-1896] translated the original Sanskrit
+texts into English word-for-word. He has done a great service to
+idiots like me, providing a ready reference that I can look up anytime
+I want. You can find the translated text here:
 [The Mahabharata](http://www.sacred-texts.com/hin/maha/mahatxt.zip)
 
-You can also find the entire original text of the Mahabharata in Sanskrit here:
+You can also find the entire text of the Mahabharata in Sanskrit here
+(Note: this is not the *critical edition* printed by BORI, which
+should be considered the authoritative version):
 [The Mahabharata - Sanskrit](http://www.sacred-texts.com/hin/mbs/index.htm)
-
 
 ### Books I want to read
 
-These books are gems in Mahabharata literature (from what I've heard), and they are all inaccessible to me either because they are out of print or because they are in an unknown language. If someone has read one of these books and is willing to explain the salient points to me, I will pay for dinner and drinks.
+These books are gems in Mahabharata literature (from what I've heard),
+and they are all inaccessible to me either because they are out of
+print or because they are in an unknown language. If someone has read
+one of these books and is willing to explain the salient points to me,
+I will pay for dinner and drinks.
 
 *  **Yajnaseni - Pratibha Ray [Oriya]**
    (from the POV of Draupadi)

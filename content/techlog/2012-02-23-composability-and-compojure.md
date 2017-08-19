@@ -1,7 +1,10 @@
 ---
 title: "Composability and Compojure"
 date: 2012-02-23T23:57:57+05:30
-tags: [clojure, compojure, ring]
+tags:
+- clojure
+- compojure
+- ring
 ---
 
 Caveat: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don't understand what that means, then you should probably head over to the [Compojure docs](https://github.com/weavejester/compojure/wiki). Compojure exposes us to a beautifully _composable_ abstraction, and this post is an attempt to show why that is a great thing.

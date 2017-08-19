@@ -4,12 +4,10 @@ date: 2012-09-21T21:02:02+05:30
 comments: true
 published: true
 ---
-
 _Cross-posted from my answer to the question: [What was the relationship between Draupadi and the Pandavas like?](http://www.quora.com/Mythology/What-was-the-relationship-between-Draupadi-and-the-Pandavas-like/answer/Vedang-Manerikar) on [Quora](http://quora.com)_
 
-
 Draupadi's relationship with the Pandavas is complex and at the heart of the Mahabharat.
-
+<!--more-->
 ### Draupadi and Arjuna
 
 Let's jump right in with the most important relationship: Draupadi and Arjuna.
@@ -17,7 +15,7 @@ Let's jump right in with the most important relationship: Draupadi and Arjuna.
 Of the five Pandavas, Draupadi favors Arjuna the most. She is in love with him, whereas the others are in love with her. Arjuna has won her in the Swayamvar, Arjuna is her Lord, and she is devoted to him. {% fn_ref 1 %}
 
 On the other hand, she is not Arjuna's favorite wife. Arjuna does not like sharing her with 4 other men (conjecture on my part). Arjuna's favorite wife is Subadhra, Krishna's half-sister. He also dotes on Abhimanyu (his son with Subadhra) over and above his sons from Draupadi and Chitrangada (Here is a quick question: Can you name his sons from Draupadi and Chitrangada? Off the top of your head? Exactly). All of Draupadi's husbands married other women, but the only time Draupadi gets upset and distraught is when she learns of Arjuna's marriage to Subadhra. Subadhra has to go to Draupadi dressed as a maid, just to assure her that she (Subadhra) will always be beneath Draupadi in status. {% fn_ref 2 %}
-<!--more-->
+
 ### Draupadi and Yudhisthir
 
 Now let's see the reason why Draupadi's life is a shambles, why she is the most cursed woman of her time, and one of the most important reasons behind the Mahabharat war: Draupadi's marriage to Yudhisthir.
