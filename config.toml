@@ -2,7 +2,7 @@
 baseURL = "https://vedang.me/"
 languageCode = "en-us"
 title = "Vedang Manerikar"
-theme = "tranquilpeak"
+theme = "ananke"
 enableRobotsTXT = true
 paginate = 3
 disqusShortname = "vedang"
@@ -17,12 +17,6 @@ disqusShortname = "vedang"
   twitter = "vedang"
 
 # Menu Configuration
-[[menu.main]]
-  weight = 0
-  identifier = "home"
-  name = "Home"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
-  url = "/"
 [[menu.main]]
   weight = 1
   identifier = "techlog"
@@ -49,16 +43,10 @@ disqusShortname = "vedang"
   url = "/mahabharat"
 [[menu.main]]
   weight = 5
-  identifier = "tags"
-  name = "Tags"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
-  url = "/tags"
-[[menu.main]]
-  weight = 6
   identifier = "about"
   name = "About Me"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  url = "/#about"
+  url = "/about/"
 
 [[menu.links]]
   weight = 1
@@ -82,6 +70,11 @@ disqusShortname = "vedang"
   url = "/index.xml"
 
 [params]
+    # --------------------------------------------------
+    # Params needed by Ananke
+    featured_image = "/images/peace.jpg"
+    # --------------------------------------------------
+
     # Params needed by Manis
     # ----------
     copyright = "&copy; 2017 Vedang Manerikar"
