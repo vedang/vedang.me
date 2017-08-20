@@ -73,6 +73,7 @@ disqusShortname = "vedang"
     # --------------------------------------------------
     # Params needed by Ananke
     featured_image = "/images/peace.jpg"
+    background_color_class = "bg-silver"
     # --------------------------------------------------
 
     # Params needed by Manis
@@ -80,7 +81,7 @@ disqusShortname = "vedang"
     copyright = "&copy; 2017 Vedang Manerikar"
 	debugCSS = false						# If false use use minified CSS (ui.min.css)
 	# Site meta description
-	description = ""
+	description = "My corner on the Inter Webs."
 	tagline = "My corner on the Inter Webs."	# Site's Tagline (Subtitle or Keyword)
 	themeAttrib = true						# If true give attribution to this theme
 	licenseURL = "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"			# URL to license file, can be outside of your domain
