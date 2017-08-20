@@ -72,8 +72,8 @@ disqusShortname = "vedang"
 [params]
     # --------------------------------------------------
     # Params needed by Ananke
-    featured_image = "/images/peace.jpg"
-    background_color_class = "bg-silver"
+    featured_image = "/images/clevinger.jpg"
+    vedang_main_section = "techlog"
     # --------------------------------------------------
 
     # Params needed by Manis
