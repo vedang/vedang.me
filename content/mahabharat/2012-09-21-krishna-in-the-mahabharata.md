@@ -1,8 +1,8 @@
 ---
 title: "Krishna in the Mahabharata"
 date: 2012-09-21T22:33:33+05:30
-comments: true
-published: true
+tags:
+- mythology
 ---
 _Cross-posted from my answer to the question: [Why is Lord Krishna called the master of finesse in the Mahabharat?](http://www.quora.com/Mahabharata/Why-is-Lord-Krishna-called-the-master-of-finesse-in-the-Mahabharat/answer/Vedang-Manerikar) on [Quora](http://quora.com)_
 

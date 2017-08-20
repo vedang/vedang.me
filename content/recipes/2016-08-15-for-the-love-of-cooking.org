@@ -1,7 +1,9 @@
 ---
-title: For the love of Cooking
+title: "For the love of Cooking"
 date: 2016-08-15T13:41:41+05:30
-tags: [recipes, lily]
+tags:
+- recipes
+- lily
 ---
 
 Lily is a lifelong cooking enthusiast. She collected, cooked,

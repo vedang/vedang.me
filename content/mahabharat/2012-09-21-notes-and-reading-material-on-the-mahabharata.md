@@ -1,8 +1,8 @@
 ---
 title: "Notes and Reading Material on the Mahabharata"
 date: 2012-09-21T20:19:19+05:30
-comments: true
-published: true
+tags:
+- mythology
 ---
 _Cross-posted from my note: [Notes and Reading Material on the Mahabharata](http://www.quora.com/Vedang-Manerikar/The-Mahabharata/Notes-and-Reading-material-on-the-Mahabharata) on [Quora](http://quora.com)_
 

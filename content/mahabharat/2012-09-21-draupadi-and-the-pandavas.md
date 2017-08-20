@@ -1,8 +1,8 @@
 ---
 title: "Draupadi and the Pandavas"
 date: 2012-09-21T21:02:02+05:30
-comments: true
-published: true
+tags:
+- mythology
 ---
 _Cross-posted from my answer to the question: [What was the relationship between Draupadi and the Pandavas like?](http://www.quora.com/Mythology/What-was-the-relationship-between-Draupadi-and-the-Pandavas-like/answer/Vedang-Manerikar) on [Quora](http://quora.com)_
 

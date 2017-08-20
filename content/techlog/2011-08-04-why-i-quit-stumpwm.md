@@ -1,7 +1,10 @@
 ---
 title: "Why I Quit StumpWM"
+tags:
+- stumpwm
+- compiz
+- window-managers
 date: 2011-08-04T13:41:41+05:30
-tags: [stumpwm, compiz, window-managers]
 ---
 
 After using [StumpWM](http://www.nongnu.org/stumpwm/) for nearly a year, I'm finally quitting and moving back to Gnome. I came to love StumpWM's minimalistic approach, and this isn't an easy decision. So why am I doing it?

@@ -1,6 +1,7 @@
 ---
 title: "Switch Statements in Python"
-tags: [python]
+tags:
+- python
 date: 2011-08-07T13:21:21+05:30
 ---
 
