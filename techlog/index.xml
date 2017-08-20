@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes On Technology on Vedang Manerikar</title>
+    <link>https://vedang.me/techlog/</link>
+    <description>Recent content in Notes On Technology on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
+    <lastBuildDate>Sat, 19 Aug 2017 13:30:59 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/techlog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Composability and Compojure</title>
+      <link>https://vedang.me/techlog/2012-02-23-composability-and-compojure/</link>
+      <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
+      
+      <guid>https://vedang.me/techlog/2012-02-23-composability-and-compojure/</guid>
+      <description>&lt;p&gt;Caveat: This post needs some rudimentary knowledge of Compojure.
+Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
+what that means, then you should probably head over to the
+&lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.
+Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
+this post is an attempt to show why that is a great thing.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Switch Statements in Python</title>
+      <link>https://vedang.me/techlog/2011-08-07-switch-statements-in-python/</link>
+      <pubDate>Sun, 07 Aug 2011 13:21:21 +0530</pubDate>
+      
+      <guid>https://vedang.me/techlog/2011-08-07-switch-statements-in-python/</guid>
+      <description>&lt;p&gt;Today I went through some old Python code and noticed this pattern
+through out:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;response,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;somefunc()&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;this&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;do_this_with(data)&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;that&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;do_that_with(data)&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;huh&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;duh(data)&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;;;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;lots&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;more&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;elifs&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;prevent_horrible_crash(data)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This code should ideally have been a switch-case, but Python does not
+support a &lt;code&gt;switch&lt;/code&gt; statement.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Why I Quit StumpWM</title>
+      <link>https://vedang.me/techlog/2011-08-04-why-i-quit-stumpwm/</link>
+      <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
+      
+      <guid>https://vedang.me/techlog/2011-08-04-why-i-quit-stumpwm/</guid>
+      <description>&lt;p&gt;After using &lt;a href=&#34;http://www.nongnu.org/stumpwm/&#34;&gt;StumpWM&lt;/a&gt; for nearly a year, I&amp;rsquo;m finally quitting and moving back to Gnome. I came to love StumpWM&amp;rsquo;s minimalistic approach, and this isn&amp;rsquo;t an easy decision. So why am I doing it?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Pinky Hell&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I am (was) a heavy user of Emacs, Tmux and StumpWM. These programs rely heavily on the &lt;code&gt;Ctrl&lt;/code&gt; key. This means that the &lt;code&gt;Ctrl&lt;/code&gt; key and my left pinky finger are pretty much destroyed at this point. With the spectre of RSI looming over my head, StumpWM is the easiest tool to get rid off. I might have less screen-space now, but my fingers will thank me for it.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

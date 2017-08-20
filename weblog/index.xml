@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Random Thoughts on Vedang Manerikar</title>
+    <link>https://vedang.me/weblog/</link>
+    <description>Recent content in Random Thoughts on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
+    <lastBuildDate>Sat, 19 Aug 2017 13:30:59 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/weblog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reboot.</title>
+      <link>https://vedang.me/weblog/2011-07-30-reboot/</link>
+      <pubDate>Sat, 30 Jul 2011 14:24:24 +0530</pubDate>
+      
+      <guid>https://vedang.me/weblog/2011-07-30-reboot/</guid>
+      <description>&lt;p&gt;Once upon a time I had a blog. Then one day I ran out of motivation,
+inclination, desire, drive, whatnot to post to that blog. I never
+really ran out of content though. At least, I think not.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

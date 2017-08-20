@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+    <title>Vedang Manerikar  | Switch Statements in Python</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     <meta name="generator" content="Hugo 0.26" />
+      
+      
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      
+
+     <link href='https://vedang.me/dist/main.css' rel='stylesheet' type="text/css" />
+
+     
+
+      <meta property="og:title" content="Switch Statements in Python" />
+<meta property="og:description" content="Today I went through some old Python code and noticed this pattern
+through out:
+
+response, data = somefunc()
+if response == &quot;this&quot;:
+    do_this_with(data)
+elif response == &quot;that&quot;:
+    do_that_with(data)
+elif response == &quot;huh&quot;:
+    duh(data)
+;; lots more elifs.
+else:
+    prevent_horrible_crash(data)
+
+
+
+This code should ideally have been a switch-case, but Python does not
+support a switch statement.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vedang.me/techlog/2011-08-07-switch-statements-in-python/" />
+
+
+
+<meta property="article:published_time" content="2011-08-07T13:21:21&#43;05:30"/>
+<meta property="article:modified_time" content="2011-08-07T13:21:21&#43;05:30"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Switch Statements in Python">
+<meta itemprop="description" content="Today I went through some old Python code and noticed this pattern
+through out:
+
+response, data = somefunc()
+if response == &quot;this&quot;:
+    do_this_with(data)
+elif response == &quot;that&quot;:
+    do_that_with(data)
+elif response == &quot;huh&quot;:
+    duh(data)
+;; lots more elifs.
+else:
+    prevent_horrible_crash(data)
+
+
+
+This code should ideally have been a switch-case, but Python does not
+support a switch statement.
+">
+
+
+<meta itemprop="dateModified" content="2011-08-07T13:21:21&#43;05:30" />
+<meta itemprop="wordCount" content="385">
+
+
+
+<meta itemprop="keywords" content="python," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Switch Statements in Python"/>
+<meta name="twitter:description" content="Today I went through some old Python code and noticed this pattern
+through out:
+
+response, data = somefunc()
+if response == &quot;this&quot;:
+    do_this_with(data)
+elif response == &quot;that&quot;:
+    do_that_with(data)
+elif response == &quot;huh&quot;:
+    duh(data)
+;; lots more elifs.
+else:
+    prevent_horrible_crash(data)
+
+
+
+This code should ideally have been a switch-case, but Python does not
+support a switch statement.
+"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://vedang.me/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Vedang Manerikar
+    </a>
+    <div class="flex-l items-center">
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/techlog" title="Techlog page">
+              Techlog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/weblog" title="Weblog page">
+              Weblog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/recipes" title="Lily&#39;s Recipes page">
+              Lily&#39;s Recipes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/mahabharat" title="Mahabharat page">
+              Mahabharat
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+  <a href="https://twitter.com/vedang" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          TECHLOG
+        </p>
+        <h1 class="f1">
+          Switch Statements in Python
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>Today I went through some old Python code and noticed this pattern
+through out:</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">response,</span> <span style="color: #f8f8f2">data</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">somefunc()</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;this&quot;</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">do_this_with(data)</span>
+<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;that&quot;</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">do_that_with(data)</span>
+<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;huh&quot;</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">duh(data)</span>
+<span style="color: #f8f8f2">;;</span> <span style="color: #f8f8f2">lots</span> <span style="color: #f8f8f2">more</span> <span style="color: #f8f8f2">elifs</span><span style="color: #f92672">.</span>
+<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">prevent_horrible_crash(data)</span>
+</pre></div>
+
+
+<p>This code should ideally have been a switch-case, but Python does not
+support a <code>switch</code> statement.
+</p>
+
+<p>Proponents of OOP believe that <code>switch</code> is <em>bad</em> - second only to
+<code>goto</code>. This is not strictly true - both goto and switch can be used
+elegantly and with great effect. Goto, for example, is great for
+undoing stacked changes and switch&rsquo;s fall-through behavior allows
+nicely for &lsquo;do things according to the stage I&rsquo;m at&rsquo;. However, if
+you&rsquo;re doing OOP, consider using polymorphism instead.</p>
+
+<p>I&rsquo;m not doing OOP, so polymorphism does not apply to me, but I was
+looking for a way to optimize this code. I was on a code-cleanup
+spree, in the &ldquo;flow&rdquo;, and I thought, &ldquo;Why don&rsquo;t I use maps to do
+this?&ldquo;. Brilliant! It was a really neat idea. Later I found out that
+this is the accepted way of doing switch-case in Python and I&rsquo;d done
+nothing special. So anyway, the code now looked like this:</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">response_map</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span><span style="color: #e6db74">&quot;this&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">do_this_with,</span>
+                <span style="color: #e6db74">&quot;that&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">do_that_with,</span>
+                <span style="color: #e6db74">&quot;huh&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">duh}</span>
+<span style="color: #f8f8f2">response_map</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">get(response,</span> <span style="color: #f8f8f2">prevent_horrible_crash)(data)</span>
+</pre></div>
+</p>
+
+<p>And that would have been that, had I not suddenly developed a
+conscience. I had replaced perfectly working, mostly readable code
+with some other code. What if my map solution was slower? What if it
+was <em>much slower</em>? I&rsquo;d done a sizable amount of refactoring, and I did
+not relish throwing it away. I needed to test my solution, so I wrote
+some sample code:</p>
+
+<script src="//gist.github.com/vedang/1130352.js"></script>
+
+<p>The results were disheartening. My replacement code was slower -
+though only just.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ python switch-speed.py
+<span style="color: #66d9ef">if</span> - <span style="color: #ae81ff">2</span>.08906793594
+map - <span style="color: #ae81ff">2</span>.88215684891
+</pre></div>
+
+
+<p>I tweaked the code a little and moved the creation of the map outside
+of the <code>switch_map</code> function. Python can access local variables faster
+than it can access global variables, but I figured a global dict would
+still beat the cost of creating the dict every time.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ python switch-speed.py
+<span style="color: #66d9ef">if</span> -  <span style="color: #ae81ff">2</span>.08955693245
+map -  <span style="color: #ae81ff">2</span>.00381493568
+</pre></div>
+
+
+<p>I breathed a sigh of relief. There was a lesson to be learnt here -
+test/profile <em>before</em> you optimize!</p>
+
+<h4 id="references-and-articles">References and articles:</h4>
+
+<ul>
+<li>More information about switch statements smell - <a href="http://c2.com/cgi/wiki?SwitchStatementsSmell">c2.com</a></li>
+<li>Goto is not evil - <a href="http://kerneltrap.org/node/553/2131">kerneltrap.org</a></li>
+</ul>
+      </div>
+    </article>
+    <aside class="ph3 mt2 mt6-ns">
+      
+
+
+
+
+
+
+
+  <div class="bg-light-gray pa3">
+    <ul>
+      <li class="list b mb3">
+        2 More Techlogs
+      </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/techlog/2012-02-23-composability-and-compojure/" class="link ph2 pv2 db black">
+            Composability and Compojure
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/techlog/2011-08-07-switch-statements-in-python/" class="link ph2 pv2 db black o-50">
+            Switch Statements in Python
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/techlog/2011-08-04-why-i-quit-stumpwm/" class="link ph2 pv2 db black">
+            Why I Quit StumpWM
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+    </aside>
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://vedang.me/" >
+    &copy; 2017 Vedang Manerikar
+  </a>
+  
+
+
+
+  <a href="https://twitter.com/vedang" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+  </div>
+</footer>
+
+    <script src="https://vedang.me/dist/app.bundle.js" async></script>
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lily&#39;s Recipes on Vedang Manerikar</title>
+    <link>https://vedang.me/recipes/</link>
+    <description>Recent content in Lily&#39;s Recipes on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
+    <lastBuildDate>Sat, 19 Aug 2017 13:30:59 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/recipes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
