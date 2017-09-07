@@ -17,5 +17,5 @@ have strong personal
 culture, and I use this space to try and convert random strangers to
 my point of view.
 
-If you want to get in touch, please send me a message here:
-{{< form-contact action="http://formspree.io/ved.manerikar@gmail.com" >}}
+If you want to get in touch, please send me a message at
+vedang.manerikar on Google's email service.
