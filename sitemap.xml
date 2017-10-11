@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vedang.me/techlog/2017-10-11-mbsync-channel-is-locked/</loc>
+    <lastmod>2017-10-11T09:37:22+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</loc>
     <lastmod>2017-09-07T21:02:10+05:30</lastmod>
   </url>
@@ -133,8 +138,14 @@
   </url>
   
   <url>
+    <loc>https://vedang.me/tags/tinylog/</loc>
+    <lastmod>2017-10-11T09:37:22+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vedang.me/</loc>
-    <lastmod>2017-09-07T21:02:10+05:30</lastmod>
+    <lastmod>2017-10-11T09:37:22+05:30</lastmod>
     <priority>0</priority>
   </url>
   

@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.26" />
+     <meta name="generator" content="Hugo 0.29" />
       
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -24,16 +24,15 @@
 through out:
 
 response, data = somefunc()
-if response == &quot;this&quot;:
+if response == &#34;this&#34;:
     do_this_with(data)
-elif response == &quot;that&quot;:
+elif response == &#34;that&#34;:
     do_that_with(data)
-elif response == &quot;huh&quot;:
+elif response == &#34;huh&#34;:
     duh(data)
 ;; lots more elifs.
 else:
     prevent_horrible_crash(data)
-
 
 
 This code should ideally have been a switch-case, but Python does not
@@ -62,16 +61,15 @@ support a switch statement.
 through out:
 
 response, data = somefunc()
-if response == &quot;this&quot;:
+if response == &#34;this&#34;:
     do_this_with(data)
-elif response == &quot;that&quot;:
+elif response == &#34;that&#34;:
     do_that_with(data)
-elif response == &quot;huh&quot;:
+elif response == &#34;huh&#34;:
     duh(data)
 ;; lots more elifs.
 else:
     prevent_horrible_crash(data)
-
 
 
 This code should ideally have been a switch-case, but Python does not
@@ -80,7 +78,7 @@ support a switch statement.
 
 
 <meta itemprop="dateModified" content="2011-08-07T13:21:21&#43;05:30" />
-<meta itemprop="wordCount" content="385">
+<meta itemprop="wordCount" content="350">
 
 
 
@@ -90,16 +88,15 @@ support a switch statement.
 through out:
 
 response, data = somefunc()
-if response == &quot;this&quot;:
+if response == &#34;this&#34;:
     do_this_with(data)
-elif response == &quot;that&quot;:
+elif response == &#34;that&#34;:
     do_that_with(data)
-elif response == &quot;huh&quot;:
+elif response == &#34;huh&#34;:
     duh(data)
 ;; lots more elifs.
 else:
     prevent_horrible_crash(data)
-
 
 
 This code should ideally have been a switch-case, but Python does not
@@ -191,18 +188,17 @@ support a switch statement.
         <p>Today I went through some old Python code and noticed this pattern
 through out:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">response,</span> <span style="color: #f8f8f2">data</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">somefunc()</span>
-<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;this&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">do_this_with(data)</span>
-<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;that&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">do_that_with(data)</span>
-<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;huh&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">duh(data)</span>
-<span style="color: #f8f8f2">;;</span> <span style="color: #f8f8f2">lots</span> <span style="color: #f8f8f2">more</span> <span style="color: #f8f8f2">elifs</span><span style="color: #f92672">.</span>
-<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">prevent_horrible_crash(data)</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="">response</span><span style="">,</span><span style=""> </span><span style="">data</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">somefunc</span><span style="">()</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">if</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;this&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_this_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;that&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_that_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;huh&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">duh</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="">;;</span><span style=""> </span><span style="">lots</span><span style=""> </span><span style="">more</span><span style=""> </span><span style="">elifs</span><span style="color:#f92672">.</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">else</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">prevent_horrible_crash</span><span style="">(</span><span style="">data</span><span style="">)</span></code></pre>
+</div>
 
 <p>This code should ideally have been a switch-case, but Python does not
 support a <code>switch</code> statement.
@@ -222,12 +218,11 @@ this?&ldquo;. Brilliant! It was a really neat idea. Later I found out that
 this is the accepted way of doing switch-case in Python and I&rsquo;d done
 nothing special. So anyway, the code now looked like this:</p>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">response_map</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span><span style="color: #e6db74">&quot;this&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">do_this_with,</span>
-                <span style="color: #e6db74">&quot;that&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">do_that_with,</span>
-                <span style="color: #e6db74">&quot;huh&quot;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">duh}</span>
-<span style="color: #f8f8f2">response_map</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">get(response,</span> <span style="color: #f8f8f2">prevent_horrible_crash)(data)</span>
-</pre></div>
-</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="">response_map</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">{</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;this&#34;</span><span style="">:</span><span style=""> </span><span style="">do_this_with</span><span style="">,</span><span style="">
+</span><span style="">                </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;that&#34;</span><span style="">:</span><span style=""> </span><span style="">do_that_with</span><span style="">,</span><span style="">
+</span><span style="">                </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;huh&#34;</span><span style="">:</span><span style=""> </span><span style="">duh</span><span style="">}</span><span style="">
+</span><span style=""></span><span style="">response_map</span><span style="color:#f92672">.</span><span style="">get</span><span style="">(</span><span style="">response</span><span style="">,</span><span style=""> </span><span style="">prevent_horrible_crash</span><span style="">)(</span><span style="">data</span><span style="">)</span></code></pre>
+</div></p>
 
 <p>And that would have been that, had I not suddenly developed a
 conscience. I had replaced perfectly working, mostly readable code
@@ -241,22 +236,20 @@ some sample code:</p>
 <p>The results were disheartening. My replacement code was slower -
 though only just.</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ python switch-speed.py
-<span style="color: #66d9ef">if</span> - <span style="color: #ae81ff">2</span>.08906793594
-map - <span style="color: #ae81ff">2</span>.88215684891
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="">$ python switch-speed.py
+</span><span style=""></span><span style="color:#66d9ef">if</span><span style=""> - </span><span style="color:#ae81ff">2</span><span style="">.08906793594
+</span><span style="">map - </span><span style="color:#ae81ff">2</span><span style="">.88215684891</span></code></pre>
+</div>
 
 <p>I tweaked the code a little and moved the creation of the map outside
 of the <code>switch_map</code> function. Python can access local variables faster
 than it can access global variables, but I figured a global dict would
 still beat the cost of creating the dict every time.</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ python switch-speed.py
-<span style="color: #66d9ef">if</span> -  <span style="color: #ae81ff">2</span>.08955693245
-map -  <span style="color: #ae81ff">2</span>.00381493568
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="">$ python switch-speed.py
+</span><span style=""></span><span style="color:#66d9ef">if</span><span style=""> -  </span><span style="color:#ae81ff">2</span><span style="">.08955693245
+</span><span style="">map -  </span><span style="color:#ae81ff">2</span><span style="">.00381493568</span></code></pre>
+</div>
 
 <p>I breathed a sigh of relief. There was a lesson to be learnt here -
 test/profile <em>before</em> you optimize!</p>
@@ -281,8 +274,15 @@ test/profile <em>before</em> you optimize!</p>
   <div class="bg-light-gray pa3">
     <ul>
       <li class="list b mb3">
-        2 More Techlogs
+        3 More Techlogs
       </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/techlog/2017-10-11-mbsync-channel-is-locked/" class="link ph2 pv2 db black">
+            Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked
+          </a>
+        </li>
       
         <li class="list f5 w-100 hover-bg-white nl1">
           

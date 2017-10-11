@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
-    <lastBuildDate>Thu, 07 Sep 2017 21:02:10 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 11 Oct 2017 09:37:22 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked</title>
+      <link>https://vedang.me/techlog/2017-10-11-mbsync-channel-is-locked/</link>
+      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
+      
+      <guid>https://vedang.me/techlog/2017-10-11-mbsync-channel-is-locked/</guid>
+      <description>You may come across the following error when running mbsync :
+ Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp;lt;channel-name&amp;gt;-local:&amp;lt;folder&amp;gt; is locked  This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!</description>
+    </item>
     
     <item>
       <title>Imagine Working in Engineering at Helpshift</title>
@@ -95,18 +105,17 @@ this post is an attempt to show why that is a great thing.
       <description>&lt;p&gt;Today I went through some old Python code and noticed this pattern
 through out:&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;response,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;somefunc()&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;this&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;do_this_with(data)&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;that&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;do_that_with(data)&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;huh&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;duh(data)&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;;;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;lots&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;more&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;elifs&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;prevent_horrible_crash(data)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;somefunc&lt;/span&gt;&lt;span style=&#34;&#34;&gt;()&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this&amp;#34;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;do_this_with&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;that&amp;#34;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;do_that_with&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;huh&amp;#34;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;duh&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;;;&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;lots&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;more&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;elifs&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;prevent_horrible_crash&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;This code should ideally have been a switch-case, but Python does not
 support a &lt;code&gt;switch&lt;/code&gt; statement.

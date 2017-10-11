@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.26" />
+     <meta name="generator" content="Hugo 0.29" />
       
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -143,6 +143,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Techlog</span>
     <h1 class="f3 near-black">
+      <a href="/techlog/2017-10-11-mbsync-channel-is-locked/" class="link black dim">
+        Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      You may come across the following error when running mbsync :
+ Error: channel :&lt;channel-name&gt;-remote:&lt;folder&gt;-:&lt;channel-name&gt;-local:&lt;folder&gt; is locked  This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Techlog</span>
+    <h1 class="f3 near-black">
       <a href="/techlog/2012-02-23-composability-and-compojure/" class="link black dim">
         Composability and Compojure
       </a>
@@ -174,18 +192,17 @@ this post is an attempt to show why that is a great thing.
       <p>Today I went through some old Python code and noticed this pattern
 through out:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">response,</span> <span style="color: #f8f8f2">data</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">somefunc()</span>
-<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;this&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">do_this_with(data)</span>
-<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;that&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">do_that_with(data)</span>
-<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;huh&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">duh(data)</span>
-<span style="color: #f8f8f2">;;</span> <span style="color: #f8f8f2">lots</span> <span style="color: #f8f8f2">more</span> <span style="color: #f8f8f2">elifs</span><span style="color: #f92672">.</span>
-<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">prevent_horrible_crash(data)</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="">response</span><span style="">,</span><span style=""> </span><span style="">data</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">somefunc</span><span style="">()</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">if</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;this&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_this_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;that&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_that_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;huh&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">duh</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="">;;</span><span style=""> </span><span style="">lots</span><span style=""> </span><span style="">more</span><span style=""> </span><span style="">elifs</span><span style="color:#f92672">.</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">else</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">prevent_horrible_crash</span><span style="">(</span><span style="">data</span><span style="">)</span></code></pre>
+</div>
 
 <p>This code should ideally have been a switch-case, but Python does not
 support a <code>switch</code> statement.
@@ -221,6 +238,53 @@ support a <code>switch</code> statement.
       
     </section>
   
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/techlog/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li
+    class="disabled">
+    <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    class="active"><a href="/techlog/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="/techlog/page/2/">2</a></li>
+    
+    
+    <li
+    >
+    <a href="/techlog/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="/techlog/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
 
   </div>
 

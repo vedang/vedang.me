@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.26" />
+     <meta name="generator" content="Hugo 0.29" />
       
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -56,7 +56,7 @@ this post is an attempt to show why that is a great thing.
 
 
 <meta itemprop="dateModified" content="2012-02-23T23:57:57&#43;05:30" />
-<meta itemprop="wordCount" content="897">
+<meta itemprop="wordCount" content="794">
 
 
 
@@ -168,14 +168,13 @@ let&rsquo;s get started.</p>
 
 <p>Here is what the basic routes function would look like:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/defroutes</span> <span style="color: #f8f8f2">main-routes</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/&quot;</span> <span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-                   <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Cello World&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">)))</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/bye/&quot;</span> <span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-                      <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Goodbye World&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">)))</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">route/not-found</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">))</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">main-routes</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/bye/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">                      </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Goodbye World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">route/not-found</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span><span style="">))</span></code></pre>
+</div>
 
 <p>Compojure uses Ring to handle requests and responses. These terms
 (request/response) don&rsquo;t mean &lsquo;objects&rsquo; (to those of you from the OOP
@@ -204,15 +203,14 @@ Simple, isn&rsquo;t it?</p>
 <p>So if you think you&rsquo;ve understood it so far, tell me if adding this
 route to our main routes will work or not:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/hello*&quot;</span> <span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/defroutes</span> <span style="color: #f8f8f2">hello-routes</span>
-                         <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/hello/name/&quot;</span> <span style="color: #f8f8f2">[]</span>
-                                 <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-                                   <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">)))</span>
-                         <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/hello/city/&quot;</span> <span style="color: #f8f8f2">[]</span>
-                                 <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-                                   <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">)))))</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello*&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">hello-routes</span><span style="">
+</span><span style="">                         </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/name/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
+</span><span style="">                                 </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">                                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
+</span><span style="">                         </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/city/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
+</span><span style="">                                 </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">                                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&#34;</span><span style="">)))))</span></code></pre>
+</div>
 
 <p>Well, yes! <code>cc/defroutes</code> gives us a handler<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>, and that&rsquo;s really
 all <code>cc/GET</code> cares about!</p>
@@ -225,16 +223,15 @@ this fit into our abstraction? - As a function that takes a
 handler(H1) and, wait for it, returns another handler(H2). Boom!
 Confused? Here is what a middleware function looks like:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">defn </span><span style="color: #f8f8f2">verify-secret</span>
-  <span style="color: #e6db74">&quot;Verify that secret-key has been sent as a parameter s in the request&quot;</span>
-  <span style="color: #f8f8f2">[handler]</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[request]</span>
-    <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">if </span><span style="color: #f8f8f2">(= </span><span style="color: #e6db74">&quot;s=please&quot;</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">:query-string</span> <span style="color: #f8f8f2">request))</span>
-      <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">handler</span> <span style="color: #f8f8f2">request)</span>
-      <span style="color: #f8f8f2">{</span><span style="color: #e6db74">:status</span> <span style="color: #ae81ff">403</span>
-       <span style="color: #e6db74">:body</span> <span style="color: #e6db74">&quot;You don&#39;t know the secret word&quot;</span><span style="color: #f8f8f2">})))</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="">(</span><span style="color:#66d9ef">defn </span><span style="">verify-secret</span><span style="">
+</span><span style="">  </span><span style="color:#e6db74">&#34;Verify that secret-key has been sent as a parameter s in the request&#34;</span><span style="">
+</span><span style="">  </span><span style="">[</span><span style="">handler</span><span style="">]</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">request</span><span style="">]</span><span style="">
+</span><span style="">    </span><span style="">(</span><span style="color:#66d9ef">if </span><span style="">(</span><span style="">= </span><span style="color:#e6db74">&#34;s=please&#34;</span><span style=""> </span><span style="">(</span><span style="color:#e6db74">:query-string</span><span style=""> </span><span style="">request</span><span style="">))</span><span style="">
+</span><span style="">      </span><span style="">(</span><span style="">handler</span><span style=""> </span><span style="">request</span><span style="">)</span><span style="">
+</span><span style="">      </span><span style="">{</span><span style="color:#e6db74">:status</span><span style=""> </span><span style="color:#ae81ff">403</span><span style="">
+</span><span style="">       </span><span style="color:#e6db74">:body</span><span style=""> </span><span style="color:#e6db74">&#34;You don&#39;t know the secret word&#34;</span><span style="">})))</span></code></pre>
+</div>
 
 <p>This function gets a handler(H1). It doesn&rsquo;t know or care what that
 handler is going to do to the request. It returns a new handler(H2)
@@ -249,42 +246,41 @@ request.</p>
 
 <p>Here is what the final code would look like:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">;; Define some Hello routes</span>
-<span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/defroutes</span> <span style="color: #f8f8f2">hello-routes</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/hello/name/&quot;</span> <span style="color: #f8f8f2">[]</span>
-          <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-            <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">)))</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/hello/city/&quot;</span> <span style="color: #f8f8f2">[]</span>
-          <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-            <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">))))</span>
-
-<span style="color: #75715e">;; Our main routes function.</span>
-<span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/defroutes</span> <span style="color: #f8f8f2">main-routes*</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/&quot;</span> <span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-                   <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Cello World&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">)))</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/bye/&quot;</span> <span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[req]</span>
-                      <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">rur/response</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Goodbye World&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">)))</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">cc/GET</span> <span style="color: #e6db74">&quot;/hello*&quot;</span> <span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">hello-routes)</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">route/not-found</span> <span style="color: #e6db74">&quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">))</span>
-
-<span style="color: #75715e">;; A middleware function</span>
-<span style="color: #f8f8f2">(</span><span style="color: #66d9ef">defn </span><span style="color: #f8f8f2">verify-secret</span>
-  <span style="color: #e6db74">&quot;Verify that secret-key has been sent as a parameter s in the request&quot;</span>
-  <span style="color: #f8f8f2">[handler]</span>
-  <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">fn </span><span style="color: #f8f8f2">[request]</span>
-    <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">if </span><span style="color: #f8f8f2">(= </span><span style="color: #e6db74">&quot;s=please&quot;</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">:query-string</span> <span style="color: #f8f8f2">request))</span>
-      <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">handler</span> <span style="color: #f8f8f2">request)</span>
-      <span style="color: #f8f8f2">{</span><span style="color: #e6db74">:status</span> <span style="color: #ae81ff">403</span>
-       <span style="color: #e6db74">:body</span> <span style="color: #e6db74">&quot;You don&#39;t know the secret word&quot;</span><span style="color: #f8f8f2">})))</span>
-
-<span style="color: #75715e">;;; Wrap my main routes in middleware</span>
-<span style="color: #f8f8f2">(</span><span style="color: #66d9ef">def </span><span style="color: #f8f8f2">main-routes</span> <span style="color: #f8f8f2">(-&gt; </span><span style="color: #f92672">#</span><span style="color: #e6db74">&#39;main-routes*</span>
-                     <span style="color: #f8f8f2">verify-secret))</span>
-
-<span style="color: #75715e">;;; Start app with main routes</span>
-<span style="color: #f8f8f2">(</span><span style="color: #a6e22e">run-jetty</span> <span style="color: #f92672">#</span><span style="color: #e6db74">&#39;main-routes</span> <span style="color: #f8f8f2">{</span><span style="color: #e6db74">:port</span> <span style="color: #f8f8f2">port</span> <span style="color: #e6db74">:join?</span> <span style="color: #f8f8f2">false})</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; Define some Hello routes</span><span style="">
+</span><span style=""></span><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">hello-routes</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/name/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
+</span><span style="">          </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">            </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/city/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
+</span><span style="">          </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">            </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&#34;</span><span style="">))))</span><span style="">
+</span><span style="">
+</span><span style=""></span><span style="color:#75715e">;; Our main routes function.</span><span style="">
+</span><span style=""></span><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">main-routes*</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/bye/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
+</span><span style="">                      </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Goodbye World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello*&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">hello-routes</span><span style="">)</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="">route/not-found</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span><span style="">))</span><span style="">
+</span><span style="">
+</span><span style=""></span><span style="color:#75715e">;; A middleware function</span><span style="">
+</span><span style=""></span><span style="">(</span><span style="color:#66d9ef">defn </span><span style="">verify-secret</span><span style="">
+</span><span style="">  </span><span style="color:#e6db74">&#34;Verify that secret-key has been sent as a parameter s in the request&#34;</span><span style="">
+</span><span style="">  </span><span style="">[</span><span style="">handler</span><span style="">]</span><span style="">
+</span><span style="">  </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">request</span><span style="">]</span><span style="">
+</span><span style="">    </span><span style="">(</span><span style="color:#66d9ef">if </span><span style="">(</span><span style="">= </span><span style="color:#e6db74">&#34;s=please&#34;</span><span style=""> </span><span style="">(</span><span style="color:#e6db74">:query-string</span><span style=""> </span><span style="">request</span><span style="">))</span><span style="">
+</span><span style="">      </span><span style="">(</span><span style="">handler</span><span style=""> </span><span style="">request</span><span style="">)</span><span style="">
+</span><span style="">      </span><span style="">{</span><span style="color:#e6db74">:status</span><span style=""> </span><span style="color:#ae81ff">403</span><span style="">
+</span><span style="">       </span><span style="color:#e6db74">:body</span><span style=""> </span><span style="color:#e6db74">&#34;You don&#39;t know the secret word&#34;</span><span style="">})))</span><span style="">
+</span><span style="">
+</span><span style=""></span><span style="color:#75715e">;;; Wrap my main routes in middleware</span><span style="">
+</span><span style=""></span><span style="">(</span><span style="color:#66d9ef">def </span><span style="">main-routes</span><span style=""> </span><span style="">(</span><span style="">-&gt; </span><span style="color:#f92672">#</span><span style="color:#e6db74">&#39;main-routes*</span><span style="">
+</span><span style="">                     </span><span style="">verify-secret</span><span style="">))</span><span style="">
+</span><span style="">
+</span><span style=""></span><span style="color:#75715e">;;; Start app with main routes</span><span style="">
+</span><span style=""></span><span style="">(</span><span style="">run-jetty</span><span style=""> </span><span style="color:#f92672">#</span><span style="color:#e6db74">&#39;main-routes</span><span style=""> </span><span style="">{</span><span style="color:#e6db74">:port</span><span style=""> </span><span style="">port</span><span style=""> </span><span style="color:#e6db74">:join?</span><span style=""> </span><span style="">false</span><span style="">})</span></code></pre>
+</div>
 
 <p><code>main-routes*</code> is a handler which matches the incoming uris to ones we
 support, <code>verify-secret</code> will make sure that the incoming requests
@@ -317,8 +313,15 @@ systems and frameworks.</p>
   <div class="bg-light-gray pa3">
     <ul>
       <li class="list b mb3">
-        2 More Techlogs
+        3 More Techlogs
       </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/techlog/2017-10-11-mbsync-channel-is-locked/" class="link ph2 pv2 db black">
+            Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked
+          </a>
+        </li>
       
         <li class="list f5 w-100 hover-bg-white nl1">
           

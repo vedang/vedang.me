@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Vedang Manerikar  | Compiz</title>
+    <title>Vedang Manerikar  | Notes On Technology</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -18,14 +18,14 @@
      <link href='https://vedang.me/dist/main.css' rel='stylesheet' type="text/css" />
 
      
-      <link href="https://vedang.me/tags/compiz/index.xml" rel="alternate" type="application/rss+xml" title="Vedang Manerikar" />
-      <link href="https://vedang.me/tags/compiz/index.xml" rel="feed" type="application/rss+xml" title="Vedang Manerikar" />
+      <link href="https://vedang.me/techlog/index.xml" rel="alternate" type="application/rss+xml" title="Vedang Manerikar" />
+      <link href="https://vedang.me/techlog/index.xml" rel="feed" type="application/rss+xml" title="Vedang Manerikar" />
       
 
-      <meta property="og:title" content="Compiz" />
-<meta property="og:description" content="My corner on the Inter Webs." />
+      <meta property="og:title" content="Notes On Technology" />
+<meta property="og:description" content="(To Teach Myself)" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://vedang.me/tags/compiz/" />
+<meta property="og:url" content="https://vedang.me/techlog/" />
 
 
 
@@ -40,11 +40,11 @@
 
 
 
-<meta itemprop="name" content="Compiz">
-<meta itemprop="description" content="My corner on the Inter Webs.">
+<meta itemprop="name" content="Notes On Technology">
+<meta itemprop="description" content="(To Teach Myself)">
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Compiz"/>
-<meta name="twitter:description" content="My corner on the Inter Webs."/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Notes On Technology"/>
+<meta name="twitter:description" content="(To Teach Myself)"/>
 
   </head>
 
@@ -115,8 +115,12 @@
 
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Compiz
+          Notes On Technology
         </h1>
+        
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
+            (To Teach Myself)
+          </h2>
         
       </div>
     </div>
@@ -126,13 +130,88 @@
     <main class="pb7" role="main">
       
   <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Compiz”</p>
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">                
+      
     </div>
   </article>
   <div class="mw8 center">
     
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Techlog</span>
+    <h1 class="f3 near-black">
+      <a href="/techlog/2017-10-11-mbsync-channel-is-locked/" class="link black dim">
+        Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      You may come across the following error when running mbsync :
+ Error: channel :&lt;channel-name&gt;-remote:&lt;folder&gt;-:&lt;channel-name&gt;-local:&lt;folder&gt; is locked  This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Techlog</span>
+    <h1 class="f3 near-black">
+      <a href="/techlog/2012-02-23-composability-and-compojure/" class="link black dim">
+        Composability and Compojure
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Caveat: This post needs some rudimentary knowledge of Compojure.
+Compojure is a web framework for Clojure, and if you don&rsquo;t understand
+what that means, then you should probably head over to the
+<a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>.
+Compojure exposes us to a beautifully <em>composable</em> abstraction, and
+this post is an attempt to show why that is a great thing.
+</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Techlog</span>
+    <h1 class="f3 near-black">
+      <a href="/techlog/2011-08-07-switch-statements-in-python/" class="link black dim">
+        Switch Statements in Python
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Today I went through some old Python code and noticed this pattern
+through out:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="">response</span><span style="">,</span><span style=""> </span><span style="">data</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">somefunc</span><span style="">()</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">if</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;this&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_this_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;that&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_that_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;huh&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">duh</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="">;;</span><span style=""> </span><span style="">lots</span><span style=""> </span><span style="">more</span><span style=""> </span><span style="">elifs</span><span style="color:#f92672">.</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">else</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">prevent_horrible_crash</span><span style="">(</span><span style="">data</span><span style="">)</span></code></pre>
+</div>
+
+<p>This code should ideally have been a switch-case, but Python does not
+support a <code>switch</code> statement.
+</p>
+    </div>
+  </div>
+</div>
+
+        </div>
       
         <div class="relative w-100  mb4 bg-white">
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
@@ -158,6 +237,55 @@
         </div>
       
     </section>
+  
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/techlog/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li
+    >
+    <a href="/techlog/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    ><a href="/techlog/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li
+    class="active"><a href="/techlog/page/2/">2</a></li>
+    
+    
+    <li
+    class="disabled">
+    <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="/techlog/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
   </div>
 
     </main>

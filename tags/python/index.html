@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.26" />
+     <meta name="generator" content="Hugo 0.29" />
       
       
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -147,18 +147,17 @@
       <p>Today I went through some old Python code and noticed this pattern
 through out:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">response,</span> <span style="color: #f8f8f2">data</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">somefunc()</span>
-<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;this&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">do_this_with(data)</span>
-<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;that&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">do_that_with(data)</span>
-<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">response</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;huh&quot;</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">duh(data)</span>
-<span style="color: #f8f8f2">;;</span> <span style="color: #f8f8f2">lots</span> <span style="color: #f8f8f2">more</span> <span style="color: #f8f8f2">elifs</span><span style="color: #f92672">.</span>
-<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">prevent_horrible_crash(data)</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="">response</span><span style="">,</span><span style=""> </span><span style="">data</span><span style=""> </span><span style="color:#f92672">=</span><span style=""> </span><span style="">somefunc</span><span style="">()</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">if</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;this&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_this_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;that&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">do_that_with</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">elif</span><span style=""> </span><span style="">response</span><span style=""> </span><span style="color:#f92672">==</span><span style=""> </span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;huh&#34;</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">duh</span><span style="">(</span><span style="">data</span><span style="">)</span><span style="">
+</span><span style=""></span><span style="">;;</span><span style=""> </span><span style="">lots</span><span style=""> </span><span style="">more</span><span style=""> </span><span style="">elifs</span><span style="color:#f92672">.</span><span style="">
+</span><span style=""></span><span style="color:#66d9ef">else</span><span style="">:</span><span style="">
+</span><span style="">    </span><span style="">prevent_horrible_crash</span><span style="">(</span><span style="">data</span><span style="">)</span></code></pre>
+</div>
 
 <p>This code should ideally have been a switch-case, but Python does not
 support a <code>switch</code> statement.
