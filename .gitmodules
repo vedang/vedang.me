@@ -2,7 +2,7 @@
 	path = themes/manis
 	url = https://github.com/yursan9/manis-hugo-theme
 [submodule "themes/ananke"]
-	path = themes/ananke
+	path = themes/gohugo-theme-ananke
 	url = https://github.com/budparr/gohugo-theme-ananke.git
 [submodule "themes/tranquilpeak"]
 	path = themes/tranquilpeak
