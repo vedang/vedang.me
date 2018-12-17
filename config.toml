@@ -1,20 +1,37 @@
 # Full config options: https://gohugo.io/getting-started/configuration/#toml-configuration
+# Arranged according to use in Ananke
+title = "Vedang Manerikar"
 baseURL = "https://vedang.me/"
 languageCode = "en-us"
-title = "Vedang Manerikar"
-theme = "ananke"
+theme = "gohugo-theme-ananke"
+
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
+#SectionPagesMenu = "main"
+Paginate = 5
+googleAnalytics = ""
 enableRobotsTXT = true
-paginate = 3
 disqusShortname = "vedang"
 
-[author]
-  name = "Vedang Manerikar"
-  bio = "sings badly and at the top of his voice. writes Clojure code for [@Helpshift](https://twitter.com/helpshift/). will work for chocolate."
-  location = "Pune, India"
-  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  gravatarEmail = "ved.manerikar@gmail.com"
-  # Your Twitter username without the @. E.g : thibaudlepretre
-  twitter = "vedang"
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  # --------------------------------------------------
+  # Params needed by Ananke
+  favicon = ""
+  description = "My corner on the Inter Webs."
+  twitter = "https://twitter.com/vedang"
+  github = "https://github.com/vedang/"
+  featured_image = "/images/clevinger.jpg"
+  show_reading_time = true
+  #---------------------------
+  # My Changes
+  vedang_main_section = "techlog"
+  vedang_section2 = "weblog"
+  # --------------------------------------------------
 
 # Menu Configuration
 [[menu.main]]
@@ -31,99 +48,19 @@ disqusShortname = "vedang"
   url = "/weblog"
 [[menu.main]]
   weight = 3
-  identifier = "recipes"
-  name = "Lily's Recipes"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-cutlery\"></i>"
-  url = "/recipes"
-[[menu.main]]
-  weight = 4
   identifier = "mahabharat"
   name = "Mahabharat"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-podcast\"></i>"
   url = "/mahabharat"
+[[menu.main]]
+  weight = 4
+  identifier = "recipes"
+  name = "Lily's Recipes"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-cutlery\"></i>"
+  url = "/recipes"
 [[menu.main]]
   weight = 5
   identifier = "about"
   name = "About Me"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
   url = "/about/"
-
-[[menu.links]]
-  weight = 1
-  identifier = "twitter"
-  name = "Twitter"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-twitter\"></i>"
-  url = "https://twitter.com/vedang"
-
-[[menu.links]]
-  weight = 0
-  identifier = "github"
-  name = "GitHub"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
-  url = "https://github.com/vedang"
-
-[[menu.misc]]
-  weight = 0
-  identifier = "rss"
-  name = "RSS"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
-  url = "/index.xml"
-
-[params]
-    # --------------------------------------------------
-    # Params needed by Ananke
-    featured_image = "/images/clevinger.jpg"
-    vedang_main_section = "techlog"
-    # --------------------------------------------------
-
-    # Params needed by Manis
-    # ----------
-    copyright = "&copy; 2017 Vedang Manerikar"
-	debugCSS = false						# If false use use minified CSS (ui.min.css)
-	# Site meta description
-	description = "My corner on the Inter Webs."
-	tagline = "My corner on the Inter Webs."	# Site's Tagline (Subtitle or Keyword)
-	themeAttrib = true						# If true give attribution to this theme
-	licenseURL = "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"			# URL to license file, can be outside of your domain
-
-	# 404 Configuration
-	head404 = "Sorry, I can find what you want."
-	sub404 = "Back to <a href='/'>Home</a>."
-
-	colorTheme = "#ff8181"					# Color of your website
-	latestCount = 3							# Maximum number of item in Latest Posts or Works
-	faviconImg = ""							# Path to site's favicon image
-	dateFmt = "Jan 02, 2006"				# Date format in item list
-
-	# Code Highlighting (HighlightJS)
-	highlightJs = true
-	highlightJsLanguages = [ "go", "clojure", "python" ]
-	highlightJsStyle = "ocean"
-
-	# Social Links
-	email = "vedang.manerikar@gmail.com"
-	github = "https://github.com/vedang/"
-	twitter = "https://twitter.com/vedang"
-    # ----------
-
-    # Params needed by Tranquilpeak
-    # ----------
-    clearReading = true
-    hierarchicalCategories = false
-    sidebarBehavior = 4
-    coverImage = "peace.jpg"
-    thumbnailImage = true
-    thumbnailImagePosition = "right"
-
-  [params.header.rightLink]
-    class = ""
-    icon = ""
-    url = "/#about"
-
-  # Customize link of author avatar in sidebar
-  [params.sidebar.profile]
-    url = "/#about"
-
-  # Customize copyright value "© 2016 <CUSTOMIZATION>. All Rights Reserved"
-  [params.footer]
-    copyright = "<a href=\"https://twitter.com/vedang\">Vedang Manerikar</a>"
