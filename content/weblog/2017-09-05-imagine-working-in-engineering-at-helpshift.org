@@ -1,15 +1,13 @@
 #+TITLE: Imagine Working in Engineering at Helpshift
 #+DATE: 2017-09-07T21:02:10+05:30
 #+AUTHOR: Vedang Manerikar
-#+TAGS: helpshift, culture
+#+TAGS: helpshift culture
 
 /Cross-posted from my interview published on [[https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188][Helpshift's Medium blog]]/
 
-*** Name: Vedang Manerikar
-
-*** Current Role: Principal Engineering Manager, Backend
-
-*** How long you have been with Helpshift?: 7 years
+- Name: Vedang Manerikar
+- Current Role: Principal Engineering Manager, Backend
+- How long you have been with Helpshift?: 7 years
 # more
 
 *** What does your day-to-day at Helpshift look like?

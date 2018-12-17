@@ -1,7 +1,7 @@
 #+TITLE: Tinylog: Mbsync: Error: Channel <x> Is Locked
 #+DATE: 2017-10-11T09:37:22+05:30
 #+AUTHOR: Vedang Manerikar
-#+TAGS: tinylog
+#+TAGS: tinylog mbsync
 
 You may come across the following error when running ~mbsync~ :
 
