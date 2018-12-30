@@ -12,6 +12,9 @@ Paginate = 5
 googleAnalytics = ""
 enableRobotsTXT = true
 disqusShortname = "vedang"
+pygmentsCodeFences = true
+disableFastRender = true
+enableEmoji = true
 
 [sitemap]
   changefreq = "monthly"

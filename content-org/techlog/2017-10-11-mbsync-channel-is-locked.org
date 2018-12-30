@@ -1,13 +1,17 @@
-#+TITLE: Tinylog: Mbsync: Error: Channel <x> Is Locked
-#+DATE: 2017-10-11T09:37:22+05:30
-#+AUTHOR: Vedang Manerikar
-#+TAGS: tinylog mbsync
+#+title: Tinylog: Mbsync: Error: Channel <x> Is Locked
+#+date: 2017-10-11
+#+author: Vedang Manerikar
+#+hugo_section: techlog
+#+hugo_base_dir: ~/src/vedang.me/
+#+hugo_tags: tinylog mbsync
+#+hugo_categories: tinylog
+#+hugo_draft: false
 
 You may come across the following error when running ~mbsync~ :
 
-#+BEGIN_EXAMPLE
+#+begin_example
   Error: channel :<channel-name>-remote:<folder>-:<channel-name>-local:<folder> is locked
-#+END_EXAMPLE
+#+end_example
 
 This happens when there is another ~mbsync~ instance running in
 parallel and it has taken a lock on the particular folder. In my case,
