@@ -6,11 +6,19 @@
     <description>Recent content in Notes On Technology on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
     <lastBuildDate>Sat, 19 Aug 2017 13:30:59 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/techlog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Simulating the Passport Seva Kendra using Clojure</title>
+      <link>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</guid>
+      <description>A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune to get my passport renewed. At the time, the government had revamped this process and made it a simple, step-in/step-out painless affair. Unfortunately for me, I hit an edge-case in the system and took much longer than expected to complete. I was there for close to 4 hours. I used this time to observe the behavior of the PSK and think about ways to improve the applicant experience.</description>
+    </item>
     
     <item>
       <title>Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked</title>
@@ -19,7 +27,7 @@
       
       <guid>https://vedang.me/techlog/2017-10-11-mbsync-channel-is-locked/</guid>
       <description>You may come across the following error when running mbsync :
- Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp;lt;channel-name&amp;gt;-local:&amp;lt;folder&amp;gt; is locked  This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!</description>
+Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp;lt;channel-name&amp;gt;-local:&amp;lt;folder&amp;gt; is locked This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!</description>
     </item>
     
     <item>
@@ -28,13 +36,13 @@
       <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
       
       <guid>https://vedang.me/techlog/2012-02-23-composability-and-compojure/</guid>
-      <description>&lt;p&gt;Caveat: This post needs some rudimentary knowledge of Compojure.
+      <description>&lt;p&gt;&lt;em&gt;Caveat&lt;/em&gt;: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
 what that means, then you should probably head over to the
-&lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.
-Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
-this post is an attempt to show why that is a great thing.
-&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
+this post is an attempt to show why that is a great thing.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,21 +54,19 @@ this post is an attempt to show why that is a great thing.
       <description>&lt;p&gt;Today I went through some old Python code and noticed this pattern
 through out:&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;somefunc&lt;/span&gt;&lt;span style=&#34;&#34;&gt;()&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this&amp;#34;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;do_this_with&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;that&amp;#34;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;do_that_with&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;response&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;huh&amp;#34;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;duh&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;;;&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;lots&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;more&lt;/span&gt;&lt;span style=&#34;&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;elifs&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;&lt;span style=&#34;&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;&#34;&gt;prevent_horrible_crash&lt;/span&gt;&lt;span style=&#34;&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;response, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; somefunc()
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this&amp;#34;&lt;/span&gt;:
+    do_this_with(data)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;that&amp;#34;&lt;/span&gt;:
+    do_that_with(data)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;huh&amp;#34;&lt;/span&gt;:
+    duh(data)
+;; lots more elifs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+    prevent_horrible_crash(data)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This code should ideally have been a switch-case, but Python does not
-support a &lt;code&gt;switch&lt;/code&gt; statement.
-&lt;/p&gt;</description>
+support a &lt;code&gt;switch&lt;/code&gt; statement.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -69,13 +75,10 @@ support a &lt;code&gt;switch&lt;/code&gt; statement.
       <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
       
       <guid>https://vedang.me/techlog/2011-08-04-why-i-quit-stumpwm/</guid>
-      <description>&lt;p&gt;After using &lt;a href=&#34;http://www.nongnu.org/stumpwm/&#34;&gt;StumpWM&lt;/a&gt; for nearly a year, I&amp;rsquo;m finally quitting and moving back to Gnome. I came to love StumpWM&amp;rsquo;s minimalistic approach, and this isn&amp;rsquo;t an easy decision. So why am I doing it?&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Pinky Hell&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I am (was) a heavy user of Emacs, Tmux and StumpWM. These programs rely heavily on the &lt;code&gt;Ctrl&lt;/code&gt; key. This means that the &lt;code&gt;Ctrl&lt;/code&gt; key and my left pinky finger are pretty much destroyed at this point. With the spectre of RSI looming over my head, StumpWM is the easiest tool to get rid off. I might have less screen-space now, but my fingers will thank me for it.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;After using &lt;a href=&#34;http://www.nongnu.org/stumpwm/&#34;&gt;StumpWM&lt;/a&gt; for nearly a
+year, I&amp;rsquo;m finally quitting and moving back to Gnome. I came to love
+StumpWM&amp;rsquo;s minimalistic approach, and this isn&amp;rsquo;t an easy decision. So
+why am I doing it?&lt;/p&gt;</description>
     </item>
     
   </channel>

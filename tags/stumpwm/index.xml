@@ -6,7 +6,6 @@
     <description>Recent content in Stumpwm on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
     <lastBuildDate>Thu, 04 Aug 2011 13:41:41 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/stumpwm/index.xml" rel="self" type="application/rss+xml" />
@@ -18,13 +17,10 @@
       <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
       
       <guid>https://vedang.me/techlog/2011-08-04-why-i-quit-stumpwm/</guid>
-      <description>&lt;p&gt;After using &lt;a href=&#34;http://www.nongnu.org/stumpwm/&#34;&gt;StumpWM&lt;/a&gt; for nearly a year, I&amp;rsquo;m finally quitting and moving back to Gnome. I came to love StumpWM&amp;rsquo;s minimalistic approach, and this isn&amp;rsquo;t an easy decision. So why am I doing it?&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Pinky Hell&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I am (was) a heavy user of Emacs, Tmux and StumpWM. These programs rely heavily on the &lt;code&gt;Ctrl&lt;/code&gt; key. This means that the &lt;code&gt;Ctrl&lt;/code&gt; key and my left pinky finger are pretty much destroyed at this point. With the spectre of RSI looming over my head, StumpWM is the easiest tool to get rid off. I might have less screen-space now, but my fingers will thank me for it.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;After using &lt;a href=&#34;http://www.nongnu.org/stumpwm/&#34;&gt;StumpWM&lt;/a&gt; for nearly a
+year, I&amp;rsquo;m finally quitting and moving back to Gnome. I came to love
+StumpWM&amp;rsquo;s minimalistic approach, and this isn&amp;rsquo;t an easy decision. So
+why am I doing it?&lt;/p&gt;</description>
     </item>
     
   </channel>

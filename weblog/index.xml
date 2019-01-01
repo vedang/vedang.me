@@ -6,7 +6,6 @@
     <description>Recent content in Random Thoughts on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
     <lastBuildDate>Sat, 19 Aug 2017 13:30:59 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/weblog/index.xml" rel="self" type="application/rss+xml" />
@@ -15,18 +14,12 @@
     <item>
       <title>Imagine Working in Engineering at Helpshift</title>
       <link>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</link>
-      <pubDate>Thu, 07 Sep 2017 21:02:10 +0530</pubDate>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
       
       <guid>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my interview published on &lt;a href=&#34;https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188&#34; title=&#34;Helpshift&#39;s Medium blog&#34;&gt;Helpshift&#39;s Medium blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;name-vedang-manerikar&#34;&gt;Name: Vedang Manerikar&lt;/h3&gt;
-
-&lt;h3 id=&#34;current-role-principal-engineering-manager-backend&#34;&gt;Current Role: Principal Engineering Manager, Backend&lt;/h3&gt;
-
-&lt;h3 id=&#34;how-long-you-have-been-with-helpshift-7-years&#34;&gt;How long you have been with Helpshift?: 7 years&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>Cross-posted from my interview published on Helpshift&amp;rsquo;s Medium blog
+ Name: Vedang Manerikar Current Role: Principal Engineering Manager, Backend How long you have been with Helpshift?: 7 years  What does your day-to-day at Helpshift look like? My day-to-day is unblocking people and getting things done!
+I review architecture, read code, enable customer service, help product guys understand the engineering pros and cons of their product decisions and prioritize work for maximum productivity.</description>
     </item>
     
     <item>

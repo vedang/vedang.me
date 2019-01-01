@@ -6,7 +6,6 @@
     <description>Recent content in Compojure on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
     <lastBuildDate>Thu, 23 Feb 2012 23:57:57 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/compojure/index.xml" rel="self" type="application/rss+xml" />
@@ -18,13 +17,13 @@
       <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
       
       <guid>https://vedang.me/techlog/2012-02-23-composability-and-compojure/</guid>
-      <description>&lt;p&gt;Caveat: This post needs some rudimentary knowledge of Compojure.
+      <description>&lt;p&gt;&lt;em&gt;Caveat&lt;/em&gt;: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
 what that means, then you should probably head over to the
-&lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.
-Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
-this post is an attempt to show why that is a great thing.
-&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
+this post is an attempt to show why that is a great thing.&lt;/p&gt;</description>
     </item>
     
   </channel>

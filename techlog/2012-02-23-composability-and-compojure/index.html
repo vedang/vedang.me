@@ -3,78 +3,77 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-     
+    
     <title>Vedang Manerikar  | Composability and Compojure</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.29" />
-      
-      
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-      
+    <meta name="generator" content="Hugo 0.51" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
 
-     <link href='https://vedang.me/dist/main.css' rel='stylesheet' type="text/css" />
+    
+    
+      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
 
-     
+    
 
-      <meta property="og:title" content="Composability and Compojure" />
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Composability and Compojure" />
 <meta property="og:description" content="Caveat: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don&rsquo;t understand
 what that means, then you should probably head over to the
 Compojure docs.
+
 Compojure exposes us to a beautifully composable abstraction, and
-this post is an attempt to show why that is a great thing.
-" />
+this post is an attempt to show why that is a great thing." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://vedang.me/techlog/2012-02-23-composability-and-compojure/" />
-
-
-
-<meta property="article:published_time" content="2012-02-23T23:57:57&#43;05:30"/>
+<meta property="og:url" content="https://vedang.me/techlog/2012-02-23-composability-and-compojure/" /><meta property="article:published_time" content="2012-02-23T23:57:57&#43;05:30"/>
 <meta property="article:modified_time" content="2012-02-23T23:57:57&#43;05:30"/>
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="Composability and Compojure">
 <meta itemprop="description" content="Caveat: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don&rsquo;t understand
 what that means, then you should probably head over to the
 Compojure docs.
+
 Compojure exposes us to a beautifully composable abstraction, and
-this post is an attempt to show why that is a great thing.
-">
+this post is an attempt to show why that is a great thing.">
 
 
+<meta itemprop="datePublished" content="2012-02-23T23:57:57&#43;05:30" />
 <meta itemprop="dateModified" content="2012-02-23T23:57:57&#43;05:30" />
-<meta itemprop="wordCount" content="794">
+<meta itemprop="wordCount" content="931">
 
 
 
 <meta itemprop="keywords" content="clojure,compojure,ring," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Composability and Compojure"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Composability and Compojure"/>
 <meta name="twitter:description" content="Caveat: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don&rsquo;t understand
 what that means, then you should probably head over to the
 Compojure docs.
+
 Compojure exposes us to a beautifully composable abstraction, and
-this post is an attempt to show why that is a great thing.
-"/>
+this post is an attempt to show why that is a great thing."/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
   <header>
     <div class="bg-black">
@@ -100,14 +99,14 @@ this post is an attempt to show why that is a great thing.
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/recipes" title="Lily&#39;s Recipes page">
-              Lily&#39;s Recipes
+            <a class="hover-white no-underline white-90" href="/mahabharat" title="Mahabharat page">
+              Mahabharat
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/mahabharat" title="Mahabharat page">
-              Mahabharat
+            <a class="hover-white no-underline white-90" href="/recipes" title="Lily&#39;s Recipes page">
+              Lily&#39;s Recipes
             </a>
           </li>
           
@@ -120,14 +119,35 @@ this post is an attempt to show why that is a great thing.
         </ul>
       
       
+<div hidden>
+  <span id="new-window-0">Opens in a new window</span>
+  <span id="new-window-1">Opens an external site</span>
+  <span id="new-window-2">Opens an external site in a new window</span>
+</div>
 
 
 
-  <a href="https://twitter.com/vedang" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
-    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+<a href="https://twitter.com/vedang" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-describedby="new-window-0">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
-  </a>
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
 
+
+
+
+
+<a href="https://github.com/vedang/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-describedby="new-window-0">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
 
 
 
@@ -139,26 +159,34 @@ this post is an attempt to show why that is a great thing.
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <div class="flex-l mt2 mw8 center">
-    <article class="center cf pv5 ph3 ph4-ns mw7">
-      <header>
-        <p class="f6 b helvetica tracked">
-          TECHLOG
-        </p>
-        <h1 class="f1">
-          Composability and Compojure
-        </h1>
-      </header>
-      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
-        <p>Caveat: This post needs some rudimentary knowledge of Compojure.
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        NOTES ON TECHNOLOGY
+      </p>
+      <h1 class="f1 athelas mb1">Composability and Compojure</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2012-02-23T23:57:57&#43;05:30">February 23, 2012</time>      
+      
+      
+        <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 931 words</span>
+      
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><em>Caveat</em>: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don&rsquo;t understand
 what that means, then you should probably head over to the
-<a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>.
-Compojure exposes us to a beautifully <em>composable</em> abstraction, and
-this post is an attempt to show why that is a great thing.
-</p>
+<a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>.</p>
+
+<p>Compojure exposes us to a beautifully <em>composable</em> abstraction, and
+this post is an attempt to show why that is a great thing.</p>
 
 <p>In order to understand the Compojure framework, let us write a small
 <code>cello world</code> app. The code snippets in this post are a means to
@@ -168,13 +196,12 @@ let&rsquo;s get started.</p>
 
 <p>Here is what the basic routes function would look like:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">main-routes</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/bye/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">                      </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Goodbye World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">route/not-found</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span><span style="">))</span></code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(cc/defroutes main-routes
+  (cc/GET <span style="color:#e6db74">&#34;/&#34;</span> [] (<span style="color:#66d9ef">fn </span>[req]
+                   (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Cello World&lt;/h1&gt;&#34;</span>)))
+  (cc/GET <span style="color:#e6db74">&#34;/bye/&#34;</span> [] (<span style="color:#66d9ef">fn </span>[req]
+                      (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Goodbye World&lt;/h1&gt;&#34;</span>)))
+  (route/not-found <span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span>))</code></pre></div>
 
 <p>Compojure uses Ring to handle requests and responses. These terms
 (request/response) don&rsquo;t mean &lsquo;objects&rsquo; (to those of you from the OOP
@@ -203,16 +230,15 @@ Simple, isn&rsquo;t it?</p>
 <p>So if you think you&rsquo;ve understood it so far, tell me if adding this
 route to our main routes will work or not:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello*&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">hello-routes</span><span style="">
-</span><span style="">                         </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/name/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
-</span><span style="">                                 </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">                                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
-</span><span style="">                         </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/city/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
-</span><span style="">                                 </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">                                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&#34;</span><span style="">)))))</span></code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(cc/GET <span style="color:#e6db74">&#34;/hello*&#34;</span> [] (cc/defroutes hello-routes
+                         (cc/GET <span style="color:#e6db74">&#34;/hello/name/&#34;</span> []
+                                 (<span style="color:#66d9ef">fn </span>[req]
+                                   (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&#34;</span>)))
+                         (cc/GET <span style="color:#e6db74">&#34;/hello/city/&#34;</span> []
+                                 (<span style="color:#66d9ef">fn </span>[req]
+                                   (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&#34;</span>)))))</code></pre></div>
 
-<p>Well, yes! <code>cc/defroutes</code> gives us a handler<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>, and that&rsquo;s really
+<p>Well, yes! <code>cc/defroutes</code> gives us a handler<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, and that&rsquo;s really
 all <code>cc/GET</code> cares about!</p>
 
 <p>Having an abstraction of this form allows us to do many things easily,
@@ -223,15 +249,14 @@ this fit into our abstraction? - As a function that takes a
 handler(H1) and, wait for it, returns another handler(H2). Boom!
 Confused? Here is what a middleware function looks like:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="">(</span><span style="color:#66d9ef">defn </span><span style="">verify-secret</span><span style="">
-</span><span style="">  </span><span style="color:#e6db74">&#34;Verify that secret-key has been sent as a parameter s in the request&#34;</span><span style="">
-</span><span style="">  </span><span style="">[</span><span style="">handler</span><span style="">]</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">request</span><span style="">]</span><span style="">
-</span><span style="">    </span><span style="">(</span><span style="color:#66d9ef">if </span><span style="">(</span><span style="">= </span><span style="color:#e6db74">&#34;s=please&#34;</span><span style=""> </span><span style="">(</span><span style="color:#e6db74">:query-string</span><span style=""> </span><span style="">request</span><span style="">))</span><span style="">
-</span><span style="">      </span><span style="">(</span><span style="">handler</span><span style=""> </span><span style="">request</span><span style="">)</span><span style="">
-</span><span style="">      </span><span style="">{</span><span style="color:#e6db74">:status</span><span style=""> </span><span style="color:#ae81ff">403</span><span style="">
-</span><span style="">       </span><span style="color:#e6db74">:body</span><span style=""> </span><span style="color:#e6db74">&#34;You don&#39;t know the secret word&#34;</span><span style="">})))</span></code></pre>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>verify-secret
+  <span style="color:#e6db74">&#34;Verify that secret-key has been sent as a parameter s in the request&#34;</span>
+  [handler]
+  (<span style="color:#66d9ef">fn </span>[request]
+    (<span style="color:#66d9ef">if </span>(= <span style="color:#e6db74">&#34;s=please&#34;</span> (<span style="color:#e6db74">:query-string</span> request))
+      (handler request)
+      {<span style="color:#e6db74">:status</span> <span style="color:#ae81ff">403</span>
+       <span style="color:#e6db74">:body</span> <span style="color:#e6db74">&#34;You don&#39;t know the secret word&#34;</span>})))</code></pre></div>
 
 <p>This function gets a handler(H1). It doesn&rsquo;t know or care what that
 handler is going to do to the request. It returns a new handler(H2)
@@ -246,40 +271,79 @@ request.</p>
 
 <p>Here is what the final code would look like:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; Define some Hello routes</span><span style="">
-</span><span style=""></span><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">hello-routes</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/name/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
-</span><span style="">          </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">            </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello/city/&#34;</span><span style=""> </span><span style="">[]</span><span style="">
-</span><span style="">          </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">            </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&#34;</span><span style="">))))</span><span style="">
-</span><span style="">
-</span><span style=""></span><span style="color:#75715e">;; Our main routes function.</span><span style="">
-</span><span style=""></span><span style="">(</span><span style="">cc/defroutes</span><span style=""> </span><span style="">main-routes*</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">                   </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Cello World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/bye/&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">req</span><span style="">]</span><span style="">
-</span><span style="">                      </span><span style="">(</span><span style="">rur/response</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Goodbye World&lt;/h1&gt;&#34;</span><span style="">)))</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">cc/GET</span><span style=""> </span><span style="color:#e6db74">&#34;/hello*&#34;</span><span style=""> </span><span style="">[]</span><span style=""> </span><span style="">hello-routes</span><span style="">)</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="">route/not-found</span><span style=""> </span><span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span><span style="">))</span><span style="">
-</span><span style="">
-</span><span style=""></span><span style="color:#75715e">;; A middleware function</span><span style="">
-</span><span style=""></span><span style="">(</span><span style="color:#66d9ef">defn </span><span style="">verify-secret</span><span style="">
-</span><span style="">  </span><span style="color:#e6db74">&#34;Verify that secret-key has been sent as a parameter s in the request&#34;</span><span style="">
-</span><span style="">  </span><span style="">[</span><span style="">handler</span><span style="">]</span><span style="">
-</span><span style="">  </span><span style="">(</span><span style="color:#66d9ef">fn </span><span style="">[</span><span style="">request</span><span style="">]</span><span style="">
-</span><span style="">    </span><span style="">(</span><span style="color:#66d9ef">if </span><span style="">(</span><span style="">= </span><span style="color:#e6db74">&#34;s=please&#34;</span><span style=""> </span><span style="">(</span><span style="color:#e6db74">:query-string</span><span style=""> </span><span style="">request</span><span style="">))</span><span style="">
-</span><span style="">      </span><span style="">(</span><span style="">handler</span><span style=""> </span><span style="">request</span><span style="">)</span><span style="">
-</span><span style="">      </span><span style="">{</span><span style="color:#e6db74">:status</span><span style=""> </span><span style="color:#ae81ff">403</span><span style="">
-</span><span style="">       </span><span style="color:#e6db74">:body</span><span style=""> </span><span style="color:#e6db74">&#34;You don&#39;t know the secret word&#34;</span><span style="">})))</span><span style="">
-</span><span style="">
-</span><span style=""></span><span style="color:#75715e">;;; Wrap my main routes in middleware</span><span style="">
-</span><span style=""></span><span style="">(</span><span style="color:#66d9ef">def </span><span style="">main-routes</span><span style=""> </span><span style="">(</span><span style="">-&gt; </span><span style="color:#f92672">#</span><span style="color:#e6db74">&#39;main-routes*</span><span style="">
-</span><span style="">                     </span><span style="">verify-secret</span><span style="">))</span><span style="">
-</span><span style="">
-</span><span style=""></span><span style="color:#75715e">;;; Start app with main routes</span><span style="">
-</span><span style=""></span><span style="">(</span><span style="">run-jetty</span><span style=""> </span><span style="color:#f92672">#</span><span style="color:#e6db74">&#39;main-routes</span><span style=""> </span><span style="">{</span><span style="color:#e6db74">:port</span><span style=""> </span><span style="">port</span><span style=""> </span><span style="color:#e6db74">:join?</span><span style=""> </span><span style="">false</span><span style="">})</span></code></pre>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; Define some Hello routes</span>
+(cc/defroutes hello-routes
+  (cc/GET <span style="color:#e6db74">&#34;/hello/name/&#34;</span> []
+          (<span style="color:#66d9ef">fn </span>[req]
+            (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&#34;</span>)))
+  (cc/GET <span style="color:#e6db74">&#34;/hello/city/&#34;</span> []
+          (<span style="color:#66d9ef">fn </span>[req]
+            (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&#34;</span>))))
+
+<span style="color:#75715e">;; Our main routes function.</span>
+(cc/defroutes main-routes*
+  (cc/GET <span style="color:#e6db74">&#34;/&#34;</span> [] (<span style="color:#66d9ef">fn </span>[req]
+                   (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Cello World&lt;/h1&gt;&#34;</span>)))
+  (cc/GET <span style="color:#e6db74">&#34;/bye/&#34;</span> [] (<span style="color:#66d9ef">fn </span>[req]
+                      (rur/response <span style="color:#e6db74">&#34;&lt;h1&gt;Goodbye World&lt;/h1&gt;&#34;</span>)))
+  (cc/GET <span style="color:#e6db74">&#34;/hello*&#34;</span> [] hello-routes)
+  (route/not-found <span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span>))
+
+<span style="color:#75715e">;; A middleware function</span>
+(<span style="color:#66d9ef">defn </span>verify-secret
+  <span style="color:#e6db74">&#34;Verify that secret-key has been sent as a parameter s in the request&#34;</span>
+  [handler]
+  (<span style="color:#66d9ef">fn </span>[request]
+    (<span style="color:#66d9ef">if </span>(= <span style="color:#e6db74">&#34;s=please&#34;</span> (<span style="color:#e6db74">:query-string</span> request))
+      (handler request)
+      {<span style="color:#e6db74">:status</span> <span style="color:#ae81ff">403</span>
+       <span style="color:#e6db74">:body</span> <span style="color:#e6db74">&#34;You don&#39;t know the secret word&#34;</span>})))
+
+<span style="color:#75715e">;;; Wrap my main routes in middleware</span>
+(<span style="color:#66d9ef">def </span>main-routes (-&gt; <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;main-routes*</span>
+                     verify-secret))
+
+<span style="color:#75715e">;;; Start app with main routes</span>
+(run-jetty <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;main-routes</span> {<span style="color:#e6db74">:port</span> port <span style="color:#e6db74">:join?</span> false})</code></pre></td></tr></table>
+</div>
 </div>
 
 <p><code>main-routes*</code> is a handler which matches the incoming uris to ones we
@@ -298,81 +362,100 @@ systems and frameworks.</p>
 <li id="fn:1">Actually, we got lucky in this case. <code>cc/defroutes</code> is a macro. When we say <code>(cc/defroutes name &amp; handlers)</code> the code is replaced to become <code>(def name handlerfn)</code>. Luckily for us though, def returns the variable which was just defined, and it works out okay in the end. The aim was to show composability in action, not to espouse a coding style. Never do this in actual code.
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 </ol>
-</div>
+</div><ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/clojure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">clojure</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/compojure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">compojure</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ring" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ring</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vedang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
-    </article>
-    <aside class="ph3 mt2 mt6-ns">
-      
+    </main>
+
+    <aside class="w-30-l mt6-l">
 
 
 
 
+</aside>
 
-
-
-  <div class="bg-light-gray pa3">
-    <ul>
-      <li class="list b mb3">
-        3 More Techlogs
-      </li>
-      
-        <li class="list f5 w-100 hover-bg-white nl1">
-          
-          <a href="/techlog/2017-10-11-mbsync-channel-is-locked/" class="link ph2 pv2 db black">
-            Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked
-          </a>
-        </li>
-      
-        <li class="list f5 w-100 hover-bg-white nl1">
-          
-          <a href="/techlog/2012-02-23-composability-and-compojure/" class="link ph2 pv2 db black o-50">
-            Composability and Compojure
-          </a>
-        </li>
-      
-        <li class="list f5 w-100 hover-bg-white nl1">
-          
-          <a href="/techlog/2011-08-07-switch-statements-in-python/" class="link ph2 pv2 db black">
-            Switch Statements in Python
-          </a>
-        </li>
-      
-        <li class="list f5 w-100 hover-bg-white nl1">
-          
-          <a href="/techlog/2011-08-04-why-i-quit-stumpwm/" class="link ph2 pv2 db black">
-            Why I Quit StumpWM
-          </a>
-        </li>
-      
-    </ul>
-  </div>
-
-
-    </aside>
-  </div>
+  </article>
 
     </main>
-    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://vedang.me/" >
-    &copy; 2017 Vedang Manerikar
+    &copy; 2019 Vedang Manerikar
   </a>
-  
+    <div>
+<div hidden>
+  <span id="new-window-0">Opens in a new window</span>
+  <span id="new-window-1">Opens an external site</span>
+  <span id="new-window-2">Opens an external site in a new window</span>
+</div>
 
 
 
-  <a href="https://twitter.com/vedang" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
-    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+<a href="https://twitter.com/vedang" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-describedby="new-window-0">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
-  </a>
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
 
 
 
 
+
+<a href="https://github.com/vedang/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-describedby="new-window-0">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+</div>
   </div>
 </footer>
 
-    <script src="https://vedang.me/dist/app.bundle.js" async></script>
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
 
   </body>
 </html>

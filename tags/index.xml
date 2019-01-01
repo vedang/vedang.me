@@ -6,8 +6,7 @@
     <description>Recent content in Tags on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2017 Vedang Manerikar</copyright>
-    <lastBuildDate>Thu, 23 Feb 2012 23:57:57 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +14,7 @@
     <item>
       <title>Clojure</title>
       <link>https://vedang.me/tags/clojure/</link>
-      <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
       
       <guid>https://vedang.me/tags/clojure/</guid>
       <description></description>
@@ -40,9 +39,18 @@
     </item>
     
     <item>
+      <title>Concurrency</title>
+      <link>https://vedang.me/tags/concurrency/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Culture</title>
       <link>https://vedang.me/tags/culture/</link>
-      <pubDate>Thu, 07 Sep 2017 21:02:10 +0530</pubDate>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
       
       <guid>https://vedang.me/tags/culture/</guid>
       <description></description>
@@ -51,9 +59,18 @@
     <item>
       <title>Helpshift</title>
       <link>https://vedang.me/tags/helpshift/</link>
-      <pubDate>Thu, 07 Sep 2017 21:02:10 +0530</pubDate>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
       
       <guid>https://vedang.me/tags/helpshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mbsync</title>
+      <link>https://vedang.me/tags/mbsync/</link>
+      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/mbsync/</guid>
       <description></description>
     </item>
     

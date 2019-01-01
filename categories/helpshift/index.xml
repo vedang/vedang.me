@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Helpshift on Vedang Manerikar</title>
+    <link>https://vedang.me/categories/helpshift/</link>
+    <description>Recent content in Helpshift on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Sep 2017 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/categories/helpshift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Imagine Working in Engineering at Helpshift</title>
+      <link>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</link>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</guid>
+      <description>Cross-posted from my interview published on Helpshift&amp;rsquo;s Medium blog
+ Name: Vedang Manerikar Current Role: Principal Engineering Manager, Backend How long you have been with Helpshift?: 7 years  What does your day-to-day at Helpshift look like? My day-to-day is unblocking people and getting things done!
+I review architecture, read code, enable customer service, help product guys understand the engineering pros and cons of their product decisions and prioritize work for maximum productivity.</description>
+    </item>
+    
+  </channel>
+</rss>

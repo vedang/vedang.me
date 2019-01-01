@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrency on Vedang Manerikar</title>
+    <link>https://vedang.me/tags/concurrency/</link>
+    <description>Recent content in Concurrency on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Simulating the Passport Seva Kendra using Clojure</title>
+      <link>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</guid>
+      <description>A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune to get my passport renewed. At the time, the government had revamped this process and made it a simple, step-in/step-out painless affair. Unfortunately for me, I hit an edge-case in the system and took much longer than expected to complete. I was there for close to 4 hours. I used this time to observe the behavior of the PSK and think about ways to improve the applicant experience.</description>
+    </item>
+    
+  </channel>
+</rss>
