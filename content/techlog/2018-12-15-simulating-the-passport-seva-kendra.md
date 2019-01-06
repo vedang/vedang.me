@@ -26,8 +26,6 @@ at the PSK.
 
 ## The Problem Statement {#the-problem-statement}
 
-{{< figure src="/images/psk.jpg" alt="The workings of the Passport Seva Kendra" >}}
-
 Let me describe the process to you first.
 
 -   The PSK has appointment slots every 15 minutes, and there are ~25
@@ -75,6 +73,8 @@ Let me describe the process to you first.
     comes to processing their applications. For the purposes of this
     post, I assume that P has the highest priority, followed by S, T
     and N.
+
+{{< figure src="/images/psk-renderkid.jpg" alt="The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)" >}}
 
 In the rest of this post, we'll build this system as described
 above, and see if we can fix the flaw in it. We will use Clojure to
@@ -129,7 +129,7 @@ code. For our simulation, the data looks like this:
   "The various stages in the PSK, and transition from one stage to the other.
 
   - `processing-time-range` represents the amount of time spent at the
-  counter in this stage.
+  counter in this stage (in mins).
   - `next` represents the next stage for the person.
   - `counters` represent the number of counters/agents serving this stage."
 
@@ -795,8 +795,12 @@ If you're interested in working with Clojure, on problems like
 Estimated Wait Time, [we're hiring](https://jobs.lever.co/helpshift/)! Send us an email at
 [jobs@helpshift.com](mailto:jobs@helpshift.com).
 
-_A big thanks to the following people for reviewing initial drafts
-of this post: Kapil Reddy, Kiran Kulkarni, Mourjo Sen, Suvrat Apte_
+/A big thank you to the following people for reviewing initial
+drafts of this post: Kapil Reddy, Kiran Kulkarni, Mourjo Sen, Suvrat
+Apte, Dinesh Chhatani./
+
+_A big thank you to [Bhargava Chowdary](https://twitter.com/renderkid) for creating the illustration
+of the PSK._
 
 
 ## References {#references}
