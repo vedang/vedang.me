@@ -40,7 +40,7 @@
 
 <meta itemprop="datePublished" content="2018-12-15T00:00:00&#43;05:30" />
 <meta itemprop="dateModified" content="2018-12-15T00:00:00&#43;05:30" />
-<meta itemprop="wordCount" content="4504">
+<meta itemprop="wordCount" content="4523">
 
 
 
@@ -164,7 +164,7 @@
       
       
         <span class="f6 mv4 dib tracked"> - 22 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 4504 words</span>
+        <span class="f6 mv4 dib tracked"> - 4523 words</span>
       
     </header>
 
@@ -185,12 +185,6 @@ here we are, a year later, talking about the passport renewal process
 at the PSK.</p>
 
 <h2 id="the-problem-statement">The Problem Statement</h2>
-
-<figure>
-    <img src="/images/psk.jpg"
-         alt="The workings of the Passport Seva Kendra"/> 
-</figure>
-
 
 <p>Let me describe the process to you first.</p>
 
@@ -245,6 +239,12 @@ post, I assume that P has the highest priority, followed by S, T
 and N.</li>
 </ul>
 
+<figure>
+    <img src="/images/psk-renderkid.jpg"
+         alt="The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)"/> 
+</figure>
+
+
 <p>In the rest of this post, we&rsquo;ll build this system as described
 above, and see if we can fix the flaw in it. We will use Clojure to
 write the solution. Clojure&rsquo;s concurrency primitives are fantastic,
@@ -296,7 +296,7 @@ code. For our simulation, the data looks like this:</p>
   <span style="color:#e6db74">&#34;The various stages in the PSK, and transition from one stage to the other.
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">  - `processing-time-range` represents the amount of time spent at the
-</span><span style="color:#e6db74">  counter in this stage.
+</span><span style="color:#e6db74">  counter in this stage (in mins).
 </span><span style="color:#e6db74">  - `next` represents the next stage for the person.
 </span><span style="color:#e6db74">  - `counters` represent the number of counters/agents serving this stage.&#34;</span>
 
@@ -919,8 +919,12 @@ love to understand the real-world problems that I&rsquo;ve missed.</p>
 Estimated Wait Time, <a href="https://jobs.lever.co/helpshift/">we&rsquo;re hiring</a>! Send us an email at
 <a href="mailto:jobs@helpshift.com">jobs@helpshift.com</a>.</p>
 
-<p><em>A big thanks to the following people for reviewing initial drafts
-of this post: Kapil Reddy, Kiran Kulkarni, Mourjo Sen, Suvrat Apte</em></p>
+<p>/A big thank you to the following people for reviewing initial
+drafts of this post: Kapil Reddy, Kiran Kulkarni, Mourjo Sen, Suvrat
+Apte, Dinesh Chhatani./</p>
+
+<p><em>A big thank you to <a href="https://twitter.com/renderkid">Bhargava Chowdary</a> for creating the illustration
+of the PSK.</em></p>
 
 <h2 id="references">References</h2>
 
