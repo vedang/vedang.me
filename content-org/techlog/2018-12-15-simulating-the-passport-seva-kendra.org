@@ -6,8 +6,10 @@
 #+hugo_tags: clojure concurrency
 #+hugo_categories: clojure
 #+hugo_draft: false
-#+hugo_custom_front_matter: :toc true :featured_image "/images/psk.jpg"
+#+hugo_custom_front_matter: :toc true :featured_image "/images/psk-renderkid.jpg"
 #+subtitle: Exploring concurrency primitives in Clojure
+
+/Cross-posted from my post on the [[https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c][Helpshift Engineering Blog]]/
 
 A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
 to get my passport renewed. At the time, the government had revamped
@@ -22,7 +24,8 @@ Recently, my wife booked an appointment at the PSK to renew _her_
 passport and this provided the spark I needed to write about it. So
 here we are, a year later, talking about the passport renewal process
 at the PSK.
-# more
+
+#+hugo: more
 
 * The Problem Statement
   Let me describe the process to you first.

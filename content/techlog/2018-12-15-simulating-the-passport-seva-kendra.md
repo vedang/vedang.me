@@ -6,8 +6,10 @@ tags = ["clojure", "concurrency"]
 categories = ["clojure"]
 draft = false
 toc = true
-featured_image = "/images/psk.jpg"
+featured_image = "/images/psk-renderkid.jpg"
 +++
+
+_Cross-posted from my post on the [Helpshift Engineering Blog](https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c)_
 
 A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
 to get my passport renewed. At the time, the government had revamped
@@ -22,6 +24,8 @@ Recently, my wife booked an appointment at the PSK to renew <span class="underli
 passport and this provided the spark I needed to write about it. So
 here we are, a year later, talking about the passport renewal process
 at the PSK.
+
+<!--more-->
 
 
 ## The Problem Statement {#the-problem-statement}
