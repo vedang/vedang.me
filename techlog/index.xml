@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Writing a good status update</title>
+      <link>https://vedang.me/techlog/2019-08-06-writing-a-good-status-update/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/techlog/2019-08-06-writing-a-good-status-update/</guid>
+      <description>What is the purpose of status updates?  Let your manager know what you have achieved this week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself.  Properties of good status updates  Short and meaningful. (5 min reading time) Communicate work in the previous week, highlight progress Communicate plan for the next week, help make yourself efficient Communicate open questions and blockers, highlight areas where we need to help you  Writing the status update  We ask for status updates on every Monday.</description>
+    </item>
+    
+    <item>
       <title>Simulating the Passport Seva Kendra using Clojure</title>
       <link>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>

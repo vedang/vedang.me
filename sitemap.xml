@@ -4,7 +4,44 @@
   
   <url>
     <loc>https://vedang.me/categories/</loc>
-    <lastmod>2019-07-20T00:00:00+05:30</lastmod>
+    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/</loc>
+    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/</loc>
+    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/techlog/2019-08-06-writing-a-good-status-update/</loc>
+    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/categories/engineering_management/</loc>
+    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/organization/</loc>
+    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/project_management/</loc>
+    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -16,31 +53,7 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/</loc>
-    <lastmod>2019-07-20T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/</loc>
-    <lastmod>2019-07-20T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://vedang.me/tags/culture/</loc>
-    <lastmod>2019-07-20T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/tags/engmgmt/</loc>
-    <lastmod>2019-07-20T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/categories/engmgmt/</loc>
     <lastmod>2019-07-20T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
@@ -53,13 +66,13 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/clojure/</loc>
+    <loc>https://vedang.me/categories/clojure/</loc>
     <lastmod>2018-12-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/clojure/</loc>
+    <loc>https://vedang.me/tags/clojure/</loc>
     <lastmod>2018-12-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
@@ -84,13 +97,13 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/tinylog/</loc>
+    <loc>https://vedang.me/categories/tinylog/</loc>
     <lastmod>2017-10-11T09:37:22+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/tinylog/</loc>
+    <loc>https://vedang.me/tags/tinylog/</loc>
     <lastmod>2017-10-11T09:37:22+05:30</lastmod>
     <priority>0</priority>
   </url>
@@ -103,13 +116,13 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/helpshift/</loc>
+    <loc>https://vedang.me/categories/helpshift/</loc>
     <lastmod>2017-09-07T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/helpshift/</loc>
+    <loc>https://vedang.me/tags/helpshift/</loc>
     <lastmod>2017-09-07T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>

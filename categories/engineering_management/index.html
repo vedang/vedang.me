@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Vedang Manerikar  | Notes On Technology</title>
+    <title>Vedang Manerikar </title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,23 +27,23 @@
     
 
     
-      <link href="https://vedang.me/techlog/index.xml" rel="alternate" type="application/rss+xml" title="Vedang Manerikar" />
-      <link href="https://vedang.me/techlog/index.xml" rel="feed" type="application/rss+xml" title="Vedang Manerikar" />
+      <link href="https://vedang.me/categories/engineering_management/index.xml" rel="alternate" type="application/rss+xml" title="Vedang Manerikar" />
+      <link href="https://vedang.me/categories/engineering_management/index.xml" rel="feed" type="application/rss+xml" title="Vedang Manerikar" />
     
 
-    <meta property="og:title" content="Notes On Technology" />
-<meta property="og:description" content="(To Teach Myself)" />
+    <meta property="og:title" content="engineering_management" />
+<meta property="og:description" content="My corner on the Inter Webs." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://vedang.me/techlog/" />
+<meta property="og:url" content="https://vedang.me/categories/engineering_management/" />
 
-<meta property="og:updated_time" content="2017-08-19T13:30:59&#43;05:30"/>
+<meta property="og:updated_time" content="2019-08-06T00:00:00&#43;05:30"/>
 
-<meta itemprop="name" content="Notes On Technology">
-<meta itemprop="description" content="(To Teach Myself)">
+<meta itemprop="name" content="engineering_management">
+<meta itemprop="description" content="My corner on the Inter Webs.">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Notes On Technology"/>
-<meta name="twitter:description" content="(To Teach Myself)"/>
+<meta name="twitter:title" content="engineering_management"/>
+<meta name="twitter:description" content="My corner on the Inter Webs."/>
 
   </head>
 
@@ -135,12 +135,8 @@
 
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Notes On Technology
+          engineering_management
         </h1>
-        
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
-            (To Teach Myself)
-          </h2>
         
       </div>
     </div>
@@ -149,11 +145,16 @@
 
     <main class="pb7" role="main">
       
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-  <main class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></main>
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “engineering_management”</p>
+    </div>
+  </article>
+  <div class="mw8 center">    
     <section class="flex-ns flex-wrap justify-around mt5">
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Techlog</span>
     <h1 class="f3 near-black">
@@ -166,150 +167,81 @@
     </div>
   </div>
 </div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Techlog</span>
+    <span class="f6 db">Weblog</span>
     <h1 class="f3 near-black">
-      <a href="/techlog/2018-12-15-simulating-the-passport-seva-kendra/" class="link black dim">
-        Simulating the Passport Seva Kendra using Clojure
+      <a href="/weblog/2019-07-20-gojek-10x-engineering/" class="link black dim">
+        Notes for the video: GOJEK&#39;s 10x Engineer - Truth or Myth?
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p><em>Cross-posted from my post on the <a href="https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c">Helpshift Engineering Blog</a></em></p>
+      <h2 id="summary">Summary</h2>
 
-<p>A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
-to get my passport renewed. At the time, the government had revamped
-this process and made it a simple, step-in/step-out painless affair.
-Unfortunately for me, I hit an edge-case in the system and took much
-longer than expected to complete. I was there for close to 4 hours. I
-used this time to observe the behavior of the PSK and think about
-ways to improve the applicant experience. I thought it was an
-interesting problem to solve and write about.</p>
+<ul>
+<li>Engineering quality is paramount. Focus on <a href="https://dave.cheney.net/2019/07/09/clear-is-better-than-clever">clean and clear code</a>.
+Code is the primary medium of communication for any engineer.
+Write beautiful code and hold people to high standards.</li>
+<li>Adding head count has vast hidden costs and often brings down
+output. The reason for this is the exponential increase in
+communication required to align everyone to common goals.</li>
+<li>Similarly, pods cannot scale unless they can own small,
+independent components.</li>
+<li>Monoliths are normal and good when the company is small.
+Refactoring the monolithic model into different components allows
+us to scale pods and org.</li>
+<li>Carve monoliths only when it hits critical mass. Then, identify
+the pain and pull it out into it&rsquo;s own pod.</li>
+<li>&ldquo;Relationship as a service&rdquo; or &ldquo;Please get this done for me over
+and above other stuff on your plate&rdquo;
 
-<p>Recently, my wife booked an appointment at the PSK to renew <span class="underline">her</span>
-passport and this provided the spark I needed to write about it. So
-here we are, a year later, talking about the passport renewal process
-at the PSK.</p>
+<ul>
+<li>&ldquo;Traffic congestion&rdquo; (A team which is too busy) and structural
+failure can lead to the impression that the system is
+bureaucratic and political.</li>
+</ul></li>
+<li>Criteria when hiring Engineers
+
+<ul>
+<li>Computer science (Can computers understand your code?)
+
+<ul>
+<li>Ability to grasp large complex systems</li>
+<li>Understanding of implications of design choices on that system.</li>
+</ul></li>
+<li>Software Engineering (Can humans understand your code?)
+
+<ul>
+<li>How well do you communicate through your code? This is the
+metric that enables building <strong>good</strong> systems.</li>
+<li>The hygiene you show in code is the hygiene you will enforce
+on others.</li>
+</ul></li>
+<li>Good behavioral traits (Can you grow?)
+
+<ul>
+<li>Curious</li>
+<li>Wants to learn</li>
+<li>Can accept feedback</li>
+<li>&ldquo;Strong opinions, Weakly held.&rdquo;</li>
+<li>&ldquo;Pride without attachment.&rdquo;</li>
+</ul></li>
+</ul></li>
+<li>Find the full video <a href="https://www.youtube.com/watch?v=He0XBBfCEVk">here</a>!</li>
+<li>The rest of this post is detailed notes on the video</li>
+</ul>
     </div>
   </div>
 </div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Techlog</span>
-    <h1 class="f3 near-black">
-      <a href="/techlog/2017-10-11-mbsync-channel-is-locked/" class="link black dim">
-        Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      You may come across the following error when running mbsync :
-Error: channel :&lt;channel-name&gt;-remote:&lt;folder&gt;-:&lt;channel-name&gt;-local:&lt;folder&gt; is locked This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Techlog</span>
-    <h1 class="f3 near-black">
-      <a href="/techlog/2012-02-23-composability-and-compojure/" class="link black dim">
-        Composability and Compojure
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p><em>Caveat</em>: This post needs some rudimentary knowledge of Compojure.
-Compojure is a web framework for Clojure, and if you don&rsquo;t understand
-what that means, then you should probably head over to the
-<a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>.</p>
 
-<p>Compojure exposes us to a beautifully <em>composable</em> abstraction, and
-this post is an attempt to show why that is a great thing.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Techlog</span>
-    <h1 class="f3 near-black">
-      <a href="/techlog/2011-08-07-switch-statements-in-python/" class="link black dim">
-        Switch Statements in Python
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Today I went through some old Python code and noticed this pattern
-through out:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response, data <span style="color:#f92672">=</span> somefunc()
-<span style="color:#66d9ef">if</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;this&#34;</span>:
-    do_this_with(data)
-<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;that&#34;</span>:
-    do_that_with(data)
-<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;huh&#34;</span>:
-    duh(data)
-;; lots more elifs<span style="color:#f92672">.</span>
-<span style="color:#66d9ef">else</span>:
-    prevent_horrible_crash(data)</code></pre></div>
-
-<p>This code should ideally have been a switch-case, but Python does not
-support a <code>switch</code> statement.</p>
-    </div>
-  </div>
-</div>
-</div>
+        </div>
       
     </section>
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/techlog/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item disabled">
-    <a href="" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/techlog/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/techlog/page/2/">2</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/techlog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/techlog/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-</article>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
