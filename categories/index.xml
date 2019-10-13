@@ -6,13 +6,21 @@
     <description>Recent content in Categories on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>engineering_management</title>
+      <title>Clojure</title>
+      <link>https://vedang.me/categories/clojure/</link>
+      <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Engineering_management</title>
       <link>https://vedang.me/categories/engineering_management/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
       
@@ -21,29 +29,20 @@
     </item>
     
     <item>
-      <title>clojure</title>
-      <link>https://vedang.me/categories/clojure/</link>
-      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/clojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tinylog</title>
-      <link>https://vedang.me/categories/tinylog/</link>
-      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/tinylog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>helpshift</title>
+      <title>Helpshift</title>
       <link>https://vedang.me/categories/helpshift/</link>
       <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/helpshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tinylog</title>
+      <link>https://vedang.me/categories/tinylog/</link>
+      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/tinylog/</guid>
       <description></description>
     </item>
     
