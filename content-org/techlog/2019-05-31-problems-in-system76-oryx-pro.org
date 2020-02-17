@@ -1,7 +1,7 @@
 #+title: Problems in my brand new System76 Oryx Pro laptop
 #+date: <2019-05-31 Fri>
 #+author: Vedang Manerikar
-#+hugo_section: techlog
+#+hugo_section: weblog
 #+hugo_base_dir: ~/src/vedang.me/
 #+hugo_tags: linux popos system76
 #+hugo_categories: laptops

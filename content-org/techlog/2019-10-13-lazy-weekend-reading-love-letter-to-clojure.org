@@ -1,7 +1,7 @@
 #+title: Lazy Weekend Reading: A love letter to Clojure
 #+date: <2019-10-13 Sun>
 #+author: Vedang Manerikar
-#+hugo_section: techlog
+#+hugo_section: weblog
 #+hugo_base_dir: ~/src/vedang.me/
 #+hugo_tags: clojure software programming
 #+hugo_categories: notes
