@@ -13,10 +13,10 @@
     
     <item>
       <title>Lazy Weekend Reading: A love letter to Clojure</title>
-      <link>https://vedang.me/techlog/lazy-weekend-reading-love-letter-to-clojure/</link>
+      <link>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
-      <guid>https://vedang.me/techlog/lazy-weekend-reading-love-letter-to-clojure/</guid>
+      <guid>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</guid>
       <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:</description>
     </item>
     
@@ -90,6 +90,15 @@ on others.&lt;/li&gt;
 &lt;li&gt;Find the full video &lt;a href=&#34;https://www.youtube.com/watch?v=He0XBBfCEVk&#34;&gt;here&lt;/a&gt;!&lt;/li&gt;
 &lt;li&gt;The rest of this post is detailed notes on the video&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Problems in my brand new System76 Oryx Pro laptop</title>
+      <link>https://vedang.me/weblog/2019-05-31-problems-in-system76-oryx-pro/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/weblog/2019-05-31-problems-in-system76-oryx-pro/</guid>
+      <description>Important Note I&amp;rsquo;m enjoying using a Linux laptop after years of development on the Macbook, and this post is more a list of issues I personally faced on moving to Linux after 7 years of development on the Macbook. I&amp;rsquo;d written a similar thing when I&amp;rsquo;d moved to the Macbook for the first time. Hopefully, this will help someone else moving to this particular laptop. This is not a &amp;ldquo;look, linux sux&amp;rdquo; post.</description>
     </item>
     
     <item>

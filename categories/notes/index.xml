@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>engmgmt on Vedang Manerikar</title>
-    <link>https://vedang.me/tags/engmgmt/</link>
-    <description>Recent content in engmgmt on Vedang Manerikar</description>
+    <title>Notes on Vedang Manerikar</title>
+    <link>https://vedang.me/categories/notes/</link>
+    <description>Recent content in Notes on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jul 2019 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2019 00:00:00 +0530</lastBuildDate>
     
-	<atom:link href="https://vedang.me/tags/engmgmt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vedang.me/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lazy Weekend Reading: A love letter to Clojure</title>
+      <link>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</link>
+      <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</guid>
+      <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:</description>
+    </item>
     
     <item>
       <title>Notes for the video: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>

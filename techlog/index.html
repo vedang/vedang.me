@@ -156,21 +156,6 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Techlog</span>
     <h1 class="f3 near-black">
-      <a href="/techlog/lazy-weekend-reading-love-letter-to-clojure/" class="link black dim">
-        Lazy Weekend Reading: A love letter to Clojure
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &ndash; we&rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Techlog</span>
-    <h1 class="f3 near-black">
       <a href="/techlog/2019-08-06-writing-a-good-status-update/" class="link black dim">
         Writing a good status update
       </a>
@@ -249,6 +234,36 @@ this post is an attempt to show why that is a great thing.</p>
 </div>
 </div>
       
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Techlog</span>
+    <h1 class="f3 near-black">
+      <a href="/techlog/2011-08-07-switch-statements-in-python/" class="link black dim">
+        Switch Statements in Python
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Today I went through some old Python code and noticed this pattern
+through out:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response, data <span style="color:#f92672">=</span> somefunc()
+<span style="color:#66d9ef">if</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;this&#34;</span>:
+    do_this_with(data)
+<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;that&#34;</span>:
+    do_that_with(data)
+<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;huh&#34;</span>:
+    duh(data)
+;; lots more elifs<span style="color:#f92672">.</span>
+<span style="color:#66d9ef">else</span>:
+    prevent_horrible_crash(data)</code></pre></div>
+
+<p>This code should ideally have been a switch-case, but Python does not
+support a <code>switch</code> statement.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
     </section>
 
 <ul class="pagination">
@@ -299,7 +314,7 @@ this post is an attempt to show why that is a great thing.</p>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://vedang.me/" >
-    &copy; 2019 Vedang Manerikar
+    &copy; 2020 Vedang Manerikar
   </a>
     <div>
 <div hidden>

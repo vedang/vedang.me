@@ -13,10 +13,10 @@
     
     <item>
       <title>Lazy Weekend Reading: A love letter to Clojure</title>
-      <link>https://vedang.me/techlog/lazy-weekend-reading-love-letter-to-clojure/</link>
+      <link>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
-      <guid>https://vedang.me/techlog/lazy-weekend-reading-love-letter-to-clojure/</guid>
+      <guid>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</guid>
       <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:</description>
     </item>
     

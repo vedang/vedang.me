@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laptops on Vedang Manerikar</title>
+    <link>https://vedang.me/categories/laptops/</link>
+    <description>Recent content in Laptops on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/categories/laptops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Problems in my brand new System76 Oryx Pro laptop</title>
+      <link>https://vedang.me/weblog/2019-05-31-problems-in-system76-oryx-pro/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/weblog/2019-05-31-problems-in-system76-oryx-pro/</guid>
+      <description>Important Note I&amp;rsquo;m enjoying using a Linux laptop after years of development on the Macbook, and this post is more a list of issues I personally faced on moving to Linux after 7 years of development on the Macbook. I&amp;rsquo;d written a similar thing when I&amp;rsquo;d moved to the Macbook for the first time. Hopefully, this will help someone else moving to this particular laptop. This is not a &amp;ldquo;look, linux sux&amp;rdquo; post.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vedang.me/techlog/lazy-weekend-reading-love-letter-to-clojure/</loc>
+    <loc>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</loc>
     <lastmod>2019-10-13T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -19,6 +19,13 @@
   <url>
     <loc>https://vedang.me/weblog/2019-07-20-gojek-10x-engineering/</loc>
     <lastmod>2019-07-20T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/weblog/2019-05-31-problems-in-system76-oryx-pro/</loc>
+    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -135,14 +142,14 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/clojure/</loc>
-    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/categories/clojure/</loc>
+    <lastmod>2018-12-15T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/clojure/</loc>
+    <loc>https://vedang.me/tags/clojure/</loc>
     <lastmod>2019-10-13T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
@@ -177,8 +184,15 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/engineering_management/</loc>
+    <loc>https://vedang.me/tags/engineering_management/</loc>
     <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/categories/helpshift/</loc>
+    <lastmod>2017-09-07T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -191,8 +205,15 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/helpshift/</loc>
-    <lastmod>2017-09-07T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/categories/laptops/</loc>
+    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/linux/</loc>
+    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -212,8 +233,22 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/organization/</loc>
+    <loc>https://vedang.me/categories/notes/</loc>
+    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/categories/organization/</loc>
     <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/popos/</loc>
+    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -261,6 +296,13 @@
   </url>
   
   <url>
+    <loc>https://vedang.me/tags/system76/</loc>
+    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vedang.me/tags/</loc>
     <lastmod>2019-10-13T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
@@ -268,14 +310,14 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/tinylog/</loc>
+    <loc>https://vedang.me/categories/tinylog/</loc>
     <lastmod>2017-10-11T09:37:22+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/tinylog/</loc>
+    <loc>https://vedang.me/tags/tinylog/</loc>
     <lastmod>2017-10-11T09:37:22+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
