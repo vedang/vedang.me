@@ -3,8 +3,8 @@
 #+author: Vedang Manerikar
 #+hugo_section: weblog
 #+hugo_base_dir: ~/src/vedang.me/
-#+hugo_tags: culture
-#+hugo_categories: engineering_management
+#+hugo_tags: culture engineering_management
+#+hugo_categories: notes
 #+hugo_draft: false
 #+hugo_custom_front_matter: :toc true :featured_image "/images/gofigure6.jpg"
 

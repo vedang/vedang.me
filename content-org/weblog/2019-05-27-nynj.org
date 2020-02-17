@@ -101,3 +101,8 @@
    - State "TODO"       from              [2019-05-27 Mon 11:42]
    :END:
    - Superb Pizza place in Brooklyn
+** TODO The Counter                                                  :burger:
+   :LOGBOOK:
+   - State "TODO"       from              [2020-01-25 Sat 22:21]
+   :END:
+   - Superb burgers

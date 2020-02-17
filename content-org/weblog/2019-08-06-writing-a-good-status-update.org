@@ -3,8 +3,8 @@
 #+author: Vedang Manerikar
 #+hugo_section: techlog
 #+hugo_base_dir: ~/src/vedang.me/
-#+hugo_tags: organization project_management
-#+hugo_categories: engineering_management
+#+hugo_tags: project_management engineering_management
+#+hugo_categories: organization
 #+hugo_draft: false
 #+hugo_custom_front_matter: :toc true
 

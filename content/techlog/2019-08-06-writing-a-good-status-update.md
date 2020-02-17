@@ -2,8 +2,8 @@
 title = "Writing a good status update"
 author = ["Vedang Manerikar"]
 date = 2019-08-06T00:00:00+05:30
-tags = ["organization", "project_management"]
-categories = ["engineering_management"]
+tags = ["project_management", "engineering_management"]
+categories = ["organization"]
 draft = false
 toc = true
 +++

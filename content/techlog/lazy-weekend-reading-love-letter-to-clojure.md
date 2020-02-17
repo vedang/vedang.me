@@ -3,7 +3,7 @@ title = "Lazy Weekend Reading: A love letter to Clojure"
 author = ["Vedang Manerikar"]
 date = 2019-10-13T00:00:00+05:30
 tags = ["clojure", "software", "programming"]
-categories = ["clojure"]
+categories = ["notes"]
 draft = false
 toc = true
 +++

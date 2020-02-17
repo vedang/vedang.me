@@ -4,7 +4,7 @@
 #+hugo_section: techlog
 #+hugo_base_dir: ~/src/vedang.me/
 #+hugo_tags: clojure software programming
-#+hugo_categories: clojure
+#+hugo_categories: notes
 #+hugo_draft: false
 #+hugo_custom_front_matter: :toc true
 

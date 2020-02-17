@@ -2,8 +2,8 @@
 title = "Notes for the video: GOJEK's 10x Engineer - Truth or Myth?"
 author = ["Vedang Manerikar"]
 date = 2019-07-20T00:00:00+05:30
-tags = ["culture"]
-categories = ["engineering_management"]
+tags = ["culture", "engineering_management"]
+categories = ["notes"]
 draft = false
 toc = true
 featured_image = "/images/gofigure6.jpg"
