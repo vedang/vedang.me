@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ring on Vedang Manerikar</title>
+    <title>ring on Vedang Manerikar</title>
     <link>https://vedang.me/tags/ring/</link>
-    <description>Recent content in Ring on Vedang Manerikar</description>
+    <description>Recent content in ring on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Feb 2012 23:57:57 +0530</lastBuildDate>
@@ -21,7 +21,6 @@
 Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
 what that means, then you should probably head over to the
 &lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
 this post is an attempt to show why that is a great thing.&lt;/p&gt;</description>
     </item>

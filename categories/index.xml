@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Vedang Manerikar</title>
@@ -6,39 +6,13 @@
     <description>Recent content in Categories on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 13 Oct 2019 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Clojure</title>
-      <link>https://vedang.me/categories/clojure/</link>
-      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/clojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Helpshift</title>
-      <link>https://vedang.me/categories/helpshift/</link>
-      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/helpshift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laptops</title>
-      <link>https://vedang.me/categories/laptops/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/laptops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Notes</title>
+      <title>notes</title>
       <link>https://vedang.me/categories/notes/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
@@ -47,7 +21,7 @@
     </item>
     
     <item>
-      <title>Organization</title>
+      <title>organization</title>
       <link>https://vedang.me/categories/organization/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
       
@@ -56,11 +30,38 @@
     </item>
     
     <item>
-      <title>Tinylog</title>
+      <title>tools</title>
+      <link>https://vedang.me/categories/tools/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://vedang.me/categories/programming/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tinylog</title>
       <link>https://vedang.me/categories/tinylog/</link>
       <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
       
       <guid>https://vedang.me/categories/tinylog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interviews</title>
+      <link>https://vedang.me/categories/interviews/</link>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/interviews/</guid>
       <description></description>
     </item>
     

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Software on Vedang Manerikar</title>
+    <title>software on Vedang Manerikar</title>
     <link>https://vedang.me/tags/software/</link>
-    <description>Recent content in Software on Vedang Manerikar</description>
+    <description>Recent content in software on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Oct 2019 00:00:00 +0530</lastBuildDate>
@@ -17,7 +17,8 @@
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
       <guid>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</guid>
-      <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:</description>
+      <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:
+General software philosophy  Choose tools that are good to think with Most bugs are due to programmers not understanding all the possible states their code may execute in.</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Vedang Manerikar</title>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Clojure</title>
+      <title>clojure</title>
       <link>https://vedang.me/tags/clojure/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
@@ -21,97 +21,7 @@
     </item>
     
     <item>
-      <title>Compiz</title>
-      <link>https://vedang.me/tags/compiz/</link>
-      <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/compiz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Compojure</title>
-      <link>https://vedang.me/tags/compojure/</link>
-      <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/compojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Concurrency</title>
-      <link>https://vedang.me/tags/concurrency/</link>
-      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/concurrency/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Culture</title>
-      <link>https://vedang.me/tags/culture/</link>
-      <pubDate>Sat, 20 Jul 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/culture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Engineering_management</title>
-      <link>https://vedang.me/tags/engineering_management/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/engineering_management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Helpshift</title>
-      <link>https://vedang.me/tags/helpshift/</link>
-      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/helpshift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://vedang.me/tags/linux/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mbsync</title>
-      <link>https://vedang.me/tags/mbsync/</link>
-      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/mbsync/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mythology</title>
-      <link>https://vedang.me/tags/mythology/</link>
-      <pubDate>Fri, 21 Sep 2012 22:33:33 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/mythology/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Popos</title>
-      <link>https://vedang.me/tags/popos/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/popos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
+      <title>programming</title>
       <link>https://vedang.me/tags/programming/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
@@ -120,34 +30,7 @@
     </item>
     
     <item>
-      <title>Project_management</title>
-      <link>https://vedang.me/tags/project_management/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/project_management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://vedang.me/tags/python/</link>
-      <pubDate>Sun, 07 Aug 2011 13:21:21 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ring</title>
-      <link>https://vedang.me/tags/ring/</link>
-      <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/ring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software</title>
+      <title>software</title>
       <link>https://vedang.me/tags/software/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
@@ -156,16 +39,61 @@
     </item>
     
     <item>
-      <title>Stumpwm</title>
-      <link>https://vedang.me/tags/stumpwm/</link>
-      <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
+      <title>engineering_management</title>
+      <link>https://vedang.me/tags/engineering_management/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
       
-      <guid>https://vedang.me/tags/stumpwm/</guid>
+      <guid>https://vedang.me/tags/engineering_management/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>System76</title>
+      <title>project_management</title>
+      <link>https://vedang.me/tags/project_management/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/project_management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>culture</title>
+      <link>https://vedang.me/tags/culture/</link>
+      <pubDate>Sat, 20 Jul 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/culture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>laptops</title>
+      <link>https://vedang.me/tags/laptops/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/laptops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://vedang.me/tags/linux/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>popos</title>
+      <link>https://vedang.me/tags/popos/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/popos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system76</title>
       <link>https://vedang.me/tags/system76/</link>
       <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
       
@@ -174,7 +102,25 @@
     </item>
     
     <item>
-      <title>Tinylog</title>
+      <title>concurrency</title>
+      <link>https://vedang.me/tags/concurrency/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mbsync</title>
+      <link>https://vedang.me/tags/mbsync/</link>
+      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/mbsync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tinylog</title>
       <link>https://vedang.me/tags/tinylog/</link>
       <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
       
@@ -183,7 +129,70 @@
     </item>
     
     <item>
-      <title>Window Managers</title>
+      <title>helpshift</title>
+      <link>https://vedang.me/tags/helpshift/</link>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/helpshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mythology</title>
+      <link>https://vedang.me/tags/mythology/</link>
+      <pubDate>Fri, 21 Sep 2012 22:33:33 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/mythology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compojure</title>
+      <link>https://vedang.me/tags/compojure/</link>
+      <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/compojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ring</title>
+      <link>https://vedang.me/tags/ring/</link>
+      <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/ring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://vedang.me/tags/python/</link>
+      <pubDate>Sun, 07 Aug 2011 13:21:21 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compiz</title>
+      <link>https://vedang.me/tags/compiz/</link>
+      <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/compiz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stumpwm</title>
+      <link>https://vedang.me/tags/stumpwm/</link>
+      <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/stumpwm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>window-managers</title>
       <link>https://vedang.me/tags/window-managers/</link>
       <pubDate>Thu, 04 Aug 2011 13:41:41 +0530</pubDate>
       

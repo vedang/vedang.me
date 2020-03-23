@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vedang Manerikar</title>
@@ -17,7 +17,8 @@
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
       
       <guid>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</guid>
-      <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:</description>
+      <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:
+General software philosophy  Choose tools that are good to think with Most bugs are due to programmers not understanding all the possible states their code may execute in.</description>
     </item>
     
     <item>
@@ -37,7 +38,6 @@ What is the purpose of status updates?  Let your manager know what you have achi
       
       <guid>https://vedang.me/weblog/2019-07-20-gojek-10x-engineering/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Engineering quality is paramount. Focus on &lt;a href=&#34;https://dave.cheney.net/2019/07/09/clear-is-better-than-clever&#34;&gt;clean and clear code&lt;/a&gt;.
 Code is the primary medium of communication for any engineer.
@@ -54,39 +54,39 @@ us to scale pods and org.&lt;/li&gt;
 the pain and pull it out into it&amp;rsquo;s own pod.&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Relationship as a service&amp;rdquo; or &amp;ldquo;Please get this done for me over
 and above other stuff on your plate&amp;rdquo;
-
 &lt;ul&gt;
 &lt;li&gt;&amp;ldquo;Traffic congestion&amp;rdquo; (A team which is too busy) and structural
 failure can lead to the impression that the system is
 bureaucratic and political.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Criteria when hiring Engineers
-
 &lt;ul&gt;
 &lt;li&gt;Computer science (Can computers understand your code?)
-
 &lt;ul&gt;
 &lt;li&gt;Ability to grasp large complex systems&lt;/li&gt;
 &lt;li&gt;Understanding of implications of design choices on that system.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Software Engineering (Can humans understand your code?)
-
 &lt;ul&gt;
 &lt;li&gt;How well do you communicate through your code? This is the
 metric that enables building &lt;strong&gt;good&lt;/strong&gt; systems.&lt;/li&gt;
 &lt;li&gt;The hygiene you show in code is the hygiene you will enforce
 on others.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Good behavioral traits (Can you grow?)
-
 &lt;ul&gt;
 &lt;li&gt;Curious&lt;/li&gt;
 &lt;li&gt;Wants to learn&lt;/li&gt;
 &lt;li&gt;Can accept feedback&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Strong opinions, Weakly held.&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Pride without attachment.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Find the full video &lt;a href=&#34;https://www.youtube.com/watch?v=He0XBBfCEVk&#34;&gt;here&lt;/a&gt;!&lt;/li&gt;
 &lt;li&gt;The rest of this post is detailed notes on the video&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -108,7 +108,6 @@ on others.&lt;/li&gt;
       
       <guid>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted from my post on the &lt;a href=&#34;https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c&#34;&gt;Helpshift Engineering Blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
 to get my passport renewed. At the time, the government had revamped
 this process and made it a simple, step-in/step-out painless affair.
@@ -117,8 +116,7 @@ longer than expected to complete. I was there for close to 4 hours. I
 used this time to observe the behavior of the PSK and think about
 ways to improve the applicant experience. I thought it was an
 interesting problem to solve and write about.&lt;/p&gt;
-
-&lt;p&gt;Recently, my wife booked an appointment at the PSK to renew &lt;span class=&#34;underline&#34;&gt;her&lt;/span&gt;
+&lt;p&gt;Recently, my wife booked an appointment at the PSK to renew &lt;!-- raw HTML omitted --&gt;her&lt;!-- raw HTML omitted --&gt;
 passport and this provided the spark I needed to write about it. So
 here we are, a year later, talking about the passport renewal process
 at the PSK.&lt;/p&gt;</description>
@@ -152,7 +150,6 @@ I review architecture, read code, enable customer service, help product guys und
       
       <guid>https://vedang.me/mahabharat/2012-09-21-krishna-in-the-mahabharata/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted from my answer to the question: &lt;a href=&#34;http://www.quora.com/Mahabharata/Why-is-Lord-Krishna-called-the-master-of-finesse-in-the-Mahabharat/answer/Vedang-Manerikar&#34;&gt;Why is Lord Krishna called the master of finesse in the Mahabharat?&lt;/a&gt; on &lt;a href=&#34;http://quora.com&#34;&gt;Quora&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;I will attempt to answer this, but my answer is going to be
 controversial. Please keep in mind that it is not my intention to
 offend anyone.&lt;/p&gt;</description>
@@ -165,7 +162,6 @@ offend anyone.&lt;/p&gt;</description>
       
       <guid>https://vedang.me/mahabharat/2012-09-21-draupadi-and-the-pandavas/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted from my answer to the question: &lt;a href=&#34;http://www.quora.com/Mythology/What-was-the-relationship-between-Draupadi-and-the-Pandavas-like/answer/Vedang-Manerikar&#34;&gt;What was the relationship between Draupadi and the Pandavas like?&lt;/a&gt; on &lt;a href=&#34;http://quora.com&#34;&gt;Quora&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;Draupadi&amp;rsquo;s relationship with the Pandavas is complex and at the heart
 of the Mahabharat.&lt;/p&gt;</description>
     </item>
@@ -177,7 +173,6 @@ of the Mahabharat.&lt;/p&gt;</description>
       
       <guid>https://vedang.me/mahabharat/2012-09-21-notes-and-reading-material-on-the-mahabharata/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted from my note: &lt;a href=&#34;http://www.quora.com/Vedang-Manerikar/The-Mahabharata/Notes-and-Reading-material-on-the-Mahabharata&#34;&gt;Notes and Reading Material on the Mahabharata&lt;/a&gt; on &lt;a href=&#34;http://quora.com&#34;&gt;Quora&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;People have shown some interest in reading material for the
 Mahabharata, this post should save me from repeatedly typing the same
 things.&lt;/p&gt;</description>
@@ -193,7 +188,6 @@ things.&lt;/p&gt;</description>
 Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
 what that means, then you should probably head over to the
 &lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
 this post is an attempt to show why that is a great thing.&lt;/p&gt;</description>
     </item>
@@ -206,7 +200,6 @@ this post is an attempt to show why that is a great thing.&lt;/p&gt;</descriptio
       <guid>https://vedang.me/techlog/2011-08-07-switch-statements-in-python/</guid>
       <description>&lt;p&gt;Today I went through some old Python code and noticed this pattern
 through out:&lt;/p&gt;
-
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;response, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; somefunc()
 &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this&amp;#34;&lt;/span&gt;:
     do_this_with(data)
@@ -217,7 +210,6 @@ through out:&lt;/p&gt;
 ;; lots more elifs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
     prevent_horrible_crash(data)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;p&gt;This code should ideally have been a switch-case, but Python does not
 support a &lt;code&gt;switch&lt;/code&gt; statement.&lt;/p&gt;</description>
     </item>

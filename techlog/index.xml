@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes On Technology on Vedang Manerikar</title>
@@ -28,7 +28,6 @@ What is the purpose of status updates?  Let your manager know what you have achi
       
       <guid>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted from my post on the &lt;a href=&#34;https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c&#34;&gt;Helpshift Engineering Blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
 to get my passport renewed. At the time, the government had revamped
 this process and made it a simple, step-in/step-out painless affair.
@@ -37,8 +36,7 @@ longer than expected to complete. I was there for close to 4 hours. I
 used this time to observe the behavior of the PSK and think about
 ways to improve the applicant experience. I thought it was an
 interesting problem to solve and write about.&lt;/p&gt;
-
-&lt;p&gt;Recently, my wife booked an appointment at the PSK to renew &lt;span class=&#34;underline&#34;&gt;her&lt;/span&gt;
+&lt;p&gt;Recently, my wife booked an appointment at the PSK to renew &lt;!-- raw HTML omitted --&gt;her&lt;!-- raw HTML omitted --&gt;
 passport and this provided the spark I needed to write about it. So
 here we are, a year later, talking about the passport renewal process
 at the PSK.&lt;/p&gt;</description>
@@ -64,7 +62,6 @@ Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp
 Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
 what that means, then you should probably head over to the
 &lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
 this post is an attempt to show why that is a great thing.&lt;/p&gt;</description>
     </item>
@@ -77,7 +74,6 @@ this post is an attempt to show why that is a great thing.&lt;/p&gt;</descriptio
       <guid>https://vedang.me/techlog/2011-08-07-switch-statements-in-python/</guid>
       <description>&lt;p&gt;Today I went through some old Python code and noticed this pattern
 through out:&lt;/p&gt;
-
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;response, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; somefunc()
 &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this&amp;#34;&lt;/span&gt;:
     do_this_with(data)
@@ -88,7 +84,6 @@ through out:&lt;/p&gt;
 ;; lots more elifs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
     prevent_horrible_crash(data)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;p&gt;This code should ideally have been a switch-case, but Python does not
 support a &lt;code&gt;switch&lt;/code&gt; statement.&lt;/p&gt;</description>
     </item>

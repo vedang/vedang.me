@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Culture on Vedang Manerikar</title>
+    <title>culture on Vedang Manerikar</title>
     <link>https://vedang.me/tags/culture/</link>
-    <description>Recent content in Culture on Vedang Manerikar</description>
+    <description>Recent content in culture on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Jul 2019 00:00:00 +0530</lastBuildDate>
@@ -18,7 +18,6 @@
       
       <guid>https://vedang.me/weblog/2019-07-20-gojek-10x-engineering/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Engineering quality is paramount. Focus on &lt;a href=&#34;https://dave.cheney.net/2019/07/09/clear-is-better-than-clever&#34;&gt;clean and clear code&lt;/a&gt;.
 Code is the primary medium of communication for any engineer.
@@ -35,39 +34,39 @@ us to scale pods and org.&lt;/li&gt;
 the pain and pull it out into it&amp;rsquo;s own pod.&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Relationship as a service&amp;rdquo; or &amp;ldquo;Please get this done for me over
 and above other stuff on your plate&amp;rdquo;
-
 &lt;ul&gt;
 &lt;li&gt;&amp;ldquo;Traffic congestion&amp;rdquo; (A team which is too busy) and structural
 failure can lead to the impression that the system is
 bureaucratic and political.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Criteria when hiring Engineers
-
 &lt;ul&gt;
 &lt;li&gt;Computer science (Can computers understand your code?)
-
 &lt;ul&gt;
 &lt;li&gt;Ability to grasp large complex systems&lt;/li&gt;
 &lt;li&gt;Understanding of implications of design choices on that system.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Software Engineering (Can humans understand your code?)
-
 &lt;ul&gt;
 &lt;li&gt;How well do you communicate through your code? This is the
 metric that enables building &lt;strong&gt;good&lt;/strong&gt; systems.&lt;/li&gt;
 &lt;li&gt;The hygiene you show in code is the hygiene you will enforce
 on others.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Good behavioral traits (Can you grow?)
-
 &lt;ul&gt;
 &lt;li&gt;Curious&lt;/li&gt;
 &lt;li&gt;Wants to learn&lt;/li&gt;
 &lt;li&gt;Can accept feedback&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Strong opinions, Weakly held.&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Pride without attachment.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Find the full video &lt;a href=&#34;https://www.youtube.com/watch?v=He0XBBfCEVk&#34;&gt;here&lt;/a&gt;!&lt;/li&gt;
 &lt;li&gt;The rest of this post is detailed notes on the video&lt;/li&gt;
 &lt;/ul&gt;</description>
