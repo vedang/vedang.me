@@ -1,0 +1,26 @@
+#+title: Experience Report: Using Basecamp as a Remote team
+#+date: <2020-03-16 Mon>
+#+author: Vedang Manerikar
+#+hugo_section: weblog
+#+hugo_base_dir: ~/src/vedang.me/
+#+hugo_tags: project_planning teams collaboration communication
+#+hugo_categories: tools
+#+hugo_draft: true
+#+hugo_custom_front_matter: :toc true
+
+* Good things
+- Onboarding was beautiful. As a software dev, I learnt a lot about
+  how to do this well.
+  + Templates to help you set up teams and projects.
+  + Videos explaining the basics.
+  + The account login choice (between Google login and email/password
+    login) was limited, but the switch was seamless.
+* Bad things
+- No ability to instantly modify your status.
+  + I want to let people know what I'm doing. Examples:
+    - "Bathroom Break"
+    - "AFK for lunch"
+    - "On the phone"
+  + For a tool helping remote employees, this seems like a big miss.
+- No ability to add reactions in Campfire. Coming from Slack, this is
+  a huge step back in the "fun" component.

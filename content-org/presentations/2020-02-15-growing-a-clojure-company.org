@@ -1,0 +1,10 @@
+#+title: Growing a Clojure Company from small to mid-sized (and hopefully beyond)
+#+subtitle: Tips, Tricks, Habits, Practices
+#+date: <2020-02-09 Sun>
+#+author: Vedang Manerikar
+#+hugo_section: techlog
+#+hugo_base_dir: ~/src/vedang.me/
+#+hugo_tags: clojure engineering_management
+#+hugo_categories: presentations
+#+hugo_draft: true
+#+hugo_custom_front_matter: :toc true :featured_image "/images/psk-renderkid.jpg"
