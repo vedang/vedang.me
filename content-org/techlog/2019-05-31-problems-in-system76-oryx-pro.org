@@ -3,8 +3,8 @@
 #+author: Vedang Manerikar
 #+hugo_section: weblog
 #+hugo_base_dir: ~/src/vedang.me/
-#+hugo_tags: linux popos system76
-#+hugo_categories: laptops
+#+hugo_tags: linux popos system76 laptops
+#+hugo_categories: tools
 #+hugo_draft: false
 #+hugo_custom_front_matter: :toc true
 

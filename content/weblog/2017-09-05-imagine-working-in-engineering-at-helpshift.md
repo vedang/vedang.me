@@ -3,7 +3,7 @@ title = "Imagine Working in Engineering at Helpshift"
 author = ["Vedang Manerikar"]
 date = 2017-09-07
 tags = ["helpshift", "culture"]
-categories = ["helpshift"]
+categories = ["interviews"]
 draft = false
 toc = true
 +++

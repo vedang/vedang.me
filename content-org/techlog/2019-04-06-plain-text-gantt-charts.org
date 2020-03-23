@@ -4,7 +4,7 @@
 #+hugo_section: techlog
 #+hugo_base_dir: ~/src/vedang.me/
 #+hugo_tags: gantt emacs org-mode mermaidjs
-#+hugo_categories: yakshaving
+#+hugo_categories: tools
 #+hugo_draft: true
 #+hugo_custom_front_matter: :toc true :featured_image "/images/pgm-gantt.jpg"
 #+subtitle: Organizing your planning in org-mode.

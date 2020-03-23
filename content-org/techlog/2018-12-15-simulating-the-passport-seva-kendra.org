@@ -4,7 +4,7 @@
 #+hugo_section: techlog
 #+hugo_base_dir: ~/src/vedang.me/
 #+hugo_tags: clojure concurrency
-#+hugo_categories: clojure
+#+hugo_categories: programming
 #+hugo_draft: false
 #+hugo_custom_front_matter: :toc true :featured_image "/images/psk-renderkid.jpg"
 #+subtitle: Exploring concurrency primitives in Clojure

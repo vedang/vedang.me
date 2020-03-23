@@ -4,7 +4,7 @@
 #+hugo_section: weblog
 #+hugo_base_dir: ~/src/vedang.me/
 #+hugo_tags: tourist recommendations
-#+hugo_categories: vacay
+#+hugo_categories: vacation
 #+hugo_draft: true
 #+hugo_custom_front_matter: :toc true
 

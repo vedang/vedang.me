@@ -4,7 +4,7 @@
 #+hugo_section: weblog
 #+hugo_base_dir: ~/src/vedang.me/
 #+hugo_tags: helpshift culture
-#+hugo_categories: helpshift
+#+hugo_categories: interviews
 #+hugo_draft: false
 #+hugo_custom_front_matter: :toc true
 

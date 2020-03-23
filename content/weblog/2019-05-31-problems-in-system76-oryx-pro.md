@@ -2,8 +2,8 @@
 title = "Problems in my brand new System76 Oryx Pro laptop"
 author = ["Vedang Manerikar"]
 date = 2019-05-31T00:00:00+05:30
-tags = ["linux", "popos", "system76"]
-categories = ["laptops"]
+tags = ["linux", "popos", "system76", "laptops"]
+categories = ["tools"]
 draft = false
 toc = true
 +++
