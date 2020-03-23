@@ -6,10 +6,21 @@
     <description>Recent content on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2019 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2020 10:10:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>I have questions about COVID-19</title>
+      <link>https://vedang.me/projects/i-have-questions-about-covid19/</link>
+      <pubDate>Mon, 23 Mar 2020 10:10:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/projects/i-have-questions-about-covid19/</guid>
+      <description>This page is a demo page, built to showcase how we can use bots to answer common questions that people have about COVID-19. This is a great way for folks to get up-to-date information about the pandemic while staying at home.
+To get started, click on the chat widget on the bottom right corner of the screen. Follow the instructions.
+This bot is built on guidelines and bots published by the World Health Organization and the Indian Govt.</description>
+    </item>
     
     <item>
       <title>Lazy Weekend Reading: A love letter to Clojure</title>
