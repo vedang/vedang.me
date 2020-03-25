@@ -1,12 +1,11 @@
 +++
-title = "Plain Text Gantt Charts"
+title = "Project planning in Plain Text"
 author = ["Vedang Manerikar"]
-date = 2019-04-06
-tags = ["gantt", "emacs", "org-mode", "mermaidjs"]
-categories = ["tools"]
+lastmod = 2020-03-26T08:05:12+05:30
+tags = ["project-management", "taskjuggler", "mermaidjs", "gantt", "emacs", "orgmode"]
+categories = ["organization"]
 draft = true
-toc = true
-featured_image = "/images/pgm-gantt.jpg"
+creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
 +++
 
 ## Points {#points}

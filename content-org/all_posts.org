@@ -38,26 +38,6 @@ email me at vedang at helpshift dot com.
 #+begin_export html
 <script src="hs_corona.js"></script>
 #+end_export
-* Tiny Logs                                                        :@tinylog:
-  :PROPERTIES:
-  :EXPORT_HUGO_SECTION: blog
-  :END:
-** DONE Tinylog: Mbsync: Error: Channel <x> Is Locked                :mbsync:
-   CLOSED: [2017-10-11 Wed 19:22]
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: mbsync-channel-is-locked
-   :END:
-You may come across the following error when running ~mbsync~ :
-
-#+begin_example
-  Error: channel :<channel-name>-remote:<folder>-:<channel-name>-local:<folder> is locked
-#+end_example
-
-This happens when there is another ~mbsync~ instance running in
-parallel and it has taken a lock on the particular folder. In my case,
-I am running ~mbsync~ via a cron-job, and it tends to leave dead
-instances around if the laptop sleeps during a run. Kill all instances
-of ~mbsync~ and restart the process and you should be fine!
 * Programming                                                  :@programming:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
@@ -848,3 +828,73 @@ at the PSK.
 [fn:1] STM: [[http://en.wikipedia.org/wiki/Software_transactional_memory]]
 
 #  LocalWords:  PSK Seva Clojure
+* Tools                                                              :@tools:
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: blog
+  :END:
+** DRAFT Project planning in Plain Text :taskjuggler:mermaidjs:gantt:emacs:orgmode:
+** TODO Project planning in Plain Text :taskjuggler:mermaidjs:gantt:emacs:orgmode:
+
+   :PROPERTIES:
+   :EXPORT_SUBTITLE: "Organizing your planning in org-mode."
+   :EXPORT_FILE_NAME: project-planning-in-plain-text
+   :END:
+   :LOGBOOK:
+   - Note taken on [2020-03-25 Wed 22:38] \\
+     - Jotted down the original idea on <2019-04-06 Sat>
+   :END:
+*** Points
+    - Gantt charts are a very effective planning tool
+    - Everyone ends up on gantt charts:
+      + manually maintain an excel sheet
+      + use professional (and expensive) tool for all or part of your
+        project planning: MS Project, Project Plan 365.
+    - Wouldn't it be great to have this in plain text?
+      + mermaidjs
+      + ^ Great tool. Easy to write plain text gantt charts and see the
+        visualization.
+      + Where do we store this information? I want it to be a part of
+        the day to day work I'm doing.
+    - Enter org-mode
+      + Incredible tool for personal planning, note taking, task tracking
+      + Missing visualization tools, but has all the tools to hook things together.
+      + Let's get to work connecting org-mode and mermaidjs
+    - What we get
+      + Add source blocks anywhere in your org-file, as you would normally do.
+      + All the data is available for you to read within context.
+      + Dealing with dates in Org is a breeze.
+    - What are the pain points?
+      + Tangle the org-file, Process the generated file, Evaluate the processed file
+        - Too many manual steps
+      + Adding new sections means you have to remember to add the
+        section to the tangle block in the correct order.
+    - What is missing
+      + Being able to add a leave for 2 days in the middle of a planned
+        project and have relevant plans automatically adjust. Need to
+        check if tools support this.
+
+
+  #+hugo: more
+
+  Gantt Charts are the best.
+
+* Tiny Logs                                                        :@tinylog:
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: blog
+  :END:
+** DONE Tinylog: Mbsync: Error: Channel <x> Is Locked                :mbsync:
+   CLOSED: [2017-10-11 Wed 19:22]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: mbsync-channel-is-locked
+   :END:
+You may come across the following error when running ~mbsync~ :
+
+#+begin_example
+  Error: channel :<channel-name>-remote:<folder>-:<channel-name>-local:<folder> is locked
+#+end_example
+
+This happens when there is another ~mbsync~ instance running in
+parallel and it has taken a lock on the particular folder. In my case,
+I am running ~mbsync~ via a cron-job, and it tends to leave dead
+instances around if the laptop sleeps during a run. Kill all instances
+of ~mbsync~ and restart the process and you should be fine!
