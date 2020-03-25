@@ -11,6 +11,7 @@
    :EXPORT_FILE_NAME: index
    :EXPORT_OPTIONS: num:1
    :EXPORT_HUGO_SECTION: projects
+   :EXPORT_HUGO_RESOURCES: :src "hs_corona.js"
    :END:
    :LOGBOOK:
    - State "DONE"       from "TODO"       [2020-03-23 Mon 10:10]
