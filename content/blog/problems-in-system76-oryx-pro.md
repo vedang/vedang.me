@@ -1,23 +1,25 @@
 +++
 title = "Problems in my brand new System76 Oryx Pro laptop"
 author = ["Vedang Manerikar"]
-date = 2019-05-31T00:00:00+05:30
-tags = ["linux", "popos", "system76", "laptops"]
+date = 2019-05-31T22:51:00+05:30
+lastmod = 2020-03-25T22:54:54+05:30
+tags = ["laptops", "system76", "popos", "linux"]
 categories = ["tools"]
 draft = false
+creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
 toc = true
 +++
 
 ## **Important Note** {#important-note}
 
 I'm enjoying using a Linux laptop after years of development on the
-Macbook, and this post is more a list of issues I personally faced on
-moving to Linux after 7 years of development on the Macbook. I'd
+Macbook, and this post is more a list of issues I personally faced
+on moving to Linux after 7 years of development on the Macbook. I'd
 written a similar thing when I'd moved to the Macbook for the first
-time. Hopefully, this will help someone else moving to this particular
-laptop. This is not a "look, linux sux" post. The Oryx Pro is a great
-machine, and is a far better experience than the overall Linux
-experience I remember from 2012.
+time. Hopefully, this will help someone else moving to this
+particular laptop. This is not a "look, linux sux" post. The Oryx
+Pro is a great machine, and is a far better experience than the
+overall Linux experience I remember from 2012.
 
 
 ## Emacs is unusable due to constant movement of the cursor. {#emacs-is-unusable-due-to-constant-movement-of-the-cursor-dot}
