@@ -21,6 +21,13 @@ enableEmoji = true
   priority = 0.5
   filename = "sitemap.xml"
 
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            hardWraps = false
+            unsafe = true
+            xhtml = false
+
 [params]
   # --------------------------------------------------
   # Params needed by Ananke
