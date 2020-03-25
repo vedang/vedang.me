@@ -5,3 +5,4 @@
 #+exclude_tags: noexport
 #+options: toc:2 creator:t
 #+seq_todo: TODO DRAFT DONE
+#+hugo_auto_set_lastmod: t

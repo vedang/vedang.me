@@ -2,6 +2,7 @@
 title = "I have questions about COVID-19"
 author = ["Vedang Manerikar"]
 date = 2020-03-23T10:10:00+05:30
+lastmod = 2020-03-25T19:07:38+05:30
 tags = ["covid19", "coronavirus"]
 draft = false
 creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
