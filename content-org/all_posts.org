@@ -832,7 +832,29 @@ at the PSK.
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
-** DRAFT Project planning in Plain Text :taskjuggler:mermaidjs:gantt:emacs:orgmode:
+** DRAFT Setting up email in Emacs using notmuch and mbsync :mbsync:notmuch:emacs:email:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: email-in-emacs-notmuch-mbsync
+   :END:
+   :LOGBOOK:
+   - Note taken on [2020-03-25 Wed 22:44] \\
+     - Jotted down original idea and an initial draft on <2019-05-27 Mon>
+   :END:
+*** Installing notmuch
+    - sudo apt install notmuch
+**** Create the notmuch config file
+**** Load notmuch.el when running emacs
+*** Installing mbsync
+    - sudo apt install isync
+**** Create the mbsync config file
+*** Installing msmtp
+    - sudo apt install msmtp
+**** Create the msmtp config file
+**** Set the sendmail program to msmtp in Emacs
+*** Create a script to sync email and index it.
+    - nmgetmail.sh
+    - install a cron for this.
+
 ** TODO Project planning in Plain Text :taskjuggler:mermaidjs:gantt:emacs:orgmode:
 
    :PROPERTIES:
