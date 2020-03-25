@@ -1,11 +1,11 @@
 +++
 title = "Writing Flink Jobs in Clojure"
 author = ["Vedang Manerikar"]
-date = 2019-06-13
-tags = ["flink", "clojure", "streaming"]
+lastmod = 2020-03-25T23:05:50+05:30
+tags = ["streaming", "flink", "clojure"]
 categories = ["programming"]
 draft = true
-toc = true
+creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
 +++
 
 ## 4e3f68a \* Add concrete type info to generic Flink interfaces {#4e3f68a-add-concrete-type-info-to-generic-flink-interfaces}
