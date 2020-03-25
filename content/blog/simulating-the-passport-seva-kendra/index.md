@@ -1,12 +1,14 @@
 +++
 title = "Simulating the Passport Seva Kendra using Clojure"
 author = ["Vedang Manerikar"]
-date = 2018-12-15
-tags = ["clojure", "concurrency"]
+date = 2018-12-15T19:56:00+05:30
+lastmod = 2020-03-25T22:30:45+05:30
+tags = ["concurrency", "clojure"]
 categories = ["programming"]
 draft = false
+creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
 toc = true
-featured_image = "/images/psk-renderkid.jpg"
+featured_image = "blog/simulating-the-passport-seva-kendra/psk-renderkid.jpg"
 +++
 
 _Cross-posted from my post on the [Helpshift Engineering Blog](https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c)_
@@ -78,7 +80,7 @@ Let me describe the process to you first.
     post, I assume that P has the highest priority, followed by S, T
     and N.
 
-{{< figure src="/images/psk-renderkid.jpg" alt="The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)" >}}
+{{< figure src="psk-renderkid.jpg" alt="The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)" >}}
 
 In the rest of this post, we'll build this system as described
 above, and see if we can fix the flaw in it. We will use Clojure to
@@ -668,7 +670,7 @@ Let's run this system! We're setting up a small loop to display the
 board. We're running much fewer counters than the actual PSK. This
 is in order to make the display board consumable.
 
-{{< figure src="/images/psk-run-1.gif" alt="A normal day at the Passport Seva Kendra" >}}
+{{< figure src="psk-run-1.gif" alt="A normal day at the Passport Seva Kendra" >}}
 
 Things look good in this loop, the board looks predictable. The
 problem occurs when someone gets unlucky at one stage, and spends
@@ -696,7 +698,7 @@ counters processing earlier stages (which matches with reality)
 
 Here is what this looks like:
 
-{{< figure src="/images/psk-run-2.gif" alt="N-3 is not having a good day." >}}
+{{< figure src="psk-run-2.gif" alt="N-3 is not having a good day." >}}
 
 As you can see, there are a number of people ahead of N-3 by the
 time he's done with stage 0. N-40s are being processed in stage 0 at
