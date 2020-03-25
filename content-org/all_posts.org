@@ -1086,6 +1086,11 @@ of ~mbsync~ and restart the process and you should be fine!
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
+** TODO Lazy Weekend Reading: API design and the Scikit-learn project   :api:
+   :LOGBOOK:
+   - Note taken on [2020-03-25 Wed 23:17] \\
+     - Original idea was on <2020-02-09 Sun>
+   :END:
 ** DONE Lazy Weekend Reading: A love letter to Clojure  :programming:clojure:
    CLOSED: [2019-10-13 Sun 23:02]
    :PROPERTIES:

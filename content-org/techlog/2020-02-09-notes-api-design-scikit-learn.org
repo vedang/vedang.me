@@ -1,9 +1,0 @@
-#+title: Lazy Weekend Reading: API design and the Scikit-learn project
-#+date: <2020-02-09 Sun>
-#+author: Vedang Manerikar
-#+hugo_section: techlog
-#+hugo_base_dir: ~/src/vedang.me/
-#+hugo_tags: api design software_development
-#+hugo_categories: notes
-#+hugo_draft: true
-#+hugo_custom_front_matter: :toc true :featured_image "/images/psk-renderkid.jpg"
