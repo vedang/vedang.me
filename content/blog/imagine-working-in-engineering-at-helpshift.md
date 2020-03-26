@@ -1,10 +1,12 @@
 +++
 title = "Imagine Working in Engineering at Helpshift"
 author = ["Vedang Manerikar"]
-date = 2017-09-07
-tags = ["helpshift", "culture"]
+date = 2017-09-07T07:27:00+05:30
+lastmod = 2020-03-26T07:30:32+05:30
+tags = ["culture", "helpshift"]
 categories = ["interviews"]
 draft = false
+creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
 toc = true
 +++
 
@@ -13,6 +15,8 @@ _Cross-posted from my interview published on [Helpshift's Medium blog](https://m
 -   Name: Vedang Manerikar
 -   Current Role: Principal Engineering Manager, Backend
 -   How long you have been with Helpshift?: 7 years
+
+<!--more-->
 
 
 ## What does your day-to-day at Helpshift look like? {#what-does-your-day-to-day-at-helpshift-look-like}
