@@ -1,16 +1,47 @@
 #+hugo_base_dir: ../
 #+setupfile: ./setup.org
+* Blog
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: blog
+  :END:
+This is a dummy container for the listings page for all blog posts. Actual posts should be categorized and created under the appropriate heading. The sections that my site supports are as follows:
+
+1. Blog: My blogposts and writing
+2. Projects: Some small projects that I'm working on for fun.
+3. Presentations: List of presentations I've given
+4. Lily's Recipes: I'm thinking of moving this under projects
+5. About: A page about me.
+
+** DONE The main blog listing page
+   CLOSED: [2020-03-26 Thu 21:27]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: _index
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
+   :EXPORT_TITLE: Writing
+   :END:
+#+begin_description
+(Observations, Tech stuff, Learning, Stories)
+#+end_description
 * Projects
   :PROPERTIES:
-  :CATEGORY: projects
+  :EXPORT_HUGO_SECTION: projects
   :END:
+** DONE The main Project Listing page
+   CLOSED: [2020-03-26 Thu 21:26]
+   :PROPERTIES:
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/peace.jpg"
+   :EXPORT_FILE_NAME: _index
+   :EXPORT_TITLE: Projects
+   :END:
+#+begin_description
+(Tiny things I build for joy)
+#+end_description
 ** DONE I have questions about COVID-19                 :covid19:coronavirus:
    CLOSED: [2020-03-23 Mon 10:10]
    :PROPERTIES:
    :EXPORT_HUGO_BUNDLE: i-have-questions-about-covid19
    :EXPORT_FILE_NAME: index
    :EXPORT_OPTIONS: num:1
-   :EXPORT_HUGO_SECTION: projects
    :EXPORT_HUGO_RESOURCES: :src "hs_corona.js"
    :END:
    :LOGBOOK:
