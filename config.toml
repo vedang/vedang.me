@@ -34,7 +34,8 @@ enableEmoji = true
   favicon = "images/vedang_small.jpeg"
   description = "My corner on the Inter Webs."
   twitter = "https://twitter.com/vedang"
-  github = "https://github.com/vedang/"
+  github = "https://github.com/vedang"
+  mastodon = "https://mastodon.technology/@vedang"
   featured_image = "/images/clevinger.jpg"
   show_reading_time = true
   #---------------------------
