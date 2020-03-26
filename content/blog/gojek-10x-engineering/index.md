@@ -1,12 +1,14 @@
 +++
-title = "Notes for the video: GOJEK's 10x Engineer - Truth or Myth?"
+title = "Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?"
 author = ["Vedang Manerikar"]
-date = 2019-07-20T00:00:00+05:30
-tags = ["culture", "engineering_management"]
+date = 2019-07-20T07:39:00+05:30
+lastmod = 2020-03-26T07:44:39+05:30
+tags = ["engineering-management", "gojek", "culture"]
 categories = ["notes"]
 draft = false
+creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
 toc = true
-featured_image = "/images/gofigure6.jpg"
+featured_image = "blog/gojek-10x-engineering/gofigure6.jpg"
 +++
 
 ## Summary {#summary}
