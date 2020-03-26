@@ -38,25 +38,26 @@ enableEmoji = true
   mastodon = "https://mastodon.technology/@vedang"
   featured_image = "/images/clevinger.jpg"
   show_reading_time = true
+  recent_posts_number = 10
   #---------------------------
   # My Changes
-  vedang_main_section = "techlog"
+  vedang_main_section = "blog"
   vedang_section2 = "weblog"
   # --------------------------------------------------
 
 # Menu Configuration
 [[menu.main]]
   weight = 1
-  identifier = "techlog"
-  name = "Techlog"
+  identifier = "blog"
+  name = "Writing"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-floppy-o\"></i>"
-  url = "/techlog"
+  url = "/blog"
 [[menu.main]]
   weight = 2
-  identifier = "weblog"
-  name = "Weblog"
+  identifier = "projects"
+  name = "Projects"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file-text\"></i>"
-  url = "/weblog"
+  url = "/projects"
 [[menu.main]]
   weight = 3
   identifier = "mahabharat"
