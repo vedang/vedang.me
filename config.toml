@@ -31,7 +31,7 @@ enableEmoji = true
 [params]
   # --------------------------------------------------
   # Params needed by Ananke
-  favicon = ""
+  favicon = "images/vedang_small.jpeg"
   description = "My corner on the Inter Webs."
   twitter = "https://twitter.com/vedang"
   github = "https://github.com/vedang/"
