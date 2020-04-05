@@ -6,20 +6,23 @@
     <description>Recent content in interviews on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Sep 2017 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 07 Sep 2017 07:27:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/categories/interviews/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Imagine Working in Engineering at Helpshift</title>
-      <link>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</link>
-      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
+      <link>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</link>
+      <pubDate>Thu, 07 Sep 2017 07:27:00 +0530</pubDate>
       
-      <guid>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</guid>
-      <description>Cross-posted from my interview published on Helpshift&amp;rsquo;s Medium blog
- Name: Vedang Manerikar Current Role: Principal Engineering Manager, Backend How long you have been with Helpshift?: 7 years  What does your day-to-day at Helpshift look like? My day-to-day is unblocking people and getting things done!
-I review architecture, read code, enable customer service, help product guys understand the engineering pros and cons of their product decisions and prioritize work for maximum productivity.</description>
+      <guid>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my interview published on &lt;a href=&#34;https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188&#34;&gt;Helpshift&amp;rsquo;s Medium blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name: Vedang Manerikar&lt;/li&gt;
+&lt;li&gt;Current Role: Principal Engineering Manager, Backend&lt;/li&gt;
+&lt;li&gt;How long you have been with Helpshift?: 7 years&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

@@ -6,17 +6,17 @@
     <description>Recent content in culture on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jul 2019 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jul 2019 07:39:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/culture/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Notes for the video: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>
-      <link>https://vedang.me/weblog/2019-07-20-gojek-10x-engineering/</link>
-      <pubDate>Sat, 20 Jul 2019 00:00:00 +0530</pubDate>
+      <title>Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>
+      <link>https://vedang.me/blog/gojek-10x-engineering/</link>
+      <pubDate>Sat, 20 Jul 2019 07:39:00 +0530</pubDate>
       
-      <guid>https://vedang.me/weblog/2019-07-20-gojek-10x-engineering/</guid>
+      <guid>https://vedang.me/blog/gojek-10x-engineering/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Engineering quality is paramount. Focus on &lt;a href=&#34;https://dave.cheney.net/2019/07/09/clear-is-better-than-clever&#34;&gt;clean and clear code&lt;/a&gt;.
@@ -74,13 +74,16 @@ on others.&lt;/li&gt;
     
     <item>
       <title>Imagine Working in Engineering at Helpshift</title>
-      <link>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</link>
-      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
+      <link>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</link>
+      <pubDate>Thu, 07 Sep 2017 07:27:00 +0530</pubDate>
       
-      <guid>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</guid>
-      <description>Cross-posted from my interview published on Helpshift&amp;rsquo;s Medium blog
- Name: Vedang Manerikar Current Role: Principal Engineering Manager, Backend How long you have been with Helpshift?: 7 years  What does your day-to-day at Helpshift look like? My day-to-day is unblocking people and getting things done!
-I review architecture, read code, enable customer service, help product guys understand the engineering pros and cons of their product decisions and prioritize work for maximum productivity.</description>
+      <guid>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my interview published on &lt;a href=&#34;https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188&#34;&gt;Helpshift&amp;rsquo;s Medium blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name: Vedang Manerikar&lt;/li&gt;
+&lt;li&gt;Current Role: Principal Engineering Manager, Backend&lt;/li&gt;
+&lt;li&gt;How long you have been with Helpshift?: 7 years&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

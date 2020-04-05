@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Vedang Manerikar</title>
+    <link>https://vedang.me/blog/</link>
+    <description>Recent content in Writing on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Mar 2020 21:27:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lazy Weekend Reading: A love letter to Clojure</title>
+      <link>https://vedang.me/blog/love-letter-to-clojure/</link>
+      <pubDate>Sun, 13 Oct 2019 23:02:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/love-letter-to-clojure/</guid>
+      <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:
+General software philosophy  Choose tools that are good to think with Most bugs are due to programmers not understanding all the possible states their code may execute in.</description>
+    </item>
+    
+    <item>
+      <title>Writing a good status update</title>
+      <link>https://vedang.me/blog/writing-a-good-status-update/</link>
+      <pubDate>Tue, 06 Aug 2019 07:49:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/writing-a-good-status-update/</guid>
+      <description>We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&amp;rsquo;s useful enough to publish publicly. Here goes:
+What is the purpose of status updates?  Let your manager know what you have achieved last week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself.</description>
+    </item>
+    
+    <item>
+      <title>Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>
+      <link>https://vedang.me/blog/gojek-10x-engineering/</link>
+      <pubDate>Sat, 20 Jul 2019 07:39:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/gojek-10x-engineering/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Engineering quality is paramount. Focus on &lt;a href=&#34;https://dave.cheney.net/2019/07/09/clear-is-better-than-clever&#34;&gt;clean and clear code&lt;/a&gt;.
+Code is the primary medium of communication for any engineer.
+Write beautiful code and hold people to high standards.&lt;/li&gt;
+&lt;li&gt;Adding head count has vast hidden costs and often brings down
+output. The reason for this is the exponential increase in
+communication required to align everyone to common goals.&lt;/li&gt;
+&lt;li&gt;Similarly, pods cannot scale unless they can own small,
+independent components.&lt;/li&gt;
+&lt;li&gt;Monoliths are normal and good when the company is small.
+Refactoring the monolithic model into different components allows
+us to scale pods and org.&lt;/li&gt;
+&lt;li&gt;Carve monoliths only when it hits critical mass. Then, identify
+the pain and pull it out into it&amp;rsquo;s own pod.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Relationship as a service&amp;rdquo; or &amp;ldquo;Please get this done for me over
+and above other stuff on your plate&amp;rdquo;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Traffic congestion&amp;rdquo; (A team which is too busy) and structural
+failure can lead to the impression that the system is
+bureaucratic and political.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Criteria when hiring Engineers
+&lt;ul&gt;
+&lt;li&gt;Computer science (Can computers understand your code?)
+&lt;ul&gt;
+&lt;li&gt;Ability to grasp large complex systems&lt;/li&gt;
+&lt;li&gt;Understanding of implications of design choices on that system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Software Engineering (Can humans understand your code?)
+&lt;ul&gt;
+&lt;li&gt;How well do you communicate through your code? This is the
+metric that enables building &lt;strong&gt;good&lt;/strong&gt; systems.&lt;/li&gt;
+&lt;li&gt;The hygiene you show in code is the hygiene you will enforce
+on others.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Good behavioral traits (Can you grow?)
+&lt;ul&gt;
+&lt;li&gt;Curious&lt;/li&gt;
+&lt;li&gt;Wants to learn&lt;/li&gt;
+&lt;li&gt;Can accept feedback&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Strong opinions, Weakly held.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Pride without attachment.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Find the full video &lt;a href=&#34;https://www.youtube.com/watch?v=He0XBBfCEVk&#34;&gt;here&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;The rest of this post is detailed notes on the video&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Problems in my brand new System76 Oryx Pro laptop</title>
+      <link>https://vedang.me/blog/problems-in-system76-oryx-pro/</link>
+      <pubDate>Fri, 31 May 2019 22:51:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/problems-in-system76-oryx-pro/</guid>
+      <description>Important Note I&amp;rsquo;m enjoying using a Linux laptop after years of development on the Macbook, and this post is more a list of issues I personally faced on moving to Linux after 7 years of development on the Macbook. I&amp;rsquo;d written a similar thing when I&amp;rsquo;d moved to the Macbook for the first time. Hopefully, this will help someone else moving to this particular laptop. This is not a &amp;ldquo;look, linux sux&amp;rdquo; post.</description>
+    </item>
+    
+    <item>
+      <title>Simulating the Passport Seva Kendra using Clojure</title>
+      <link>https://vedang.me/blog/simulating-the-passport-seva-kendra/</link>
+      <pubDate>Sat, 15 Dec 2018 19:56:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/simulating-the-passport-seva-kendra/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my post on the &lt;a href=&#34;https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c&#34;&gt;Helpshift Engineering Blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
+to get my passport renewed. At the time, the government had revamped
+this process and made it a simple, step-in/step-out painless affair.
+Unfortunately for me, I hit an edge-case in the system and took much
+longer than expected to complete. I was there for close to 4 hours. I
+used this time to observe the behavior of the PSK and think about
+ways to improve the applicant experience. I thought it was an
+interesting problem to solve and write about.&lt;/p&gt;
+&lt;p&gt;Recently, my wife booked an appointment at the PSK to renew &lt;span class=&#34;underline&#34;&gt;her&lt;/span&gt;
+passport and this provided the spark I needed to write about it. So
+here we are, a year later, talking about the passport renewal process
+at the PSK.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked</title>
+      <link>https://vedang.me/blog/mbsync-channel-is-locked/</link>
+      <pubDate>Wed, 11 Oct 2017 19:22:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/mbsync-channel-is-locked/</guid>
+      <description>You may come across the following error when running mbsync :
+Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp;lt;channel-name&amp;gt;-local:&amp;lt;folder&amp;gt; is locked This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!</description>
+    </item>
+    
+    <item>
+      <title>Imagine Working in Engineering at Helpshift</title>
+      <link>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</link>
+      <pubDate>Thu, 07 Sep 2017 07:27:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my interview published on &lt;a href=&#34;https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188&#34;&gt;Helpshift&amp;rsquo;s Medium blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name: Vedang Manerikar&lt;/li&gt;
+&lt;li&gt;Current Role: Principal Engineering Manager, Backend&lt;/li&gt;
+&lt;li&gt;How long you have been with Helpshift?: 7 years&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Notes and Reading Material on the Mahabharata</title>
+      <link>https://vedang.me/blog/notes-and-reading-material-on-the-mahabharat/</link>
+      <pubDate>Fri, 21 Sep 2012 20:55:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/notes-and-reading-material-on-the-mahabharat/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my note: &lt;a href=&#34;http://www.quora.com/Vedang-Manerikar/The-Mahabharata/Notes-and-Reading-material-on-the-Mahabharata&#34;&gt;Notes and Reading Material on the
+Mahabharata&lt;/a&gt; on &lt;a href=&#34;http://quora.com&#34;&gt;Quora&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;People have shown some interest in reading material for the
+Mahabharata, this post should save me from repeatedly typing the same
+things.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Draupadi and the Pandavas</title>
+      <link>https://vedang.me/blog/draupadi-and-the-pandavas/</link>
+      <pubDate>Fri, 21 Sep 2012 19:17:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/draupadi-and-the-pandavas/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my answer to the question: &lt;a href=&#34;http://www.quora.com/Mythology/What-was-the-relationship-between-Draupadi-and-the-Pandavas-like/answer/Vedang-Manerikar&#34;&gt;What was the
+relationship between Draupadi and the Pandavas like?&lt;/a&gt; on &lt;a href=&#34;http://quora.com&#34;&gt;Quora&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Draupadi&amp;rsquo;s relationship with the Pandavas is complex and at the heart
+of the Mahabharat.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Krishna in the Mahabharat</title>
+      <link>https://vedang.me/blog/krishna-in-the-mahabharat/</link>
+      <pubDate>Thu, 20 Sep 2012 20:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/krishna-in-the-mahabharat/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my answer to the question: &lt;a href=&#34;http://www.quora.com/Mahabharata/Why-is-Lord-Krishna-called-the-master-of-finesse-in-the-Mahabharat/answer/Vedang-Manerikar&#34;&gt;Why is Lord Krishna
+called the master of finesse in the Mahabharat?&lt;/a&gt; on &lt;a href=&#34;http://quora.com&#34;&gt;Quora&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I will attempt to answer this, but my answer is going to be
+controversial. Please keep in mind that it is not my intention to
+offend anyone.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Composability and Compojure</title>
+      <link>https://vedang.me/blog/composability-and-compojure/</link>
+      <pubDate>Thu, 23 Feb 2012 23:58:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/composability-and-compojure/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Caveat&lt;/em&gt;: This post needs some rudimentary knowledge of Compojure.
+Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
+what that means, then you should probably head over to the
+&lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Compojure exposes us to a beautifully &lt;span class=&#34;underline&#34;&gt;composable&lt;/span&gt; abstraction, and
+this post is an attempt to show why that is a great thing.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Switch Statements in Python</title>
+      <link>https://vedang.me/blog/switch-statements-in-python/</link>
+      <pubDate>Sun, 07 Aug 2011 13:21:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/switch-statements-in-python/</guid>
+      <description>&lt;p&gt;Today I went through some old Python code and noticed this pattern
+through out:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;response, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; somefunc()
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this&amp;#34;&lt;/span&gt;:
+    do_this_with(data)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;that&amp;#34;&lt;/span&gt;:
+    do_that_with(data)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;huh&amp;#34;&lt;/span&gt;:
+    duh(data)
+    ;; lots more elifs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+    prevent_horrible_crash(data)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This code should ideally have been a switch-case, but Python does not
+support a &lt;code&gt;switch&lt;/code&gt; statement.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Why I Quit StumpWM</title>
+      <link>https://vedang.me/blog/why-i-quit-stumpwm/</link>
+      <pubDate>Thu, 04 Aug 2011 13:41:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/why-i-quit-stumpwm/</guid>
+      <description>&lt;p&gt;After using &lt;a href=&#34;http://www.nongnu.org/stumpwm/&#34;&gt;StumpWM&lt;/a&gt; for nearly a
+year, I&amp;rsquo;m finally quitting and moving back to Gnome. I came to love
+StumpWM&amp;rsquo;s minimalistic approach, and this isn&amp;rsquo;t an easy decision. So
+why am I doing it?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reboot</title>
+      <link>https://vedang.me/blog/reboot/</link>
+      <pubDate>Sat, 30 Jul 2011 14:25:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/reboot/</guid>
+      <description>&lt;p&gt;Once upon a time I had a blog. Then one day I ran out of motivation,
+inclination, desire, drive, whatnot to post to that blog. I never
+really ran out of content though. At least, I think not.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

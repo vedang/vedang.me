@@ -3,372 +3,379 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vedang.me/tags/coronavirus/</loc>
-    <lastmod>2020-03-23T10:10:00+05:30</lastmod>
+    <loc>https://vedang.me/projects/lilys-recipes/</loc>
+    <lastmod>2020-04-05T19:12:27+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/covid19/</loc>
-    <lastmod>2020-03-23T10:10:00+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/projects/i-have-questions-about-covid19/</loc>
-    <lastmod>2020-03-23T10:10:00+05:30</lastmod>
+    <loc>https://vedang.me/blog/</loc>
+    <lastmod>2020-04-05T18:46:39+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/projects/</loc>
-    <lastmod>2020-03-23T10:10:00+05:30</lastmod>
+    <lastmod>2020-04-05T19:00:15+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/coronavirus/</loc>
+    <lastmod>2020-03-25T19:07:38+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/covid19/</loc>
+    <lastmod>2020-03-25T19:07:38+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/projects/i-have-questions-about-covid19/</loc>
+    <lastmod>2020-03-25T19:07:38+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/</loc>
-    <lastmod>2020-03-23T10:10:00+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/</loc>
-    <lastmod>2020-03-23T10:10:00+05:30</lastmod>
+    <lastmod>2020-04-05T22:07:35+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/</loc>
-    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T22:07:35+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/clojure/</loc>
-    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:41:16+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</loc>
-    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/blog/love-letter-to-clojure/</loc>
+    <lastmod>2020-04-05T18:33:11+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/notes/</loc>
-    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:48:41+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/programming/</loc>
-    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/tags/communication/</loc>
+    <lastmod>2020-04-05T18:37:39+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/software/</loc>
-    <lastmod>2019-10-13T00:00:00+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/tags/engineering_management/</loc>
-    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/tags/engineering-management/</loc>
+    <lastmod>2020-04-05T18:48:41+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/organization/</loc>
-    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:37:39+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/project_management/</loc>
-    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/tags/project-management/</loc>
+    <lastmod>2020-04-05T18:37:39+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/techlog/2019-08-06-writing-a-good-status-update/</loc>
-    <lastmod>2019-08-06T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/blog/writing-a-good-status-update/</loc>
+    <lastmod>2020-04-05T18:37:39+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/culture/</loc>
-    <lastmod>2019-07-20T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:44+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/weblog/2019-07-20-gojek-10x-engineering/</loc>
-    <lastmod>2019-07-20T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/tags/gojek/</loc>
+    <lastmod>2020-04-05T18:48:41+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/blog/gojek-10x-engineering/</loc>
+    <lastmod>2020-04-05T18:48:41+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/laptops/</loc>
-    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:15+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/linux/</loc>
-    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:15+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/popos/</loc>
-    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:15+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/weblog/2019-05-31-problems-in-system76-oryx-pro/</loc>
-    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/blog/problems-in-system76-oryx-pro/</loc>
+    <lastmod>2020-04-05T18:49:15+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/system76/</loc>
-    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:15+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/tools/</loc>
-    <lastmod>2019-05-31T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:15+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/concurrency/</loc>
-    <lastmod>2018-12-15T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:39:21+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/programming/</loc>
-    <lastmod>2018-12-15T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:42:03+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</loc>
-    <lastmod>2018-12-15T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/blog/simulating-the-passport-seva-kendra/</loc>
+    <lastmod>2020-04-05T18:39:21+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/mbsync/</loc>
-    <lastmod>2017-10-11T09:37:22+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/tags/tinylog/</loc>
-    <lastmod>2017-10-11T09:37:22+05:30</lastmod>
+    <lastmod>2020-04-05T18:40:29+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/tinylog/</loc>
-    <lastmod>2017-10-11T09:37:22+05:30</lastmod>
+    <lastmod>2020-04-05T18:40:29+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/techlog/2017-10-11-mbsync-channel-is-locked/</loc>
-    <lastmod>2017-10-11T09:37:22+05:30</lastmod>
+    <loc>https://vedang.me/blog/mbsync-channel-is-locked/</loc>
+    <lastmod>2020-04-05T18:40:29+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/helpshift/</loc>
-    <lastmod>2017-09-07T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:44+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/</loc>
-    <lastmod>2017-09-07T00:00:00+05:30</lastmod>
+    <loc>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</loc>
+    <lastmod>2020-04-05T18:49:44+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/interviews/</loc>
-    <lastmod>2017-09-07T00:00:00+05:30</lastmod>
+    <lastmod>2020-04-05T18:49:44+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/about/</loc>
-    <lastmod>2017-08-19T13:30:59+05:30</lastmod>
+    <lastmod>2020-04-05T22:22:57+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/recipes/</loc>
-    <lastmod>2017-08-19T13:30:59+05:30</lastmod>
+    <loc>https://vedang.me/</loc>
+    <lastmod>2020-04-05T22:22:57+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/mahabharat/</loc>
-    <lastmod>2017-08-19T13:30:59+05:30</lastmod>
+    <loc>https://vedang.me/tags/books/</loc>
+    <lastmod>2020-04-05T22:07:35+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/techlog/</loc>
-    <lastmod>2017-08-19T13:30:59+05:30</lastmod>
+    <loc>https://vedang.me/categories/mahabharat/</loc>
+    <lastmod>2020-04-05T22:07:35+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/weblog/</loc>
-    <lastmod>2017-08-19T13:30:59+05:30</lastmod>
+    <loc>https://vedang.me/blog/notes-and-reading-material-on-the-mahabharat/</loc>
+    <lastmod>2020-04-05T22:07:35+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/mahabharat/2012-09-21-krishna-in-the-mahabharata/</loc>
-    <lastmod>2012-09-21T22:33:33+05:30</lastmod>
+    <loc>https://vedang.me/tags/draupadi/</loc>
+    <lastmod>2020-04-05T20:26:20+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/mythology/</loc>
-    <lastmod>2012-09-21T22:33:33+05:30</lastmod>
+    <loc>https://vedang.me/blog/draupadi-and-the-pandavas/</loc>
+    <lastmod>2020-04-05T20:26:20+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/mahabharat/2012-09-21-draupadi-and-the-pandavas/</loc>
-    <lastmod>2012-09-21T21:02:02+05:30</lastmod>
+    <loc>https://vedang.me/tags/krishna/</loc>
+    <lastmod>2020-04-05T20:26:20+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/mahabharat/2012-09-21-notes-and-reading-material-on-the-mahabharata/</loc>
-    <lastmod>2012-09-21T20:19:19+05:30</lastmod>
+    <loc>https://vedang.me/tags/pandavas/</loc>
+    <lastmod>2020-04-05T20:26:20+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/blog/krishna-in-the-mahabharat/</loc>
+    <lastmod>2020-04-05T20:26:08+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/compojure/</loc>
-    <lastmod>2012-02-23T23:57:57+05:30</lastmod>
+    <lastmod>2020-04-05T18:41:16+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/techlog/2012-02-23-composability-and-compojure/</loc>
-    <lastmod>2012-02-23T23:57:57+05:30</lastmod>
+    <loc>https://vedang.me/blog/composability-and-compojure/</loc>
+    <lastmod>2020-04-05T18:41:16+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/ring/</loc>
-    <lastmod>2012-02-23T23:57:57+05:30</lastmod>
+    <lastmod>2020-04-05T18:41:16+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/python/</loc>
-    <lastmod>2011-08-07T13:21:21+05:30</lastmod>
+    <lastmod>2020-04-05T18:42:03+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/techlog/2011-08-07-switch-statements-in-python/</loc>
-    <lastmod>2011-08-07T13:21:21+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/tags/compiz/</loc>
-    <lastmod>2011-08-04T13:41:41+05:30</lastmod>
+    <loc>https://vedang.me/blog/switch-statements-in-python/</loc>
+    <lastmod>2020-04-05T18:42:03+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/stumpwm/</loc>
-    <lastmod>2011-08-04T13:41:41+05:30</lastmod>
+    <lastmod>2020-04-05T18:38:42+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/techlog/2011-08-04-why-i-quit-stumpwm/</loc>
-    <lastmod>2011-08-04T13:41:41+05:30</lastmod>
+    <loc>https://vedang.me/blog/why-i-quit-stumpwm/</loc>
+    <lastmod>2020-04-05T18:38:42+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/window-managers/</loc>
-    <lastmod>2011-08-04T13:41:41+05:30</lastmod>
+    <lastmod>2020-04-05T18:38:42+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/weblog/2011-07-30-reboot/</loc>
-    <lastmod>2011-07-30T14:24:24+05:30</lastmod>
+    <loc>https://vedang.me/categories/random/</loc>
+    <lastmod>2020-04-05T18:50:08+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/blog/reboot/</loc>
+    <lastmod>2020-04-05T18:50:08+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

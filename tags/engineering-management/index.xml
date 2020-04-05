@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>engineering-management on Vedang Manerikar</title>
+    <link>https://vedang.me/tags/engineering-management/</link>
+    <description>Recent content in engineering-management on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Aug 2019 07:49:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/tags/engineering-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing a good status update</title>
+      <link>https://vedang.me/blog/writing-a-good-status-update/</link>
+      <pubDate>Tue, 06 Aug 2019 07:49:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/writing-a-good-status-update/</guid>
+      <description>We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&amp;rsquo;s useful enough to publish publicly. Here goes:
+What is the purpose of status updates?  Let your manager know what you have achieved last week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself.</description>
+    </item>
+    
+    <item>
+      <title>Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>
+      <link>https://vedang.me/blog/gojek-10x-engineering/</link>
+      <pubDate>Sat, 20 Jul 2019 07:39:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/blog/gojek-10x-engineering/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Engineering quality is paramount. Focus on &lt;a href=&#34;https://dave.cheney.net/2019/07/09/clear-is-better-than-clever&#34;&gt;clean and clear code&lt;/a&gt;.
+Code is the primary medium of communication for any engineer.
+Write beautiful code and hold people to high standards.&lt;/li&gt;
+&lt;li&gt;Adding head count has vast hidden costs and often brings down
+output. The reason for this is the exponential increase in
+communication required to align everyone to common goals.&lt;/li&gt;
+&lt;li&gt;Similarly, pods cannot scale unless they can own small,
+independent components.&lt;/li&gt;
+&lt;li&gt;Monoliths are normal and good when the company is small.
+Refactoring the monolithic model into different components allows
+us to scale pods and org.&lt;/li&gt;
+&lt;li&gt;Carve monoliths only when it hits critical mass. Then, identify
+the pain and pull it out into it&amp;rsquo;s own pod.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Relationship as a service&amp;rdquo; or &amp;ldquo;Please get this done for me over
+and above other stuff on your plate&amp;rdquo;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Traffic congestion&amp;rdquo; (A team which is too busy) and structural
+failure can lead to the impression that the system is
+bureaucratic and political.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Criteria when hiring Engineers
+&lt;ul&gt;
+&lt;li&gt;Computer science (Can computers understand your code?)
+&lt;ul&gt;
+&lt;li&gt;Ability to grasp large complex systems&lt;/li&gt;
+&lt;li&gt;Understanding of implications of design choices on that system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Software Engineering (Can humans understand your code?)
+&lt;ul&gt;
+&lt;li&gt;How well do you communicate through your code? This is the
+metric that enables building &lt;strong&gt;good&lt;/strong&gt; systems.&lt;/li&gt;
+&lt;li&gt;The hygiene you show in code is the hygiene you will enforce
+on others.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Good behavioral traits (Can you grow?)
+&lt;ul&gt;
+&lt;li&gt;Curious&lt;/li&gt;
+&lt;li&gt;Wants to learn&lt;/li&gt;
+&lt;li&gt;Can accept feedback&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Strong opinions, Weakly held.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Pride without attachment.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Find the full video &lt;a href=&#34;https://www.youtube.com/watch?v=He0XBBfCEVk&#34;&gt;here&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;The rest of this post is detailed notes on the video&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

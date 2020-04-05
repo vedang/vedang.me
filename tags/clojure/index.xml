@@ -6,27 +6,27 @@
     <description>Recent content in clojure on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2019 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2019 23:02:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lazy Weekend Reading: A love letter to Clojure</title>
-      <link>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</link>
-      <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
+      <link>https://vedang.me/blog/love-letter-to-clojure/</link>
+      <pubDate>Sun, 13 Oct 2019 23:02:00 +0530</pubDate>
       
-      <guid>https://vedang.me/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/</guid>
+      <guid>https://vedang.me/blog/love-letter-to-clojure/</guid>
       <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:
 General software philosophy  Choose tools that are good to think with Most bugs are due to programmers not understanding all the possible states their code may execute in.</description>
     </item>
     
     <item>
       <title>Simulating the Passport Seva Kendra using Clojure</title>
-      <link>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</link>
-      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
+      <link>https://vedang.me/blog/simulating-the-passport-seva-kendra/</link>
+      <pubDate>Sat, 15 Dec 2018 19:56:00 +0530</pubDate>
       
-      <guid>https://vedang.me/techlog/2018-12-15-simulating-the-passport-seva-kendra/</guid>
+      <guid>https://vedang.me/blog/simulating-the-passport-seva-kendra/</guid>
       <description>&lt;p&gt;&lt;em&gt;Cross-posted from my post on the &lt;a href=&#34;https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c&#34;&gt;Helpshift Engineering Blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
 to get my passport renewed. At the time, the government had revamped
@@ -36,7 +36,7 @@ longer than expected to complete. I was there for close to 4 hours. I
 used this time to observe the behavior of the PSK and think about
 ways to improve the applicant experience. I thought it was an
 interesting problem to solve and write about.&lt;/p&gt;
-&lt;p&gt;Recently, my wife booked an appointment at the PSK to renew &lt;!-- raw HTML omitted --&gt;her&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Recently, my wife booked an appointment at the PSK to renew &lt;span class=&#34;underline&#34;&gt;her&lt;/span&gt;
 passport and this provided the spark I needed to write about it. So
 here we are, a year later, talking about the passport renewal process
 at the PSK.&lt;/p&gt;</description>
@@ -44,15 +44,15 @@ at the PSK.&lt;/p&gt;</description>
     
     <item>
       <title>Composability and Compojure</title>
-      <link>https://vedang.me/techlog/2012-02-23-composability-and-compojure/</link>
-      <pubDate>Thu, 23 Feb 2012 23:57:57 +0530</pubDate>
+      <link>https://vedang.me/blog/composability-and-compojure/</link>
+      <pubDate>Thu, 23 Feb 2012 23:58:00 +0530</pubDate>
       
-      <guid>https://vedang.me/techlog/2012-02-23-composability-and-compojure/</guid>
+      <guid>https://vedang.me/blog/composability-and-compojure/</guid>
       <description>&lt;p&gt;&lt;em&gt;Caveat&lt;/em&gt;: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don&amp;rsquo;t understand
 what that means, then you should probably head over to the
 &lt;a href=&#34;https://github.com/weavejester/compojure/wiki&#34;&gt;Compojure docs&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Compojure exposes us to a beautifully &lt;em&gt;composable&lt;/em&gt; abstraction, and
+&lt;p&gt;Compojure exposes us to a beautifully &lt;span class=&#34;underline&#34;&gt;composable&lt;/span&gt; abstraction, and
 this post is an attempt to show why that is a great thing.&lt;/p&gt;</description>
     </item>
     

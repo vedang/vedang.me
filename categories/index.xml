@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2019 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2019 23:02:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>notes</title>
       <link>https://vedang.me/categories/notes/</link>
-      <pubDate>Sun, 13 Oct 2019 00:00:00 +0530</pubDate>
+      <pubDate>Sun, 13 Oct 2019 23:02:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/notes/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>organization</title>
       <link>https://vedang.me/categories/organization/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0530</pubDate>
+      <pubDate>Tue, 06 Aug 2019 07:49:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/organization/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>tools</title>
       <link>https://vedang.me/categories/tools/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0530</pubDate>
+      <pubDate>Fri, 31 May 2019 22:51:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/tools/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>programming</title>
       <link>https://vedang.me/categories/programming/</link>
-      <pubDate>Sat, 15 Dec 2018 00:00:00 +0530</pubDate>
+      <pubDate>Sat, 15 Dec 2018 19:56:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/programming/</guid>
       <description></description>
@@ -50,7 +50,7 @@
     <item>
       <title>tinylog</title>
       <link>https://vedang.me/categories/tinylog/</link>
-      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
+      <pubDate>Wed, 11 Oct 2017 19:22:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/tinylog/</guid>
       <description></description>
@@ -59,9 +59,27 @@
     <item>
       <title>interviews</title>
       <link>https://vedang.me/categories/interviews/</link>
-      <pubDate>Thu, 07 Sep 2017 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 07 Sep 2017 07:27:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/interviews/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mahabharat</title>
+      <link>https://vedang.me/categories/mahabharat/</link>
+      <pubDate>Fri, 21 Sep 2012 20:55:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/mahabharat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random</title>
+      <link>https://vedang.me/categories/random/</link>
+      <pubDate>Sat, 30 Jul 2011 14:25:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/random/</guid>
       <description></description>
     </item>
     

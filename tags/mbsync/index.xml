@@ -6,17 +6,17 @@
     <description>Recent content in mbsync on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Oct 2017 09:37:22 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 11 Oct 2017 19:22:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/mbsync/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked</title>
-      <link>https://vedang.me/techlog/2017-10-11-mbsync-channel-is-locked/</link>
-      <pubDate>Wed, 11 Oct 2017 09:37:22 +0530</pubDate>
+      <link>https://vedang.me/blog/mbsync-channel-is-locked/</link>
+      <pubDate>Wed, 11 Oct 2017 19:22:00 +0530</pubDate>
       
-      <guid>https://vedang.me/techlog/2017-10-11-mbsync-channel-is-locked/</guid>
+      <guid>https://vedang.me/blog/mbsync-channel-is-locked/</guid>
       <description>You may come across the following error when running mbsync :
 Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp;lt;channel-name&amp;gt;-local:&amp;lt;folder&amp;gt; is locked This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!</description>
     </item>
