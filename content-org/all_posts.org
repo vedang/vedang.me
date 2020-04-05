@@ -69,6 +69,60 @@ email me at vedang at helpshift dot com.
 #+begin_export html
 <script src="hs_corona.js"></script>
 #+end_export
+* About Me
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: about
+  :END:
+** DONE The main About Me page
+   CLOSED: [2017-08-19 Sat 13:30]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: index
+   :EXPORT_TITLE: About Me
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
+   :END:
+{{< figure src="/images/vedang-2018.jpg" >}}
+
+Hi! I'm Vedang. I live in Pune, India and work at [[https://helpshift.com][Helpshift]]. Now a
+days, I'm an Engineering Manager working on improving processes and
+workflows within the Helpshift Core backend team with the help of my
+team mates. Previously, I was an individual contributor and helped
+design and write some of the code that runs Helpshift.
+
+I'm passionate about programming, and some of my work can be found on
+[[https://github.com/vedang][GitHub]]. I use Emacs as my editor-for-everything, and blog about it
+from time to time.
+
+I love talking about technology. If you're talking about distributed
+systems, programming languages, performance, data structures, Emacs,
+Git, do call me over!
+
+I love reading books, and I write book reviews once in a while. I also
+have strong personal [[https://vedang.me/categories/mythology/][opinions on mythology]] and culture, and I use this
+space to try and convert random strangers to my point of view.
+
+If you want to get in touch, please send me a message at
+vedang.manerikar on Google's email service.
+
+*** Presentations & Talks
+
+- (2015) [[https://www.youtube.com/watch?v=k10_trKtKNk][Dead simple Scalability patterns]]
+
+*** Interviews
+
+- (2017) [[https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188][Imagine working in Engineering at Helpshift]]
+- (2014) [[https://yourstory.com/2014/08/vedang-manerikar-helpshift/][Scaling systems at Helpshift]]
+
+*** Open-source Contributions
+
+Some useful things on my Github account:
+
+- [[https://github.com/vedang/csaoid][cheatsheets]] : Some common commands / ways to do things. The Git one is especially useful.
+- [[https://github.com/helpshift/emacs-up][emacs-up]] : A bare-bones config for Clojure programming in Emacs.
+- [[https://github.com/vedang/clj_fdb][clj-fdb]] : An early version Clojure wrapper on top of the Java API for FoundationDB.
+- [[https://github.com/vedang/el-spice][el-spice]] : A minor mode to improve the coding experience of writing Emacs Lisp.
+- [[https://github.com/vedang/org-mode-crate][org-mode-crate]] : Super powered configuration for org-mode. Everything I use in my org flow.
+- [[https://github.com/vedang/nginx-nonewlines][nginx-nonewlines]] : A Nginx module to strip out all whitespace. (This was my Helpshift Interview task)
+
 * Programming                                                  :@programming:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
