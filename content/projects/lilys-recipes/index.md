@@ -1,16 +1,21 @@
----
-title: "Lily's Recipes"
-date: 2017-08-19T13:30:59+05:30
-featured_image: "/images/roastalmonds.jpg"
-description: "A Grandmother Gives Her Grandson A Lifetime's Worth Of Recipes."
----
++++
+title = "Lily's Recipes"
+author = ["Vedang Manerikar"]
+description = "A Grandmother Gives Her Grandson A Lifetime's Worth Of Recipes."
+date = 2020-04-05T19:03:00+05:30
+aliases = ["/recipes/"]
+lastmod = 2020-04-05T19:12:27+05:30
+draft = false
+creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+featured_image = "projects/lilys-recipes/roastalmonds.jpg"
++++
 
 Lily is a lifelong cooking enthusiast. She collected, cooked,
 commented on, and critiqued thousands of recipes over the years - and
 she did it before the age of the telephone (let alone the TV, the
 computer or the internet).
 
-{{< figure src="/images/ajji.jpg" caption="My Ajji - Lila Manerikar :)" >}}
+{{< figure src="ajji.jpg" caption="My Ajji - Lila Manerikar :)" >}}
 
 The photo you see here is my 96 year old ajji (grandmother) Lila
 Manerikar - lovingly referred to as Lily by her numerous
@@ -19,10 +24,10 @@ grandchildren.
 I moved out of my parents' home a year and a half ago, and learnt two
 things quickly:
 
-1. I was an ungrateful son who never truly appreciated the work that
-   goes into setting a dinner table everyday.
-2. I liked cooking. I liked the ritual of it, I loved the flavours,
-   and it helped me relax.
+1.  I was an ungrateful son who never truly appreciated the work that
+    goes into setting a dinner table everyday.
+2.  I liked cooking. I liked the ritual of it, I loved the flavours,
+    and it helped me relax.
 
 My grandmother - and my parents - were pleasantly surprised to hear
 about my newfound love of cooking. And then Lily said, "Are you
@@ -38,14 +43,14 @@ when I describe my successes and missteps to her.
 
 Sadly, we've lost all but one box of Lily's recipes over the years.
 Some to poor storage and some to bookworms. As she handed over this
-final box of recipes to me, she said,
+final box of recipes to me, she said:
 
 > "I used to collect these recipes obsessively when I was young. You
-> kids have it easy: look at your phone and it will tell you how to
-> cook something, how it should look, what it should smell like. In my
-> time, gathering this knowledge was harder. These scraps may or may
-> not be useful to you, what with your fancy phone. If you find
-> something useful, great. Otherwise, throw them away."
+> kids have it easy: look at your phone and it will tell you how to cook
+> something, how it should look, what it should smell like. In my time,
+> gathering this knowledge was harder. These scraps may or may not be
+> useful to you, what with your fancy phone. If you find something
+> useful, great. Otherwise, throw them away."
 
 That last bit about "throwing them away" comes from a sense of drama
 cultivated by watching a healthy dose of daily soaps and cooking shows
