@@ -2,13 +2,13 @@
 title = "About Me"
 author = ["Vedang Manerikar"]
 date = 2017-08-19T13:30:00+05:30
-lastmod = 2020-03-27T17:11:49+05:30
+lastmod = 2020-04-05T22:22:57+05:30
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
 featured_image = "/images/clevinger.jpg"
 +++
 
-{{< figure src="/images/vedang-2018.jpg" >}}
+{{< figure src="vedang-2018.jpg" >}}
 
 Hi! I'm Vedang. I live in Pune, India and work at [Helpshift](https://helpshift.com). Now a
 days, I'm an Engineering Manager working on improving processes and

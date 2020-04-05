@@ -155,7 +155,7 @@ health as often as I can!
    :EXPORT_TITLE: About Me
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
    :END:
-{{< figure src="/images/vedang-2018.jpg" >}}
+{{< figure src="vedang-2018.jpg" >}}
 
 Hi! I'm Vedang. I live in Pune, India and work at [[https://helpshift.com][Helpshift]]. Now a
 days, I'm an Engineering Manager working on improving processes and
