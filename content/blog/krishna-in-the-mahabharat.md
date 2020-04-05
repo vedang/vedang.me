@@ -1,10 +1,18 @@
----
-title: "Krishna in the Mahabharata"
-date: 2012-09-21T22:33:33+05:30
-tags:
-- mythology
----
-_Cross-posted from my answer to the question: [Why is Lord Krishna called the master of finesse in the Mahabharat?](http://www.quora.com/Mahabharata/Why-is-Lord-Krishna-called-the-master-of-finesse-in-the-Mahabharat/answer/Vedang-Manerikar) on [Quora](http://quora.com)_
++++
+title = "Krishna in the Mahabharat"
+author = ["Vedang Manerikar"]
+date = 2012-09-20T20:18:00+05:30
+aliases = ["/mahabharat/2012-09-21-krishna-in-the-mahabharata/"]
+lastmod = 2020-04-05T20:26:08+05:30
+tags = ["pandavas", "krishna"]
+categories = ["mahabharat"]
+draft = false
+creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+toc = true
++++
+
+_Cross-posted from my answer to the question: [Why is Lord Krishna
+called the master of finesse in the Mahabharat?](http://www.quora.com/Mahabharata/Why-is-Lord-Krishna-called-the-master-of-finesse-in-the-Mahabharat/answer/Vedang-Manerikar) on [Quora](http://quora.com)_
 
 I will attempt to answer this, but my answer is going to be
 controversial. Please keep in mind that it is not my intention to
@@ -18,7 +26,8 @@ the Mahabharat is not a religious text revered by millions. Instead,
 let us analyze the Mahabharat as if it is a (ridiculously good)
 fantasy story, and Krishna is a central character in this story.
 
-### Introduction and back-story:
+
+## Introduction and back-story {#introduction-and-back-story}
 
 Krishna is introduced to us early on, as a cousin of the Pandavas. He
 is accomplished, wise, and powerful in his own right (unlike Pandavas
@@ -44,7 +53,8 @@ Duryodhana, who is Dhritarashtra's son. Dhritarashtra is politically
 aligned with Jarasandh. Thus, Pandavas are going against Jarasandh
 himself. Krishna aligns himself with the Pandavas.
 
-### Jarasandh vadh and the Rajsuya yagna:
+
+## Jarasandh vadh and the Rajsuya yagna {#jarasandh-vadh-and-the-rajsuya-yagna}
 
 I'll skip some details here, because I don't intend to reproduce the
 Mahabharat entirely. Suffice to say that Krishna and Arjuna are the
@@ -80,7 +90,8 @@ Balaram teaches the mace to Bhima and Duryodhana, and he is impressed
 with Duryodhana. Duryodhan will not be so easy to eliminate. We will
 deal with him later.
 
-### Subhadhra and Samba:
+
+## Subhadhra and Samba {#subhadhra-and-samba}
 
 Balaram promises Subhadhra to Duryodhana in marriage. If this comes to
 pass, the two families will be much too closely linked for Krishna's
@@ -99,7 +110,8 @@ in battle, and brings Samba and Laxamani back to Dwarka. The families
 are intertwined. Krishna will face a much tougher task getting support
 from the Yadavas against Duryodhana now.
 
-### Preparations for the Kurukshetra war:
+
+## Preparations for the Kurukshetra war {#preparations-for-the-kurukshetra-war}
 
 Krishna does not have an option. He is over-ruled by his council, and
 pledges his army to Duryodhana. However he says that he will fight on
@@ -115,7 +127,7 @@ Duryodhana's side, it is game over for the Pandavas. So Krishna
 convinces Balaram that this war will be full of adharma (he is not
 wrong on that count). A man of Balaram's accomplishments should not
 taint his soul by participating in such a war. He should instead go on
-a pilgrimage to the holy sites in India. _This_ is Krishna's greatest
+a pilgrimage to the holy sites in India. <span class="underline">This</span> is Krishna's greatest
 political maneuver in the Mahabharat. With Balaram gone, Kritivarma
 becomes the Senapati of the Yadava army. It is a testament to the
 quality of Yadava soldiers that Kritivarma and Satyaki (who is the
@@ -137,33 +149,36 @@ Kunti to Karna, to convince Karna to switch, and when that fails, to
 beg for the lives of her sons. Thus, Krishna will ensure that 4 sons
 of Kunti are safe from the wrath of Karna.
 
-### Machinations in the War:
+
+## Machinations in the War {#machinations-in-the-war}
 
 There are many, many things that Krishna does on the battlefield, but
 most people are already aware of them. Quickly then, the highlights:
 
-   *  Convince Arjuna to fight.
-   *  Convince the Pandavas that Bhishma is slaughtering their armies and needs to fall
-   *  Protect Arjuna from himself (the Abhimanyu/Jayadrath incident)
-   *  Formulate and execute the plan to slay Drona (_naro va kunjaro va_)
-   *  Tell the Pandavas how to counter Ashwatthama's multiple celestial weapons
-   *  Stop the Pandavas from infighting on multiple occasions
-       * When Dhrishtadyumna chops off Drona's head, Arjuna sees red
-       * When Karna defeats and humiliates Yudhisthir, Yudhisthir runs
-         back to his tent. He blames Arjuna of incompetence in killing
-         Karna with such vigor, that Arjuna pulls out Gandiva to kill
-         Yudhishthir himself. Krishna cools things down.
-   *  Use Ghatotkach as a pawn to rid Karna of his celestial Shakti.
-       * When Ghatotkach dies, the Pandava camp is in mourning. Not
-         Krishna though. He dances in joy, claiming that "finally, Karna
-         is surmountable"
-   *  Convince Arjuna to kill Karna when he is unarmed and on foot
-   *  Gesture Bhima to hit Duryodhana in the thigh, blatantly against the
-      rules of mace battle.
-   *  Stop Balaram from slaughtering Bhima on the spot for cheating.
-       * Balaram is back from his pilgrimage in time to watch the battle
-         between Duryodhana and Bhima. Krishna has to hold him in a bear
-         hug when Bhima breaks Duryodhana's thigh.
+-   Convince Arjuna to fight.
+-   Convince the Pandavas that Bhishma is slaughtering their armies and
+    needs to fall
+-   Protect Arjuna from himself (the Abhimanyu/Jayadrath incident)
+-   Formulate and execute the plan to slay Drona (\_naro va kunjaro va\_)
+-   Tell the Pandavas how to counter Ashwatthama's multiple celestial
+    weapons
+-   Stop the Pandavas from infighting on multiple occasions
+    -   When Dhrishtadyumna chops off Drona's head, Arjuna sees red.
+    -   When Karna defeats and humiliates Yudhisthir, Yudhisthir runs back
+        to his tent. He blames Arjuna of incompetence in killing Karna
+        with such vigor, that Arjuna pulls out Gandiva to kill Yudhishthir
+        himself. Krishna cools things down.
+-   Use Ghatotkach as a pawn to rid Karna of his celestial Shakti.
+    -   When Ghatotkach dies, the Pandava camp is in mourning. Not Krishna
+        though. He dances in joy, claiming that "finally, Karna is
+        surmountable"
+-   Convince Arjuna to kill Karna when he is unarmed and on foot
+-   Gesture Bhima to hit Duryodhana in the thigh, blatantly against the
+    rules of mace battle.
+-   Stop Balaram from slaughtering Bhima on the spot for cheating.
+    -   Balaram is back from his pilgrimage in time to watch the battle
+        between Duryodhana and Bhima. Krishna has to hold him in a bear
+        hug when Bhima breaks Duryodhana's thigh.
 
 In summary, the Pandavas are bumbling fools who do not stand a
 snowball's chance in hell without Krishna to guide them on every step.
