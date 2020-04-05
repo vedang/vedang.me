@@ -7,7 +7,6 @@ theme = "gohugo-theme-ananke"
 
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
-#SectionPagesMenu = "main"
 Paginate = 6
 googleAnalytics = "UA-2086352-6"
 enableRobotsTXT = true
@@ -42,7 +41,6 @@ enableEmoji = true
   #---------------------------
   # My Changes
   vedang_main_section = "blog"
-  vedang_section2 = "weblog"
   # --------------------------------------------------
 
 # Menu Configuration
@@ -60,18 +58,6 @@ enableEmoji = true
   url = "/projects"
 [[menu.main]]
   weight = 3
-  identifier = "mahabharat"
-  name = "Mahabharat"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-podcast\"></i>"
-  url = "/mahabharat"
-[[menu.main]]
-  weight = 4
-  identifier = "recipes"
-  name = "Lily's Recipes"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-cutlery\"></i>"
-  url = "/recipes"
-[[menu.main]]
-  weight = 5
   identifier = "about"
   name = "About Me"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
