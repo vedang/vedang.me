@@ -2,11 +2,12 @@
 title = "Composability and Compojure"
 author = ["Vedang Manerikar"]
 date = 2012-02-23T23:58:00+05:30
-lastmod = 2020-03-26T21:07:13+05:30
+aliases = ["/techlog/2012-02-23-composability-and-compojure/"]
+lastmod = 2020-04-05T18:41:16+05:30
 tags = ["ring", "compojure", "clojure"]
 categories = ["programming"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
 +++
 
 _Caveat_: This post needs some rudimentary knowledge of Compojure.

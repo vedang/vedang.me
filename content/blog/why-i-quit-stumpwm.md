@@ -2,11 +2,12 @@
 title = "Why I Quit StumpWM"
 author = ["Vedang Manerikar"]
 date = 2011-08-04T13:41:00+05:30
-lastmod = 2020-03-26T18:52:31+05:30
+aliases = ["/techlog/2011-08-04-why-i-quit-stumpwm/"]
+lastmod = 2020-04-05T18:38:42+05:30
 tags = ["window-managers", "stumpwm"]
 categories = ["tools"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
 toc = true
 +++
 

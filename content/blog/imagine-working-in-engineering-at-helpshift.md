@@ -2,11 +2,12 @@
 title = "Imagine Working in Engineering at Helpshift"
 author = ["Vedang Manerikar"]
 date = 2017-09-07T07:27:00+05:30
-lastmod = 2020-03-26T07:30:32+05:30
+aliases = ["/weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/"]
+lastmod = 2020-04-05T18:49:44+05:30
 tags = ["culture", "helpshift"]
 categories = ["interviews"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
 toc = true
 +++
 

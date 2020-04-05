@@ -18,6 +18,7 @@ This is a dummy container for the listings page for all blog posts. Actual posts
    :EXPORT_FILE_NAME: _index
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
    :EXPORT_TITLE: Writing
+   :EXPORT_HUGO_ALIASES: /weblog/ /techlog/
    :END:
 #+begin_description
 (Observations, Tech stuff, Learning, Stories)
@@ -159,6 +160,7 @@ Some useful things on my Github account:
    :EXPORT_FILE_NAME: index
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :featured_image "blog/simulating-the-passport-seva-kendra/psk-renderkid.jpg"
    :EXPORT_SUBTITLE: "Exploring concurrency primitives in Clojure"
+   :EXPORT_HUGO_ALIASES: /techlog/2018-12-15-simulating-the-passport-seva-kendra/
    :END:
 /Cross-posted from my post on the [[https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c][Helpshift Engineering Blog]]/
 
@@ -996,6 +998,7 @@ at the PSK.
    CLOSED: [2012-02-23 Thu 23:58]
    :PROPERTIES:
    :EXPORT_FILE_NAME: composability-and-compojure
+   :EXPORT_HUGO_ALIASES: /techlog/2012-02-23-composability-and-compojure/
    :END:
 /Caveat/: This post needs some rudimentary knowledge of Compojure.
 Compojure is a web framework for Clojure, and if you don't understand
@@ -1151,6 +1154,7 @@ coding style. Never do this in actual code.
    CLOSED: [2011-08-07 Sun 13:21]
    :PROPERTIES:
    :EXPORT_FILE_NAME: switch-statements-in-python
+   :EXPORT_HUGO_ALIASES: /techlog/2011-08-07-switch-statements-in-python/
    :END:
 Today I went through some old Python code and noticed this pattern
 through out:
@@ -1317,6 +1321,7 @@ test/profile _before_ you optimize!
    :PROPERTIES:
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
    :EXPORT_FILE_NAME: problems-in-system76-oryx-pro
+   :EXPORT_HUGO_ALIASES: /weblog/2019-05-31-problems-in-system76-oryx-pro/
    :END:
 *** *Important Note*
   I'm enjoying using a Linux laptop after years of development on the
@@ -1423,6 +1428,7 @@ test/profile _before_ you optimize!
    :PROPERTIES:
    :EXPORT_FILE_NAME: why-i-quit-stumpwm
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
+   :EXPORT_HUGO_ALIASES: /techlog/2011-08-04-why-i-quit-stumpwm/
    :END:
 After using [StumpWM](http://www.nongnu.org/stumpwm/) for nearly a
 year, I'm finally quitting and moving back to Gnome. I came to love
@@ -1517,6 +1523,7 @@ comments.
    :PROPERTIES:
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
    :EXPORT_FILE_NAME: writing-a-good-status-update
+   :EXPORT_HUGO_ALIASES: /techlog/2019-08-06-writing-a-good-status-update/
    :END:
 We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it's useful enough to publish publicly. Here goes:
 
@@ -1662,6 +1669,7 @@ We share written status updates within the team on a weekly basis (every Monday)
    CLOSED: [2017-10-11 Wed 19:22]
    :PROPERTIES:
    :EXPORT_FILE_NAME: mbsync-channel-is-locked
+   :EXPORT_HUGO_ALIASES: /techlog/2017-10-11-mbsync-channel-is-locked/
    :END:
 You may come across the following error when running ~mbsync~ :
 
@@ -1796,6 +1804,7 @@ convinced me that the book was worth purchasing. Here are my notes:
    :PROPERTIES:
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
    :EXPORT_FILE_NAME: love-letter-to-clojure
+   :EXPORT_HUGO_ALIASES: /weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/
    :END:
 I had no idea that /Gene Kim/, author of three books that have
 garnered wide-spread public acclaim, was doing Clojure programming.
@@ -1905,6 +1914,7 @@ The blog-post covers the following areas:
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :featured_image "blog/gojek-10x-engineering/gofigure6.jpg"
    :EXPORT_HUGO_BUNDLE: gojek-10x-engineering
    :EXPORT_FILE_NAME: index
+   :EXPORT_HUGO_ALIASES: /weblog/2019-07-20-gojek-10x-engineering/
    :END:
 *** Summary
     - Engineering quality is paramount. Focus on [[https://dave.cheney.net/2019/07/09/clear-is-better-than-clever][clean and clear code]].
@@ -2295,6 +2305,7 @@ The blog-post covers the following areas:
    :PROPERTIES:
    :EXPORT_HUGO_BUNDLE: reboot
    :EXPORT_FILE_NAME: index
+   :EXPORT_HUGO_ALIASES: /weblog/2011-07-30-reboot/
    :END:
 Once upon a time I had a blog. Then one day I ran out of motivation,
 inclination, desire, drive, whatnot to post to that blog. I never
@@ -2317,6 +2328,7 @@ not to bore you. Or leave. I don't give a shit.
    :PROPERTIES:
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
    :EXPORT_FILE_NAME: imagine-working-in-engineering-at-helpshift
+   :EXPORT_HUGO_ALIASES: /weblog/2017-09-05-imagine-working-in-engineering-at-helpshift/
    :END:
 /Cross-posted from my interview published on [[https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188][Helpshift's Medium blog]]/
 

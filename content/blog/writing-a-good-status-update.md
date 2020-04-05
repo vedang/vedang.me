@@ -2,11 +2,12 @@
 title = "Writing a good status update"
 author = ["Vedang Manerikar"]
 date = 2019-08-06T07:49:00+05:30
-lastmod = 2020-03-26T08:05:08+05:30
+aliases = ["/techlog/2019-08-06-writing-a-good-status-update/"]
+lastmod = 2020-04-05T18:37:39+05:30
 tags = ["communication", "project-management", "engineering-management"]
 categories = ["organization"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
 toc = true
 +++
 
