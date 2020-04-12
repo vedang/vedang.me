@@ -1760,7 +1760,7 @@ of ~mbsync~ and restart the process and you should be fine!
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
-** DONE Lazy Weekend Viewing: Preventing the collapse of civilization
+** DONE Lazy Weekend Viewing: Preventing the collapse of civilization :technology:history:@programming:
    CLOSED: [2020-04-12 Sun 18:20]
    :PROPERTIES:
    :EXPORT_FILE_NAME: preventing-the-collapse-of-civilization
