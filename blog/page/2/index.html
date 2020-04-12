@@ -155,6 +155,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog</span>
     <h1 class="f3 near-black">
+      <a href="https://vedang.me/blog/mbsync-channel-is-locked/" class="link black dim">
+        Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      You may come across the following error when running mbsync :
+Error: channel :&lt;channel-name&gt;-remote:&lt;folder&gt;-:&lt;channel-name&gt;-local:&lt;folder&gt; is locked This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
       <a href="https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/" class="link black dim">
         Imagine Working in Engineering at Helpshift
       </a>
@@ -242,34 +258,6 @@ what that means, then you should probably head over to the
 <a href="https://github.com/weavejester/compojure/wiki">Compojure docs</a>.</p>
 <p>Compojure exposes us to a beautifully <span class="underline">composable</span> abstraction, and
 this post is an attempt to show why that is a great thing.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
-    <h1 class="f3 near-black">
-      <a href="https://vedang.me/blog/switch-statements-in-python/" class="link black dim">
-        Switch Statements in Python
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Today I went through some old Python code and noticed this pattern
-through out:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response, data <span style="color:#f92672">=</span> somefunc()
-<span style="color:#66d9ef">if</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;this&#34;</span>:
-    do_this_with(data)
-<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;that&#34;</span>:
-    do_that_with(data)
-<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;huh&#34;</span>:
-    duh(data)
-    ;; lots more elifs<span style="color:#f92672">.</span>
-<span style="color:#66d9ef">else</span>:
-    prevent_horrible_crash(data)
-</code></pre></div><p>This code should ideally have been a switch-case, but Python does not
-support a <code>switch</code> statement.</p>
     </div>
   </div>
 </div>

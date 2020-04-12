@@ -155,6 +155,34 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog</span>
     <h1 class="f3 near-black">
+      <a href="https://vedang.me/blog/switch-statements-in-python/" class="link black dim">
+        Switch Statements in Python
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Today I went through some old Python code and noticed this pattern
+through out:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response, data <span style="color:#f92672">=</span> somefunc()
+<span style="color:#66d9ef">if</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;this&#34;</span>:
+    do_this_with(data)
+<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;that&#34;</span>:
+    do_that_with(data)
+<span style="color:#66d9ef">elif</span> response <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;huh&#34;</span>:
+    duh(data)
+    ;; lots more elifs<span style="color:#f92672">.</span>
+<span style="color:#66d9ef">else</span>:
+    prevent_horrible_crash(data)
+</code></pre></div><p>This code should ideally have been a switch-case, but Python does not
+support a <code>switch</code> statement.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
       <a href="https://vedang.me/blog/why-i-quit-stumpwm/" class="link black dim">
         Why I Quit StumpWM
       </a>

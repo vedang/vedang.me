@@ -3,6 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vedang.me/categories/</loc>
+    <lastmod>2020-04-12T18:46:34+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/blog/preventing-the-collapse-of-civilization/</loc>
+    <lastmod>2020-04-12T18:46:34+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/categories/notes/</loc>
+    <lastmod>2020-04-12T18:46:34+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://vedang.me/projects/lilys-recipes/</loc>
     <lastmod>2020-04-05T19:12:27+05:30</lastmod>
     <changefreq>monthly</changefreq>
@@ -52,13 +73,6 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/</loc>
-    <lastmod>2020-04-05T22:07:35+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://vedang.me/tags/clojure/</loc>
     <lastmod>2020-04-05T18:41:16+05:30</lastmod>
     <changefreq>monthly</changefreq>
@@ -68,13 +82,6 @@
   <url>
     <loc>https://vedang.me/blog/love-letter-to-clojure/</loc>
     <lastmod>2020-04-05T18:33:11+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/categories/notes/</loc>
-    <lastmod>2020-04-05T18:48:41+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
