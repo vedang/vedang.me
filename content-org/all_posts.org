@@ -1355,6 +1355,15 @@ test/profile _before_ you optimize!
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
+** DRAFT Creating blog-posts from (org) Beamer presentations :orgmode:beamer:presentations:
+- Handout mode for generating PDF
+- Converting the PDF pages to png images with =pdftoppm=
+  + pdftoppm -png org_agenda.pdf png_images/org_agenda
+- Creating a post with the slide_png as the image and the
+  slide_speaker_notes as the content. No other way to do this except
+  manually right now. I can write emacs-lisp code for this, using the
+  export-file-name to identify images to use and speaker notes to
+  copy.
 ** DRAFT Experience Report: Using Basecamp as a Remote team :communication:collaboration:teams:project_management:
    :PROPERTIES:
    :EXPORT_FILE_NAME: exp-report-basecamp
