@@ -2,7 +2,7 @@
 title = "Lazy Weekend Viewing: Preventing the collapse of civilization"
 author = ["Vedang Manerikar"]
 date = 2020-04-12T18:20:00+05:30
-lastmod = 2020-04-12T20:23:47+05:30
+lastmod = 2020-04-19T13:42:30+05:30
 tags = ["technology", "history"]
 categories = ["notes", "programming"]
 draft = false
@@ -128,3 +128,11 @@ recommend you make the time to see it. My notes below:
     -   Good information drowned by noise.
         -   The harder it is to understand something, the more noise / bad
             answers around it.
+
+
+## Resources: {#resources}
+
+-   Videos recommended by Jonathan Blow:
+    -   Casey Muratori: [The Thirty Million Line Problem](https://www.youtube.com/watch?v=kZRE7HIO3vk)
+    -   Samo Burja: [Civilization: Institutions, Knowledge and the Future](https://www.youtube.com/watch?v=OiNmTVThNEY)
+    -   Eric Cline: [1177 BC: The Year Civilization Collapsed](https://www.youtube.com/watch?v=hyry8mgXiTk)

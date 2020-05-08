@@ -3,7 +3,7 @@ title = "Lazy Weekend Reading: A love letter to Clojure"
 author = ["Vedang Manerikar"]
 date = 2019-10-13T23:02:00+05:30
 aliases = ["/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/"]
-lastmod = 2020-04-05T18:33:11+05:30
+lastmod = 2020-04-19T13:43:05+05:30
 tags = ["clojure"]
 categories = ["notes"]
 draft = false
@@ -98,7 +98,7 @@ The blog-post covers the following areas:
     focus on the business problem they want to solve.
 
 
-## Links to other superb resources for more reading {#links-to-other-superb-resources-for-more-reading}
+## Resources: {#resources}
 
 -   Some great blog-posts:
     -   Bryan Cantrell: [A love letter to Rust](https://twitter.com/bcantrill/status/1042180114199375872) (which inspired this post)

@@ -1874,6 +1874,11 @@ recommend you make the time to see it. My notes below:
   + Good information drowned by noise.
     - The harder it is to understand something, the more noise / bad
       answers around it.
+*** Resources:
+- Videos recommended by Jonathan Blow:
+  + Casey Muratori: [[https://www.youtube.com/watch?v=kZRE7HIO3vk][The Thirty Million Line Problem]]
+  + Samo Burja: [[https://www.youtube.com/watch?v=OiNmTVThNEY][Civilization: Institutions, Knowledge and the Future]]
+  + Eric Cline: [[https://www.youtube.com/watch?v=hyry8mgXiTk][1177 BC: The Year Civilization Collapsed]]
 ** DRAFT Lazy Weekend Reading: What is User Story Mapping? :project_management:
    :PROPERTIES:
    :EXPORT_FILE_NAME: user-story-mapping
@@ -2067,7 +2072,7 @@ The blog-post covers the following areas:
     still ahead of us. They involve providing platforms to developers
     that hide the complexity of these things and allow the developer to
     focus on the business problem they want to solve.
-*** Links to other superb resources for more reading
+*** Resources:
   - Some great blog-posts:
     + Bryan Cantrell: [[https://twitter.com/bcantrill/status/1042180114199375872][A love letter to Rust]] (which inspired this post)
     + John Carmack: [[http://www.gamasutra.com/view/news/169296/Indepth%5C_Functional%5C_programming%5C_in%5C_C.php][The power of functional programming concepts in C++]]
