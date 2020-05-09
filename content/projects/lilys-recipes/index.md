@@ -4,9 +4,9 @@ author = ["Vedang Manerikar"]
 description = "A Grandmother Gives Her Grandson A Lifetime's Worth Of Recipes."
 date = 2020-04-05T19:03:00+05:30
 aliases = ["/recipes/"]
-lastmod = 2020-04-05T19:12:27+05:30
+lastmod = 2020-05-09T20:50:19+05:30
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 26.3 (Org mode 9.3.6 + ox-hugo)"
 featured_image = "projects/lilys-recipes/roastalmonds.jpg"
 +++
 
@@ -15,7 +15,7 @@ commented on, and critiqued thousands of recipes over the years - and
 she did it before the age of the telephone (let alone the TV, the
 computer or the internet).
 
-{{< figure src="ajji.jpg" caption="My Ajji - Lila Manerikar :)" >}}
+{{< figure src="ajji.jpg" caption="Figure 1: My Ajji - Lila Manerikar :)" >}}
 
 The photo you see here is my 96 year old ajji (grandmother) Lila
 Manerikar - lovingly referred to as Lily by her numerous

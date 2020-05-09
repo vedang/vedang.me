@@ -88,7 +88,8 @@ commented on, and critiqued thousands of recipes over the years - and
 she did it before the age of the telephone (let alone the TV, the
 computer or the internet).
 
-{{< figure src="ajji.jpg" caption="My Ajji - Lila Manerikar :)" >}}
+#+caption: My Ajji - Lila Manerikar :)
+file:ajji.jpg
 
 The photo you see here is my 96 year old ajji (grandmother) Lila
 Manerikar - lovingly referred to as Lily by her numerous
@@ -155,7 +156,7 @@ health as often as I can!
    :EXPORT_TITLE: About Me
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
    :END:
-{{< figure src="vedang-2018.jpg" >}}
+file:vedang-2018.jpg
 
 Hi! I'm Vedang. I live in Pune, India and work at [[https://helpshift.com][Helpshift]]. Now a
 days, I'm an Engineering Manager working on improving processes and
@@ -303,7 +304,8 @@ at the PSK.
       post, I assume that P has the highest priority, followed by S, T
       and N.
 
-    {{< figure src="psk-renderkid.jpg" alt="The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)" >}}
+    #+caption: The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)
+    file:psk-renderkid.jpg
 
     In the rest of this post, we'll build this system as described
     above, and see if we can fix the flaw in it. We will use Clojure to
@@ -866,7 +868,8 @@ at the PSK.
     board. We're running much fewer counters than the actual PSK. This
     is in order to make the display board consumable.
 
-    {{< figure src="psk-run-1.gif" alt="A normal day at the Passport Seva Kendra" >}}
+    #+caption: A normal day at the Passport Seva Kendra
+    file:psk-run-1.gif
 
     Things look good in this loop, the board looks predictable. The
     problem occurs when someone gets unlucky at one stage, and spends
@@ -894,7 +897,8 @@ at the PSK.
 
     Here is what this looks like:
 
-    {{< figure src="psk-run-2.gif" alt="N-3 is not having a good day." >}}
+    #+caption: N-3 is not having a good day.
+    file:psk-run-2.gif
 
     As you can see, there are a number of people ahead of N-3 by the
     time he's done with stage 0. N-40s are being processed in stage 0 at
@@ -2514,7 +2518,8 @@ inclination, desire, drive, whatnot to post to that blog. I never
 really ran out of content though. At least, I think not.
 
 #+hugo: more
-{{< figure src="garfield.gif" alt="This image does not belong to me. It is (probably) copyright Jim Davis or some slimeball corporation. I am not using this image for profit, so please do not sue me." >}}
+#+caption: This image does not belong to me. It is (probably) copyright Jim Davis or some slimeball corporation. I am not using this image for profit, so please do not sue me.
+file:garfield.gif
 
 I worried that I'd drown this world in my drivel, but lately I've come
 to realise that no one gives a shit. So I'm going to write for the

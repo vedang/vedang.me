@@ -3,11 +3,11 @@ title = "Simulating the Passport Seva Kendra using Clojure"
 author = ["Vedang Manerikar"]
 date = 2018-12-15T19:56:00+05:30
 aliases = ["/techlog/2018-12-15-simulating-the-passport-seva-kendra/"]
-lastmod = 2020-04-05T18:39:21+05:30
+lastmod = 2020-05-09T20:52:11+05:30
 tags = ["concurrency", "clojure"]
 categories = ["programming"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 26.3 (Org mode 9.3.6 + ox-hugo)"
 toc = true
 featured_image = "blog/simulating-the-passport-seva-kendra/psk-renderkid.jpg"
 +++
@@ -81,7 +81,7 @@ Let me describe the process to you first.
     post, I assume that P has the highest priority, followed by S, T
     and N.
 
-{{< figure src="psk-renderkid.jpg" alt="The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)" >}}
+{{< figure src="psk-renderkid.jpg" caption="Figure 1: The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)" >}}
 
 In the rest of this post, we'll build this system as described
 above, and see if we can fix the flaw in it. We will use Clojure to
@@ -671,7 +671,7 @@ Let's run this system! We're setting up a small loop to display the
 board. We're running much fewer counters than the actual PSK. This
 is in order to make the display board consumable.
 
-{{< figure src="psk-run-1.gif" alt="A normal day at the Passport Seva Kendra" >}}
+{{< figure src="psk-run-1.gif" caption="Figure 2: A normal day at the Passport Seva Kendra" >}}
 
 Things look good in this loop, the board looks predictable. The
 problem occurs when someone gets unlucky at one stage, and spends
@@ -699,7 +699,7 @@ counters processing earlier stages (which matches with reality)
 
 Here is what this looks like:
 
-{{< figure src="psk-run-2.gif" alt="N-3 is not having a good day." >}}
+{{< figure src="psk-run-2.gif" caption="Figure 3: N-3 is not having a good day." >}}
 
 As you can see, there are a number of people ahead of N-3 by the
 time he's done with stage 0. N-40s are being processed in stage 0 at
