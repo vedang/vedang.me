@@ -1,0 +1,66 @@
+-*- mode: org; -*-
+
+* Installing Emacs from source
+
+** Ubuntu 12.04
+
+$ git clone git://git.savannah.gnu.org/emacs.git
+
+$ sudo apt-get install libxaw7-dev libjpeg-dev libgif-dev libxpm-dev
+libpng12-dev libtiff4-dev libncurses5-dev libtinfo-dev libglib2.0-dev
+intl-fonts libgtk2.0-dev libxaw3dxft6 librsvg2-dev imagemagick libdbus-1-dev
+libgconf2-dev libm17n-dev libotf-dev graphicsmagick-libmagick-dev-compat
+
+# This second step can probably be avoided/replaced with
+# $ sudo build-dep emacs
+# Need to try that out one of these days
+
+$ make distclean
+$ ./autogen.sh
+$ ./configure --prefix=/opt/emacs/ --with-xft --with-x-toolkit
+$ make bootstrap
+$ sudo make install
+
+** Mac OS X 10.7
+
+$ brew install emacs --HEAD --cocoa --use-git-head
+
+$ brew linkapps
+
+# After installing from brew, head to /Library/Caches/Homebrew/emacs--git/
+# (source is downloaded here) and make tags for the source
+
+$ make tags
+
+
+* Clj -> Elisp Cheat Sheet
+** map = mapcar
+mapc is similar to mapcar, expect that it does not accumulate the results.
+mapc should be used for side-effects, where we don't care about the
+return value.
+** apply = apply
+The way to call this is:
+(apply #'equal '(:a :A))
+** keep = delq nil
+** = = equal
+** first = car
+** rest = cdr
+** Other Notes:
+The function `funcall` can be used to treat the first argument as a
+function on the rest of the arguments.
+
+Eg: (funcall #'equal :a :A) => nil
+    (funcall #'equal :a :a) => t
+
+
+* Regex replacements
+  Taken right from the Emacs Manual (I always seem to forget this).
+  http://www.gnu.org/software/emacs/manual/html_node/emacs/Regexp-Replace.html
+
+  M-x replace-regexp <RET> c[ad]+r <RET> \&-safe <RET>
+  replaces (for example) ‘cadr’ with ‘cadr-safe’ and ‘cddr’ with ‘cddr-safe’.
+
+  M-x replace-regexp <RET> \(c[ad]+r\)-safe <RET> \1 <RET>
+  ‘\d’ in newstring, where d is a digit, stands for whatever matched the dth
+  parenthesized grouping in regexp.
+  Note : The parens making groups need to be escaped.

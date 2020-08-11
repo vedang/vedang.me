@@ -1,0 +1,87 @@
+-*- mode: org; comment-column: 0; -*-
+
+# This file contains a list of shell commands that I've found handy in situations
+# I've faced over time. These are commands that _I_ have used (successfully).
+# I'm not claiming that this is the only way or even the right
+# way to handle a particular situation that you may face. YMMV.
+
+# The commands are ordered by type rather than difficulty, so you are going to
+# find intermediate and slightly advanced commands intermingled with the easy
+# ones. I mean for this document to be used as a cheat-sheet, not a tutorial,
+# but if you are confused about something shoot me a mail
+
+* Redirection
+  # How do I redirect the output of a process to a log file, and
+  # background the process at the same time?
+  - some_cmd > some_file 2>&1 &
+  # How to I capture both STDOUT as well as STDERR in a file for
+  # analysis?
+  # https://stackoverflow.com/questions/692000/how-do-i-write-stderr-to-a-file-while-using-tee-with-a-pipe/692407#692407
+  - some_cmd > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
+
+* Shell shortcuts
+  # Copy the last command on the shell
+  - !!
+  # Copy the nth command on the shell
+  - !N
+  # Copy the last argument of the previous command
+  - !$ or Esc .
+  # Just print any command in history starting with something. eg: rsync:p
+  - :p
+  # Expand the variable
+  - C-M-e or ESC C-e
+  # Search through previous command history
+  - C-r
+  # Copy all args of the last command
+  - !*
+  # Delete backwards
+  - C-w
+  # Replace old with new in the previous command
+  - ^old^new
+  # Exansions across multiple folders. eg: cp handlers/{user,site,profile}/ .
+  - {}
+  # Get specific arguments from previous commands (with pos/neg count)
+  - M-.
+  # Show matching expansions
+  - M-=
+  # Expand hostname
+  - M-@
+  # Comment out the command
+  - M-#
+
+* Info
+  # To install a downloaded info file to a dir file. Note, if dir does
+  # not exist, install-info will create it properly.
+  - install-info --info-file=sicp.info --dir-file=dir
+* Find tips and tricks
+  # How do I run a command in all directories under the current directory?
+  - find . -maxdepth 1 -type d \( ! -name . \) -print0 | xargs -0 -L1 sh -c 'echo "Working in $0" && cd "$0" && git fetch origin'
+  - find . -maxdepth 1 -type d \( ! -name . \) -exec sh -c 'echo "Working in $0" && cd "$0" && git fetch origin'
+  # How do I list all files of *.h and *.cc?
+  - find . \( -name "*.h" -o -name "*.cc" \) -print
+* Shell + Emacs
+  # How do I redirect the output of a shell command into Emacs for editing?
+  - command | (f=$(mktemp); cat > $f; emacsclient $f; rm -v $f)
+  - command | (f=$(mktemp); cat > $f; emacsclient $f; cat $f)
+  # How do I run a shell command from inside Emacs?
+  - Run M-! in Emacs
+* Process utils
+- ps -eTp
+- /usr/share/bcc/tools/cachetop
+- /usr/share/bcc/tools/filetop -s writes -p `pgrep mongod`
+- sudo perf record -F99 -p `pgrep mongod`-g -- sleep 120
+- procs as a replacement for ps
+* Sum numbers in shell
+  - <cmd> | paste -sd+ - | bc
+* SSH break bad connection
+- Press ~. on the shell
+* NTP: fix the date on your machine
+- Install =ntp= and =ntpdate=
+  + sudo apt install ntp ntpdate
+- Sync time with ntpdate
+  + sudo ntpdate 0.us.pool.ntp.org
+- If you see an error that ntp socket is already in use, turn off ntpd
+  (that is generally what is running on 123 port)
+  + ps ax | grep ntpd
+  + sudo kill <pid>
+- This should sync your time correctly with the ntp servers.
