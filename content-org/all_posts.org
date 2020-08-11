@@ -203,7 +203,16 @@ Some useful things on my Github account:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
-** DRAFT Using Constraint Propagation to solve the team Oncall rotation :constraint_propagation:clojure:
+** WORKING The Programmer's Guide to Wisdom                          :wisdom:
+   :PROPERTIES:
+   :EXPORT_HUGO_BUNDLE: programmer-guide
+   :EXPORT_FILE_NAME: index
+   :END:
+   :LOGBOOK:
+   - State "WORKING"    from              [2020-08-10 Mon 12:20]
+   :END:
+- What happens when I try to render : [[file:programmer_guide.pdf][the programmer's guide to wisdom]]?
+** WORKING Using Constraint Propagation to solve the team Oncall rotation :constraint_propagation:clojure:
    :PROPERTIES:
    :EXPORT_FILE_NAME: using-constraint-propagation-for-oncall-rotation
    :END:
@@ -1359,7 +1368,71 @@ test/profile _before_ you optimize!
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
-** DRAFT Creating blog-posts from (org) Beamer presentations :orgmode:beamer:presentations:
+** WORKING fzf: The shell finder I was desperately missing.
+   :CLOCK:
+   CLOCK: [2020-08-08 Sat 10:10]--[2020-08-08 Sat 15:57] =>  5:47
+   :END:
+   :LOGBOOK:
+   - State "WORKING"    from              [2020-08-08 Sat 10:10]
+   :END:
+- https://github.com/junegunn/fzf/
+** WORKING Hey.com with Notmuch in Emacs            :hey:notmuch:emacs:email:
+   :LOGBOOK:
+   - State "WORKING"    from "DONE"       [2020-06-19 Fri 01:24]
+   - State "DONE"       from "WORKING"    [2020-06-19 Fri 01:24]
+   - State "WORKING"    from "TODO"       [2020-06-17 Wed 21:21]
+   :END:
+   :CLOCK:
+   CLOCK: [2020-06-19 Fri 00:01]--[2020-06-19 Fri 01:24] =>  1:23
+   CLOCK: [2020-06-19 Fri 00:00]--[2020-06-19 Fri 00:01] =>  0:01
+   CLOCK: [2020-06-18 Thu 22:01]--[2020-06-19 Fri 00:00] =>  1:59
+   CLOCK: [2020-06-18 Thu 21:00]--[2020-06-18 Thu 21:30] =>  0:30
+   CLOCK: [2020-06-18 Thu 16:48]--[2020-06-18 Thu 18:58] =>  2:10
+   CLOCK: [2020-06-18 Thu 10:13]--[2020-06-18 Thu 12:13] =>  2:00
+   CLOCK: [2020-06-17 Wed 21:21]--[2020-06-17 Wed 22:05] =>  0:44
+   :END:
+
+Hey Folks!
+
+Today, I saw Jason Fried's [[https://www.youtube.com/watch?v=UCeYTysLyGI][demo of Hey.com on Youtube]] -- this is the
+cool new email service from Basecamp that everyone is talking about. I
+loved the product thinking behind Hey, especially the focus on Email
+workflows, which is something that I care about a lot! I'm eagerly
+waiting for my Hey invite, but until then, I thought "Let me show you
+how much of this can be replicated inside Notmuch with Emacs". What is
+notmuch? Notmuch is a *fast* email program that lets you manipulate
+your email anyway you want. Let's walk through and see if we can bring
+the Hey workflows to it!
+
+1. Email Grouping, Hey Style
+2. Screening people / Moving people to Spam
+3. Similarly, moving them to Feed or Papertrail
+4. Reply Later action for emails
+5. Read Together for all unread emails
+6. Filtering by person
+
+*** Why I still want to try Hey!
+
+- Renaming a subject / Saving Clips / Adding searchable sticky private notes! ::
+  Personal modification / metadata attachment per email is a *killer
+  feature*! This is completely incredible and I've wanted this for so
+  long!
+- Reference Later / Searching for attachments / Viewing attachments! ::
+  Another super idea. Specifically, I've often wanted access to
+  specific emails / attachments fast on my mobile phone. Google Inbox
+  surfaced attachments nicely, making it possible to open the
+  attachment directly without opening the email, but that was just
+  scratching the surface!
+- Removing trackers! :: Thank you :heart:
+- Merging different email threads into a single thread on my client! ::
+  Again, potentially super useful.
+
+I'm looking forward to a @hey email address!
+
+** WORKING Creating blog-posts from (org) Beamer presentations :orgmode:beamer:
+   :LOGBOOK:
+   - State "WORKING"    from              [2020-06-17 Wed 21:20]
+   :END:
 - Handout mode for generating PDF
 - Converting the PDF pages to png images with =pdftoppm=
   + pdftoppm -png org_agenda.pdf png_images/org_agenda
@@ -1368,11 +1441,12 @@ test/profile _before_ you optimize!
   manually right now. I can write emacs-lisp code for this, using the
   export-file-name to identify images to use and speaker notes to
   copy.
-** DRAFT Experience Report: Using Basecamp as a Remote team :communication:collaboration:teams:project_management:
+** WORKING Experience Report: Using Basecamp as a Remote team :communication:collaboration:teams:project_management:
    :PROPERTIES:
    :EXPORT_FILE_NAME: exp-report-basecamp
    :END:
    :LOGBOOK:
+   - State "WORKING"    from              [2020-06-17 Wed 21:20]
    - Note taken on [2020-03-26 Thu 08:04] \\
      - Started original note on <2020-03-16 Mon>
    :END:
@@ -1487,11 +1561,12 @@ test/profile _before_ you optimize!
 
   #  LocalWords:  touchpad keypress Macbook Oryx Macbook's okayish
 
-** DRAFT Setting up email in Emacs using notmuch and mbsync :mbsync:notmuch:emacs:email:
+** WORKING Setting up email in Emacs using notmuch and mbsync :mbsync:notmuch:emacs:email:
    :PROPERTIES:
    :EXPORT_FILE_NAME: email-in-emacs-notmuch-mbsync
    :END:
    :LOGBOOK:
+   - State "WORKING"    from              [2020-06-17 Wed 21:20]
    - Note taken on [2020-03-25 Wed 22:44] \\
      - Jotted down original idea and an initial draft on <2019-05-27 Mon>
    :END:
@@ -1892,7 +1967,7 @@ recommend you make the time to see it. My notes below:
   + Casey Muratori: [[https://www.youtube.com/watch?v=kZRE7HIO3vk][The Thirty Million Line Problem]]
   + Samo Burja: [[https://www.youtube.com/watch?v=OiNmTVThNEY][Civilization: Institutions, Knowledge and the Future]]
   + Eric Cline: [[https://www.youtube.com/watch?v=hyry8mgXiTk][1177 BC: The Year Civilization Collapsed]]
-** DRAFT Lazy Weekend Reading: What is User Story Mapping? :project_management:
+** WORKING Lazy Weekend Reading: What is User Story Mapping? :project_management:
    :PROPERTIES:
    :EXPORT_FILE_NAME: user-story-mapping
    :END:
@@ -2465,7 +2540,7 @@ The blog-post covers the following areas:
      :END:
      - Superb burgers
 
-** DRAFT Best Laid Plans And किरन्या                            :true_stories:
+** WORKING Best Laid Plans And किरन्या                            :true_stories:
    :PROPERTIES:
    :EXPORT_FILE_NAME: best-laid-plans-and-किरन्या
    :END:
