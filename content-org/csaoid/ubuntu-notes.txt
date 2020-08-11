@@ -1,0 +1,99 @@
+-*- mode: org; comment-column: 0; -*-
+
+# This file contains a list of commands that I've found handy in situations
+# I've faced over time. These are commands that _I_ have used (successfully).
+# I'm not claiming that this is the only way or even the right
+# way to handle a particular situation that you may face. YMMV.
+
+* Disable the touchpad
+  - Checking to see if this interferes with typing due to the placement of the touchpad on the system76
+#+begin_src fundamental
+Run the following command in a terminal:
+
+xinput list
+
+You will get an output that looks like this:
+
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ SynPS/2 Synaptics TouchPad                id=12   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+    ↳ Power Button                              id=8    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=9    [slave  keyboard (3)]
+    ↳ Laptop_Integrated_Webcam_1.3M             id=10   [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=11   [slave  keyboard (3)]
+    ↳ Dell WMI hotkeys                          id=13   [slave  keyboard (3)]
+
+It displays all the input devices connected. Note that they all have an id. Since 12 is the id for my touchpad, running the following command will disable it.
+
+xinput disable 12
+
+(and enable via a similar command)
+#+end_src
+* Jenv on Ubuntu
+  - Install jenv from : https://github.com/jenv/jenv
+  - Follow the instructions above to install it. The instructions
+    contain Mac specific information on how to install multiple
+    versions of java.
+  - For Ubuntu specific information, refer to
+    https://aboullaite.me/switching-between-java-versions-on-ubuntu-linux/.
+    (The important package is =update-java-alternatives=)
+  - Ubuntu jvm paths to add to jenv look like this:
+    =/usr/lib/jvm/java-13-openjdk-amd64/=
+    #+begin_src shell
+      jenv add /usr/lib/jvm/java-13-openjdk-amd64/
+    #+end_src
+  - List all installed versions with =jenv versions=
+* Opening any file in it's default application from the terminal
+  - Use =xdg-open=
+* Recording the screen in Ubuntu
+  - Use the built-in screen recorder provided by Gnome.
+  - Start/Stop the screen recorder using the hotkey <Ctrl + Alt + Shift + R>.
+  - Whether the recording is on or not is indicated by a red dot in
+    the notification center at the top-right of the screen.
+  - By default, recording stops after 30 seconds. To change the
+    default =max-screencast-length=, install =dconf-editor= and change
+    the setting
+    =/org/gnome/settings-daemon/plugins/media-keys/max-screencast-length=.
+* Recording audio on Ubuntu
+  - Use the built-in audio recorder =arecord= from the command-line.
+* Taking a screenshot on Ubuntu
+  - Select the =Screenshot= application from Activities
+* Dealing with 'boot space is filled up' warning
+** Get the list of kernels that you have installed but are no longer using:
+#+begin_src shell
+dpkg -l linux-{image,headers}-"[0-9]*" | awk '/^ii/{ print $2}' | grep -v -e `uname -r | cut -f1,2 -d"-"` | grep -e '[0-9]'
+#+end_src
+** Confirm that the output above does not contain the results of =uname -r=
+** Remove the unused kernels by piping the output to =apt-get purge=
+#+begin_src shell
+xargs sudo apt-get -y purge
+#+end_src
+** References:
++ https://askubuntu.com/a/90219: Also an excellent explanation of globbing on the shell
++ https://askubuntu.com/a/259092: The actual answer to this question
+* Steps when using apt to update your distribution
+** Ensure that your packages are up-to-date
+#+begin_src shell-script
+  sudo apt update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt -y dist-upgrade
+#+end_src
+** Remove unused and unnecessary packages
+#+begin_src shell-script
+  sudo apt -y autoremove && sudo apt autoclean
+#+end_src
+** Run the upgrade command for PopOS
+#+begin_src shell-script
+  sudo pop-upgrade release upgrade systemd
+#+end_src
+* Searching for installed packages using apt
+#+begin_src
+apt list --installed | grep texlive
+#+end_src
+* Installing LaTeX packages
+#+begin_src
+sudo apt install texlive-base texlive texlive-binaries texlive-latex-base texlive-latex-recommended texlive-luatex texlive-latex-extra texlive-xetex
+#+end_src
+- The whole shebang can be installed by installing =texlive-full=, but is unnecessary.
