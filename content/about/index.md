@@ -2,9 +2,9 @@
 title = "About Me"
 author = ["Vedang Manerikar"]
 date = 2017-08-19T13:30:00+05:30
-lastmod = 2020-05-09T20:50:55+05:30
+lastmod = 2020-08-22T18:04:31+05:30
 draft = false
-creator = "Emacs 26.3 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 featured_image = "/images/clevinger.jpg"
 +++
 

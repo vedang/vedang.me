@@ -3,11 +3,11 @@ title = "Krishna in the Mahabharat"
 author = ["Vedang Manerikar"]
 date = 2012-09-20T20:18:00+05:30
 aliases = ["/mahabharat/2012-09-21-krishna-in-the-mahabharata/"]
-lastmod = 2020-04-05T20:26:08+05:30
-tags = ["pandavas", "krishna"]
+lastmod = 2020-08-22T18:04:37+05:30
+tags = ["mahabharat", "pandavas", "krishna"]
 categories = ["mahabharat"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 +++
 

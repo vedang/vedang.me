@@ -3,11 +3,11 @@ title = "Notes and Reading Material on the Mahabharata"
 author = ["Vedang Manerikar"]
 date = 2012-09-21T20:55:00+05:30
 aliases = ["/mahabharat/2012-09-21-notes-and-reading-material-on-the-mahabharata/"]
-lastmod = 2020-04-05T22:07:35+05:30
-tags = ["books"]
+lastmod = 2020-08-22T18:04:37+05:30
+tags = ["mahabharat", "books"]
 categories = ["mahabharat"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 +++
 

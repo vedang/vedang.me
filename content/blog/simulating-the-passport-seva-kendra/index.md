@@ -3,11 +3,11 @@ title = "Simulating the Passport Seva Kendra using Clojure"
 author = ["Vedang Manerikar"]
 date = 2018-12-15T19:56:00+05:30
 aliases = ["/techlog/2018-12-15-simulating-the-passport-seva-kendra/"]
-lastmod = 2020-05-09T20:52:11+05:30
-tags = ["concurrency", "clojure"]
+lastmod = 2020-08-22T18:04:32+05:30
+tags = ["programming", "concurrency", "clojure"]
 categories = ["programming"]
 draft = false
-creator = "Emacs 26.3 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 featured_image = "blog/simulating-the-passport-seva-kendra/psk-renderkid.jpg"
 +++

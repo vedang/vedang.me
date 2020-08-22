@@ -7,9 +7,11 @@
 This is a dummy container for the listings page for all blog posts. Actual posts should be categorized and created under the appropriate heading. The sections that my site supports are as follows:
 
 1. Blog: My blogposts and writing
-2. Projects: Some small projects that I'm working on for fun.
-3. Presentations: List of presentations I've given
-4. Lily's Recipes: I'm thinking of moving this under projects
+2. Tinylog: Fast, useful snippets. Might not always have all the context, but will be useful to the person searching for them.
+3. Notes: Notes I take when I watch a video or read a book / article.
+4. Projects: Some small projects that I'm working on for fun.
+   1. Presentations: List of presentations I've given
+   2. Lily's Recipes: I'm thinking of moving this under projects
 5. About: A page about me.
 
 ** DONE The main blog listing page
@@ -199,19 +201,31 @@ Some useful things on my Github account:
 - [[https://github.com/vedang/org-mode-crate][org-mode-crate]] : Super powered configuration for org-mode. Everything I use in my org flow.
 - [[https://github.com/vedang/nginx-nonewlines][nginx-nonewlines]] : A Nginx module to strip out all whitespace. (This was my Helpshift Interview task)
 
-* Programming                                                  :@programming:
+* Programming                                      :programming:@programming:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
-** WORKING The Programmer's Guide to Wisdom                          :wisdom:
+** DONE The Programmer's Guide to Wisdom                             :wisdom:
+   CLOSED: [2020-08-22 Sat 17:15]
    :PROPERTIES:
+   :EXPORT_HUGO_SECTION: tinylog
    :EXPORT_HUGO_BUNDLE: programmer-guide
    :EXPORT_FILE_NAME: index
+   :TWITTER:  https://twitter.com/vedang/status/1292744222873853952
    :END:
    :LOGBOOK:
+   - State "DONE"       from "WORKING"    [2020-08-22 Sat 17:15]
    - State "WORKING"    from              [2020-08-10 Mon 12:20]
    :END:
-- What happens when I try to render : [[file:programmer_guide.pdf][the programmer's guide to wisdom]]?
+This poster captures timeless advice on programming, I keep a copy on
+my desk to read whenever I can.
+
+file:programmer_guide.png
+{{< tweet 1292744222873853952 >}}
+
+I collect such deeply useful and universal advice [[/tags/wisdom/][under the tag
+wisdom]], if you want to read more posts of this kind.
+
 ** WORKING Using Constraint Propagation to solve the team Oncall rotation :constraint_propagation:clojure:
    :PROPERTIES:
    :EXPORT_FILE_NAME: using-constraint-propagation-for-oncall-rotation
@@ -1364,7 +1378,7 @@ $ python switch-speed.py ;=>
 
 I breathed a sigh of relief. There was a lesson to be learnt here -
 test/profile _before_ you optimize!
-* Tools                                                              :@tools:
+* Tools                                                        :tools:@tools:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
@@ -1676,7 +1690,7 @@ comments.
 
 [[http://wiki.compiz.org/Plugins/Dbus][wiki.compiz.org]]
 
-* Planning & Organization                                     :@organization:
+* Planning & Organization                        :organization:@organization:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
@@ -1823,15 +1837,33 @@ We share written status updates within the team on a weekly basis (every Monday)
 
   Gantt Charts are the best.
 
-* Tiny Logs                                                        :@tinylog:
+* Tinylog                                                          :@tinylog:
   :PROPERTIES:
-  :EXPORT_HUGO_SECTION: blog
+  :EXPORT_HUGO_SECTION: tinylog
   :END:
+This is a container for the listings page for all my wiki posts.
+** DONE The main tinylog listing page
+   CLOSED: [2020-08-22 Sat 17:56]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: _index
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
+   :EXPORT_TITLE: Tiny snippets of useful information.
+   :END:
+   :LOGBOOK:
+   - State "DONE"       from              [2020-08-22 Sat 17:56]
+   :END:
+#+begin_description
+(A Wiki of Commands)
+#+end_description
+I spend way too much time on the net searching for the same things
+over and over again. Usually it's the tiny odd-job that I am looking
+to get done, or that one special or obscure command that I _just can't
+remember_. This collection is for exactly such things.
 ** DONE Tinylog: Mbsync: Error: Channel <x> Is Locked                :mbsync:
    CLOSED: [2017-10-11 Wed 19:22]
    :PROPERTIES:
    :EXPORT_FILE_NAME: mbsync-channel-is-locked
-   :EXPORT_HUGO_ALIASES: /techlog/2017-10-11-mbsync-channel-is-locked/
+   :EXPORT_HUGO_ALIASES: /techlog/2017-10-11-mbsync-channel-is-locked/ /blog/mbsync-channel-is-locked/
    :END:
 You may come across the following error when running ~mbsync~ :
 
@@ -1846,14 +1878,27 @@ instances around if the laptop sleeps during a run. Kill all instances
 of ~mbsync~ and restart the process and you should be fine!
 * Notes                                                               :@notes:
   :PROPERTIES:
-  :EXPORT_HUGO_SECTION: blog
+  :EXPORT_HUGO_SECTION: notes
   :END:
-** DONE Lazy Weekend Viewing: Preventing the collapse of civilization :technology:history:@programming:
+This is a container for the listings page for all notes posts.
+** DONE The main notes listing page
+   CLOSED: [2020-03-26 Thu 21:27]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: _index
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
+   :EXPORT_TITLE: Notes
+   :END:
+#+begin_description
+(Notes I take from videos, articles, books)
+#+end_description
+** DONE Lazy Weekend Viewing: Preventing the collapse of civilization :technology:history:programming:
    CLOSED: [2020-04-12 Sun 18:20]
    :PROPERTIES:
    :EXPORT_FILE_NAME: preventing-the-collapse-of-civilization
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :syndication '((twitter . 1249325252594642944))
+   :TWITTER: https://twitter.com/vedang/status/1249325252594642944
+   :EXPORT_HUGO_ALIASES: /blog/preventing-the-collapse-of-civilization/
    :END:
    :CLOCK:
    CLOCK: [2020-04-12 Sun 17:04]--[2020-04-12 Sun 18:20] =>  1:16
@@ -2085,7 +2130,7 @@ convinced me that the book was worth purchasing. Here are my notes:
    :PROPERTIES:
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true
    :EXPORT_FILE_NAME: love-letter-to-clojure
-   :EXPORT_HUGO_ALIASES: /weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/
+   :EXPORT_HUGO_ALIASES: /weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/ /blog/love-letter-to-clojure/
    :END:
 I had no idea that /Gene Kim/, author of three books that have
 garnered wide-spread public acclaim, was doing Clojure programming.
@@ -2195,7 +2240,7 @@ The blog-post covers the following areas:
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc true :featured_image "blog/gojek-10x-engineering/gofigure6.jpg"
    :EXPORT_HUGO_BUNDLE: gojek-10x-engineering
    :EXPORT_FILE_NAME: index
-   :EXPORT_HUGO_ALIASES: /weblog/2019-07-20-gojek-10x-engineering/
+   :EXPORT_HUGO_ALIASES: /weblog/2019-07-20-gojek-10x-engineering/ /blog/gojek-10x-engineering/
    :END:
 *** Summary
     - Engineering quality is paramount. Focus on [[https://dave.cheney.net/2019/07/09/clear-is-better-than-clever][clean and clear code]].
@@ -2429,7 +2474,7 @@ The blog-post covers the following areas:
       because you did not give them sufficient leeway to unleash their
       art.
 
-* Random                                                            :@random:
+* Random                                                     :random:@random:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
@@ -2601,7 +2646,7 @@ to realise that no one gives a shit. So I'm going to write for the
 right reasons: Because it makes me happy. Stick around, and I'll try
 not to bore you. Or leave. I don't give a shit.
 
-* Interviews                                                    :@interviews:
+* Interviews                                         :interviews:@interviews:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:
@@ -2707,7 +2752,7 @@ not to bore you. Or leave. I don't give a shit.
     did "work" mean for them? What was their work day like? What did
     they do to unwind? What did they do for leisure? Who did _they_
     look up to? I'd love to know these answers!
-* Mahabharat                                                    :@mahabharat:
+* Mahabharat                                         :mahabharat:@mahabharat:
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: blog
   :END:

@@ -2,12 +2,12 @@
 title = "Tinylog: Mbsync: Error: Channel <x> Is Locked"
 author = ["Vedang Manerikar"]
 date = 2017-10-11T19:22:00+05:30
-aliases = ["/techlog/2017-10-11-mbsync-channel-is-locked/"]
-lastmod = 2020-04-05T18:40:29+05:30
+aliases = ["/techlog/2017-10-11-mbsync-channel-is-locked/", "/blog/mbsync-channel-is-locked/"]
+lastmod = 2020-08-22T18:04:34+05:30
 tags = ["mbsync"]
 categories = ["tinylog"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 You may come across the following error when running `mbsync` :

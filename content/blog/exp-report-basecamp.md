@@ -1,11 +1,11 @@
 +++
 title = "Experience Report: Using Basecamp as a Remote team"
 author = ["Vedang Manerikar"]
-lastmod = 2020-03-26T08:08:30+05:30
-tags = ["communication", "collaboration", "teams", "project-management"]
+lastmod = 2020-08-22T18:04:33+05:30
+tags = ["tools", "communication", "collaboration", "teams", "project-management"]
 categories = ["tools"]
 draft = true
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 ## Good things {#good-things}

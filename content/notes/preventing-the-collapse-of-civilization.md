@@ -2,11 +2,12 @@
 title = "Lazy Weekend Viewing: Preventing the collapse of civilization"
 author = ["Vedang Manerikar"]
 date = 2020-04-12T18:20:00+05:30
-lastmod = 2020-04-19T13:42:30+05:30
-tags = ["technology", "history"]
-categories = ["notes", "programming"]
+aliases = ["/blog/preventing-the-collapse-of-civilization/"]
+lastmod = 2020-08-22T18:04:35+05:30
+tags = ["technology", "history", "programming"]
+categories = ["notes"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 [syndication]
   twitter = 1249325252594642944

@@ -1,11 +1,11 @@
 +++
 title = "Setting up email in Emacs using notmuch and mbsync"
 author = ["Vedang Manerikar"]
-lastmod = 2020-03-25T22:47:26+05:30
-tags = ["mbsync", "notmuch", "emacs", "email"]
+lastmod = 2020-08-22T18:04:33+05:30
+tags = ["tools", "mbsync", "notmuch", "emacs", "email"]
 categories = ["tools"]
 draft = true
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 ## Installing notmuch {#installing-notmuch}

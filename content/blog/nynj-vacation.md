@@ -1,11 +1,11 @@
 +++
 title = "Things to do in New York and New Jersey."
 author = ["Vedang Manerikar"]
-lastmod = 2020-03-26T07:37:10+05:30
-tags = ["recommendations", "vacation"]
+lastmod = 2020-08-22T18:04:36+05:30
+tags = ["random", "recommendations", "vacation"]
 categories = ["random"]
 draft = true
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 ## <span class="org-todo todo TODO">TODO</span> Sleep No More {#sleep-no-more}

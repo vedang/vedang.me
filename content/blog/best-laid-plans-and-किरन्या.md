@@ -1,11 +1,11 @@
 +++
 title = "Best Laid Plans And किरन्या"
 author = ["Vedang Manerikar"]
-lastmod = 2020-03-25T23:23:07+05:30
-tags = ["true-stories"]
+lastmod = 2020-08-22T18:04:36+05:30
+tags = ["random", "true-stories"]
 categories = ["random"]
 draft = true
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 -   14th August.

@@ -3,11 +3,11 @@ title = "Switch Statements in Python"
 author = ["Vedang Manerikar"]
 date = 2011-08-07T13:21:00+05:30
 aliases = ["/techlog/2011-08-07-switch-statements-in-python/"]
-lastmod = 2020-04-05T18:42:03+05:30
-tags = ["python"]
+lastmod = 2020-08-22T18:04:33+05:30
+tags = ["programming", "python"]
 categories = ["programming"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 Today I went through some old Python code and noticed this pattern

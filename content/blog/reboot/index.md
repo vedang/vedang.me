@@ -3,10 +3,11 @@ title = "Reboot"
 author = ["Vedang Manerikar"]
 date = 2011-07-30T14:25:00+05:30
 aliases = ["/weblog/2011-07-30-reboot/"]
-lastmod = 2020-05-09T20:49:13+05:30
+lastmod = 2020-08-22T18:04:36+05:30
+tags = ["random"]
 categories = ["random"]
 draft = false
-creator = "Emacs 26.3 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 Once upon a time I had a blog. Then one day I ran out of motivation,

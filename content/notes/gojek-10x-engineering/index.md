@@ -2,12 +2,12 @@
 title = "Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?"
 author = ["Vedang Manerikar"]
 date = 2019-07-20T07:39:00+05:30
-aliases = ["/weblog/2019-07-20-gojek-10x-engineering/"]
-lastmod = 2020-04-05T18:48:41+05:30
+aliases = ["/weblog/2019-07-20-gojek-10x-engineering/", "/blog/gojek-10x-engineering/"]
+lastmod = 2020-08-22T18:04:36+05:30
 tags = ["engineering-management", "gojek", "culture"]
 categories = ["notes"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 featured_image = "blog/gojek-10x-engineering/gofigure6.jpg"
 +++

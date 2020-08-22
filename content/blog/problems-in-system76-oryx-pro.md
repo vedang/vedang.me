@@ -3,11 +3,11 @@ title = "Problems in my brand new System76 Oryx Pro laptop"
 author = ["Vedang Manerikar"]
 date = 2019-05-31T22:51:00+05:30
 aliases = ["/weblog/2019-05-31-problems-in-system76-oryx-pro/"]
-lastmod = 2020-04-05T18:49:15+05:30
-tags = ["laptops", "system76", "popos", "linux"]
+lastmod = 2020-08-22T18:04:33+05:30
+tags = ["tools", "laptops", "system76", "popos", "linux"]
 categories = ["tools"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 +++
 

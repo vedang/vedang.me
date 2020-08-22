@@ -1,11 +1,11 @@
 +++
 title = "Using Constraint Propagation to solve the team Oncall rotation"
 author = ["Vedang Manerikar"]
-lastmod = 2020-03-25T23:14:18+05:30
-tags = ["constraint-propagation", "clojure"]
+lastmod = 2020-08-22T18:04:32+05:30
+tags = ["programming", "constraint-propagation", "clojure"]
 categories = ["programming"]
 draft = true
-creator = "Emacs 26.1 (Org mode 9.3.2 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
 
 ## Notation {#notation}

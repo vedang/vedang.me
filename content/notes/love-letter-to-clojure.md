@@ -2,12 +2,12 @@
 title = "Lazy Weekend Reading: A love letter to Clojure"
 author = ["Vedang Manerikar"]
 date = 2019-10-13T23:02:00+05:30
-aliases = ["/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/"]
-lastmod = 2020-04-19T13:43:05+05:30
+aliases = ["/weblog/2019-10-13-lazy-weekend-reading-love-letter-to-clojure/", "/blog/love-letter-to-clojure/"]
+lastmod = 2020-08-22T18:04:35+05:30
 tags = ["clojure"]
 categories = ["notes"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 +++
 

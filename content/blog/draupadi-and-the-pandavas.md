@@ -3,11 +3,11 @@ title = "Draupadi and the Pandavas"
 author = ["Vedang Manerikar"]
 date = 2012-09-21T19:17:00+05:30
 aliases = ["/mahabharat/2012-09-21-draupadi-and-the-pandavas/"]
-lastmod = 2020-04-05T20:26:20+05:30
-tags = ["krishna", "pandavas", "draupadi"]
+lastmod = 2020-08-22T18:04:37+05:30
+tags = ["mahabharat", "krishna", "pandavas", "draupadi"]
 categories = ["mahabharat"]
 draft = false
-creator = "Emacs 26.1 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 toc = true
 +++
 

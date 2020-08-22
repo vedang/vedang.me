@@ -4,9 +4,9 @@ author = ["Vedang Manerikar"]
 description = "A Grandmother Gives Her Grandson A Lifetime's Worth Of Recipes."
 date = 2020-04-05T19:03:00+05:30
 aliases = ["/recipes/"]
-lastmod = 2020-05-09T20:50:19+05:30
+lastmod = 2020-08-22T18:04:31+05:30
 draft = false
-creator = "Emacs 26.3 (Org mode 9.3.6 + ox-hugo)"
+creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 featured_image = "projects/lilys-recipes/roastalmonds.jpg"
 +++
 
