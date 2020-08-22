@@ -6,7 +6,7 @@
     
     <title>Vedang Manerikar  | Simulating the Passport Seva Kendra using Clojure</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -44,7 +44,7 @@ at the PSK." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vedang.me/blog/simulating-the-passport-seva-kendra/" />
 <meta property="article:published_time" content="2018-12-15T19:56:00+05:30" />
-<meta property="article:modified_time" content="2020-04-05T18:39:21+05:30" />
+<meta property="article:modified_time" content="2020-08-22T18:04:32+05:30" />
 <meta itemprop="name" content="Simulating the Passport Seva Kendra using Clojure">
 <meta itemprop="description" content="Cross-posted from my post on the Helpshift Engineering Blog
 A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
@@ -60,12 +60,12 @@ passport and this provided the spark I needed to write about it. So
 here we are, a year later, talking about the passport renewal process
 at the PSK.">
 <meta itemprop="datePublished" content="2018-12-15T19:56:00&#43;05:30" />
-<meta itemprop="dateModified" content="2020-04-05T18:39:21&#43;05:30" />
-<meta itemprop="wordCount" content="4532">
+<meta itemprop="dateModified" content="2020-08-22T18:04:32&#43;05:30" />
+<meta itemprop="wordCount" content="4565">
 
 
 
-<meta itemprop="keywords" content="concurrency,clojure," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="programming,concurrency,clojure," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Simulating the Passport Seva Kendra using Clojure"/>
 <meta name="twitter:description" content="Cross-posted from my post on the Helpshift Engineering Blog
 A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune
@@ -111,8 +111,14 @@ at the PSK."/>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/projects" title="Projects page">
-              Projects
+            <a class="hover-white no-underline white-90" href="/notes" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tinylog" title="Tinylog page">
+              Tinylog
             </a>
           </li>
           
@@ -237,7 +243,7 @@ at the PSK."/>
       
       
         <span class="f6 mv4 dib tracked"> - 22 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 4532 words</span>
+        <span class="f6 mv4 dib tracked"> - 4565 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><em>Cross-posted from my post on the <a href="https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c">Helpshift Engineering Blog</a></em></p>
@@ -307,7 +313,9 @@ and N.</li>
 </ul>
 <figure>
     <img src="psk-renderkid.jpg"
-         alt="The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)"/> 
+         alt="Figure 1: The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)"/> <figcaption>
+            <p>Figure 1: The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)</p>
+        </figcaption>
 </figure>
 
 <p>In the rest of this post, we&rsquo;ll build this system as described
@@ -806,7 +814,9 @@ board. We&rsquo;re running much fewer counters than the actual PSK. This
 is in order to make the display board consumable.</p>
 <figure>
     <img src="psk-run-1.gif"
-         alt="A normal day at the Passport Seva Kendra"/> 
+         alt="Figure 2: A normal day at the Passport Seva Kendra"/> <figcaption>
+            <p>Figure 2: A normal day at the Passport Seva Kendra</p>
+        </figcaption>
 </figure>
 
 <p>Things look good in this loop, the board looks predictable. The
@@ -832,7 +842,9 @@ counters processing earlier stages (which matches with reality)</p>
 <p>Here is what this looks like:</p>
 <figure>
     <img src="psk-run-2.gif"
-         alt="N-3 is not having a good day."/> 
+         alt="Figure 3: N-3 is not having a good day."/> <figcaption>
+            <p>Figure 3: N-3 is not having a good day.</p>
+        </figcaption>
 </figure>
 
 <p>As you can see, there are a number of people ahead of N-3 by the
@@ -951,6 +963,10 @@ of the PSK.</em></p>
 </section><ul class="pa0">
   
    <li class="list">
+     <a href="/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">programming</a>
+   </li>
+  
+   <li class="list">
      <a href="/tags/concurrency" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">concurrency</a>
    </li>
   
@@ -1037,6 +1053,26 @@ of the PSK.</em></p>
 	   
 	     <li  class="mb2">
           <a href="/blog/composability-and-compojure/">Composability and Compojure</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/switch-statements-in-python/">Switch Statements in Python</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/notes/doug-mcilroy-unix-philosophy/">Doug McIlroy: the UNIX philosophy</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/notes/esr-unix-philosophy/">ESR: the UNIX Philosophy</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/notes/rob-pike-rules/">Rob Pike: Rules of Programming</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/notes/tim-peters-the-python-way/">Tim Peters: The Python Way</a>
         </li>
 	    
     </ul>

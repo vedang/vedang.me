@@ -6,10 +6,30 @@
     <description>Recent content in engineering-management on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Aug 2019 07:49:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 18:11:52 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/engineering-management/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gene Kim: The Four Types of Work</title>
+      <link>https://vedang.me/notes/gene-kim-the-four-types/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/notes/gene-kim-the-four-types/</guid>
+      <description>Snippet from: The Phoenix Project, along with my own notes
+ Business Projects &amp;ldquo;Feature Work&amp;rdquo;. This is the most visible type of work. Internal IT Projects Release Automation, QA Automation, Developer Tooling and other internal enablers. Mostly un-tracked and invisible, but crucial to long-term success. Updates and Changes Generally generated from above to categories of work. Introduces delay as breadth of existing surface area increases. Unplanned Work Fire-fighting at all levels of the company.</description>
+    </item>
+    
+    <item>
+      <title>Gene Kim: The Three Ways of doing excellent Work</title>
+      <link>https://vedang.me/notes/gene-kim-the-three-ways/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/notes/gene-kim-the-three-ways/</guid>
+      <description>Snippet from: The Phoenix Project, along with my own notes
+ Flow Maximizing the rate of flow of work is the key to success. Limiting the work in progress is the fastest way to achieve Flow. Fast Feedback Setup systems to get fast feedback at every stage of work, from concept through shipping to maintaining in production. Experimentation and Learning Keep dedicated time for experiments, at every level of the company.</description>
+    </item>
     
     <item>
       <title>Writing a good status update</title>
@@ -23,10 +43,10 @@ What is the purpose of status updates?  Let your manager know what you have achi
     
     <item>
       <title>Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>
-      <link>https://vedang.me/blog/gojek-10x-engineering/</link>
+      <link>https://vedang.me/notes/gojek-10x-engineering/</link>
       <pubDate>Sat, 20 Jul 2019 07:39:00 +0530</pubDate>
       
-      <guid>https://vedang.me/blog/gojek-10x-engineering/</guid>
+      <guid>https://vedang.me/notes/gojek-10x-engineering/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Engineering quality is paramount. Focus on &lt;a href=&#34;https://dave.cheney.net/2019/07/09/clear-is-better-than-clever&#34;&gt;clean and clear code&lt;/a&gt;.

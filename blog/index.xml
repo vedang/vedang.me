@@ -12,26 +12,6 @@
     
     
     <item>
-      <title>Lazy Weekend Viewing: Preventing the collapse of civilization</title>
-      <link>https://vedang.me/blog/preventing-the-collapse-of-civilization/</link>
-      <pubDate>Sun, 12 Apr 2020 18:20:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/blog/preventing-the-collapse-of-civilization/</guid>
-      <description>&amp;ldquo;Preventing the Collapse of Civilization&amp;rdquo; is an excellent talk by Jonathan Blow (of Braid fame) at DevGAMM 2019. It&amp;rsquo;s inspiring and I recommend you make the time to see it. My notes below:
-Summary  It is a myth that technology only advances. We&amp;rsquo;ve often seen significant backward slides in tech. (Lots of examples to illustrate this point) Software is in decline. Both software robustness and programmer productivity is declining. (Lots of examples to illustrate this point) We need to fight complexity and strive for simplicity in every step if we want to battle degradation and loss of capability.</description>
-    </item>
-    
-    <item>
-      <title>Lazy Weekend Reading: A love letter to Clojure</title>
-      <link>https://vedang.me/blog/love-letter-to-clojure/</link>
-      <pubDate>Sun, 13 Oct 2019 23:02:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/blog/love-letter-to-clojure/</guid>
-      <description>I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &amp;ndash; we&amp;rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:
-General software philosophy  Choose tools that are good to think with Most bugs are due to programmers not understanding all the possible states their code may execute in.</description>
-    </item>
-    
-    <item>
       <title>Writing a good status update</title>
       <link>https://vedang.me/blog/writing-a-good-status-update/</link>
       <pubDate>Tue, 06 Aug 2019 07:49:00 +0530</pubDate>
@@ -39,67 +19,6 @@ General software philosophy  Choose tools that are good to think with Most bugs 
       <guid>https://vedang.me/blog/writing-a-good-status-update/</guid>
       <description>We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&amp;rsquo;s useful enough to publish publicly. Here goes:
 What is the purpose of status updates?  Let your manager know what you have achieved last week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself.</description>
-    </item>
-    
-    <item>
-      <title>Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>
-      <link>https://vedang.me/blog/gojek-10x-engineering/</link>
-      <pubDate>Sat, 20 Jul 2019 07:39:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/blog/gojek-10x-engineering/</guid>
-      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Engineering quality is paramount. Focus on &lt;a href=&#34;https://dave.cheney.net/2019/07/09/clear-is-better-than-clever&#34;&gt;clean and clear code&lt;/a&gt;.
-Code is the primary medium of communication for any engineer.
-Write beautiful code and hold people to high standards.&lt;/li&gt;
-&lt;li&gt;Adding head count has vast hidden costs and often brings down
-output. The reason for this is the exponential increase in
-communication required to align everyone to common goals.&lt;/li&gt;
-&lt;li&gt;Similarly, pods cannot scale unless they can own small,
-independent components.&lt;/li&gt;
-&lt;li&gt;Monoliths are normal and good when the company is small.
-Refactoring the monolithic model into different components allows
-us to scale pods and org.&lt;/li&gt;
-&lt;li&gt;Carve monoliths only when it hits critical mass. Then, identify
-the pain and pull it out into it&amp;rsquo;s own pod.&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Relationship as a service&amp;rdquo; or &amp;ldquo;Please get this done for me over
-and above other stuff on your plate&amp;rdquo;
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;Traffic congestion&amp;rdquo; (A team which is too busy) and structural
-failure can lead to the impression that the system is
-bureaucratic and political.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Criteria when hiring Engineers
-&lt;ul&gt;
-&lt;li&gt;Computer science (Can computers understand your code?)
-&lt;ul&gt;
-&lt;li&gt;Ability to grasp large complex systems&lt;/li&gt;
-&lt;li&gt;Understanding of implications of design choices on that system.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Software Engineering (Can humans understand your code?)
-&lt;ul&gt;
-&lt;li&gt;How well do you communicate through your code? This is the
-metric that enables building &lt;strong&gt;good&lt;/strong&gt; systems.&lt;/li&gt;
-&lt;li&gt;The hygiene you show in code is the hygiene you will enforce
-on others.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Good behavioral traits (Can you grow?)
-&lt;ul&gt;
-&lt;li&gt;Curious&lt;/li&gt;
-&lt;li&gt;Wants to learn&lt;/li&gt;
-&lt;li&gt;Can accept feedback&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Strong opinions, Weakly held.&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Pride without attachment.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Find the full video &lt;a href=&#34;https://www.youtube.com/watch?v=He0XBBfCEVk&#34;&gt;here&lt;/a&gt;!&lt;/li&gt;
-&lt;li&gt;The rest of this post is detailed notes on the video&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -130,16 +49,6 @@ interesting problem to solve and write about.&lt;/p&gt;
 passport and this provided the spark I needed to write about it. So
 here we are, a year later, talking about the passport renewal process
 at the PSK.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked</title>
-      <link>https://vedang.me/blog/mbsync-channel-is-locked/</link>
-      <pubDate>Wed, 11 Oct 2017 19:22:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/blog/mbsync-channel-is-locked/</guid>
-      <description>You may come across the following error when running mbsync :
-Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp;lt;channel-name&amp;gt;-local:&amp;lt;folder&amp;gt; is locked This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!</description>
     </item>
     
     <item>

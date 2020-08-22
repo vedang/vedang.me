@@ -6,7 +6,7 @@
     
     <title>Vedang Manerikar  | Writing</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -70,8 +70,14 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/projects" title="Projects page">
-              Projects
+            <a class="hover-white no-underline white-90" href="/notes" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tinylog" title="Tinylog page">
+              Tinylog
             </a>
           </li>
           
@@ -155,38 +161,6 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog</span>
     <h1 class="f3 near-black">
-      <a href="https://vedang.me/blog/preventing-the-collapse-of-civilization/" class="link black dim">
-        Lazy Weekend Viewing: Preventing the collapse of civilization
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &ldquo;Preventing the Collapse of Civilization&rdquo; is an excellent talk by Jonathan Blow (of Braid fame) at DevGAMM 2019. It&rsquo;s inspiring and I recommend you make the time to see it. My notes below:
-Summary  It is a myth that technology only advances. We&rsquo;ve often seen significant backward slides in tech. (Lots of examples to illustrate this point) Software is in decline. Both software robustness and programmer productivity is declining. (Lots of examples to illustrate this point) We need to fight complexity and strive for simplicity in every step if we want to battle degradation and loss of capability.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
-    <h1 class="f3 near-black">
-      <a href="https://vedang.me/blog/love-letter-to-clojure/" class="link black dim">
-        Lazy Weekend Reading: A love letter to Clojure
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I had no idea that Gene Kim, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate &ndash; we&rsquo;ve ordered them recently for the Helpshift Library). He published a love-letter to Clojure this weekend, and I think it is an absolute must-read for all programmers (whether you write Clojure or not). The blog-post covers the following areas:
-General software philosophy  Choose tools that are good to think with Most bugs are due to programmers not understanding all the possible states their code may execute in.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
-    <h1 class="f3 near-black">
       <a href="https://vedang.me/blog/writing-a-good-status-update/" class="link black dim">
         Writing a good status update
       </a>
@@ -194,73 +168,6 @@ General software philosophy  Choose tools that are good to think with Most bugs 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&rsquo;s useful enough to publish publicly. Here goes:
 What is the purpose of status updates?  Let your manager know what you have achieved last week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
-    <h1 class="f3 near-black">
-      <a href="https://vedang.me/blog/gojek-10x-engineering/" class="link black dim">
-        Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <h2 id="summary">Summary</h2>
-<ul>
-<li>Engineering quality is paramount. Focus on <a href="https://dave.cheney.net/2019/07/09/clear-is-better-than-clever">clean and clear code</a>.
-Code is the primary medium of communication for any engineer.
-Write beautiful code and hold people to high standards.</li>
-<li>Adding head count has vast hidden costs and often brings down
-output. The reason for this is the exponential increase in
-communication required to align everyone to common goals.</li>
-<li>Similarly, pods cannot scale unless they can own small,
-independent components.</li>
-<li>Monoliths are normal and good when the company is small.
-Refactoring the monolithic model into different components allows
-us to scale pods and org.</li>
-<li>Carve monoliths only when it hits critical mass. Then, identify
-the pain and pull it out into it&rsquo;s own pod.</li>
-<li>&ldquo;Relationship as a service&rdquo; or &ldquo;Please get this done for me over
-and above other stuff on your plate&rdquo;
-<ul>
-<li>&ldquo;Traffic congestion&rdquo; (A team which is too busy) and structural
-failure can lead to the impression that the system is
-bureaucratic and political.</li>
-</ul>
-</li>
-<li>Criteria when hiring Engineers
-<ul>
-<li>Computer science (Can computers understand your code?)
-<ul>
-<li>Ability to grasp large complex systems</li>
-<li>Understanding of implications of design choices on that system.</li>
-</ul>
-</li>
-<li>Software Engineering (Can humans understand your code?)
-<ul>
-<li>How well do you communicate through your code? This is the
-metric that enables building <strong>good</strong> systems.</li>
-<li>The hygiene you show in code is the hygiene you will enforce
-on others.</li>
-</ul>
-</li>
-<li>Good behavioral traits (Can you grow?)
-<ul>
-<li>Curious</li>
-<li>Wants to learn</li>
-<li>Can accept feedback</li>
-<li>&ldquo;Strong opinions, Weakly held.&rdquo;</li>
-<li>&ldquo;Pride without attachment.&rdquo;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Find the full video <a href="https://www.youtube.com/watch?v=He0XBBfCEVk">here</a>!</li>
-<li>The rest of this post is detailed notes on the video</li>
-</ul>
     </div>
   </div>
 </div>
@@ -308,6 +215,63 @@ at the PSK.</p>
 </div>
 </div>
       
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/" class="link black dim">
+        Imagine Working in Engineering at Helpshift
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p><em>Cross-posted from my interview published on <a href="https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188">Helpshift&rsquo;s Medium blog</a></em></p>
+<ul>
+<li>Name: Vedang Manerikar</li>
+<li>Current Role: Principal Engineering Manager, Backend</li>
+<li>How long you have been with Helpshift?: 7 years</li>
+</ul>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="https://vedang.me/blog/notes-and-reading-material-on-the-mahabharat/" class="link black dim">
+        Notes and Reading Material on the Mahabharata
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p><em>Cross-posted from my note: <a href="http://www.quora.com/Vedang-Manerikar/The-Mahabharata/Notes-and-Reading-material-on-the-Mahabharata">Notes and Reading Material on the
+Mahabharata</a> on <a href="http://quora.com">Quora</a></em></p>
+<p>People have shown some interest in reading material for the
+Mahabharata, this post should save me from repeatedly typing the same
+things.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="https://vedang.me/blog/draupadi-and-the-pandavas/" class="link black dim">
+        Draupadi and the Pandavas
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p><em>Cross-posted from my answer to the question: <a href="http://www.quora.com/Mythology/What-was-the-relationship-between-Draupadi-and-the-Pandavas-like/answer/Vedang-Manerikar">What was the
+relationship between Draupadi and the Pandavas like?</a> on <a href="http://quora.com">Quora</a></em></p>
+<p>Draupadi&rsquo;s relationship with the Pandavas is complex and at the heart
+of the Mahabharat.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
     </section>
 
 <ul class="pagination">
@@ -344,23 +308,12 @@ at the PSK.</p>
     <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
     
     
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/blog/page/3/">3</a></li>
-    
-    
     <li class="page-item">
     <a href="/blog/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/blog/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/blog/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

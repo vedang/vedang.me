@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tiny snippets of useful information. on Vedang Manerikar</title>
+    <link>https://vedang.me/tinylog/</link>
+    <description>Recent content in Tiny snippets of useful information. on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Aug 2020 17:56:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/tinylog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Programmer&#39;s Guide to Wisdom</title>
+      <link>https://vedang.me/tinylog/programmer-guide/</link>
+      <pubDate>Sat, 22 Aug 2020 17:15:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tinylog/programmer-guide/</guid>
+      <description>This poster captures timeless advice on programming, I keep a copy on my desk to read whenever I can.
+Over the weekend, I created a poster for my desk. It captures timeless best practices and advice on programming and software design. Presenting it here, in the hopes that it&amp;#39;ll be useful to others as well. Features: @esrtweet, Doug McIlroy, @rob_pike and @RealGeneKim pic.twitter.com/Lj2kUqwq2J
+&amp;mdash; Vedang Manerikar (@vedang) August 10, 2020  I collect such deeply useful and universal advice under the tag wisdom, if you want to read more posts of this kind.</description>
+    </item>
+    
+    <item>
+      <title>Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked</title>
+      <link>https://vedang.me/tinylog/mbsync-channel-is-locked/</link>
+      <pubDate>Wed, 11 Oct 2017 19:22:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tinylog/mbsync-channel-is-locked/</guid>
+      <description>You may come across the following error when running mbsync :
+Error: channel :&amp;lt;channel-name&amp;gt;-remote:&amp;lt;folder&amp;gt;-:&amp;lt;channel-name&amp;gt;-local:&amp;lt;folder&amp;gt; is locked This happens when there is another mbsync instance running in parallel and it has taken a lock on the particular folder. In my case, I am running mbsync via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of mbsync and restart the process and you should be fine!</description>
+    </item>
+    
+  </channel>
+</rss>

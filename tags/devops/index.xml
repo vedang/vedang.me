@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on Vedang Manerikar</title>
+    <link>https://vedang.me/tags/devops/</link>
+    <description>Recent content in devops on Vedang Manerikar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Aug 2020 18:11:52 +0530</lastBuildDate>
+    
+	<atom:link href="https://vedang.me/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gene Kim: The Five Ideals of DevOps</title>
+      <link>https://vedang.me/notes/gene-kim-the-five-ideals/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/notes/gene-kim-the-five-ideals/</guid>
+      <description>Snippet from: The Unicorn Project, along with my own notes
+ The First Ideal Locality and Simplicity. Build simple, decoupled systems that can iterate in isolation. The Second Ideal Focus, Flow and Joy. Work in small batches with fast and continuous feedback. The Third Ideal Improvement of Daily Work. Make sure that daily work can be done with minimum impediments. Prioritize productivity over everything else. The Fourth Ideal Psychological Safety. Solving problems requires preventing problems, which requires honesty, which requires the absence of fear.</description>
+    </item>
+    
+  </channel>
+</rss>

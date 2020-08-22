@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2020 10:10:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 18:11:52 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>devops</title>
+      <link>https://vedang.me/tags/devops/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distributed-systems</title>
+      <link>https://vedang.me/tags/distributed-systems/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineering-management</title>
+      <link>https://vedang.me/tags/engineering-management/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/engineering-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://vedang.me/tags/programming/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wisdom</title>
+      <link>https://vedang.me/tags/wisdom/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/wisdom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>history</title>
+      <link>https://vedang.me/tags/history/</link>
+      <pubDate>Sun, 12 Apr 2020 18:20:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/history/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technology</title>
+      <link>https://vedang.me/tags/technology/</link>
+      <pubDate>Sun, 12 Apr 2020 18:20:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/technology/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>coronavirus</title>
@@ -48,11 +111,11 @@
     </item>
     
     <item>
-      <title>engineering-management</title>
-      <link>https://vedang.me/tags/engineering-management/</link>
+      <title>organization</title>
+      <link>https://vedang.me/tags/organization/</link>
       <pubDate>Tue, 06 Aug 2019 07:49:00 +0530</pubDate>
       
-      <guid>https://vedang.me/tags/engineering-management/</guid>
+      <guid>https://vedang.me/tags/organization/</guid>
       <description></description>
     </item>
     
@@ -120,6 +183,15 @@
     </item>
     
     <item>
+      <title>tools</title>
+      <link>https://vedang.me/tags/tools/</link>
+      <pubDate>Fri, 31 May 2019 22:51:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>concurrency</title>
       <link>https://vedang.me/tags/concurrency/</link>
       <pubDate>Sat, 15 Dec 2018 19:56:00 +0530</pubDate>
@@ -147,11 +219,29 @@
     </item>
     
     <item>
+      <title>interviews</title>
+      <link>https://vedang.me/tags/interviews/</link>
+      <pubDate>Thu, 07 Sep 2017 07:27:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/interviews/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>books</title>
       <link>https://vedang.me/tags/books/</link>
       <pubDate>Fri, 21 Sep 2012 20:55:00 +0530</pubDate>
       
       <guid>https://vedang.me/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mahabharat</title>
+      <link>https://vedang.me/tags/mahabharat/</link>
+      <pubDate>Fri, 21 Sep 2012 20:55:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/mahabharat/</guid>
       <description></description>
     </item>
     
@@ -224,6 +314,15 @@
       <pubDate>Thu, 04 Aug 2011 13:41:00 +0530</pubDate>
       
       <guid>https://vedang.me/tags/window-managers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random</title>
+      <link>https://vedang.me/tags/random/</link>
+      <pubDate>Sat, 30 Jul 2011 14:25:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/random/</guid>
       <description></description>
     </item>
     

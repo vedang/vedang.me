@@ -6,10 +6,37 @@
     <description>Recent content in Categories on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Apr 2020 18:20:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 18:11:52 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>wisdom</title>
+      <link>https://vedang.me/categories/wisdom/</link>
+      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/wisdom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tinylog</title>
+      <link>https://vedang.me/categories/tinylog/</link>
+      <pubDate>Sat, 22 Aug 2020 17:56:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/tinylog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://vedang.me/categories/programming/</link>
+      <pubDate>Sat, 22 Aug 2020 17:15:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/programming/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>notes</title>
@@ -35,24 +62,6 @@
       <pubDate>Fri, 31 May 2019 22:51:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://vedang.me/categories/programming/</link>
-      <pubDate>Sat, 15 Dec 2018 19:56:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tinylog</title>
-      <link>https://vedang.me/categories/tinylog/</link>
-      <pubDate>Wed, 11 Oct 2017 19:22:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/tinylog/</guid>
       <description></description>
     </item>
     
