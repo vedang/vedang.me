@@ -52,12 +52,25 @@ enableEmoji = true
   url = "/blog"
 [[menu.main]]
   weight = 2
-  identifier = "projects"
-  name = "Projects"
+  identifier = "notes"
+  name = "Notes"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file-text\"></i>"
-  url = "/projects"
+  url = "/notes"
 [[menu.main]]
   weight = 3
+  identifier = "tinylog"
+  name = "Tinylog"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file-text\"></i>"
+  url = "/tinylog"
+# Hidden until I have something interesting here.
+# [[menu.main]]
+#   weight = 4
+#   identifier = "projects"
+#   name = "Projects"
+#   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-file-text\"></i>"
+#   url = "/projects"
+[[menu.main]]
+  weight = 4
   identifier = "about"
   name = "About Me"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
