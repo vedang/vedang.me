@@ -1,8 +1,9 @@
 +++
-title = "About Me"
+title = " "
 author = ["Vedang Manerikar"]
+description = "(About Me)"
 date = 2017-08-19T13:30:00+05:30
-lastmod = 2020-08-22T18:04:31+05:30
+lastmod = 2020-08-22T21:31:54+05:30
 draft = false
 creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 featured_image = "/images/clevinger.jpg"

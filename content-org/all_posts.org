@@ -155,9 +155,12 @@ health as often as I can!
    CLOSED: [2017-08-19 Sat 13:30]
    :PROPERTIES:
    :EXPORT_FILE_NAME: index
-   :EXPORT_TITLE: About Me
+   :EXPORT_TITLE: " "
    :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :featured_image "/images/clevinger.jpg"
    :END:
+#+begin_description
+(About Me)
+#+end_description
 file:vedang-2018.jpg
 
 Hi! I'm Vedang. I live in Pune, India and work at [[https://helpshift.com][Helpshift]]. Now a
