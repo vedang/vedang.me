@@ -1,6 +1,12 @@
--*- mode: org; -*-
+# -*- mode: org; -*-
+#+hugo_base_dir: ../../
+#+setupfile: ../setup.org
+#+filetags: @emacs:emacs
 
 * Installing Emacs from source
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: tinylog
+  :END:
 ** Ubuntu 12.04
 
 $ git clone git://git.savannah.gnu.org/emacs.git
@@ -31,7 +37,10 @@ $ brew linkapps
 
 $ make tags
 
-** Compiling and Running Emacs 28 on the native-comp feature branch (Ubuntu).
+** Compiling and Running Emacs 28 from the native-comp feature branch (Ubuntu 20.04).
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: emacs-28-native-comp-ubuntu-20-04
+   :END:
 *** The gist of it, building Emacs from Source
    #+begin_src shell-script
      ./autogen.sh
