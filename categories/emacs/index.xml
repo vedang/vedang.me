@@ -6,7 +6,7 @@
     <description>Recent content in emacs on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Aug 2020 08:53:04 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2020 12:25:29 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,11 +14,10 @@
     <item>
       <title>Compiling and Running Emacs 28 from the native-comp feature branch (Ubuntu 20.04).</title>
       <link>https://vedang.me/tinylog/emacs-28-native-comp-ubuntu-20-04/</link>
-      <pubDate>Sun, 23 Aug 2020 08:53:04 +0530</pubDate>
+      <pubDate>Sun, 23 Aug 2020 12:25:29 +0530</pubDate>
       
       <guid>https://vedang.me/tinylog/emacs-28-native-comp-ubuntu-20-04/</guid>
-      <description>The gist of it, building Emacs from Source ./autogen.sh ./configure --with-nativecomp # If everything works make # Test the binary src/emacs -Q # Install the binary sudo make install Problems during Installation Configure fails because libgccjit fails the smoketest   Ensure that libgccjit is installed and at the latest version (at this point in time, the latest version is 10)
-  Ensure that gcc is at the same version as libgccjit (also 10)</description>
+      <description>The gist of it, building Emacs from Source git clone https://git.savannah.gnu.org/git/emacs.git cd emacs ./autogen.sh ./configure --with-nativecomp # If everything works make # Test the binary src/emacs -Q # Install the binary sudo make install # If you want to re-build from scratch make distclean Problems during Installation Configure fails because libgccjit fails the smoketest   Ensure that libgccjit is installed and at the latest version (at this point in time, the latest version is 10)</description>
     </item>
     
   </channel>
