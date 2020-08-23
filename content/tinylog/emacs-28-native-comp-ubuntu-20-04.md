@@ -1,7 +1,7 @@
 +++
 title = "Compiling and Running Emacs 28 from the native-comp feature branch (Ubuntu 20.04)."
 author = ["Vedang Manerikar"]
-lastmod = 2020-08-23T08:53:04+05:30
+lastmod = 2020-08-23T12:25:29+05:30
 tags = ["emacs"]
 categories = ["emacs"]
 draft = false
@@ -11,6 +11,8 @@ creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 ## The gist of it, building Emacs from Source {#the-gist-of-it-building-emacs-from-source}
 
 ```shell-script
+git clone https://git.savannah.gnu.org/git/emacs.git
+cd emacs
 ./autogen.sh
 ./configure --with-nativecomp
 # If everything works
@@ -19,6 +21,8 @@ make
 src/emacs -Q
 # Install the binary
 sudo make install
+# If you want to re-build from scratch
+make distclean
 ```
 
 

@@ -43,6 +43,8 @@ $ make tags
    :END:
 *** The gist of it, building Emacs from Source
    #+begin_src shell-script
+     git clone https://git.savannah.gnu.org/git/emacs.git
+     cd emacs
      ./autogen.sh
      ./configure --with-nativecomp
      # If everything works
@@ -51,6 +53,8 @@ $ make tags
      src/emacs -Q
      # Install the binary
      sudo make install
+     # If you want to re-build from scratch
+     make distclean
    #+end_src
 *** Problems during Installation
 **** Configure fails because libgccjit fails the smoketest
