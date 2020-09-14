@@ -1,12 +1,15 @@
 +++
 title = "Compiling and Running Emacs 28 from the native-comp feature branch (Ubuntu 20.04)."
 author = ["Vedang Manerikar"]
-lastmod = 2020-08-23T12:25:29+05:30
+lastmod = 2020-08-23T12:35:23+05:30
 tags = ["emacs"]
 categories = ["emacs"]
 draft = false
 creator = "Emacs 28.0.50 (Org mode 9.3.7 + ox-hugo)"
 +++
+
+{{< tweet 1297429392835010565>}}
+
 
 ## The gist of it, building Emacs from Source {#the-gist-of-it-building-emacs-from-source}
 

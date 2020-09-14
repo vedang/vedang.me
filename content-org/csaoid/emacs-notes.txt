@@ -40,7 +40,9 @@ $ make tags
 ** Compiling and Running Emacs 28 from the native-comp feature branch (Ubuntu 20.04).
    :PROPERTIES:
    :EXPORT_FILE_NAME: emacs-28-native-comp-ubuntu-20-04
+   :TWITTER:  https://twitter.com/vedang/status/1297429392835010565
    :END:
+{{< tweet 1297429392835010565>}}
 *** The gist of it, building Emacs from Source
    #+begin_src shell-script
      git clone https://git.savannah.gnu.org/git/emacs.git
