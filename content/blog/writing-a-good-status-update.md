@@ -3,7 +3,7 @@ title = "Writing a good status update"
 author = ["Vedang Manerikar"]
 date = 2019-08-06T07:49:00+05:30
 aliases = ["/techlog/2019-08-06-writing-a-good-status-update/"]
-lastmod = 2020-08-22T18:04:34+05:30
+lastmod = 2020-10-28T23:28:13+05:30
 tags = ["organization", "communication", "project-management", "engineering-management"]
 categories = ["organization"]
 draft = false
@@ -31,18 +31,21 @@ We share written status updates within the team on a weekly basis (every Monday)
 
 ## Writing the status update {#writing-the-status-update}
 
--   We ask for status updates on every Monday. First thing Monday
-    morning, spend time reviewing your last week and creating an update.
-    Remember to review the status you had posted last week as well! You
-    need to give updates about all of those tasks.
+Write the status update either as the last thing on Friday or as the
+first thing on Monday. Remember to review the status you had posted
+previously, so that you don't miss out on any updates. If you choose
+to write on Friday end-of-day, this can also be a great wind-down /
+logging-off ritual to wrap up the week and give yourself a sense of
+accomplishment.
 
 
 ## Create sections for your updates {#create-sections-for-your-updates}
 
 -   Use the following sections:
-    -   What I did last week
-    -   What I plan to do this week
-    -   Questions / Blockers
+    -   What I accomplished this last week
+    -   What didn't go according to plan
+    -   What I plan to do next week
+    -   Questions / Blockers / Action Items
 -   This makes it **easy to parse** your update.
 
 
@@ -58,7 +61,8 @@ We share written status updates within the team on a weekly basis (every Monday)
 
 ### Name the milestone of the project you are currently working on. {#name-the-milestone-of-the-project-you-are-currently-working-on-dot}
 
--   Helps when we have to take a call about cutting or increasing scope on a project.
+-   Helps when the team needs to take a call about cutting or
+    increasing scope on a project.
 -   Highlights and reinforces upcoming co-ordination points.
 
 
@@ -74,31 +78,36 @@ We share written status updates within the team on a weekly basis (every Monday)
 ### Example status update {#example-status-update}
 
 
-#### What I did last week: {#what-i-did-last-week}
+#### What I accomplished this last week: {#what-i-accomplished-this-last-week}
 
 -   Completed final PRD review for **Project X**, no open questions at
     this point! :yay:. Project is **on track**!
 -   Pushed a fix to **ABC Service** to production and closed **Jira Ticket
     Z**. Graphs show amazing reduction in network bandwidth! :epicwin:
     _link to graph or screenshot_.
--   Working on dev of **Project Y**. Project is **not on track** :sad_face:.
-    We had communicated that dev will be complete by <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-02 Fri&gt;</span></span>
-    but I will need 3 more days. This pushes the **new date to
-    <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-07 Wed&gt;</span></span>** EOD.
 -   Conducted the Enterprise initiative meeting, meeting notes are here:
     _link to meeting notes_.
 
 
-#### What I plan to do this week: {#what-i-plan-to-do-this-week}
+#### What didn't go according to plan: {#what-didn-t-go-according-to-plan}
+
+-   Working on dev of **Project Y**. Project is **not on track** :sad_face:.
+    We had communicated that dev will be complete by <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-02 Fri&gt;</span></span>
+    but I will need 3 more days. This pushes the **new date to
+    <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-07 Wed&gt;</span></span>** EOD.
+
+
+#### What I plan to do next week: {#what-i-plan-to-do-next-week}
 
 -   I will have the initial estimates for **Project X** by EOD
     <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-08 Thu&gt;</span></span>.
 -   I will complete the Dev work on **Project Y** as mentioned above.
+    **<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-07 Wed&gt; </span></span> EOD**
 -   I will create a document about **DEF Topic** as we had discussed by
     EOD <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-09 Fri&gt;</span></span>.
 
 
-#### Questions / Blockers: {#questions-blockers}
+#### Questions / Blockers / Action Items: {#questions-blockers-action-items}
 
 -   We need to sync up about ideas for implementing **Project X** before
     tomorrow EOD, but you don't have an empty meeting slot until
