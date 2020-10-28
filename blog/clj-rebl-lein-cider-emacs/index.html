@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Vedang Manerikar  | Writing a good status update</title>
+    <title>Vedang Manerikar  | How to use the Clojure REBL with Leiningen, Cider and Emacs</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.68.3" />
     
@@ -27,26 +27,32 @@
 
     
     
-    <meta property="og:title" content="Writing a good status update" />
-<meta property="og:description" content="We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&rsquo;s useful enough to publish publicly. Here goes:
-What is the purpose of status updates?  Let your manager know what you have achieved last week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself." />
+    <meta property="og:title" content="How to use the Clojure REBL with Leiningen, Cider and Emacs" />
+<meta property="og:description" content="Note: This set of instructions only work on Clojure 1.10&#43;, Lein 2.9&#43; and JDK 11&#43;. Also, REBL requires a license for commercial use.
+I didn&rsquo;t find a handy reference to getting started with REBL if your primary workflow is Leiningen/nrepl, so here is the series of things I had to do to get the REBL up and running for myself.
+  Download the REBL jar from Cognitect.
+  Use lein-localrepo to install the REBL jar to your m2." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://vedang.me/blog/writing-a-good-status-update/" />
-<meta property="article:published_time" content="2019-08-06T07:49:00+05:30" />
-<meta property="article:modified_time" content="2020-10-28T23:28:13+05:30" />
-<meta itemprop="name" content="Writing a good status update">
-<meta itemprop="description" content="We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&rsquo;s useful enough to publish publicly. Here goes:
-What is the purpose of status updates?  Let your manager know what you have achieved last week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself.">
-<meta itemprop="datePublished" content="2019-08-06T07:49:00&#43;05:30" />
-<meta itemprop="dateModified" content="2020-10-28T23:28:13&#43;05:30" />
-<meta itemprop="wordCount" content="679">
+<meta property="og:url" content="https://vedang.me/blog/clj-rebl-lein-cider-emacs/" />
+<meta property="article:published_time" content="2020-10-28T23:18:00+05:30" />
+<meta property="article:modified_time" content="2020-10-28T23:18:28+05:30" />
+<meta itemprop="name" content="How to use the Clojure REBL with Leiningen, Cider and Emacs">
+<meta itemprop="description" content="Note: This set of instructions only work on Clojure 1.10&#43;, Lein 2.9&#43; and JDK 11&#43;. Also, REBL requires a license for commercial use.
+I didn&rsquo;t find a handy reference to getting started with REBL if your primary workflow is Leiningen/nrepl, so here is the series of things I had to do to get the REBL up and running for myself.
+  Download the REBL jar from Cognitect.
+  Use lein-localrepo to install the REBL jar to your m2.">
+<meta itemprop="datePublished" content="2020-10-28T23:18:00&#43;05:30" />
+<meta itemprop="dateModified" content="2020-10-28T23:18:28&#43;05:30" />
+<meta itemprop="wordCount" content="291">
 
 
 
-<meta itemprop="keywords" content="organization,communication,project-management,engineering-management," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Writing a good status update"/>
-<meta name="twitter:description" content="We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&rsquo;s useful enough to publish publicly. Here goes:
-What is the purpose of status updates?  Let your manager know what you have achieved last week. Let your co-workers know what you have achieved this week. Reflect on your progress and pace yourself."/>
+<meta itemprop="keywords" content="tools,clojure,cognitect,rebl,leiningen,cider,emacs," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to use the Clojure REBL with Leiningen, Cider and Emacs"/>
+<meta name="twitter:description" content="Note: This set of instructions only work on Clojure 1.10&#43;, Lein 2.9&#43; and JDK 11&#43;. Also, REBL requires a license for commercial use.
+I didn&rsquo;t find a handy reference to getting started with REBL if your primary workflow is Leiningen/nrepl, so here is the series of things I had to do to get the REBL up and running for myself.
+  Download the REBL jar from Cognitect.
+  Use lein-localrepo to install the REBL jar to your m2."/>
 
   </head>
 
@@ -165,20 +171,20 @@ What is the purpose of status updates?  Let your manager know what you have achi
   <div id="sharing" class="mt3">
 
     
-    <a href="https://www.facebook.com/sharer.php?u=https://vedang.me/blog/writing-a-good-status-update/" class="facebook no-underline" aria-label="share on Facebook">
+    <a href="https://www.facebook.com/sharer.php?u=https://vedang.me/blog/clj-rebl-lein-cider-emacs/" class="facebook no-underline" aria-label="share on Facebook">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
 
     </a>
 
     
     
-    <a href="https://twitter.com/share?url=https://vedang.me/blog/writing-a-good-status-update/&amp;text=Writing%20a%20good%20status%20update" class="twitter no-underline" aria-label="share on Twitter">
+    <a href="https://twitter.com/share?url=https://vedang.me/blog/clj-rebl-lein-cider-emacs/&amp;text=How%20to%20use%20the%20Clojure%20REBL%20with%20Leiningen,%20Cider%20and%20Emacs" class="twitter no-underline" aria-label="share on Twitter">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
     </a>
 
     
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://vedang.me/blog/writing-a-good-status-update/&amp;title=Writing%20a%20good%20status%20update" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://vedang.me/blog/clj-rebl-lein-cider-emacs/&amp;title=How%20to%20use%20the%20Clojure%20REBL%20with%20Leiningen,%20Cider%20and%20Emacs" class="linkedin no-underline" aria-label="share on LinkedIn">
       <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -186,7 +192,7 @@ What is the purpose of status updates?  Let your manager know what you have achi
     </a>
   </div>
 
-      <h1 class="f1 athelas mt3 mb1">Writing a good status update</h1>
+      <h1 class="f1 athelas mt3 mb1">How to use the Clojure REBL with Leiningen, Cider and Emacs</h1>
       
       <p class="tracked">
           By <strong>
@@ -197,132 +203,106 @@ What is the purpose of status updates?  Let your manager know what you have achi
       </p>
       
       
-      <time class="f6 mv4 dib tracked" datetime="2019-08-06T07:49:00&#43;05:30">August 6, 2019</time>
+      <time class="f6 mv4 dib tracked" datetime="2020-10-28T23:18:00&#43;05:30">October 28, 2020</time>
 
       
       
-        <span class="f6 mv4 dib tracked"> - 4 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 679 words</span>
+        <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 291 words</span>
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it&rsquo;s useful enough to publish publicly. Here goes:</p>
-<h2 id="what-is-the-purpose-of-status-updates">What is the purpose of status updates?</h2>
-<ul>
-<li>Let <strong>your manager</strong> know what you have achieved last week.</li>
-<li>Let <strong>your co-workers</strong> know what you have achieved this week.</li>
-<li><strong>Reflect</strong> on your progress and pace <strong>yourself</strong>.</li>
-</ul>
-<h2 id="properties-of-good-status-updates">Properties of good status updates</h2>
-<ul>
-<li><strong>Short</strong> and <strong>meaningful</strong>. (5 min reading time)</li>
-<li>Communicate <strong>work in the previous week</strong>, <strong>highlight progress</strong>.</li>
-<li>Communicate <strong>plan for the next week</strong>, <strong>help make yourself efficient</strong>.</li>
-<li>Communicate <strong>open questions</strong> and <strong>blockers</strong>, <strong>highlight areas where we need to help you</strong>.</li>
-</ul>
-<h2 id="writing-the-status-update">Writing the status update</h2>
-<p>Write the status update either as the last thing on Friday or as the
-first thing on Monday. Remember to review the status you had posted
-previously, so that you don&rsquo;t miss out on any updates. If you choose
-to write on Friday end-of-day, this can also be a great wind-down /
-logging-off ritual to wrap up the week and give yourself a sense of
-accomplishment.</p>
-<h2 id="create-sections-for-your-updates">Create sections for your updates</h2>
-<ul>
-<li>Use the following sections:
-<ul>
-<li>What I accomplished this last week</li>
-<li>What didn&rsquo;t go according to plan</li>
-<li>What I plan to do next week</li>
-<li>Questions / Blockers / Action Items</li>
-</ul>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><strong>Note</strong>: This set of instructions only work on <strong>Clojure 1.10+</strong>, <strong>Lein
+2.9+</strong> and <strong>JDK 11+</strong>. Also, REBL requires a license for commercial use.</p>
+<p>I didn&rsquo;t find a handy reference to getting started with REBL if your
+primary workflow is Leiningen/nrepl, so here is the series of things I
+had to do to get the REBL up and running for myself.</p>
+<ol>
+<li>
+<p>Download the <a href="https://docs.datomic.com/cloud/other-tools/REBL.html">REBL jar</a> from Cognitect.</p>
 </li>
-<li>This makes it <strong>easy to parse</strong> your update.</li>
-</ul>
-<h3 id="name-the-project-you-are-currently-working-on">Name the project you are currently working on</h3>
-<ul>
-<li>Yes, your manager is supposed to know what you are working on. But
-you often do unplanned, extra tasks too. You help on other projects,
-handle production issues, discover interesting tidbits, get insights
-from analyzing logs. <strong>Highlight all of these activities!</strong>.</li>
-<li>Help your manager by making it easy for them to compile project reports.</li>
-<li>This makes your update very readable.</li>
-</ul>
-<h3 id="name-the-milestone-of-the-project-you-are-currently-working-on-dot">Name the milestone of the project you are currently working on.</h3>
-<ul>
-<li>Helps when the team needs to take a call about cutting or
-increasing scope on a project.</li>
-<li>Highlights and reinforces upcoming co-ordination points.</li>
-</ul>
-<h3 id="your-status-update-should-definitively-answer-the-following-questions">Your status update should definitively answer the following questions:</h3>
-<ul>
-<li>What are you working on?</li>
-<li>For each project that you are working on, where are you? What is the
-next date that you are committing to?</li>
-<li>Are you on track for the current phase of the project or not? If
-not, what is the impact on the overall project?</li>
-</ul>
-<h3 id="example-status-update">Example status update</h3>
-<h4 id="what-i-accomplished-this-last-week">What I accomplished this last week:</h4>
-<ul>
-<li>Completed final PRD review for <strong>Project X</strong>, no open questions at
-this point! :yay:. Project is <strong>on track</strong>!</li>
-<li>Pushed a fix to <strong>ABC Service</strong> to production and closed <strong>Jira Ticket
-Z</strong>. Graphs show amazing reduction in network bandwidth! :epicwin:
-<em>link to graph or screenshot</em>.</li>
-<li>Conducted the Enterprise initiative meeting, meeting notes are here:
-<em>link to meeting notes</em>.</li>
-</ul>
-<h4 id="what-didn-t-go-according-to-plan">What didn&rsquo;t go according to plan:</h4>
-<ul>
-<li>Working on dev of <strong>Project Y</strong>. Project is <strong>not on track</strong> :sad_face:.
-We had communicated that dev will be complete by <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-02 Fri&gt;</span></span>
-but I will need 3 more days. This pushes the <strong>new date to
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-07 Wed&gt;</span></span></strong> EOD.</li>
-</ul>
-<h4 id="what-i-plan-to-do-next-week">What I plan to do next week:</h4>
-<ul>
-<li>I will have the initial estimates for <strong>Project X</strong> by EOD
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-08 Thu&gt;</span></span>.</li>
-<li>I will complete the Dev work on <strong>Project Y</strong> as mentioned above.
-<strong><span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-07 Wed&gt; </span></span> EOD</strong></li>
-<li>I will create a document about <strong>DEF Topic</strong> as we had discussed by
-EOD <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-09 Fri&gt;</span></span>.</li>
-</ul>
-<h4 id="questions-blockers-action-items">Questions / Blockers / Action Items:</h4>
-<ul>
-<li>We need to sync up about ideas for implementing <strong>Project X</strong> before
-tomorrow EOD, but you don&rsquo;t have an empty meeting slot until
-day-after. What should we do?</li>
-<li>I will inform <strong>Frontend team-member</strong> that <strong>Project Y</strong> integration
-testing cannot start tomorrow, instead it will start on
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-08 Thu&gt;</span></span>.</li>
-</ul>
-<h2 id="what-do-you-get-from-writing-a-good-update">What do you get from writing a good update?</h2>
-<ul>
-<li>A <strong>record of work for yourself</strong>. This is invaluable come performance
-review time. You only have to read through 26 updates and you have a
-thorough summary.</li>
-<li><strong>Help your manager</strong> advocate for you during appraisals. You should
-care about your career more than anyone else.</li>
-<li><strong>Help yourself</strong>. Writing the update should <strong>give you</strong> a clear idea
-of your own progress and what you need to work on.</li>
-</ul>
+<li>
+<p>Use <a href="https://github.com/kumarshantanu/lein-localrepo">lein-localrepo</a> to install the REBL jar to your m2.</p>
+<pre><code class="language-shell-script" data-lang="shell-script">lein localrepo install rebl-0.9.242/rebl-0.9.242.jar com.cognitect/rebl 0.9.242
+</code></pre></li>
+<li>
+<p>Add the following code to your <code>profiles.clj</code> file (code below).
+This is based on the <a href="https://docs.datomic.com/cloud/other-tools/REBL.html#installation">REBL installation guide</a> and <a href="https://github.com/RickMoynihan/nrebl.middleware">Rick Moynihan&rsquo;s
+nrepl middleware</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{
+ <span style="color:#75715e">;; ....</span>
+ <span style="color:#75715e">;; You other profiles stuff</span>
+ <span style="color:#75715e">;; ....</span>
+ <span style="color:#e6db74">:rebl</span> {<span style="color:#e6db74">:plugins</span> [[cider/cider-nrepl <span style="color:#e6db74">&#34;0.25.3&#34;</span>]
+                  [refactor-nrepl <span style="color:#e6db74">&#34;2.5.0&#34;</span>]
+                  [nrepl <span style="color:#e6db74">&#34;0.8.2&#34;</span>]]
+        <span style="color:#e6db74">:repl-options</span> {<span style="color:#e6db74">:nrepl-middleware</span> [nrebl.middleware/wrap-nrebl]}
+        <span style="color:#e6db74">:dependencies</span> [[org.clojure/tools.deps.alpha <span style="color:#e6db74">&#34;0.7.511&#34;</span>]
+                       [com.cognitect/rebl <span style="color:#e6db74">&#34;0.9.242&#34;</span>]
+                       [org.clojure/core.async <span style="color:#e6db74">&#34;1.3.610&#34;</span>]
+                       [cljfmt  <span style="color:#e6db74">&#34;0.6.4&#34;</span>]
+                       [rickmoynihan/nrebl.middleware <span style="color:#e6db74">&#34;0.3.1&#34;</span>]
+                       [org.openjfx/javafx-fxml <span style="color:#e6db74">&#34;15-ea+6&#34;</span>]
+                       [org.openjfx/javafx-controls <span style="color:#e6db74">&#34;15-ea+6&#34;</span>]
+                       [org.openjfx/javafx-swing <span style="color:#e6db74">&#34;15-ea+6&#34;</span>]
+                       [org.openjfx/javafx-base <span style="color:#e6db74">&#34;15-ea+6&#34;</span>]
+                       [org.openjfx/javafx-web <span style="color:#e6db74">&#34;15-ea+6&#34;</span>]]}
+ <span style="color:#75715e">;; ....</span>
+ <span style="color:#75715e">;; If you don&#39;t have anything in your profiles.clj right now, just</span>
+ <span style="color:#75715e">;; remove the comments and copy the whole map over.</span>
+ }
+</code></pre></div></li>
+<li>
+<p>Start the REPL with the new profile</p>
+<pre><code class="language-shell-script" data-lang="shell-script">lein with-profile +rebl repl :headless
+</code></pre></li>
+<li>
+<p>Connect to the REPL from Emacs. Do this by opening up any Clojure
+file in your project and executing <code>M-x cider-connect</code> in the file.</p>
+</li>
+<li>
+<p>Run the following commands in the REPL to spin up the REBL.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[cognitect.rebl <span style="color:#e6db74">:as</span> rebl])
+(<span style="color:#a6e22e">rebl/ui</span>)
+</code></pre></div></li>
+<li>
+<p>At this point, anything that you evaluate when programming will be
+sent to your REPL as well as to your REBL and can be inspected from
+there. Anything you evaluate into the REPL will be sent over to the
+REBL as well.</p>
+</li>
+<li>
+<p>Work on the REPL as you normally would. Your work is also being sent
+into the REBL for fancy viewing when you need it.</p>
+</li>
+</ol>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/organization" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">organization</a>
+     <a href="/tags/tools" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">tools</a>
    </li>
   
    <li class="list">
-     <a href="/tags/communication" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">communication</a>
+     <a href="/tags/clojure" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">clojure</a>
    </li>
   
    <li class="list">
-     <a href="/tags/project-management" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">project-management</a>
+     <a href="/tags/cognitect" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cognitect</a>
    </li>
   
    <li class="list">
-     <a href="/tags/engineering-management" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">engineering-management</a>
+     <a href="/tags/rebl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">rebl</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/leiningen" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">leiningen</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/cider" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cider</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/emacs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">emacs</a>
    </li>
   
 </ul>
@@ -353,25 +333,7 @@ of your own progress and what you need to work on.</li>
       </div>
     </div>
 
-    <aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">What&#39;s in this blog</p>
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#what-is-the-purpose-of-status-updates">What is the purpose of status updates?</a></li>
-    <li><a href="#properties-of-good-status-updates">Properties of good status updates</a></li>
-    <li><a href="#writing-the-status-update">Writing the status update</a></li>
-    <li><a href="#create-sections-for-your-updates">Create sections for your updates</a>
-      <ul>
-        <li><a href="#name-the-project-you-are-currently-working-on">Name the project you are currently working on</a></li>
-        <li><a href="#name-the-milestone-of-the-project-you-are-currently-working-on-dot">Name the milestone of the project you are currently working on.</a></li>
-        <li><a href="#your-status-update-should-definitively-answer-the-following-questions">Your status update should definitively answer the following questions:</a></li>
-        <li><a href="#example-status-update">Example status update</a></li>
-      </ul>
-    </li>
-    <li><a href="#what-do-you-get-from-writing-a-good-update">What do you get from writing a good update?</a></li>
-  </ul>
-</nav>
-  </div>
+    <aside class="w-30-l mt6-l">
 
 
 
@@ -381,15 +343,27 @@ of your own progress and what you need to work on.</li>
     <ul class="pa0 list">
 	   
 	     <li  class="mb2">
-          <a href="/notes/gojek-10x-engineering/">Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</a>
+          <a href="/tinylog/emacs-28-native-comp-ubuntu-20-04/">Compiling and Running Emacs 28 from the native-comp feature branch (Ubuntu 20.04).</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/gene-kim-the-four-types/">Gene Kim: The Four Types of Work</a>
+          <a href="/notes/love-letter-to-clojure/">Lazy Weekend Reading: A love letter to Clojure</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/gene-kim-the-three-ways/">Gene Kim: The Three Ways of doing excellent Work</a>
+          <a href="/blog/problems-in-system76-oryx-pro/">Problems in my brand new System76 Oryx Pro laptop</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/simulating-the-passport-seva-kendra/">Simulating the Passport Seva Kendra using Clojure</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/composability-and-compojure/">Composability and Compojure</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/why-i-quit-stumpwm/">Why I Quit StumpWM</a>
         </li>
 	    
     </ul>

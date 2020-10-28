@@ -14,10 +14,12 @@
     <item>
       <title>Compiling and Running Emacs 28 from the native-comp feature branch (Ubuntu 20.04).</title>
       <link>https://vedang.me/tinylog/emacs-28-native-comp-ubuntu-20-04/</link>
-      <pubDate>Sun, 23 Aug 2020 12:25:29 +0530</pubDate>
+      <pubDate>Sun, 23 Aug 2020 12:35:23 +0530</pubDate>
       
       <guid>https://vedang.me/tinylog/emacs-28-native-comp-ubuntu-20-04/</guid>
-      <description>The gist of it, building Emacs from Source git clone https://git.savannah.gnu.org/git/emacs.git cd emacs ./autogen.sh ./configure --with-nativecomp # If everything works make # Test the binary src/emacs -Q # Install the binary sudo make install # If you want to re-build from scratch make distclean Problems during Installation Configure fails because libgccjit fails the smoketest   Ensure that libgccjit is installed and at the latest version (at this point in time, the latest version is 10)</description>
+      <description>Quick Note: How to compile Emacs 28.0.5 from source with native compilation: https://t.co/29vNNkGQoU
+Native Comp is the work of Andrea Corallo, compiling emacslisp to native code and making it blazing fast! https://t.co/A9oR5mJC9G
+&amp;mdash; Vedang Manerikar (@vedang) August 23, 2020  The gist of it, building Emacs from Source git clone https://git.savannah.gnu.org/git/emacs.git cd emacs ./autogen.sh ./configure --with-nativecomp # If everything works make # Test the binary src/emacs -Q # Install the binary sudo make install # If you want to re-build from scratch make distclean Problems during Installation Configure fails because libgccjit fails the smoketest   Ensure that libgccjit is installed and at the latest version (at this point in time, the latest version is 10)</description>
     </item>
     
     <item>

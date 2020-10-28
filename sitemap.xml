@@ -4,35 +4,91 @@
   
   <url>
     <loc>https://vedang.me/categories/</loc>
-    <lastmod>2020-08-23T12:25:29+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/tinylog/emacs-28-native-comp-ubuntu-20-04/</loc>
-    <lastmod>2020-08-23T12:25:29+05:30</lastmod>
+    <loc>https://vedang.me/tags/cider/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/clojure/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/cognitect/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/emacs/</loc>
-    <lastmod>2020-08-23T12:25:29+05:30</lastmod>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://vedang.me/categories/emacs/</loc>
-    <lastmod>2020-08-23T12:25:29+05:30</lastmod>
+    <loc>https://vedang.me/blog/clj-rebl-lein-cider-emacs/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/leiningen/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/rebl/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/</loc>
-    <lastmod>2020-08-23T12:25:29+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tags/tools/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/categories/tools/</loc>
+    <lastmod>2020-10-28T23:18:28+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/tinylog/emacs-28-native-comp-ubuntu-20-04/</loc>
+    <lastmod>2020-08-23T12:35:23+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vedang.me/categories/emacs/</loc>
+    <lastmod>2020-08-23T12:35:23+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -60,7 +116,7 @@
   
   <url>
     <loc>https://vedang.me/tags/engineering-management/</loc>
-    <lastmod>2020-08-22T18:11:52+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -241,13 +297,6 @@
   </url>
   
   <url>
-    <loc>https://vedang.me/tags/clojure/</loc>
-    <lastmod>2020-08-22T18:04:35+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://vedang.me/notes/love-letter-to-clojure/</loc>
     <lastmod>2020-08-22T18:04:35+05:30</lastmod>
     <changefreq>monthly</changefreq>
@@ -256,35 +305,35 @@
   
   <url>
     <loc>https://vedang.me/tags/communication/</loc>
-    <lastmod>2020-08-22T18:04:34+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/organization/</loc>
-    <lastmod>2020-08-22T18:04:34+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/categories/organization/</loc>
-    <lastmod>2020-08-22T18:04:34+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/tags/project-management/</loc>
-    <lastmod>2020-08-22T18:04:34+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://vedang.me/blog/writing-a-good-status-update/</loc>
-    <lastmod>2020-08-22T18:04:34+05:30</lastmod>
+    <lastmod>2020-10-28T23:28:13+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -341,20 +390,6 @@
   <url>
     <loc>https://vedang.me/tags/system76/</loc>
     <lastmod>2020-08-22T18:04:33+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/tags/tools/</loc>
-    <lastmod>2020-08-22T18:04:34+05:30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://vedang.me/categories/tools/</loc>
-    <lastmod>2020-08-22T18:04:34+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

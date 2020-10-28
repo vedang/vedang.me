@@ -6,17 +6,71 @@
     <description>Recent content in Tags on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Aug 2020 12:25:29 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2020 23:18:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>cider</title>
+      <link>https://vedang.me/tags/cider/</link>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/cider/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clojure</title>
+      <link>https://vedang.me/tags/clojure/</link>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cognitect</title>
+      <link>https://vedang.me/tags/cognitect/</link>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/cognitect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>emacs</title>
       <link>https://vedang.me/tags/emacs/</link>
-      <pubDate>Sun, 23 Aug 2020 12:25:29 +0530</pubDate>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
       
       <guid>https://vedang.me/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>leiningen</title>
+      <link>https://vedang.me/tags/leiningen/</link>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/leiningen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rebl</title>
+      <link>https://vedang.me/tags/rebl/</link>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/rebl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://vedang.me/tags/tools/</link>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/tags/tools/</guid>
       <description></description>
     </item>
     
@@ -102,15 +156,6 @@
     </item>
     
     <item>
-      <title>clojure</title>
-      <link>https://vedang.me/tags/clojure/</link>
-      <pubDate>Sun, 13 Oct 2019 23:02:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/clojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>communication</title>
       <link>https://vedang.me/tags/communication/</link>
       <pubDate>Tue, 06 Aug 2019 07:49:00 +0530</pubDate>
@@ -188,15 +233,6 @@
       <pubDate>Fri, 31 May 2019 22:51:00 +0530</pubDate>
       
       <guid>https://vedang.me/tags/system76/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tools</title>
-      <link>https://vedang.me/tags/tools/</link>
-      <pubDate>Fri, 31 May 2019 22:51:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/tags/tools/</guid>
       <description></description>
     </item>
     

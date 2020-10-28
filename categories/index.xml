@@ -6,15 +6,24 @@
     <description>Recent content in Categories on Vedang Manerikar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Aug 2020 12:25:29 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2020 23:18:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vedang.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>tools</title>
+      <link>https://vedang.me/categories/tools/</link>
+      <pubDate>Wed, 28 Oct 2020 23:18:00 +0530</pubDate>
+      
+      <guid>https://vedang.me/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>emacs</title>
       <link>https://vedang.me/categories/emacs/</link>
-      <pubDate>Sun, 23 Aug 2020 12:25:29 +0530</pubDate>
+      <pubDate>Sun, 23 Aug 2020 12:35:23 +0530</pubDate>
       
       <guid>https://vedang.me/categories/emacs/</guid>
       <description></description>
@@ -62,15 +71,6 @@
       <pubDate>Tue, 06 Aug 2019 07:49:00 +0530</pubDate>
       
       <guid>https://vedang.me/categories/organization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tools</title>
-      <link>https://vedang.me/categories/tools/</link>
-      <pubDate>Fri, 31 May 2019 22:51:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/categories/tools/</guid>
       <description></description>
     </item>
     

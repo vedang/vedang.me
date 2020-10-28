@@ -36,7 +36,7 @@
 <meta property="og:description" content="My corner on the Inter Webs." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vedang.me/categories/" />
-<meta property="og:updated_time" content="2020-08-23T12:25:29+05:30" />
+<meta property="og:updated_time" content="2020-10-28T23:18:00+05:30" />
 <meta itemprop="name" content="Categories">
 <meta itemprop="description" content="My corner on the Inter Webs."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Categories"/>
@@ -173,7 +173,9 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      The gist of it, building Emacs from Source git clone https://git.savannah.gnu.org/git/emacs.git cd emacs ./autogen.sh ./configure --with-nativecomp # If everything works make # Test the binary src/emacs -Q # Install the binary sudo make install # If you want to re-build from scratch make distclean Problems during Installation Configure fails because libgccjit fails the smoketest   Ensure that libgccjit is installed and at the latest version (at this point in time, the latest version is 10)
+      Quick Note: How to compile Emacs 28.0.5 from source with native compilation: https://t.co/29vNNkGQoU
+Native Comp is the work of Andrea Corallo, compiling emacslisp to native code and making it blazing fast! https://t.co/A9oR5mJC9G
+&mdash; Vedang Manerikar (@vedang) August 23, 2020  The gist of it, building Emacs from Source git clone https://git.savannah.gnu.org/git/emacs.git cd emacs ./autogen.sh ./configure --with-nativecomp # If everything works make # Test the binary src/emacs -Q # Install the binary sudo make install # If you want to re-build from scratch make distclean Problems during Installation Configure fails because libgccjit fails the smoketest   Ensure that libgccjit is installed and at the latest version (at this point in time, the latest version is 10)
     </div>
   </div>
 </div>
@@ -580,6 +582,24 @@ Error: channel :&lt;channel-name&gt;-remote:&lt;folder&gt;-:&lt;channel-name&gt;
             Category: tools
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="https://vedang.me/blog/clj-rebl-lein-cider-emacs/" class="link black dim">
+        How to use the Clojure REBL with Leiningen, Cider and Emacs
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Note: This set of instructions only work on Clojure 1.10+, Lein 2.9+ and JDK 11+. Also, REBL requires a license for commercial use.
+I didn&rsquo;t find a handy reference to getting started with REBL if your primary workflow is Leiningen/nrepl, so here is the series of things I had to do to get the REBL up and running for myself.
+  Download the REBL jar from Cognitect.
+  Use lein-localrepo to install the REBL jar to your m2.
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
