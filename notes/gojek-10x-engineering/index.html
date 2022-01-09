@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Vedang Manerikar  | Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    
-
-    
-    
-      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
-    
-
-    
-
-    
-      
-<link rel="shortcut icon" href="/images/vedang_small.jpeg" type="image/x-icon" />
-
-    
-
-    
-    
-    <meta property="og:title" content="Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?" />
-<meta property="og:description" content="Summary
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Vedang Manerikar | Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=generator content="Hugo 0.80.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link href=/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css rel=stylesheet><link rel="shortcut icon" href=/images/vedang_small.jpeg type=image/x-icon><meta property="og:title" content="Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?"><meta property="og:description" content="Summary
 
 Engineering quality is paramount. Focus on clean and clear code.
 Code is the primary medium of communication for any engineer.
@@ -79,14 +49,7 @@ Can accept feedback
 
 
 Find the full video here!
-The rest of this post is detailed notes on the video
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://vedang.me/notes/gojek-10x-engineering/" />
-<meta property="article:published_time" content="2019-07-20T07:39:00+05:30" />
-<meta property="article:modified_time" content="2020-08-22T18:04:36+05:30" />
-<meta itemprop="name" content="Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?">
-<meta itemprop="description" content="Summary
+The rest of this post is detailed notes on the video"><meta property="og:type" content="article"><meta property="og:url" content="https://vedang.me/notes/gojek-10x-engineering/"><meta property="article:published_time" content="2019-07-20T07:39:00+05:30"><meta property="article:modified_time" content="2020-08-22T18:04:36+05:30"><meta itemprop=name content="Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?"><meta itemprop=description content="Summary
 
 Engineering quality is paramount. Focus on clean and clear code.
 Code is the primary medium of communication for any engineer.
@@ -137,17 +100,7 @@ Can accept feedback
 
 
 Find the full video here!
-The rest of this post is detailed notes on the video
-">
-<meta itemprop="datePublished" content="2019-07-20T07:39:00&#43;05:30" />
-<meta itemprop="dateModified" content="2020-08-22T18:04:36&#43;05:30" />
-<meta itemprop="wordCount" content="1777">
-
-
-
-<meta itemprop="keywords" content="engineering-management,gojek,culture," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?"/>
-<meta name="twitter:description" content="Summary
+The rest of this post is detailed notes on the video"><meta itemprop=datePublished content="2019-07-20T07:39:00+05:30"><meta itemprop=dateModified content="2020-08-22T18:04:36+05:30"><meta itemprop=wordCount content="1777"><meta itemprop=keywords content="engineering-management,gojek,culture,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?"><meta name=twitter:description content="Summary
 
 Engineering quality is paramount. Focus on clean and clear code.
 Code is the primary medium of communication for any engineer.
@@ -198,650 +151,100 @@ Can accept feedback
 
 
 Find the full video here!
-The rest of this post is detailed notes on the video
-"/>
-
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-   
-  
-
-  
-  
-  <header class="cover bg-top" style="background-image: url('https://vedang.me/blog/gojek-10x-engineering/gofigure6.jpg');">
-    <div class="pb3-m pb6-l bg-black-60">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="https://vedang.me/" class="f3 fw2 hover-white no-underline white-90 dib">
-      Vedang Manerikar
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog" title="Writing page">
-              Writing
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/notes" title="Notes page">
-              Notes
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/tinylog" title="Tinylog page">
-              Tinylog
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
-              About Me
-            </a>
-          </li>
-          
-        </ul>
-      
-      
-
-
-
-
-<a href="https://twitter.com/vedang" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
-
-<a href="https://github.com/vedang" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
-
-<a href="https://mastodon.technology/@vedang" target="_blank" class="link-transition mastodon link dib z-999 pt3 pt0-l mr1" title="Mastodon link" rel="noopener" aria-label="follow on Mastodon——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 230 230;" version="1.1" viewBox="0 0 230 230" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M211.80683 139.0875c-3.1825 16.36625-28.4925 34.2775-57.5625 37.74875-15.16 1.80875-30.0825 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.3925 27.9425 21.115.7225 39.91625-5.20625 39.91625-5.20625l.86875 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23183 213.82 1.40558 165.31125.20808 116.09125c-.36375-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67058 3.45375 78.20308.2425 107.86433 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.97625 14.7525 32.97625 65.0825 0 0 .4125 37.13375-4.6 62.915" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-<path d="M65.68743 96.45938c0 9.01375-7.3075 16.32125-16.3225 16.32125-9.01375 0-16.32-7.3075-16.32-16.32125 0-9.01375 7.30625-16.3225 16.32-16.3225 9.015 0 16.3225 7.30875 16.3225 16.3225M124.52893 96.45938c0 9.01375-7.30875 16.32125-16.3225 16.32125-9.01375 0-16.32125-7.3075-16.32125-16.32125 0-9.01375 7.3075-16.3225 16.32125-16.3225 9.01375 0 16.3225 7.30875 16.3225 16.3225M183.36933 96.45938c0 9.01375-7.3075 16.32125-16.32125 16.32125-9.01375 0-16.32125-7.3075-16.32125-16.32125 0-9.01375 7.3075-16.3225 16.32125-16.3225 9.01375 0 16.32125 7.30875 16.32125 16.3225" fill="#fff"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-    </div>
-  </div>
-</nav>
-
-      <div class="tc-l pv6 ph3 ph4-ns">
-        
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</h1>
-          
-        
-      </div>
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked">
-          
-        NOTES
-      </aside>
-      
-
-
-
-
-  <div id="sharing" class="mt3">
-
-    
-    <a href="https://www.facebook.com/sharer.php?u=https://vedang.me/notes/gojek-10x-engineering/" class="facebook no-underline" aria-label="share on Facebook">
-      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
-
-    </a>
-
-    
-    
-    <a href="https://twitter.com/share?url=https://vedang.me/notes/gojek-10x-engineering/&amp;text=Lazy%20Weekend%20Viewing:%20GOJEK%27s%2010x%20Engineer%20-%20Truth%20or%20Myth?" class="twitter no-underline" aria-label="share on Twitter">
-      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-    </a>
-
-    
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://vedang.me/notes/gojek-10x-engineering/&amp;title=Lazy%20Weekend%20Viewing:%20GOJEK%27s%2010x%20Engineer%20-%20Truth%20or%20Myth?" class="linkedin no-underline" aria-label="share on LinkedIn">
-      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-
-    </a>
-  </div>
-
-      <h1 class="f1 athelas mt3 mb1">Lazy Weekend Viewing: GOJEK&#39;s 10x Engineer - Truth or Myth?</h1>
-      
-      <p class="tracked">
-          By <strong>
-          
-              Vedang Manerikar
-          
-          </strong>
-      </p>
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2019-07-20T07:39:00&#43;05:30">July 20, 2019</time>
-
-      
-      
-        <span class="f6 mv4 dib tracked"> - 9 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 1777 words</span>
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="summary">Summary</h2>
-<ul>
-<li>Engineering quality is paramount. Focus on <a href="https://dave.cheney.net/2019/07/09/clear-is-better-than-clever">clean and clear code</a>.
+The rest of this post is detailed notes on the video"></head><body class="ma0 avenir bg-near-white"><header class="cover bg-top" style=background-image:url(https://vedang.me/blog/gojek-10x-engineering/gofigure6.jpg)><div class="pb3-m pb6-l bg-black-60"><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=https://vedang.me/ class="f3 fw2 hover-white no-underline white-90 dib">Vedang Manerikar</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/blog title="Writing page">Writing</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/notes title="Notes page">Notes</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/tinylog title="Tinylog page">Tinylog</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About Me page">About Me</a></li></ul><a href=https://twitter.com/vedang target=_blank class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a><a href=https://github.com/vedang target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a><a href=https://mastodon.technology/@vedang target=_blank class="link-transition mastodon link dib z-999 pt3 pt0-l mr1" title="Mastodon link" rel=noopener aria-label="follow on Mastodon——Opens in a new window"><svg height="32" style="enable-background:new 0 0 230 230" viewBox="0 0 230 230" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M211.80683 139.0875c-3.1825 16.36625-28.4925 34.2775-57.5625 37.74875-15.16 1.80875-30.0825 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125.0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.3925 27.9425 21.115.7225 39.91625-5.20625 39.91625-5.20625l.86875 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23183 213.82 1.40558 165.31125.20808 116.09125c-.36375-14.61375-.14-28.39375-.14-39.91875.0-50.33 32.97625-65.0825 32.97625-65.0825C49.67058 3.45375 78.20308.2425 107.86433.0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09.0.0 32.97625 14.7525 32.97625 65.0825.0.0.4125 37.13375-4.6 62.915" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/><path d="M65.68743 96.45938c0 9.01375-7.3075 16.32125-16.3225 16.32125-9.01375.0-16.32-7.3075-16.32-16.32125.0-9.01375 7.30625-16.3225 16.32-16.3225 9.015.0 16.3225 7.30875 16.3225 16.3225M124.52893 96.45938c0 9.01375-7.30875 16.32125-16.3225 16.32125s-16.32125-7.3075-16.32125-16.32125c0-9.01375 7.3075-16.3225 16.32125-16.3225 9.01375.0 16.3225 7.30875 16.3225 16.3225M183.36933 96.45938c0 9.01375-7.3075 16.32125-16.32125 16.32125s-16.32125-7.3075-16.32125-16.32125c0-9.01375 7.3075-16.3225 16.32125-16.3225s16.32125 7.30875 16.32125 16.3225" fill="#fff"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a></div></div></nav><div class="tc-l pv6 ph3 ph4-ns"><h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?</h1></div></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">NOTES</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://vedang.me/notes/gojek-10x-engineering/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://vedang.me/notes/gojek-10x-engineering/&text=Lazy%20Weekend%20Viewing:%20GOJEK%27s%2010x%20Engineer%20-%20Truth%20or%20Myth?" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://vedang.me/notes/gojek-10x-engineering/&title=Lazy%20Weekend%20Viewing:%20GOJEK%27s%2010x%20Engineer%20-%20Truth%20or%20Myth?" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30C64 50.568 50.568 64 34 64zM26.354 48.137V27.71h-6.789v20.427H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?</h1><p class=tracked>By <strong>Vedang Manerikar</strong></p><time class="f6 mv4 dib tracked" datetime=2019-07-20T07:39:00+05:30>July 20, 2019</time>
+<span class="f6 mv4 dib tracked">- 9 minutes read</span>
+<span class="f6 mv4 dib tracked">- 1777 words</span></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id=summary>Summary</h2><ul><li>Engineering quality is paramount. Focus on <a href=https://dave.cheney.net/2019/07/09/clear-is-better-than-clever>clean and clear code</a>.
 Code is the primary medium of communication for any engineer.
-Write beautiful code and hold people to high standards.</li>
-<li>Adding head count has vast hidden costs and often brings down
+Write beautiful code and hold people to high standards.</li><li>Adding head count has vast hidden costs and often brings down
 output. The reason for this is the exponential increase in
-communication required to align everyone to common goals.</li>
-<li>Similarly, pods cannot scale unless they can own small,
-independent components.</li>
-<li>Monoliths are normal and good when the company is small.
+communication required to align everyone to common goals.</li><li>Similarly, pods cannot scale unless they can own small,
+independent components.</li><li>Monoliths are normal and good when the company is small.
 Refactoring the monolithic model into different components allows
-us to scale pods and org.</li>
-<li>Carve monoliths only when it hits critical mass. Then, identify
-the pain and pull it out into it&rsquo;s own pod.</li>
-<li>&ldquo;Relationship as a service&rdquo; or &ldquo;Please get this done for me over
-and above other stuff on your plate&rdquo;
-<ul>
-<li>&ldquo;Traffic congestion&rdquo; (A team which is too busy) and structural
+us to scale pods and org.</li><li>Carve monoliths only when it hits critical mass. Then, identify
+the pain and pull it out into it&rsquo;s own pod.</li><li>&ldquo;Relationship as a service&rdquo; or &ldquo;Please get this done for me over
+and above other stuff on your plate&rdquo;<ul><li>&ldquo;Traffic congestion&rdquo; (A team which is too busy) and structural
 failure can lead to the impression that the system is
-bureaucratic and political.</li>
-</ul>
-</li>
-<li>Criteria when hiring Engineers
-<ul>
-<li>Computer science (Can computers understand your code?)
-<ul>
-<li>Ability to grasp large complex systems</li>
-<li>Understanding of implications of design choices on that system.</li>
-</ul>
-</li>
-<li>Software Engineering (Can humans understand your code?)
-<ul>
-<li>How well do you communicate through your code? This is the
-metric that enables building <strong>good</strong> systems.</li>
-<li>The hygiene you show in code is the hygiene you will enforce
-on others.</li>
-</ul>
-</li>
-<li>Good behavioral traits (Can you grow?)
-<ul>
-<li>Curious</li>
-<li>Wants to learn</li>
-<li>Can accept feedback</li>
-<li>&ldquo;Strong opinions, Weakly held.&rdquo;</li>
-<li>&ldquo;Pride without attachment.&rdquo;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Find the full video <a href="https://www.youtube.com/watch?v=He0XBBfCEVk">here</a>!</li>
-<li>The rest of this post is detailed notes on the video</li>
-</ul>
-<h2 id="introductions">Introductions</h2>
-<ul>
-<li>CEO: Nadiem Makarim</li>
-<li>CTO: Niranjan Paranjape</li>
-<li>Tech Recruitment Head: Sidu Ponnappa</li>
-<li>C42 Engineering: Sequoia SWAT Team for solving tech problems
-<ul>
-<li>They were the rare &ldquo;other Clojure shop&rdquo; in India in 2010.</li>
-</ul>
-</li>
-<li>Common consulting milestone for them was &ldquo;the Client just tried
+bureaucratic and political.</li></ul></li><li>Criteria when hiring Engineers<ul><li>Computer science (Can computers understand your code?)<ul><li>Ability to grasp large complex systems</li><li>Understanding of implications of design choices on that system.</li></ul></li><li>Software Engineering (Can humans understand your code?)<ul><li>How well do you communicate through your code? This is the
+metric that enables building <strong>good</strong> systems.</li><li>The hygiene you show in code is the hygiene you will enforce
+on others.</li></ul></li><li>Good behavioral traits (Can you grow?)<ul><li>Curious</li><li>Wants to learn</li><li>Can accept feedback</li><li>&ldquo;Strong opinions, Weakly held.&rdquo;</li><li>&ldquo;Pride without attachment.&rdquo;</li></ul></li></ul></li><li>Find the full video <a href="https://www.youtube.com/watch?v=He0XBBfCEVk">here</a>!</li><li>The rest of this post is detailed notes on the video</li></ul><h2 id=introductions>Introductions</h2><ul><li>CEO: Nadiem Makarim</li><li>CTO: Niranjan Paranjape</li><li>Tech Recruitment Head: Sidu Ponnappa</li><li>C42 Engineering: Sequoia SWAT Team for solving tech problems<ul><li>They were the rare &ldquo;other Clojure shop&rdquo; in India in 2010.</li></ul></li><li>Common consulting milestone for them was &ldquo;the Client just tried
 to poach me&rdquo;. When Gojek tried this with Niranjan, they sold the
-entire company to Gojek.</li>
-<li>Today, Gojek does $9 BILLION in transactions with 300 engineers.</li>
-</ul>
-<h2 id="how-do-you-get-so-much-done-with-so-few-engineers">How do you get so much done with so few engineers</h2>
-<ul>
-<li>Adding headcount does not increase output.</li>
-<li>With every engineer you add, you actually slow down work
-(exponentially)</li>
-<li>A good finance person will challenge you on every item of spend
-because they understand that that&rsquo;s how they lose money.</li>
-<li>Similarly, a good engineering leader will challenge you on every
+entire company to Gojek.</li><li>Today, Gojek does $9 BILLION in transactions with 300 engineers.</li></ul><h2 id=how-do-you-get-so-much-done-with-so-few-engineers>How do you get so much done with so few engineers</h2><ul><li>Adding headcount does not increase output.</li><li>With every engineer you add, you actually slow down work
+(exponentially)</li><li>A good finance person will challenge you on every item of spend
+because they understand that that&rsquo;s how they lose money.</li><li>Similarly, a good engineering leader will challenge you on every
 addition of headcount. The hidden cost is enormous and impacts
-ability to deliver quickly and at quality.</li>
-</ul>
-<h2 id="collaboration-communication-and-team-size">Collaboration, Communication and Team Size</h2>
-<ul>
-<li>Every person you add exponentially increases the combinatorics of
+ability to deliver quickly and at quality.</li></ul><h2 id=collaboration-communication-and-team-size>Collaboration, Communication and Team Size</h2><ul><li>Every person you add exponentially increases the combinatorics of
 communication you need in order to agree on what exactly it is
-that you are building.</li>
-<li><strong>Code is communication between humans. Keep it clean and simple.</strong></li>
-<li>Upto 4 people, productivity grows linearly with addition of
-people. Beyond that it starts plateauing and dipping.
-<ul>
-<li>The person who observed this started slicing and dicing teams
+that you are building.</li><li><strong>Code is communication between humans. Keep it clean and simple.</strong></li><li>Upto 4 people, productivity grows linearly with addition of
+people. Beyond that it starts plateauing and dipping.<ul><li>The person who observed this started slicing and dicing teams
 so that at any point in time a subsystem was being worked on by
-no more than 4 people.</li>
-<li>By <a href="https://goodroot.ca/post/2018/10/13/practicality-metaphysics-conways-law/">Conway&rsquo;s Law</a>, he was forcing system architecture to be set
-up in a certain way.</li>
-</ul>
-</li>
-<li>We chose to map out our systems based on what a 5 person team
-could do.</li>
-</ul>
-<h2 id="what-about-number-of-pods-will-infinite-teams-of-5-scale-infinitely">What about &ldquo;number of pods&rdquo;? Will infinite teams of 5 scale infinitely?</h2>
-<ul>
-<li>As an organization, we find similar diminishing returns with
-growing the number of pods that we have.</li>
-<li>The company&rsquo;s ability to add pods is also limited by ability of
-the pods to understand the underlying system.</li>
-<li>If your pods are independent (have to collaborate only once in 2
-to 4 weeks), then you are in a manageable situation.</li>
-<li>Multiple pods working on the same problem leads to pushing for
+no more than 4 people.</li><li>By <a href=https://goodroot.ca/post/2018/10/13/practicality-metaphysics-conways-law/>Conway&rsquo;s Law</a>, he was forcing system architecture to be set
+up in a certain way.</li></ul></li><li>We chose to map out our systems based on what a 5 person team
+could do.</li></ul><h2 id=what-about-number-of-pods-will-infinite-teams-of-5-scale-infinitely>What about &ldquo;number of pods&rdquo;? Will infinite teams of 5 scale infinitely?</h2><ul><li>As an organization, we find similar diminishing returns with
+growing the number of pods that we have.</li><li>The company&rsquo;s ability to add pods is also limited by ability of
+the pods to understand the underlying system.</li><li>If your pods are independent (have to collaborate only once in 2
+to 4 weeks), then you are in a manageable situation.</li><li>Multiple pods working on the same problem leads to pushing for
 local goals (evolving the system to maximize your objectives
-based on limited understanding)</li>
-</ul>
-<h2 id="complexity-of-organizations">Complexity of organizations</h2>
-<ul>
-<li>&ldquo;Don&rsquo;t slow me down&rdquo; from CEO to engineering
-<ul>
-<li>Philosopher poet engineers</li>
-<li>Engineering had to educate the CEO on the bad effects of not
-on-boarding new comers fast enough</li>
-</ul>
-</li>
-<li>Adding Kafka to our stack allowed us to scale
-<ul>
-<li>Helped us decouple communication</li>
-<li>Tap into our data, you don&rsquo;t need to ask me anymore.</li>
-</ul>
-</li>
-<li><strong>Refactoring the monolithic model into different components
-allowed us to put more people on the independent teams.</strong></li>
-</ul>
-<h2 id="monolith-to-soa">Monolith to SOA</h2>
-<ul>
-<li>We first pulled out the allocation system
-<ul>
-<li>matching driver to customer</li>
-</ul>
-</li>
-<li>Next we pulled out Go Pay
-<ul>
-<li>This allowed us to staff the team of Go Pay without them having
-to understand the entire monolith.</li>
-</ul>
-</li>
-<li><strong>Identify a problem, pull it out, establish a pod around it.</strong></li>
-<li>CTO was pushing CEO:
-<ul>
-<li>Before we move into this new thing, we need to get rid of the
-monolith first.</li>
-<li>The choice they made was <strong>never stall growth</strong>. This meant
+based on limited understanding)</li></ul><h2 id=complexity-of-organizations>Complexity of organizations</h2><ul><li>&ldquo;Don&rsquo;t slow me down&rdquo; from CEO to engineering<ul><li>Philosopher poet engineers</li><li>Engineering had to educate the CEO on the bad effects of not
+on-boarding new comers fast enough</li></ul></li><li>Adding Kafka to our stack allowed us to scale<ul><li>Helped us decouple communication</li><li>Tap into our data, you don&rsquo;t need to ask me anymore.</li></ul></li><li><strong>Refactoring the monolithic model into different components
+allowed us to put more people on the independent teams.</strong></li></ul><h2 id=monolith-to-soa>Monolith to SOA</h2><ul><li>We first pulled out the allocation system<ul><li>matching driver to customer</li></ul></li><li>Next we pulled out Go Pay<ul><li>This allowed us to staff the team of Go Pay without them having
+to understand the entire monolith.</li></ul></li><li><strong>Identify a problem, pull it out, establish a pod around it.</strong></li><li>CTO was pushing CEO:<ul><li>Before we move into this new thing, we need to get rid of the
+monolith first.</li><li>The choice they made was <strong>never stall growth</strong>. This meant
 hanging on to the monolith for longer than they would have
 liked, and refactoring it in bits and pieces rather than in one
-single effort.</li>
-</ul>
-</li>
-<li>When starting out, it makes complete sense to have a monolith.</li>
-<li>When you carve a system out of a monolith, eventually that will
-become a monolith.
-<ul>
-<li>Now you need to split it again.</li>
-<li><strong>Identify when the monolith reaches critical mass, and then
-refactor your team and code-base in lockstep.</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="relationship-as-a-service-aka-how-politics-enters-your-system">Relationship as a service AKA How politics enters your system</h2>
-<ul>
-<li>I need something from your system, so I&rsquo;m going to lean on our
-relationship to unblock me and ignore your own priorities.</li>
-<li>&ldquo;Hey I really need this done fast, because X&rdquo;</li>
-<li>This will grow until you are completely busy trying to unblock
+single effort.</li></ul></li><li>When starting out, it makes complete sense to have a monolith.</li><li>When you carve a system out of a monolith, eventually that will
+become a monolith.<ul><li>Now you need to split it again.</li><li><strong>Identify when the monolith reaches critical mass, and then
+refactor your team and code-base in lockstep.</strong></li></ul></li></ul><h2 id=relationship-as-a-service-aka-how-politics-enters-your-system>Relationship as a service AKA How politics enters your system</h2><ul><li>I need something from your system, so I&rsquo;m going to lean on our
+relationship to unblock me and ignore your own priorities.</li><li>&ldquo;Hey I really need this done fast, because X&rdquo;</li><li>This will grow until you are completely busy trying to unblock
 other people and are unable to focus on any of your own
-priorities.</li>
-<li>Now you have a bureaucracy. The person with the back-channel to
+priorities.</li><li>Now you have a bureaucracy. The person with the back-channel to
 the blocked system gets to jump the queue. This inherently does
 not scale because people without the relationship back-channel
-get more and more frustrated.</li>
-<li>&ldquo;Our organization is political.&rdquo; I don&rsquo;t have privileged access,
-therefore that other guy must be master politician.</li>
-<li>*The actual underlying problem is traffic congestion. If you are
+get more and more frustrated.</li><li>&ldquo;Our organization is political.&rdquo; I don&rsquo;t have privileged access,
+therefore that other guy must be master politician.</li><li>*The actual underlying problem is traffic congestion. If you are
 trying to do your best, you are going to use every resource at
-your disposal, including your relationships, to get work done*</li>
-<li>*Even in the most well-intentioned and non-egotistical
+your disposal, including your relationships, to get work done*</li><li>*Even in the most well-intentioned and non-egotistical
 organizations, structural failure leads to the perception of
-favoritism*</li>
-</ul>
-<h2 id="is-there-such-a-thing-as-a-10x-engineer">Is there such a thing as a 10x engineer?</h2>
-<ul>
-<li><strong>As system complexity grows, for you to meaningfully contribute,
-you need to know the system!</strong></li>
-<li>Criteria to select engineers
-<ul>
-<li>Computer science (can computers understand your code?)
-<ul>
-<li>Ability to grasp large complex systems</li>
-<li>Understanding of implications of design choices on that system.</li>
-</ul>
-</li>
-<li>Software Engineering (can humans understand your code?)
-<ul>
-<li>How well do you communicate through your code?</li>
-<li>Communication problems are the hard blockers on building good
-systems.</li>
-<li>Well written code provides contextual logic and <a href="https://dave.cheney.net/2019/07/09/clear-is-better-than-clever">clarity</a>.</li>
-</ul>
-</li>
-<li>Good behavioral traits:
-<ul>
-<li>curious</li>
-<li>wants to learn</li>
-<li>reads books</li>
-<li>can accept feedback</li>
-<li>^ This is the kind of person who can grow.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="good-practices-in-coding">Good practices in coding</h2>
-<ul>
-<li>Every code-base comes with a glossary</li>
-<li>Terms have specific meaning, and naming is critical in the
-dividends it pays off in the future.</li>
-<li>Every engineer at every level has to take a written test</li>
-<li>We are not looking at whether you can solve the complex problem.
+favoritism*</li></ul><h2 id=is-there-such-a-thing-as-a-10x-engineer>Is there such a thing as a 10x engineer?</h2><ul><li><strong>As system complexity grows, for you to meaningfully contribute,
+you need to know the system!</strong></li><li>Criteria to select engineers<ul><li>Computer science (can computers understand your code?)<ul><li>Ability to grasp large complex systems</li><li>Understanding of implications of design choices on that system.</li></ul></li><li>Software Engineering (can humans understand your code?)<ul><li>How well do you communicate through your code?</li><li>Communication problems are the hard blockers on building good
+systems.</li><li>Well written code provides contextual logic and <a href=https://dave.cheney.net/2019/07/09/clear-is-better-than-clever>clarity</a>.</li></ul></li><li>Good behavioral traits:<ul><li>curious</li><li>wants to learn</li><li>reads books</li><li>can accept feedback</li><li>^ This is the kind of person who can grow.</li></ul></li></ul></li></ul><h2 id=good-practices-in-coding>Good practices in coding</h2><ul><li>Every code-base comes with a glossary</li><li>Terms have specific meaning, and naming is critical in the
+dividends it pays off in the future.</li><li>Every engineer at every level has to take a written test</li><li>We are not looking at whether you can solve the complex problem.
 We are judging how you express yourself. You are a programmer,
-and your code should speak well for you.</li>
-<li>*Hygiene becomes more and more important as a programmer becomes
+and your code should speak well for you.</li><li>*Hygiene becomes more and more important as a programmer becomes
 more and more senior. The hygiene you show in code is the hygiene
-you will enforce on others.*</li>
-<li>High standards are important.</li>
-</ul>
-<h2 id="differences-between-good-engineers-and-10x-engineers">Differences between good engineers and 10x engineers</h2>
-<ul>
-<li>10x <strong>outcome</strong> (not output)</li>
-<li>As you grow your organization, individual outcome is less
-important. Team outcome is what you need to measure.</li>
-<li>Engineering is completely a team sport.</li>
-<li>You can have deeply capable and extremely competent individual
+you will enforce on others.*</li><li>High standards are important.</li></ul><h2 id=differences-between-good-engineers-and-10x-engineers>Differences between good engineers and 10x engineers</h2><ul><li>10x <strong>outcome</strong> (not output)</li><li>As you grow your organization, individual outcome is less
+important. Team outcome is what you need to measure.</li><li>Engineering is completely a team sport.</li><li>You can have deeply capable and extremely competent individual
 contributors who like to work alone. As long as their code fits
 beautifully with other systems, they are multiplying everyone&rsquo;s
-capacity.</li>
-</ul>
-<h2 id="how-do-you-spot-red-flags-in-a-new-hire">How do you spot red flags in a new hire?</h2>
-<ul>
-<li>Every good engineer is highly opinionated. A good engineer has
-strong opinions weakly held.
-<ul>
-<li>You should be able to change your opinion on being presented
-facts.</li>
-</ul>
-</li>
-<li>If you are unable to deal with criticism of your code, that&rsquo;s a
-smell.
-<ul>
-<li>We ask junior people to interview senior engineers. This shows
-the grace they have when dealing with others.</li>
-</ul>
-</li>
-<li>We routinely wind up in situations where you have young people
+capacity.</li></ul><h2 id=how-do-you-spot-red-flags-in-a-new-hire>How do you spot red flags in a new hire?</h2><ul><li>Every good engineer is highly opinionated. A good engineer has
+strong opinions weakly held.<ul><li>You should be able to change your opinion on being presented
+facts.</li></ul></li><li>If you are unable to deal with criticism of your code, that&rsquo;s a
+smell.<ul><li>We ask junior people to interview senior engineers. This shows
+the grace they have when dealing with others.</li></ul></li><li>We routinely wind up in situations where you have young people
 owning complex systems. Senior engineers need to be hired to now
 deal with these systems, and they will be on-boarded by juniors.
-They should be able to deal with this fact.</li>
-<li>CTO: &ldquo;When I lay out a design, I expect people to give me
-rational criticism so that I can learn from them.&rdquo;</li>
-<li>If you had to hire someone with deep experience vs great
-behavioral foundations, what would you choose?
-<ul>
-<li>It Depends!</li>
-<li>Sometimes, you need to bring deep experience to the table to
-build something out and learn from the guru.</li>
-<li>Behavioral traits means that someone is teachable. Outside the
+They should be able to deal with this fact.</li><li>CTO: &ldquo;When I lay out a design, I expect people to give me
+rational criticism so that I can learn from them.&rdquo;</li><li>If you had to hire someone with deep experience vs great
+behavioral foundations, what would you choose?<ul><li>It Depends!</li><li>Sometimes, you need to bring deep experience to the table to
+build something out and learn from the guru.</li><li>Behavioral traits means that someone is teachable. Outside the
 Valley, this is extremely important because of the lack of
-access to experienced engineering.</li>
-</ul>
-</li>
-</ul>
-<h2 id="onboarding-engineering-bootcamp">Onboarding / Engineering bootcamp</h2>
-<ul>
-<li>Structured decision making</li>
-<li>Basic coding hygiene</li>
-<li>Collaboration
-<ul>
-<li>How do you engage with someone else to meaningfully decide
-reasonably quickly what something in code should be.</li>
-</ul>
-</li>
-<li>Heavy focus on coding during the bootcamp.</li>
-<li>We bring in coaches from <strong>every team</strong> and teach. (regardless of
+access to experienced engineering.</li></ul></li></ul><h2 id=onboarding-engineering-bootcamp>Onboarding / Engineering bootcamp</h2><ul><li>Structured decision making</li><li>Basic coding hygiene</li><li>Collaboration<ul><li>How do you engage with someone else to meaningfully decide
+reasonably quickly what something in code should be.</li></ul></li><li>Heavy focus on coding during the bootcamp.</li><li>We bring in coaches from <strong>every team</strong> and teach. (regardless of
 hire). This helps us build empathy, which is critical for future
-collaboration.</li>
-<li>Pride without attachment.
-<ul>
-<li>Pride allows you to focus on creating beautiful code.</li>
-<li>Attachment means you will stand in the way of the evolution of
+collaboration.</li><li>Pride without attachment.<ul><li>Pride allows you to focus on creating beautiful code.</li><li>Attachment means you will stand in the way of the evolution of
 your beautiful baby. You need to let it go and let others
-change it.</li>
-<li>If you look back at code you wrote 6 months back and don&rsquo;t
-notice how bad you were, you aren&rsquo;t growing.</li>
-</ul>
-</li>
-<li>Repeat the same problem every Monday throughout the whole
+change it.</li><li>If you look back at code you wrote 6 months back and don&rsquo;t
+notice how bad you were, you aren&rsquo;t growing.</li></ul></li><li>Repeat the same problem every Monday throughout the whole
 bootcamp. Ask them to review every week and see if they find that
-feeling of progress.</li>
-</ul>
-<h2 id="gojek-culture">Gojek culture</h2>
-<ul>
-<li>Even the most high-performing team has to deal with intense time
-pressure.</li>
-<li>What makes or breaks teams under pressure?
-<ul>
-<li>Show them the impact that they are making.</li>
-<li>You don&rsquo;t need to push engineers, you need to give them the
+feeling of progress.</li></ul><h2 id=gojek-culture>Gojek culture</h2><ul><li>Even the most high-performing team has to deal with intense time
+pressure.</li><li>What makes or breaks teams under pressure?<ul><li>Show them the impact that they are making.</li><li>You don&rsquo;t need to push engineers, you need to give them the
 rush! External force will not drive the maker as much as the
-impact of work will.</li>
-<li>The value you create is not proportional to the time you put
+impact of work will.</li><li>The value you create is not proportional to the time you put
 in, it&rsquo;s proportional to the state of your mind in that time
-you put in.
-<ul>
-<li>If you are burned out, or your team mate is burned out then
-there is going to be a huge negative spiral.</li>
-</ul>
-</li>
-<li>To harness creativity, you need balance and psychological
+you put in.<ul><li>If you are burned out, or your team mate is burned out then
+there is going to be a huge negative spiral.</li></ul></li><li>To harness creativity, you need balance and psychological
 safety. The hours that you put in, you need to be in a state of
 flow. This requires you to take short breaks after days of
-intense activity.</li>
-</ul>
-</li>
-<li>You can have a 10x engineer amidst you, but you may never know it
+intense activity.</li></ul></li><li>You can have a 10x engineer amidst you, but you may never know it
 because you did not give them sufficient leeway to unleash their
-art.</li>
-</ul><ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/engineering-management" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">engineering-management</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/gojek" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">gojek</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/culture" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">culture</a>
-   </li>
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "vedang" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      
-      
-      </div>
-    </div>
-
-    <aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">What&#39;s in this notes</p>
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#summary">Summary</a></li>
-    <li><a href="#introductions">Introductions</a></li>
-    <li><a href="#how-do-you-get-so-much-done-with-so-few-engineers">How do you get so much done with so few engineers</a></li>
-    <li><a href="#collaboration-communication-and-team-size">Collaboration, Communication and Team Size</a></li>
-    <li><a href="#what-about-number-of-pods-will-infinite-teams-of-5-scale-infinitely">What about &ldquo;number of pods&rdquo;? Will infinite teams of 5 scale infinitely?</a></li>
-    <li><a href="#complexity-of-organizations">Complexity of organizations</a></li>
-    <li><a href="#monolith-to-soa">Monolith to SOA</a></li>
-    <li><a href="#relationship-as-a-service-aka-how-politics-enters-your-system">Relationship as a service AKA How politics enters your system</a></li>
-    <li><a href="#is-there-such-a-thing-as-a-10x-engineer">Is there such a thing as a 10x engineer?</a></li>
-    <li><a href="#good-practices-in-coding">Good practices in coding</a></li>
-    <li><a href="#differences-between-good-engineers-and-10x-engineers">Differences between good engineers and 10x engineers</a></li>
-    <li><a href="#how-do-you-spot-red-flags-in-a-new-hire">How do you spot red flags in a new hire?</a></li>
-    <li><a href="#onboarding-engineering-bootcamp">Onboarding / Engineering bootcamp</a></li>
-    <li><a href="#gojek-culture">Gojek culture</a></li>
-  </ul>
-</nav>
-  </div>
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/blog/imagine-working-in-engineering-at-helpshift/">Imagine Working in Engineering at Helpshift</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/notes/gene-kim-the-four-types/">Gene Kim: The Four Types of Work</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/notes/gene-kim-the-three-ways/">Gene Kim: The Three Ways of doing excellent Work</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://vedang.me/" >
-    &copy;  Vedang Manerikar 2020 
-  </a>
-    <div>
-
-
-
-
-<a href="https://twitter.com/vedang" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
-
-<a href="https://github.com/vedang" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-
-
-
-<a href="https://mastodon.technology/@vedang" target="_blank" class="link-transition mastodon link dib z-999 pt3 pt0-l mr1" title="Mastodon link" rel="noopener" aria-label="follow on Mastodon——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 230 230;" version="1.1" viewBox="0 0 230 230" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M211.80683 139.0875c-3.1825 16.36625-28.4925 34.2775-57.5625 37.74875-15.16 1.80875-30.0825 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.3925 27.9425 21.115.7225 39.91625-5.20625 39.91625-5.20625l.86875 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23183 213.82 1.40558 165.31125.20808 116.09125c-.36375-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67058 3.45375 78.20308.2425 107.86433 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.97625 14.7525 32.97625 65.0825 0 0 .4125 37.13375-4.6 62.915" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-<path d="M65.68743 96.45938c0 9.01375-7.3075 16.32125-16.3225 16.32125-9.01375 0-16.32-7.3075-16.32-16.32125 0-9.01375 7.30625-16.3225 16.32-16.3225 9.015 0 16.3225 7.30875 16.3225 16.3225M124.52893 96.45938c0 9.01375-7.30875 16.32125-16.3225 16.32125-9.01375 0-16.32125-7.3075-16.32125-16.32125 0-9.01375 7.3075-16.3225 16.32125-16.3225 9.01375 0 16.3225 7.30875 16.3225 16.3225M183.36933 96.45938c0 9.01375-7.3075 16.32125-16.32125 16.32125-9.01375 0-16.32125-7.3075-16.32125-16.32125 0-9.01375 7.3075-16.3225 16.32125-16.3225 9.01375 0 16.32125 7.30875 16.32125 16.3225" fill="#fff"/>
-</svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
-</svg>
-</span></a>
-
-
-</div>
-  </div>
-</footer>
-
-    
-
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
-
-
-  </body>
-</html>
+art.</li></ul><ul class=pa0><li class=list><a href=/tags/engineering-management class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">engineering-management</a></li><li class=list><a href=/tags/gojek class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">gojek</a></li><li class=list><a href=/tags/culture class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">culture</a></li></ul><div class="mt6 instapaper_ignoref"><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"vedang"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links"><p class="f5 b mb3">What's in this notes</p><nav id=TableOfContents><ul><li><a href=#summary>Summary</a></li><li><a href=#introductions>Introductions</a></li><li><a href=#how-do-you-get-so-much-done-with-so-few-engineers>How do you get so much done with so few engineers</a></li><li><a href=#collaboration-communication-and-team-size>Collaboration, Communication and Team Size</a></li><li><a href=#what-about-number-of-pods-will-infinite-teams-of-5-scale-infinitely>What about &ldquo;number of pods&rdquo;? Will infinite teams of 5 scale infinitely?</a></li><li><a href=#complexity-of-organizations>Complexity of organizations</a></li><li><a href=#monolith-to-soa>Monolith to SOA</a></li><li><a href=#relationship-as-a-service-aka-how-politics-enters-your-system>Relationship as a service AKA How politics enters your system</a></li><li><a href=#is-there-such-a-thing-as-a-10x-engineer>Is there such a thing as a 10x engineer?</a></li><li><a href=#good-practices-in-coding>Good practices in coding</a></li><li><a href=#differences-between-good-engineers-and-10x-engineers>Differences between good engineers and 10x engineers</a></li><li><a href=#how-do-you-spot-red-flags-in-a-new-hire>How do you spot red flags in a new hire?</a></li><li><a href=#onboarding-engineering-bootcamp>Onboarding / Engineering bootcamp</a></li><li><a href=#gojek-culture>Gojek culture</a></li></ul></nav></div><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links"><p class="f5 b mb3">Related</p><ul class="pa0 list"><li class=mb2><a href=/blog/imagine-working-in-engineering-at-helpshift/>Imagine Working in Engineering at Helpshift</a></li><li class=mb2><a href=/notes/gene-kim-the-four-types/>Gene Kim: The Four Types of Work</a></li><li class=mb2><a href=/notes/gene-kim-the-three-ways/>Gene Kim: The Three Ways of doing excellent Work</a></li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://vedang.me/>&copy; Vedang Manerikar 2022</a><div><a href=https://twitter.com/vedang target=_blank class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a><a href=https://github.com/vedang target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a><a href=https://mastodon.technology/@vedang target=_blank class="link-transition mastodon link dib z-999 pt3 pt0-l mr1" title="Mastodon link" rel=noopener aria-label="follow on Mastodon——Opens in a new window"><svg height="32" style="enable-background:new 0 0 230 230" viewBox="0 0 230 230" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M211.80683 139.0875c-3.1825 16.36625-28.4925 34.2775-57.5625 37.74875-15.16 1.80875-30.0825 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125.0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.3925 27.9425 21.115.7225 39.91625-5.20625 39.91625-5.20625l.86875 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23183 213.82 1.40558 165.31125.20808 116.09125c-.36375-14.61375-.14-28.39375-.14-39.91875.0-50.33 32.97625-65.0825 32.97625-65.0825C49.67058 3.45375 78.20308.2425 107.86433.0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09.0.0 32.97625 14.7525 32.97625 65.0825.0.0.4125 37.13375-4.6 62.915" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/><path d="M65.68743 96.45938c0 9.01375-7.3075 16.32125-16.3225 16.32125-9.01375.0-16.32-7.3075-16.32-16.32125.0-9.01375 7.30625-16.3225 16.32-16.3225 9.015.0 16.3225 7.30875 16.3225 16.3225M124.52893 96.45938c0 9.01375-7.30875 16.32125-16.3225 16.32125s-16.32125-7.3075-16.32125-16.32125c0-9.01375 7.3075-16.3225 16.32125-16.3225 9.01375.0 16.3225 7.30875 16.3225 16.3225M183.36933 96.45938c0 9.01375-7.3075 16.32125-16.32125 16.32125s-16.32125-7.3075-16.32125-16.32125c0-9.01375 7.3075-16.3225 16.32125-16.3225s16.32125 7.30875 16.32125 16.3225" fill="#fff"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a></div></div></footer><script src=/dist/js/app.3fc0f988d21662902933.js></script></body></html>

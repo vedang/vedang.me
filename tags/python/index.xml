@@ -1,37 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>python on Vedang Manerikar</title>
-    <link>https://vedang.me/tags/python/</link>
-    <description>Recent content in python on Vedang Manerikar</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 07 Aug 2011 13:21:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://vedang.me/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Switch Statements in Python</title>
-      <link>https://vedang.me/blog/switch-statements-in-python/</link>
-      <pubDate>Sun, 07 Aug 2011 13:21:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/blog/switch-statements-in-python/</guid>
-      <description>&lt;p&gt;Today I went through some old Python code and noticed this pattern
-through out:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;response, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; somefunc()
-&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this&amp;#34;&lt;/span&gt;:
-    do_this_with(data)
-&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;that&amp;#34;&lt;/span&gt;:
-    do_that_with(data)
-&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; response &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;huh&amp;#34;&lt;/span&gt;:
-    duh(data)
-    ;; lots more elifs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
-    prevent_horrible_crash(data)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This code should ideally have been a switch-case, but Python does not
-support a &lt;code&gt;switch&lt;/code&gt; statement.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on Vedang Manerikar</title><link>https://vedang.me/tags/python/</link><description>Recent content in python on Vedang Manerikar</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 07 Aug 2011 13:21:00 +0530</lastBuildDate><atom:link href="https://vedang.me/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Switch Statements in Python</title><link>https://vedang.me/blog/switch-statements-in-python/</link><pubDate>Sun, 07 Aug 2011 13:21:00 +0530</pubDate><guid>https://vedang.me/blog/switch-statements-in-python/</guid><description>&lt;p>Today I went through some old Python code and noticed this pattern
+through out:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">response, data &lt;span style="color:#f92672">=&lt;/span> somefunc()
+&lt;span style="color:#66d9ef">if&lt;/span> response &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;this&amp;#34;&lt;/span>:
+do_this_with(data)
+&lt;span style="color:#66d9ef">elif&lt;/span> response &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;that&amp;#34;&lt;/span>:
+do_that_with(data)
+&lt;span style="color:#66d9ef">elif&lt;/span> response &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;huh&amp;#34;&lt;/span>:
+duh(data)
+;; lots more elifs&lt;span style="color:#f92672">.&lt;/span>
+&lt;span style="color:#66d9ef">else&lt;/span>:
+prevent_horrible_crash(data)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code should ideally have been a switch-case, but Python does not
+support a &lt;code>switch&lt;/code> statement.&lt;/p></description></item></channel></rss>

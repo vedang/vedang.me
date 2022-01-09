@@ -1,106 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wisdom on Vedang Manerikar</title>
-    <link>https://vedang.me/categories/wisdom/</link>
-    <description>Recent content in wisdom on Vedang Manerikar</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 22 Aug 2020 18:11:52 +0530</lastBuildDate>
-    
-	<atom:link href="https://vedang.me/categories/wisdom/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Doug McIlroy: the UNIX philosophy</title>
-      <link>https://vedang.me/notes/doug-mcilroy-unix-philosophy/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/doug-mcilroy-unix-philosophy/</guid>
-      <description>Snippet from: The Art of Unix Programming
-  Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new features.
-  Expect the output of every program to become the input to another, as yet unknown, program. Don&amp;rsquo;t clutter output with extraneous information. Avoid stringently columnar or binary input formats. Don&amp;rsquo;t insist on interactive input.
-  Design and build software, even operating systems, to be tried early, ideally within weeks.</description>
-    </item>
-    
-    <item>
-      <title>ESR: the UNIX Philosophy</title>
-      <link>https://vedang.me/notes/esr-unix-philosophy/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/esr-unix-philosophy/</guid>
-      <description>Snippet from: The Art of Unix Programming
- Rule of Modularity Write simple parts connected by clean interfaces. Rule of Clarity Clarity is better than cleverness. Rule of Composition Design programs to be connected to other programs. Rule of Separation Separate policy from mechanism; separate interfaces from engines. Rule of Simplicity Design for simplicity; add complexity only where you must. Rule of Parsimony Write a big program only when it is clear by demonstration that nothing else will do.</description>
-    </item>
-    
-    <item>
-      <title>Gene Kim: The Five Ideals of DevOps</title>
-      <link>https://vedang.me/notes/gene-kim-the-five-ideals/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/gene-kim-the-five-ideals/</guid>
-      <description>Snippet from: The Unicorn Project, along with my own notes
- The First Ideal Locality and Simplicity. Build simple, decoupled systems that can iterate in isolation. The Second Ideal Focus, Flow and Joy. Work in small batches with fast and continuous feedback. The Third Ideal Improvement of Daily Work. Make sure that daily work can be done with minimum impediments. Prioritize productivity over everything else. The Fourth Ideal Psychological Safety. Solving problems requires preventing problems, which requires honesty, which requires the absence of fear.</description>
-    </item>
-    
-    <item>
-      <title>Gene Kim: The Four Types of Work</title>
-      <link>https://vedang.me/notes/gene-kim-the-four-types/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/gene-kim-the-four-types/</guid>
-      <description>Snippet from: The Phoenix Project, along with my own notes
- Business Projects &amp;ldquo;Feature Work&amp;rdquo;. This is the most visible type of work. Internal IT Projects Release Automation, QA Automation, Developer Tooling and other internal enablers. Mostly un-tracked and invisible, but crucial to long-term success. Updates and Changes Generally generated from above to categories of work. Introduces delay as breadth of existing surface area increases. Unplanned Work Fire-fighting at all levels of the company.</description>
-    </item>
-    
-    <item>
-      <title>Gene Kim: The Three Ways of doing excellent Work</title>
-      <link>https://vedang.me/notes/gene-kim-the-three-ways/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/gene-kim-the-three-ways/</guid>
-      <description>Snippet from: The Phoenix Project, along with my own notes
- Flow Maximizing the rate of flow of work is the key to success. Limiting the work in progress is the fastest way to achieve Flow. Fast Feedback Setup systems to get fast feedback at every stage of work, from concept through shipping to maintaining in production. Experimentation and Learning Keep dedicated time for experiments, at every level of the company.</description>
-    </item>
-    
-    <item>
-      <title>L Peter Deutsch: The Fallacies of Distributed Computing</title>
-      <link>https://vedang.me/notes/l-peter-deutsch-the-fallacies-of-distributed-computing/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/l-peter-deutsch-the-fallacies-of-distributed-computing/</guid>
-      <description>Snippet from: The Wikipedia Article, along with my own notes
- The network is reliable Think about error-handling on network failures. Use the following patterns: Timeouts, Retries, Circuit breakers, Graceful Degradation. Latency is zero Think about bandwidth requirements and packet loss. Use the following patterns: Small payloads, Compression, Asynchronous Communication, Perceived Progress, Timeouts, Graceful Degradation. Bandwidth is infinite The same as above. Think explicitly about bottlenecks in Network traffic. Use the following patterns: Caching, Etags.</description>
-    </item>
-    
-    <item>
-      <title>Rob Pike: Rules of Programming</title>
-      <link>https://vedang.me/notes/rob-pike-rules/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/rob-pike-rules/</guid>
-      <description>Snippet from: Notes on C Programming
- No Speed Hacks You can&amp;rsquo;t tell where a program is going to spend its time. Bottlenecks occur in surprising places, so don&amp;rsquo;t try to second guess and put in a speed hack until you&amp;rsquo;ve proven that&amp;rsquo;s where the bottleneck is. Measure before tuning Don&amp;rsquo;t tune for speed until you&amp;rsquo;ve measured, and even then don&amp;rsquo;t unless one part of the code overwhelms the rest. No Fancy Algorithms Fancy algorithms are slow when n is small, and n is usually small.</description>
-    </item>
-    
-    <item>
-      <title>Tim Peters: The Python Way</title>
-      <link>https://vedang.me/notes/tim-peters-the-python-way/</link>
-      <pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate>
-      
-      <guid>https://vedang.me/notes/tim-peters-the-python-way/</guid>
-      <description>Snippet from: The Python Mailing List
-  Beautiful is better than ugly.
-  Explicit is better than implicit.
-  Simple is better than complex.
-  Complex is better than complicated.
-  Flat is better than nested.
-  Sparse is better than dense.
-  Readability counts.
-  Special cases aren&amp;rsquo;t special enough to break the rules.
-  Although practicality beats purity.
-  Errors should never pass silently.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wisdom on Vedang Manerikar</title><link>https://vedang.me/categories/wisdom/</link><description>Recent content in wisdom on Vedang Manerikar</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 22 Aug 2020 18:11:52 +0530</lastBuildDate><atom:link href="https://vedang.me/categories/wisdom/index.xml" rel="self" type="application/rss+xml"/><item><title>Doug McIlroy: the UNIX philosophy</title><link>https://vedang.me/notes/doug-mcilroy-unix-philosophy/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/doug-mcilroy-unix-philosophy/</guid><description>Snippet from: The Art of Unix Programming
+Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new features.
+Expect the output of every program to become the input to another, as yet unknown, program. Don&amp;rsquo;t clutter output with extraneous information. Avoid stringently columnar or binary input formats. Don&amp;rsquo;t insist on interactive input.
+Design and build software, even operating systems, to be tried early, ideally within weeks.</description></item><item><title>ESR: the UNIX Philosophy</title><link>https://vedang.me/notes/esr-unix-philosophy/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/esr-unix-philosophy/</guid><description>Snippet from: The Art of Unix Programming
+Rule of Modularity Write simple parts connected by clean interfaces. Rule of Clarity Clarity is better than cleverness. Rule of Composition Design programs to be connected to other programs. Rule of Separation Separate policy from mechanism; separate interfaces from engines. Rule of Simplicity Design for simplicity; add complexity only where you must. Rule of Parsimony Write a big program only when it is clear by demonstration that nothing else will do.</description></item><item><title>Gene Kim: The Five Ideals of DevOps</title><link>https://vedang.me/notes/gene-kim-the-five-ideals/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/gene-kim-the-five-ideals/</guid><description>Snippet from: The Unicorn Project, along with my own notes
+The First Ideal Locality and Simplicity. Build simple, decoupled systems that can iterate in isolation. The Second Ideal Focus, Flow and Joy. Work in small batches with fast and continuous feedback. The Third Ideal Improvement of Daily Work. Make sure that daily work can be done with minimum impediments. Prioritize productivity over everything else. The Fourth Ideal Psychological Safety. Solving problems requires preventing problems, which requires honesty, which requires the absence of fear.</description></item><item><title>Gene Kim: The Four Types of Work</title><link>https://vedang.me/notes/gene-kim-the-four-types/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/gene-kim-the-four-types/</guid><description>Snippet from: The Phoenix Project, along with my own notes
+Business Projects &amp;ldquo;Feature Work&amp;rdquo;. This is the most visible type of work. Internal IT Projects Release Automation, QA Automation, Developer Tooling and other internal enablers. Mostly un-tracked and invisible, but crucial to long-term success. Updates and Changes Generally generated from above to categories of work. Introduces delay as breadth of existing surface area increases. Unplanned Work Fire-fighting at all levels of the company.</description></item><item><title>Gene Kim: The Three Ways of doing excellent Work</title><link>https://vedang.me/notes/gene-kim-the-three-ways/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/gene-kim-the-three-ways/</guid><description>Snippet from: The Phoenix Project, along with my own notes
+Flow Maximizing the rate of flow of work is the key to success. Limiting the work in progress is the fastest way to achieve Flow. Fast Feedback Setup systems to get fast feedback at every stage of work, from concept through shipping to maintaining in production. Experimentation and Learning Keep dedicated time for experiments, at every level of the company.</description></item><item><title>L Peter Deutsch: The Fallacies of Distributed Computing</title><link>https://vedang.me/notes/l-peter-deutsch-the-fallacies-of-distributed-computing/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/l-peter-deutsch-the-fallacies-of-distributed-computing/</guid><description>Snippet from: The Wikipedia Article, along with my own notes
+The network is reliable Think about error-handling on network failures. Use the following patterns: Timeouts, Retries, Circuit breakers, Graceful Degradation. Latency is zero Think about bandwidth requirements and packet loss. Use the following patterns: Small payloads, Compression, Asynchronous Communication, Perceived Progress, Timeouts, Graceful Degradation. Bandwidth is infinite The same as above. Think explicitly about bottlenecks in Network traffic. Use the following patterns: Caching, Etags.</description></item><item><title>Rob Pike: Rules of Programming</title><link>https://vedang.me/notes/rob-pike-rules/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/rob-pike-rules/</guid><description>Snippet from: Notes on C Programming
+No Speed Hacks You can&amp;rsquo;t tell where a program is going to spend its time. Bottlenecks occur in surprising places, so don&amp;rsquo;t try to second guess and put in a speed hack until you&amp;rsquo;ve proven that&amp;rsquo;s where the bottleneck is. Measure before tuning Don&amp;rsquo;t tune for speed until you&amp;rsquo;ve measured, and even then don&amp;rsquo;t unless one part of the code overwhelms the rest. No Fancy Algorithms Fancy algorithms are slow when n is small, and n is usually small.</description></item><item><title>Tim Peters: The Python Way</title><link>https://vedang.me/notes/tim-peters-the-python-way/</link><pubDate>Sat, 22 Aug 2020 18:11:52 +0530</pubDate><guid>https://vedang.me/notes/tim-peters-the-python-way/</guid><description>Snippet from: The Python Mailing List
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&amp;rsquo;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.</description></item></channel></rss>

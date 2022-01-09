@@ -1,29 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>helpshift on Vedang Manerikar</title>
-    <link>https://vedang.me/tags/helpshift/</link>
-    <description>Recent content in helpshift on Vedang Manerikar</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 07 Sep 2017 07:27:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://vedang.me/tags/helpshift/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Imagine Working in Engineering at Helpshift</title>
-      <link>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</link>
-      <pubDate>Thu, 07 Sep 2017 07:27:00 +0530</pubDate>
-      
-      <guid>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Cross-posted from my interview published on &lt;a href=&#34;https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188&#34;&gt;Helpshift&amp;rsquo;s Medium blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Name: Vedang Manerikar&lt;/li&gt;
-&lt;li&gt;Current Role: Principal Engineering Manager, Backend&lt;/li&gt;
-&lt;li&gt;How long you have been with Helpshift?: 7 years&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>helpshift on Vedang Manerikar</title><link>https://vedang.me/tags/helpshift/</link><description>Recent content in helpshift on Vedang Manerikar</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 07 Sep 2017 07:27:00 +0530</lastBuildDate><atom:link href="https://vedang.me/tags/helpshift/index.xml" rel="self" type="application/rss+xml"/><item><title>Imagine Working in Engineering at Helpshift</title><link>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</link><pubDate>Thu, 07 Sep 2017 07:27:00 +0530</pubDate><guid>https://vedang.me/blog/imagine-working-in-engineering-at-helpshift/</guid><description>&lt;p>&lt;em>Cross-posted from my interview published on &lt;a href="https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188">Helpshift&amp;rsquo;s Medium blog&lt;/a>&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Name: Vedang Manerikar&lt;/li>
+&lt;li>Current Role: Principal Engineering Manager, Backend&lt;/li>
+&lt;li>How long you have been with Helpshift?: 7 years&lt;/li>
+&lt;/ul></description></item></channel></rss>
