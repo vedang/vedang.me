@@ -3,7 +3,7 @@ title = " "
 author = ["Vedang Manerikar"]
 description = "(About Me)"
 date = 2017-08-19T13:30:00+05:30
-lastmod = 2022-01-09T18:22:59+05:30
+lastmod = 2022-01-11T23:11:28+05:30
 draft = false
 creator = "Emacs 29.0.50 (Org mode 9.5.2 + ox-hugo)"
 featured_image = "/images/clevinger.jpg"
@@ -24,8 +24,8 @@ If you want to get in touch, please send me a message at vedang.manerikar on Goo
 
 ## Presentations &amp; Talks {#presentations-and-talks}
 
--   (2015) [Dead simple Scalability patterns](https://www.youtube.com/watch?v=k10%5FtrKtKNk)
 -   (2020) [Growing a Clojure Company](https://www.youtube.com/watch?v=zsTXte3p0Uk)
+-   (2015) [Dead simple Scalability patterns](https://www.youtube.com/watch?v=k10%5FtrKtKNk)
 
 
 ## Interviews {#interviews}
