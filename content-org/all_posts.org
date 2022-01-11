@@ -39,7 +39,7 @@ This is a dummy container for the listings page for all blog posts. Actual posts
 #+begin_description
 (Tiny things I build for joy)
 #+end_description
-** DONE I have questions about COVID-19                 :covid19:coronavirus:
+** DONE I have questions about COVID-19           :noexport:covid19:coronavirus:
    CLOSED: [2020-03-23 Mon 10:10]
    :PROPERTIES:
    :EXPORT_HUGO_BUNDLE: i-have-questions-about-covid19
