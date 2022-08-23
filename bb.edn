@@ -1,0 +1,3 @@
+{:deps {weblog/weblog {:local/root "."}}
+ :pods {clj-kondo/clj-kondo {:version "2022.05.31"}
+        org.babashka/fswatcher {:version "0.0.3"}}}
