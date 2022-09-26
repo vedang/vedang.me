@@ -12,4 +12,8 @@
                 cider/cider-nrepl                    {:mvn/version "0.30.0"}
                 refactor-nrepl/refactor-nrepl        {:mvn/version "3.6.0"}}
    :main-opts  ["-m" "nrepl.cmdline"
-                "--middleware" "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}}}
+                "--middleware" "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
+
+  :test
+  {:extra-paths ["test"]
+   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}}}

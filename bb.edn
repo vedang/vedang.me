@@ -1,3 +1,54 @@
-{:deps {weblog/weblog {:local/root "."}}
+{:deps {weblog/weblog {:local/root "."}
+        org.babashka/http-server {:mvn/version "0.1.11"}
+        babashka/babashka.pods {:git/url "https://github.com/babashka/pods"
+                                :git/sha "75c2216649bf5caf3ae41e7b8fc202e45b090ea9"}}
  :pods {clj-kondo/clj-kondo {:version "2022.05.31"}
-        org.babashka/fswatcher {:version "0.0.3"}}}
+        org.babashka/fswatcher {:version "0.0.3"}}
+ :tasks
+ {:requires ([babashka.fs :as fs]
+             [weblog.render :as wr])
+  :init (do (def opts
+              {:blog-title "Vedang Manerikar"
+               :blog-root "https://vedang.me/"
+               :blog-description "My corner on the Internet"
+               :content-dir "content"
+               :public-dir "target/public"
+               :templates-dir "resources/templates"
+               :public-assets-dir-name "assets"
+               :local-assets-dir-name "static"
+               :discuss-link "https://github.com/vedang/vedang.me/discussions/categories/posts"
+               :twitter-handle "vedang"
+               :github-handle "vedang"
+               :favicon true})
+            (defn build-site [msg]
+              (println (str "Rendering the site, executing "
+                            msg
+                            "! Here we go!"))
+              (println "Cranking out crisp HTML for you!")
+              ;; (wr/build-site opts)
+              (println "Building the stylesheets using Tailwind Magic!")
+              (shell (str "npx tailwindcss -i "
+                          (fs/file (:templates-dir opts) "style.css")
+                          " -o "
+                          (fs/file (:public-dir opts) "style.css")))))
+  clean {:doc "Remove all the generated files"
+         :task (do (println (str "Deleting the public directory: "
+                                 (:public-dir opts)))
+                   (fs/delete-tree (:public-dir opts)))}
+  clean-content {:doc "Remove the content directory. *WARN*: Are you sure?"
+                 :depends [clean]
+                 :task (do (println (str "Deleting the content directory: "
+                                         (:content-dir opts)))
+                           (fs/delete-tree (:content-dir opts))
+                           ;; The directories need to exist for Export
+                           ;; from Emacs to work correctly.
+                           (println (str "Re-creating an empty content/static directory: "
+                                         (:content-dir opts)))
+                           (fs/create-dirs
+                            (fs/path (:content-dir opts)
+                                     (:local-assets-dir-name opts))))}
+  prep-content {:doc "Create the content and assets directories. (Necessary before export)."
+                :depends [clean-content]
+                :task (wr/copy-assets opts)}
+  render {:doc "Build the HTML and CSS files in the public directory."
+          :task (build-site "render command")}}}
