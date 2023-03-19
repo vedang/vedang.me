@@ -163,6 +163,26 @@ from it's slug."
         html-map (post-process-html initial-html-map)]
     (merge-defaults html-map post-file)))
 
+(def redirect-template
+  "<html><head>
+<meta http-equiv=\"refresh\" content=\"0; URL=/{{new_url}}\" />
+</head></html>")
+
+(defn render-redirect-file
+  "Given the `old-url` and the `redirect-html`, write out the HTML."
+  [old-url metadata opts]
+  ;; Assumptions:
+  ;; 1. All old URLS / slugs end with a / (assuming an implicit index.html)
+  ;; 2. Data written to old URL / slugs don't overwrite actual posts
+  (let [redirect-html (selmer/render redirect-template
+                                     {:new_url (:html-filename metadata)})
+        l (if (cstr/starts-with? old-url "/")
+            (cstr/replace-first old-url "/" "")
+            old-url)]
+    (debug-msg (str "Writing redirects for old urls: " l "index.html"))
+    (fs/create-dirs (fs/file (:public-dir opts) l))
+    (spit (fs/file (:public-dir opts) l "index.html") redirect-html)))
+
 (defn- render-post*
   [{:keys [metadata html]} opts]
   (let [base-html (read-template (:templates-dir opts) "base.html")
@@ -174,9 +194,14 @@ from it's slug."
                                   :body post-body})
         html-file (fs/file (:public-dir opts)
                            (:html-filename metadata))]
+
     (debug-msg (str "Writing HTML to public-dir: " html-file))
     (fs/create-dirs (fs/parent html-file))
     (spit html-file page-html)
+
+    (doseq [old-url (:aliases metadata)]
+      (render-redirect-file old-url metadata opts))
+
     ;; On success, return ID of the post. Else something above will
     ;; throw an error.
     (:id metadata)))
