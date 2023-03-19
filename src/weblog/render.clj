@@ -4,20 +4,14 @@
    [cljc.java-time.zoned-date-time :as cjtz]
    [clojure.data.xml :as xml]
    [clojure.string :as cstr]
-   [markdown.core :as md]))
+   [markdown.core :as md]
+   [selmer.parser :as selmer]))
 
 (xml/alias-uri 'atom "http://www.w3.org/2005/Atom")
 
 (def ^:dynamic *print-debug*
   "Helper variable to print debug messages when developing"
   false)
-
-(def base-html
-  "Return the base-html template from the templates-dir.
-
-  @TODO: The name of the template is hard-coded at the moment, fix this."
-  (memoize (fn [templates-dir]
-             (slurp (fs/file templates-dir "base.html")))))
 
 (def create-assets
   "Return the assets directory that has been requested. Create it if it
@@ -30,20 +24,19 @@
   [msg]
   (when *print-debug* (println msg)))
 
-;;;; Sync images and CSS
 (defn copy-assets
-  "Copy assets into the public dir"
+  "Copy assets into the public dir. Used to sync images and CSS."
   [opts]
   (let [public (create-assets (:public-dir opts) (:public-assets-dir-name opts))
         local (create-assets (:content-dir opts) (:local-assets-dir-name opts))]
     (println (str "Copying assets from: " local " to: " public))
     (fs/copy-tree local public {:replace-existing true})))
 
-(def read-base-html
-  "Given the `templates-dir`, return the contents of the base.html file at
-  the root of the dir."
-  (memoize (fn [templates-dir]
-             (slurp (fs/file templates-dir "base.html")))))
+(def read-template
+  "Given the `templates-dir` and the `template`, return the contents of
+  the template file at the root of the dir."
+  (memoize (fn [templates-dir template]
+             (slurp (fs/file templates-dir template)))))
 
 (defn pre-process-markdown
   "Process the markdown before converting it to HTML. This is a
@@ -161,8 +154,7 @@ from it's slug."
   "Convert `post-file` from md format to HTML format"
   [post-file opts]
   (debug-msg (str "Converting from Markdown to HTML: " post-file))
-  (let [base-html (read-base-html (:templates-dir opts))
-        file-contents (pre-process-markdown (slurp post-file))
+  (let [file-contents (pre-process-markdown (slurp post-file))
         ;; Convert markdown to HTML. This breaks if the actual content
         ;; is empty, which seems like a bug no one has encountered
         ;; because no-one uses markdown-clj for brain forests (which
@@ -171,15 +163,45 @@ from it's slug."
         html-map (post-process-html initial-html-map)]
     (merge-defaults html-map post-file)))
 
+(defn- render-post*
+  [{:keys [metadata html]} opts]
+  (let [base-html (read-template (:templates-dir opts) "base.html")
+        post-html (read-template (:templates-dir opts) "post.html")
+        post-body (selmer/render post-html
+                                 (assoc metadata :body html))
+        page-html (selmer/render base-html
+                                 {:title (:title metadata)
+                                  :body post-body})
+        html-file (fs/file (:public-dir opts)
+                           (:html-filename metadata))]
+    (debug-msg (str "Writing HTML to public-dir: " html-file))
+    (fs/create-dirs (fs/parent html-file))
+    (spit html-file page-html)
+    ;; On success, return ID of the post. Else something above will
+    ;; throw an error.
+    (:id metadata)))
+
+(defn render-post
+  "Given a `post` data-structure, write out the HTML for the post to the
+  public folder."
+  [opts post]
+  (if (get-in post [:metadata :draft])
+    (when (:publish-drafts? opts)
+      (render-post* post opts))
+    (render-post* post opts)))
+
 (defn build-site
   "This is the main function.
 
   It is called from the bb task `render` to build all the HTML."
   [opts]
   (copy-assets opts)
-  (let [posts (fs/glob (:content-dir opts) "**.md")]
-    (reduce (fn [pid->p post-file]
-              (let [p (post->data (str post-file) opts)]
-                (assoc pid->p (get-in p [:metadata :id]) p)))
-            {}
-            posts)))
+  (let [posts (fs/glob (:content-dir opts) "**.md")
+        post-id->data (reduce (fn [pid->p post-file]
+                                (let [p (post->data (str post-file) opts)]
+                                  (assoc pid->p (get-in p [:metadata :id]) p)))
+                              {}
+                              posts)]
+    (doall
+     (keep (comp (partial render-post opts) second)
+           post-id->data))))
