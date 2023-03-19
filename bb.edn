@@ -1,4 +1,5 @@
 {:deps {weblog/weblog {:local/root "."}
+        org.babashka/cli {:mvn/version "0.6.49"}
         org.babashka/http-server {:mvn/version "0.1.11"}
         babashka/babashka.pods {:git/url "https://github.com/babashka/pods"
                                 :git/sha "75c2216649bf5caf3ae41e7b8fc202e45b090ea9"}}
@@ -6,20 +7,23 @@
         org.babashka/fswatcher {:version "0.0.3"}}
  :tasks
  {:requires ([babashka.fs :as fs]
+             [babashka.cli :as cli]
              [weblog.render :as wr])
   :init (do (def opts
-              {:blog-title "Vedang Manerikar"
-               :blog-root "https://vedang.me/"
-               :blog-description "My corner on the Internet"
-               :content-dir "content"
-               :public-dir "target/public"
-               :templates-dir "resources/templates"
-               :public-assets-dir-name "assets"
-               :local-assets-dir-name "static"
-               :discuss-link "https://github.com/vedang/vedang.me/discussions/categories/posts"
-               :twitter-handle "vedang"
-               :github-handle "vedang"
-               :favicon true})
+              (merge
+               {:blog-title "Vedang Manerikar"
+                :blog-root "https://vedang.me/"
+                :blog-description "My corner on the Internet"
+                :content-dir "content"
+                :public-dir "target/public"
+                :templates-dir "resources/templates"
+                :public-assets-dir-name "assets"
+                :local-assets-dir-name "static"
+                :discuss-link "https://github.com/vedang/vedang.me/discussions/categories/posts"
+                :twitter-handle "vedang"
+                :github-handle "vedang"
+                :favicon true}
+               (cli/parse-opts *command-line-args*)))
             (defn build-site [msg]
               (println (str "Rendering the site, executing "
                             msg

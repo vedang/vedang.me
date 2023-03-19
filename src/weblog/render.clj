@@ -220,6 +220,8 @@ from it's slug."
 
   It is called from the bb task `render` to build all the HTML."
   [opts]
+  (when (:print-debug opts)
+    (alter-var-root #'*print-debug* (constantly true)))
   (copy-assets opts)
   (let [posts (fs/glob (:content-dir opts) "**.md")
         post-id->data (reduce (fn [pid->p post-file]
