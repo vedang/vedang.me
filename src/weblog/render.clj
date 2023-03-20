@@ -3,6 +3,7 @@
    [babashka.fs :as fs]
    [cljc.java-time.zoned-date-time :as cjtz]
    [clojure.data.xml :as xml]
+   [clojure.set :as cset]
    [clojure.string :as cstr]
    [markdown.core :as md]
    [selmer.parser :as selmer]))
@@ -82,11 +83,8 @@ workaround for https://github.com/yogthos/markdown-clj/issues/146"
 (defn gen-id
   "Store the unique ID that identifies this post into the metadata.
 
-  At the moment, this is the name of the exported file, without the
-  .md extension.
-
-  @TODO: In the future, I will export the ID property of the note and
-  use this instead."
+  This is simply the name of the file, without any extension. This
+  name is guaranteed to be unique by ox-neuron."
   [metadata]
   (let [id (-> metadata
                :md-filename
@@ -215,6 +213,43 @@ from it's slug."
       (render-post* post opts))
     (render-post* post opts)))
 
+(def local-parent-child-pairs-xform
+  "Content files are nested according to relationships ->
+
+     content/a/b.md means that b is a child of a
+     content/a/b/c.md means that c is a child of b, b is a child of a.
+
+  For the given filename, return all such parent-child tuples"
+  (comp
+   ;; Break filename at path and discard "contents/" This
+   ;; is the list of all the files to act on.
+   (map (comp rest fs/components fs/file :md-filename :metadata))
+   ;; We only need to act on child entries to build the
+   ;; necessary relationships. Root entries can be
+   ;; skipped.
+   (filter second)
+   ;; Each component represents an entry. We pass it through gen-id as
+   ;; a way to strip the .md prefix.
+   ;; @TODO: Clean this up, it's unnecessarily complicated
+   (map (fn [components] (map (comp :id gen-id #(hash-map :md-filename %))
+                              components)))
+   ;; Return parent/child tuples that can be acted on
+   (mapcat (fn [fc] (->> fc rest (interleave fc) (partition 2))))))
+
+(defn- update-parent-child-relationships
+  "Helper function to update the metadata of entries with information
+  about parenthood and childhood."
+  [post-id->data [parent-id child-id]]
+  (-> post-id->data
+      (update-in [parent-id :metadata :children] conj child-id)
+      (update-in [child-id :metadata :parents] conj parent-id)
+      (update-in [child-id :metadata :tags]
+                 cset/union
+                 (get-in post-id->data [parent-id :metadata :tags]))
+      (update-in [child-id :metadata :categories]
+                 into
+                 (get-in post-id->data [parent-id :metadata :categories]))))
+
 (defn build-site
   "This is the main function.
 
@@ -224,11 +259,17 @@ from it's slug."
     (alter-var-root #'*print-debug* (constantly true)))
   (copy-assets opts)
   (let [posts (fs/glob (:content-dir opts) "**.md")
-        post-id->data (reduce (fn [pid->p post-file]
+        post-id->data-1 (reduce (fn [pid->p post-file]
                                 (let [p (post->data (str post-file) opts)]
                                   (assoc pid->p (get-in p [:metadata :id]) p)))
                               {}
-                              posts)]
+                              posts)
+        local-parent-child-pairs (transduce local-parent-child-pairs-xform
+                                            conj
+                                            (vals post-id->data-1))
+        post-id->data-2 (reduce update-parent-child-relationships
+                                post-id->data-1
+                                local-parent-child-pairs)]
     (doall
      (keep (comp (partial render-post opts) second)
-           post-id->data))))
+           post-id->data-2))))
