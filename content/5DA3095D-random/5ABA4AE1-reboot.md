@@ -10,6 +10,6 @@ Once upon a time I had a blog. Then one day I ran out of motivation, inclination
 
 <!--more-->
 
-![](./staticassets/static/images/garfield.gif)
+![](./static/images/garfield.gif)
 
 I worried that I'd drown this world in my drivel, but lately I've come to realise that no one gives a shit. So I'm going to write for the right reasons: Because it makes me happy. Stick around, and I'll try not to bore you. Or leave. I don't give a shit.

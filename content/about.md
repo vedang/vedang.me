@@ -18,7 +18,7 @@ I love reading books, and I write book reviews once in a while. I also have stro
 
 If you want to get in touch, please send me a message at vedang.manerikar on Google's email service.
 
-![](./staticassets/static/images/vedang-2018.jpg)
+![](./static/images/vedang-2018.jpg)
 
 
 ## Presentations &amp; Talks {#presentations-and-talks}

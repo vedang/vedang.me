@@ -63,7 +63,7 @@ Let me describe the process to you first.
     -   **Requiring Police Clearance (represented by P):** People who need clearance from the police (probably because they have criminal records, or work in sensitive departments in the government).
 -   Categories other than 'Normal' have a higher priority when it comes to processing their applications. For the purposes of this post, I assume that P has the highest priority, followed by S, T and N.
 
-![](./staticassets/static/images/psk-renderkid.jpg)
+![The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)](./static/images/psk-renderkid.jpg)
 
 In the rest of this post, we'll build this system as described above, and see if we can fix the flaw in it. We will use Clojure to write the solution. Clojure's concurrency primitives are fantastic, and helped me model this system in an elegant and readable way. As we go along, I'll explain these primitives in brief. [Eric Normand](https://twitter.com/ericnormand) has written an excellent guide to [understanding concurrency primitives](https://purelyfunctional.tv/guide/clojure-concurrency/) in Clojure, and [Rich Hickey](https://twitter.com/richhickey) has a [great talk about this](https://www.youtube.com/watch?v=nDAfZK8m5_8) as well. I highly recommend both these resources to the interested reader. The focus of this post will be on using these tools to implement a non-trivial system.
 
@@ -530,7 +530,7 @@ Here we use the `ref-set` and `alter` functions to reset the value of active-app
 
 Let's run this system! We're setting up a small loop to display the board. We're running much fewer counters than the actual PSK. This is in order to make the display board consumable.
 
-![](./staticassets/static/images/psk-run-1.gif)
+![](./static/images/psk-run-1.gif)
 
 Things look good in this loop, the board looks predictable. The problem occurs when someone gets unlucky at one stage, and spends much more time there than the average person. Let's repeat the run by marking someone as unlucky, and by increasing the number of counters processing earlier stages (which matches with reality)
 
@@ -554,7 +554,7 @@ Things look good in this loop, the board looks predictable. The problem occurs w
 
 Here is what this looks like:
 
-![](./staticassets/static/images/psk-run-2.gif)
+![](./static/images/psk-run-2.gif)
 
 As you can see, there are a number of people ahead of N-3 by the time he's done with stage 0. N-40s are being processed in stage 0 at this point in time. He has no idea where he is in the queue of people, and must keep staring at the display board at all times.
 

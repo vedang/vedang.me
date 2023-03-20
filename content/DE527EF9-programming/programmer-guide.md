@@ -9,7 +9,7 @@ draft: false
 
 This poster captures timeless advice on programming, I keep a copy on my desk to read whenever I can.
 
-![](./staticassets/static/images/programmer_guide.png)
+![](./static/images/programmer_guide.png)
 
 {{&lt; tweet vedang 1292744222873853952 &gt;}}
 

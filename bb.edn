@@ -17,7 +17,7 @@
                 :content-dir "content"
                 :public-dir "target/public"
                 :templates-dir "resources/templates"
-                :public-assets-dir-name "assets"
+                :public-assets-dir-name "static"
                 :local-assets-dir-name "static"
                 :discuss-link "https://github.com/vedang/vedang.me/discussions/categories/posts"
                 :twitter-handle "vedang"

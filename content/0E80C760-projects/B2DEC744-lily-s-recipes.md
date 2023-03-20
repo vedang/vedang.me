@@ -18,7 +18,7 @@ _This post was originally written in 2017. I've updated it today (11th Jan 2022)
 
 Lily is a lifelong cooking enthusiast. She collected, cooked, commented on, and critiqued thousands of recipes over the years - and she did it before the age of the telephone (let alone the TV, the computer or the internet).
 
-![](./staticassets/static/images/ajji.jpg)
+![](./static/images/ajji.jpg)
 
 The photo you see here is of my ajji (grandmother) Leela Manerikar - lovingly referred to as Lily by her numerous grandchildren. She's 96 in the photo.
 
