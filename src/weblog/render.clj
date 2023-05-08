@@ -76,7 +76,7 @@ workaround for https://github.com/yogthos/markdown-clj/issues/146"
   workaround for https://github.com/yogthos/markdown-clj/issues/146"
   [html-map]
   (-> html-map
-      ;; Get back our -- and newlines.
+      ;; Get back our -- and newlines, undoing `pre-process-markdown`
       (update :html cstr/replace "$$NDASH$$" " -- ")
       (update :html cstr/replace "$$RET$$" "\n")))
 
@@ -188,8 +188,11 @@ from it's slug."
         post-body (selmer/render post-html
                                  (assoc metadata :body html))
         page-html (selmer/render base-html
-                                 {:title (:title metadata)
-                                  :body post-body})
+                                 (merge opts
+                                        metadata
+                                        {:body post-body
+                                         :discuss-link (str (:discuss-link opts)
+                                                            (:md-filename metadata))}))
         html-file (fs/file (:public-dir opts)
                            (:html-filename metadata))]
 

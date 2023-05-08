@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" content="Vedang's Corner on the Internet" />
+    <meta charset="UTF-8" content="{{blog-description}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       type="application/atom+xml"
       rel="alternate"
       href="atom.xml"
-      title="Vedang Manerikar"
+      title="{{blog-title}}"
     />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script
@@ -61,11 +61,11 @@
     <div id="site-header" class="m-2 border-b-2 border-gray-300">
       <div id="site-title" class="prose prose-stone mx-auto grid grid-cols-2">
         <div>
-          <h1 class="m-0 lg:text-4xl">
-            <a href="/index.html">Vedang Manerikar</a>
+          <h1 class="m-0 lg:text-2xl">
+            <a href="{{relative-path|safe}}index.html">{{blog-title}}</a>
           </h1>
           <p class="font-semi-bold mt-1 text-xl text-gray-800">
-            My corner on the internet.
+            {{blog-description}}
           </p>
         </div>
         <div>
@@ -83,7 +83,13 @@
             >
             <a
               class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out"
-              href="/about.html"
+              href="https://fosstodon.com/@vedang"
+              target="_blank"
+              >Mastodon</a
+            >
+            <a
+              class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out"
+              href="{{relative-path|safe}}about.html"
               >About</a
             >
           </nav>
@@ -95,10 +101,17 @@
       id="post-body"
       class="prose prose-stone mx-auto px-2 prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl lg:px-0"
     >
-      {{body | safe }} {% if not skip-archive %}
-      <div class="bottom-0 right-0 float-right mb-6">
-        <a href="/index.html">Archive</a>
-      </div>
+      {{body|safe }} {% if parents|not-empty %}
+      <div id="post-parents">PARENTS EXIST</div>
+      {% endif %} {% if children|not-empty %}
+      <div id="post-children">CHILDREN EXIST</div>
+      {% endif %} {% if tags|not-empty %}
+      <div id="post-tags">TAGS EXIST</div>
+      {% endif %} {% if not skip-archive %}
+      <nav id="post-nav" class="bottom-0 right-0 float-right mb-6">
+        <a href="{{relative-path | safe}}index.html">Archive</a>
+        <a href="{{discuss-link}}" target="_blank">Discuss this post</a>
+      </nav>
       {% endif %}
     </div>
   </body>
