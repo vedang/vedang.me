@@ -13,15 +13,13 @@
               (merge
                {:blog-title "Vedang Manerikar"
                 :blog-root "https://vedang.me/"
-                :blog-description "My corner on the Internet"
+                :blog-description "My corner on the Internet."
                 :content-dir "content"
                 :public-dir "target/public"
                 :templates-dir "resources/templates"
                 :public-assets-dir-name "static"
                 :local-assets-dir-name "static"
-                :discuss-link "https://github.com/vedang/vedang.me/discussions/categories/posts"
-                :twitter-handle "vedang"
-                :github-handle "vedang"
+                :discuss-link "https://github.com/vedang/vedang.me/blob/master/"
                 :favicon true}
                (cli/parse-opts *command-line-args*)))
             (defn build-site [msg]
@@ -60,4 +58,9 @@
          :depends [render]
          :doc "Start the http-server for local testing"
          :task (do (println "Serving assets from dir: " (:public-dir opts))
-                   (http/exec {:port 1888 :dir (:public-dir opts)}))}}}
+                   (http/exec {:port 1888 :dir (:public-dir opts)}))}
+  watch {:doc "Watch the directory for changes and re-render on change"
+         :requires ([pod.babashka.fswatcher :as fw])
+         :task (do (fw/watch "src/weblog/render.clj" build-site {:delay-ms 50})
+                   (fw/watch "resources/templates" build-site {:delay-ms 50})
+                   (deref (promise)))}}}
