@@ -3,8 +3,7 @@
         hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
         babashka/fs {:mvn/version "0.3.17"}
         org.clojure/data.xml {:mvn/version "0.2.0-alpha8"}
-        selmer/selmer {:mvn/version "1.12.57"}
-        org.clojure/clojure {:mvn/version "1.11.1"}}
+        selmer/selmer {:mvn/version "1.12.58"}}
  :paths ["src" "resources" "target"]
  :aliases
  {:cider
@@ -14,6 +13,10 @@
    :main-opts  ["-m" "nrepl.cmdline"
                 "--middleware" "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
 
-  :test
+  :test ;; Run tests with clojure -X:test
   {:extra-paths ["test"]
-   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}}}
+   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
+                io.github.cognitect-labs/test-runner
+                {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+   :main-opts   ["-m" "cognitect.test-runner"]
+   :exec-fn cognitect.test-runner.api/test}}}

@@ -1,8 +1,8 @@
 {:deps {weblog/weblog {:local/root "."}
-        org.babashka/cli {:mvn/version "0.6.49"}
+        org.babashka/cli {:mvn/version "0.7.51"}
         org.babashka/http-server {:mvn/version "0.1.11"}
         babashka/babashka.pods {:git/url "https://github.com/babashka/pods"
-                                :git/sha "75c2216649bf5caf3ae41e7b8fc202e45b090ea9"}}
+                                :git/sha "64ecb94de888a34aeb023eb7f50bfa1a34943f24"}}
  :pods {clj-kondo/clj-kondo {:version "2022.05.31"}
         org.babashka/fswatcher {:version "0.0.3"}}
  :tasks
