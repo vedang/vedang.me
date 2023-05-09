@@ -1,4 +1,4 @@
 {:paths ["src" "resources"]
- :deps {}
+ :deps {babashka/fs {:mvn/version "0.3.17"}}
  :aliases {:test {:extra-paths ["test"]
                   :extra-deps {}}}}
