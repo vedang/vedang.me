@@ -6,17 +6,28 @@
         selmer/selmer {:mvn/version "1.12.58"}}
  :paths ["src" "resources" "target"]
  :aliases
- {:cider
+ {:dev
+  {:extra-paths ["development/src"]
+   :extra-deps {
+                ;; Development dependencies
+                org.clojure/clojure {:mvn/version "1.11.1"}}}
+
+  :cider
   {:extra-deps {nrepl/nrepl                          {:mvn/version "1.0.0"}
                 cider/cider-nrepl                    {:mvn/version "0.30.0"}
                 refactor-nrepl/refactor-nrepl        {:mvn/version "3.6.0"}}
    :main-opts  ["-m" "nrepl.cmdline"
                 "--middleware" "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
 
-  :test ;; Run tests with clojure -X:test
-  {:extra-paths ["test"]
-   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
-                io.github.cognitect-labs/test-runner
-                {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
-   :main-opts   ["-m" "cognitect.test-runner"]
-   :exec-fn cognitect.test-runner.api/test}}}
+  ;; Run tests with poly, this alias is for including the tests
+  :test
+  {:extra-paths []
+   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}
+
+  ;; Example command: clj -M:poly version
+  :poly
+  {:main-opts ["-m" "polylith.clj.core.poly-cli.core"]
+   :extra-deps {polyfy/polylith
+                {:git/url   "https://github.com/polyfy/polylith"
+                 :git/sha   "a073b7c8dbea176a8cb39b3c4d7c3d465c99e946"
+                 :deps/root "projects/poly"}}}}}
