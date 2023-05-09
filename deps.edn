@@ -1,15 +1,9 @@
-{:deps {markdown-clj/markdown-clj {:mvn/version "1.11.4"}
-        com.widdindustries/cljc.java-time {:mvn/version "0.1.21"}
-        hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
-        babashka/fs {:mvn/version "0.3.17"}
-        org.clojure/data.xml {:mvn/version "0.2.0-alpha8"}
-        selmer/selmer {:mvn/version "1.12.58"}}
- :paths ["src" "resources" "target"]
- :aliases
+{:aliases
  {:dev
   {:extra-paths ["development/src"]
    :extra-deps {;; Components
                 weblog/content {:local/root "components/content"}
+                weblog/render  {:local/root "components/render"}
                 ;; Development dependencies
                 org.clojure/clojure {:mvn/version "1.11.1"}}}
 
@@ -23,7 +17,8 @@
   ;; Run tests with poly, this alias is for including the tests
   :test
   {:extra-paths [;; Components
-                 "components/content/test"]
+                 "components/content/test"
+                 "components/render/test"]
    :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}
 
   ;; Example command: clj -M:poly version

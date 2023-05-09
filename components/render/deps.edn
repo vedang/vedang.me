@@ -1,0 +1,9 @@
+{:paths ["src" "resources"]
+ :deps {markdown-clj/markdown-clj {:mvn/version "1.11.4"}
+        com.widdindustries/cljc.java-time {:mvn/version "0.1.21"}
+        hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
+        babashka/fs {:mvn/version "0.3.17"}
+        org.clojure/data.xml {:mvn/version "0.2.0-alpha8"}
+        selmer/selmer {:mvn/version "1.12.58"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {}}}}
