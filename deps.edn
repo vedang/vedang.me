@@ -8,7 +8,8 @@
  :aliases
  {:dev
   {:extra-paths ["development/src"]
-   :extra-deps {
+   :extra-deps {;; Components
+                weblog/content {:local/root "components/content"}
                 ;; Development dependencies
                 org.clojure/clojure {:mvn/version "1.11.1"}}}
 
@@ -21,7 +22,8 @@
 
   ;; Run tests with poly, this alias is for including the tests
   :test
-  {:extra-paths []
+  {:extra-paths [;; Components
+                 "components/content/test"]
    :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}
 
   ;; Example command: clj -M:poly version
