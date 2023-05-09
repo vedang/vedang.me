@@ -3,6 +3,7 @@
   {:extra-paths ["development/src"]
    :extra-deps {;; Components
                 weblog/content {:local/root "components/content"}
+                weblog/logger  {:local/root "components/logger"}
                 weblog/render  {:local/root "components/render"}
                 ;; Development dependencies
                 org.clojure/clojure {:mvn/version "1.11.1"}}}
@@ -18,6 +19,7 @@
   :test
   {:extra-paths [;; Components
                  "components/content/test"
+                 "components/logger/test"
                  "components/render/test"]
    :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}}
 
