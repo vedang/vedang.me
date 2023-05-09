@@ -1,10 +1,18 @@
 (ns me.vedang.render.process
-  "Given an `html-map`, process the data and plug defaults into it."
+  "Process `html-map` data objects for fun and profit"
   (:require
    [babashka.fs :as fs]
    [cljc.java-time.zoned-date-time :as cjtz]
+   [clojure.set :as cset]
    [clojure.string :as cstr]
    [me.vedang.logger.interface :as logger]))
+
+(defn make-id
+  [filename]
+  (-> filename
+      fs/components
+      last
+      (cstr/replace ".md" "")))
 
 (defn gen-id
   "Store the unique ID that identifies this post into the metadata.
@@ -12,12 +20,7 @@
   This is simply the name of the file, without any extension. This
   name is guaranteed to be unique by ox-neuron."
   [metadata]
-  (let [id (-> metadata
-               :md-filename
-               fs/components
-               last
-               (cstr/replace ".md" ""))]
-    (assoc metadata :id id)))
+  (->> metadata :md-filename make-id (assoc metadata :id)))
 
 (defn gen-slug
   "Given the metadata of a post, generate a slug for the post if it does
@@ -48,14 +51,13 @@ from it's slug."
 (defn merge-defaults
   "Given an `html-map`, merge default values of metadata fields into
   the post."
-  [html-map post-file]
+  [html-map]
   (-> html-map
       (update-in [:metadata :date]
                  (fn [d]
                    (if (instance? java.util.Date d)
                      (.toInstant d)
                      (cjtz/to-instant (cjtz/now)))))
-      (update :metadata assoc :md-filename post-file)
       (update-in [:metadata :tags] set)
       ;; *NOTE*: Categories are vectors. This means that inheritance
       ;; always appends to the end. So the first of the `categories`
@@ -71,3 +73,61 @@ from it's slug."
       ;; Note that HTML filename can only be generated after the slug,
       ;; since it depends on the slug.
       (update :metadata gen-html-filename)))
+
+(defn get-content-path
+  "Given an `html-map` object, return the relative path of the content."
+  [html-map]
+  (cstr/replace-first (:md-filename (:metadata html-map))
+                      (:content-dir (:metadata html-map))
+                      ""))
+
+(def local-parent-child-pairs-xform
+  "Content files are nested according to relationships ->
+
+     content/a/b.md means that b is a child of a
+     content/a/b/c.md means that c is a child of b, b is a child of a.
+
+  For the given filename, return all such parent-child tuples"
+  (comp
+   ;; Break filename at path and discard the `content-dir` part. This
+   ;; is the list of all the files to act on.
+   (map (comp fs/components get-content-path))
+   ;; We only need to act on child entries to build the necessary
+   ;; relationships. Root entries can be skipped.
+   (filter second)
+   ;; Each component represents an entry. We pass it through gen-id as
+   ;; a way to strip the .md prefix.
+   (map (partial map make-id))
+   ;; Return parent/child tuples that can be acted on
+   (mapcat (fn [fc] (->> fc rest (interleave fc) (partition 2))))))
+
+(defn- update-parent-child-relationships
+  "Helper function to update the metadata of entries with information
+  about parenthood and childhood."
+  [id->hmap [parent-id child-id]]
+  (-> id->hmap
+      (update-in [parent-id :metadata :children] conj child-id)
+      (update-in [child-id :metadata :parents] conj parent-id)
+      (update-in [child-id :metadata :tags]
+                 cset/union
+                 (get-in id->hmap [parent-id :metadata :tags]))
+      (update-in [child-id :metadata :categories]
+                 into
+                 (get-in id->hmap [parent-id :metadata :categories]))))
+
+(defn id->html-map
+  "Build an in-mem data-structure of all the post content for later processing"
+  [html-maps]
+  (let [html-maps (map merge-defaults html-maps)
+        local-parent-child-pairs (transduce local-parent-child-pairs-xform
+                                            conj
+                                            html-maps)
+        id->hmap (reduce (fn [id->h html-map]
+                           (assoc id->h
+                                  (get-in html-map [:metadata :id])
+                                  html-map))
+                         {}
+                         html-maps)]
+    (reduce update-parent-child-relationships
+            id->hmap
+            local-parent-child-pairs)))
