@@ -5,6 +5,10 @@
                 weblog/content {:local/root "components/content"}
                 weblog/logger  {:local/root "components/logger"}
                 weblog/render  {:local/root "components/render"}
+
+                ;; Bases
+                weblog/weblog  {:local/root "bases/weblog"}
+
                 ;; Development dependencies
                 org.clojure/clojure {:mvn/version "1.11.1"}}}
 
