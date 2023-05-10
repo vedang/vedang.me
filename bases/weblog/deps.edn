@@ -1,6 +1,4 @@
 {:paths ["src" "resources"]
- :deps {weblog/content {:local/root "../../components/content"}
-        weblog/logger  {:local/root "../../components/logger"}
-        weblog/render  {:local/root "../../components/render"}}
+ :deps {}
  :aliases {:test {:extra-paths ["test"]
                   :extra-deps {}}}}
