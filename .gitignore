@@ -1,5 +1,6 @@
-/node_modules
+node_modules/
 /.cpcache
 .nrepl-port
-/target
+target/
 .DS_Store
+/.vscode

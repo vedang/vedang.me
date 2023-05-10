@@ -1,5 +1,6 @@
-{:deps {weblog/weblog {:local/root "."}
+{:deps {weblog/site {:local/root "."}
         org.babashka/cli {:mvn/version "0.7.51"}
+        babashka/fs {:mvn/version "0.3.17"}
         org.babashka/http-server {:mvn/version "0.1.11"}
         babashka/babashka.pods {:git/url "https://github.com/babashka/pods"
                                 :git/sha "64ecb94de888a34aeb023eb7f50bfa1a34943f24"}}
@@ -8,26 +9,25 @@
  :tasks
  {:requires ([babashka.fs :as fs]
              [babashka.cli :as cli]
-             [weblog.render :as wr])
+             [me.vedang.weblog.core :as weblog])
   :init (do (def opts
               (merge
                {:blog-title "Vedang Manerikar"
                 :blog-root "https://vedang.me/"
                 :blog-description "My corner on the Internet."
-                :content-dir "content"
-                :public-dir "target/public"
-                :templates-dir "resources/templates"
+                :content-dir "components/content/resources/content"
+                :public-dir "projects/weblog/target/public"
+                :templates-dir "components/render/resources/templates"
                 :public-assets-dir-name "static"
                 :local-assets-dir-name "static"
-                :discuss-link "https://github.com/vedang/vedang.me/blob/master/"
-                :favicon true}
+                :discuss-link "https://github.com/vedang/vedang.me/blob/master/"}
                (cli/parse-opts *command-line-args*)))
             (defn build-site [msg]
               (println (str "Rendering the site, executing "
                             msg
                             "! Here we go!"))
               (println "Cranking out crisp HTML for you!")
-              (wr/build-site opts)
+              (weblog/build-site opts)
               (println "Building the stylesheets using Tailwind Magic!")
               (shell (str "npx tailwindcss -i "
                           (fs/file (:templates-dir opts) "style.css")
@@ -51,7 +51,8 @@
                                      (:local-assets-dir-name opts))))}
   prep-content {:doc "Create the content and assets directories. (Necessary before export)."
                 :depends [clean-content]
-                :task (wr/copy-assets opts)}
+                :requires ([me.vedang.content.interface :as content])
+                :task (content/copy-assets opts)}
   render {:doc "Build the HTML and CSS files in the public directory."
           :task (build-site "render command")}
   serve {:requires ([babashka.http-server :as http])
@@ -61,6 +62,5 @@
                    (http/exec {:port 1888 :dir (:public-dir opts)}))}
   watch {:doc "Watch the directory for changes and re-render on change"
          :requires ([pod.babashka.fswatcher :as fw])
-         :task (do (fw/watch "src/weblog/render.clj" build-site {:delay-ms 50})
-                   (fw/watch "resources/templates" build-site {:delay-ms 50})
+         :task (do (fw/watch "components/render" build-site {:delay-ms 50})
                    (deref (promise)))}}}
