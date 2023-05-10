@@ -6,10 +6,10 @@
     <link
       type="application/atom+xml"
       rel="alternate"
-      href="atom.xml"
+      href="{{relative-path | safe}}atom.xml"
       title="{{blog-title}}"
     />
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="{{relative-path | safe}}style.css" rel="stylesheet" type="text/css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
       integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
@@ -55,6 +55,7 @@
       type="application/javascript"
     ></script>
     <title>{{title}}</title>
+    {% if favicon-tags %}{{favicon-tags | safe}}{% endif %}
   </head>
 
   <body>
@@ -101,18 +102,13 @@
       id="post-body"
       class="prose prose-stone mx-auto px-2 prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl lg:px-0"
     >
-      {{body|safe }} {% if parents|not-empty %}
-      <div id="post-parents">PARENTS EXIST</div>
-      {% endif %} {% if children|not-empty %}
-      <div id="post-children">CHILDREN EXIST</div>
-      {% endif %} {% if tags|not-empty %}
-      <div id="post-tags">TAGS EXIST</div>
-      {% endif %} {% if not skip-archive %}
+      {{body|safe }}
+{% if not skip-archive %}
       <nav id="post-nav" class="bottom-0 right-0 float-right mb-6">
         <a href="{{relative-path | safe}}index.html">Archive</a>
         <a href="{{discuss-link}}" target="_blank">Discuss this post</a>
       </nav>
-      {% endif %}
+{% endif %}
     </div>
   </body>
 </html>

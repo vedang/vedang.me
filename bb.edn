@@ -1,6 +1,7 @@
-{:deps {weblog/site {:local/root "."}
+{:deps {weblog/site {:local/root "projects/weblog"}
         org.babashka/cli {:mvn/version "0.7.51"}
         babashka/fs {:mvn/version "0.3.17"}
+        babashka/process {:mvn/version "0.5.18"}
         org.babashka/http-server {:mvn/version "0.1.11"}
         babashka/babashka.pods {:git/url "https://github.com/babashka/pods"
                                 :git/sha "64ecb94de888a34aeb023eb7f50bfa1a34943f24"}}
@@ -9,34 +10,48 @@
  :tasks
  {:requires ([babashka.fs :as fs]
              [babashka.cli :as cli]
+             [babashka.process :as bp]
              [me.vedang.weblog.core :as weblog])
-  :init (do (def opts
-              (merge
-               {:blog-title "Vedang Manerikar"
-                :blog-root "https://vedang.me/"
-                :blog-description "My corner on the Internet."
-                :content-dir "components/content/resources/content"
-                :public-dir "projects/weblog/target/public"
-                :templates-dir "components/render/resources/templates"
-                :public-assets-dir-name "static"
-                :local-assets-dir-name "static"
-                :discuss-link "https://github.com/vedang/vedang.me/blob/master/"}
-               (cli/parse-opts *command-line-args*)))
-            (defn build-site [msg]
-              (println (str "Rendering the site, executing "
-                            msg
-                            "! Here we go!"))
-              (println "Cranking out crisp HTML for you!")
-              (weblog/build-site opts)
-              (println "Building the stylesheets using Tailwind Magic!")
-              (shell (str "npx tailwindcss -i "
-                          (fs/file (:templates-dir opts) "style.css")
-                          " -o "
-                          (fs/file (:public-dir opts) "style.css")))))
-  clean {:doc "Remove all the generated files"
+  :init (let [content-dir (-> "components/content/resources/content"
+                              fs/create-dirs fs/real-path str)
+              public-dir (-> "projects/weblog/target/public"
+                             fs/create-dirs fs/real-path str)
+              templates-dir (-> "components/render/resources/templates"
+                                fs/create-dirs fs/real-path str)]
+          (def opts
+            (merge
+             {:blog-title "Vedang Manerikar"
+              :blog-root "https://vedang.me/"
+              :blog-description "My corner on the Internet."
+              :content-dir content-dir
+              :public-dir public-dir
+              :templates-dir templates-dir
+              :public-assets-dir-name "static"
+              :local-assets-dir-name "static"
+              :discuss-link "https://github.com/vedang/vedang.me/blob/master/"}
+             (cli/parse-opts *command-line-args*)))
+
+          (defn build-site [msg]
+            (println (str "Rendering the site, executing "
+                          msg
+                          "! Here we go!"))
+            (println "Cranking out crisp HTML for you!")
+            (weblog/build-site opts)
+            (println "Building the stylesheets using Tailwind Magic!")
+            (bp/shell {:dir "projects/weblog"}
+                      (str "npx tailwindcss -i "
+                           (fs/file (:templates-dir opts) "style.css")
+                           " -o "
+                           (fs/file (:public-dir opts) "style.css")))))
+
+  print-opts {:doc "Helper task to print the options we pass around"
+              :task (clojure.pprint/pprint opts)}
+
+  clean {:doc "Remove all the generated files in the public directory"
          :task (do (println (str "Deleting the public directory: "
                                  (:public-dir opts)))
                    (fs/delete-tree (:public-dir opts)))}
+
   clean-content {:doc "Remove the content directory. *WARN*: Are you sure?"
                  :depends [clean]
                  :task (do (println (str "Deleting the content directory: "
@@ -49,17 +64,21 @@
                            (fs/create-dirs
                             (fs/path (:content-dir opts)
                                      (:local-assets-dir-name opts))))}
+
   prep-content {:doc "Create the content and assets directories. (Necessary before export)."
                 :depends [clean-content]
                 :requires ([me.vedang.content.interface :as content])
                 :task (content/copy-assets opts)}
+
   render {:doc "Build the HTML and CSS files in the public directory."
           :task (build-site "render command")}
+
   serve {:requires ([babashka.http-server :as http])
          :depends [render]
          :doc "Start the http-server for local testing"
          :task (do (println "Serving assets from dir: " (:public-dir opts))
                    (http/exec {:port 1888 :dir (:public-dir opts)}))}
+
   watch {:doc "Watch the directory for changes and re-render on change"
          :requires ([pod.babashka.fswatcher :as fw])
          :task (do (fw/watch "components/render" build-site {:delay-ms 50})

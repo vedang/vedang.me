@@ -10,8 +10,8 @@
 
 (defn render-post
   "Given an `html-map`, write out the HTML for the post to the public folder."
-  [{:keys [metadata] :as html-map} opts]
-  (when (or (not (:draft metadata)) (:publish-drafts? opts))
+  [opts {:keys [metadata] :as html-map}]
+  (when (or (not (:draft metadata)) (:publish-drafts opts))
     (page/render-file html-map opts)
     (doseq [old-url (:aliases metadata)]
       (redirect/render-file old-url (:html-filename metadata) opts))

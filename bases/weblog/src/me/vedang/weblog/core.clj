@@ -6,7 +6,8 @@
 
 (defn build-site
   [opts]
-  (when (:print-logs? opts) (logger/activate-logging!))
+  (when (:print-logs opts) (logger/activate-logging!))
+  (logger/log (str "Options Map: " opts))
   (content/copy-assets opts)
   (render/build-posts opts)
   (render/build-index opts)

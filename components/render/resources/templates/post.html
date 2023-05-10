@@ -5,3 +5,13 @@
 <p>
   <i>Published: {{date}}</i>
 </p>
+
+{% if parents|not-empty %}
+<div id="post-parents">PARENTS EXIST</div>
+{% endif %}
+{% if children|not-empty %}
+<div id="post-children">CHILDREN EXIST</div>
+{% endif %}
+{% if tags|not-empty %}
+<div id="post-tags">TAGS EXIST</div>
+{% endif %}
