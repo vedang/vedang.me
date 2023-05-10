@@ -144,7 +144,7 @@ draft: false
 
     -   Posted to: [Fosstodon](https://fosstodon.org/@vedang/109443519114446151), [Twitter](https://twitter.com/vedang/status/1598619760714870784)
 
-    Code show-off for day 2: [AOC 2022 Day 2 Part 1](</ox-hugo/Screenshot 2022-12-02 at 3.56.56 PM.png>)
+    Code show-off for day 2: [AOC 2022 Day 2 Part 1](<~/Desktop/Screenshot 2022-12-02 at 3.56.56 PM.png>)
 
     -   Posted to: [Fosstodon](https://fosstodon.org/@vedang/109443622554086929), Twitter
 
@@ -271,7 +271,7 @@ draft: false
 
     \#Emacs Tip of the day: Opening a file as root (screenshot attached).
 
-    Image: ![](./static/ox-hugo/Screenshot 2023-01-12 at 3.17.44 PM.png) Alt-text: An image of the emacs-lisp function `uf/sudo-edit`, for editing a file as root from inside Emacs. Taken from: <https://github.com/vedang/emacs-up/blob/a42dd0638842cbcba2d1a98ab784eacd66d0ab0a/site-lisp/utility-functions.el#L139-L147>
+    Image: ![](./static~/Desktop/Screenshot 2023-01-12 at 3.17.44 PM.png) Alt-text: An image of the emacs-lisp function `uf/sudo-edit`, for editing a file as root from inside Emacs. Taken from: <https://github.com/vedang/emacs-up/blob/a42dd0638842cbcba2d1a98ab784eacd66d0ab0a/site-lisp/utility-functions.el#L139-L147>
 
     If you `M-x uf/sudo-edit`, it will ask for a filename and open it as root. If you `C-u M-x uf/sudo-edit`, it will reopen the file visited by the current buffer as root.
 
@@ -331,7 +331,7 @@ draft: false
     -   Posted to: [Twitter](https://twitter.com/vedang/status/1627182913501675520), [Fosstodon](https://fosstodon.org/@vedang/109890726306710754)
     -   VGR's article: <https://studio.ribbonfarm.com/p/text-is-all-you-need>
         -   <https://www.lesswrong.com/posts/jtoPawEhLNXNxvgTT/bing-chat-is-blatantly-aggressively-misaligned>
-    -   My screenshot: ![](./static/ox-hugo/Screenshot 2023-02-19 at 2.41.50 PM.png)
+    -   My screenshot: ![](./static~/Desktop/Screenshot 2023-02-19 at 2.41.50 PM.png)
 
 <!--list-separator-->
 
@@ -380,3 +380,21 @@ draft: false
     I thought then, and still do, that #Clojure was the perfect scaffolding language to bring that vision to life.
 
     -   Posted to: [Twitter](https://twitter.com/vedang/status/1637020414659395587), [Fosstodon](https://fosstodon.org/@vedang/110043550181330399)
+
+
+### 2023-04 April {#2023-04-april}
+
+
+#### 2023-04-18 Tuesday {#2023-04-18-tuesday}
+
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-18 Tue&gt;</span></span>
+
+<!--list-separator-->
+
+-  <span class="timestamp-wrapper"><span class="timestamp">[2023-04-18 Tue 16:31]</span></span>
+
+    I still find myself going to Twitter more often than Fosstodon. It's because of an incredible little plugin called Twemex. I cannot imagine using Twitter without Twemex anymore. <https://tweethunter.io/twemex>
+
+    Is anyone building a Twemex equivalent for #mastodon?
+
+    -   Posted to: [Twitter](https://twitter.com/vedang/status/1648281293963001856), [Fosstodon](https://fosstodon.org/@vedang/110219479213147896)
