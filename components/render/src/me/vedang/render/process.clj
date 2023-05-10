@@ -131,3 +131,22 @@ from it's slug."
     (reduce update-parent-child-relationships
             id->hmap
             local-parent-child-pairs)))
+
+(defn sort-and-filter
+  "Sort `html-maps` by date of publication. Filter the ones which are empty."
+  [html-maps]
+  (let [filter-xform (comp
+                      ;; Keep only those posts which have actual HTML content
+                      (filter (comp seq :html))
+                      ;; Remove special pages like index.html, which
+                      ;; should not show up in the archive. @TODO: We
+                      ;; might need a better way to do this once we
+                      ;; have Clerk notebooks in place.
+                      (filter (comp not :skip-archive :metadata))
+                      ;; Remove posts which are in draft stage @TODO:
+                      ;; How do we handle `:publish-drafts` option
+                      ;; here?
+                      (filter (comp not :draft :metadata)))]
+    (sort-by (comp :date :metadata)
+             (comp - compare)
+             (into [] filter-xform html-maps))))

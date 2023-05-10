@@ -7,21 +7,17 @@
    [selmer.parser :as selmer]))
 
 (defn render-file
-  [{:keys [metadata html]} opts]
-  (let [post-body (-> opts
-                      :templates-dir
-                      (util/read-template "post.html")
-                      (selmer/render (assoc metadata :body html)))
-        page-opts (merge opts
+  [{:keys [metadata body]} opts]
+  (let [page-opts (merge opts
                          metadata
-                         {:body post-body
+                         {:body body
                           :discuss-link (str (:discuss-link opts)
                                              (:md-filename metadata))})
         page-html (-> opts
                       :templates-dir
                       (util/read-template "base.html")
                       (selmer/render page-opts))
-        html-file (fs/file (:public-dir opts) (:html-filename metadata))]
+        html-file (fs/file (:public-dir page-opts) (:html-filename page-opts))]
     (logger/log (str "Writing HTML to public-dir: " html-file))
     (fs/create-dirs (fs/parent html-file))
     (spit html-file page-html)))
