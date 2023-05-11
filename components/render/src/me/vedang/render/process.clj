@@ -65,6 +65,7 @@ from it's slug."
       (update-in [:metadata :categories] vec)
       (update-in [:metadata :parents] set)
       (update-in [:metadata :children] set)
+      (update-in [:metadata :backlinks] set)
 
       (update :metadata gen-id)
       ;; Note that ID generation should happen before Slug, since slug

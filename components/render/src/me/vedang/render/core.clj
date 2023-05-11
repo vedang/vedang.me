@@ -22,10 +22,10 @@
 
 (defn render-post
   "Given an `html-map`, write out the HTML for the post to the public folder."
-  [{:keys [metadata] :as html-map} opts]
+  [{:keys [metadata] :as html-map} id->html-map opts]
   (when (or (not (:draft metadata)) (:publish-drafts opts))
     (-> html-map
-        (post/add-html-body opts)
+        (post/add-html-body id->html-map opts)
         (page/render-file opts))
     (doseq [old-url (:aliases metadata)]
       (redirect/render-file old-url (:html-filename metadata) opts))
@@ -38,7 +38,7 @@
         id->html-map (process/id->html-map html-maps)]
     (when-not (:no-output opts)
       (doseq [[_id html-map] id->html-map]
-        (render-post html-map opts)))
+        (render-post html-map id->html-map opts)))
     id->html-map))
 
 (defn build-index
