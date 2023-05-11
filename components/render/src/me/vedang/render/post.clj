@@ -1,6 +1,7 @@
 (ns me.vedang.render.post
-  (:require [me.vedang.render.util :as util]
-            [selmer.parser :as selmer]))
+  (:require
+   [me.vedang.render.util :as util]
+   [selmer.parser :as selmer]))
 
 (defn add-html-body
   [{:keys [metadata html] :as html-map} opts]

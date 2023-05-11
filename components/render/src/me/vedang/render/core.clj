@@ -1,8 +1,8 @@
 (ns me.vedang.render.core
   (:require
    [babashka.fs :as fs]
-   [clojure.data.xml :as xml]
    [me.vedang.logger.interface :as logger]
+   [me.vedang.render.atom :as atom]
    [me.vedang.render.index :as index]
    [me.vedang.render.markdown :as markdown]
    [me.vedang.render.page :as page]
@@ -47,13 +47,27 @@
      (build-index (vals id->html-map) opts)))
   ([html-maps opts]
    (logger/log "Writing the Index Page HTML")
-   (let [index-body (index/body html-maps)]
+   (let [index-body (index/body (process/sort-and-filter html-maps))]
      (page/render-file {:body index-body}
                        (assoc opts
                               :skip-archive true
                               :html-filename "index.html")))))
 
-(xml/alias-uri 'atom "http://www.w3.org/2005/Atom")
-
 (defn build-atom-feed
-  [opts])
+  ([opts]
+   (let [id->html-map (build-posts (assoc opts :no-output true))]
+     (build-atom-feed (vals id->html-map) opts)))
+  ([html-maps opts]
+   (let [html-maps (process/sort-and-filter html-maps)]
+     (logger/log "Writing the Atom feeds for the site")
+     ;; notes are my brain-forest entries of stuff I read / watch. I
+     ;; don't need to publish them in the feed.
+     (atom/feed (remove (fn [{:keys [metadata]}]
+                          (some (set (:categories metadata)) ["notes"]))
+                        html-maps)
+                (assoc opts :xml-filename "atom.xml"))
+     ;; Build a feed specifically for Planet Clojure
+     (atom/feed (filter (fn [{:keys [metadata]}]
+                          (some (:tags metadata) ["clojure" "clojurescript"]))
+                        html-maps)
+                (assoc opts :xml-filename "planetclojure.xml")))))

@@ -22,6 +22,7 @@
             (merge
              {:blog-title "Vedang Manerikar"
               :blog-root "https://vedang.me/"
+              :blog-author "Vedang Manerikar"
               :blog-description "My corner on the Internet."
               :content-dir content-dir
               :public-dir public-dir

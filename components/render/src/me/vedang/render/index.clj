@@ -4,8 +4,7 @@
    [cljc.java-time.zone-id :as cjtzi]
    [cljc.java-time.zoned-date-time :as cjtz]
    [clojure.string :as cstr]
-   [hiccup2.core :as hiccup]
-   [me.vedang.render.process :as process]))
+   [hiccup2.core :as hiccup]))
 
 (defn human-readable
   "Return a date in yyyy/MM/dd format, because it's more readable that way"
@@ -35,7 +34,7 @@
   [html-maps]
   (let [groups (group-by #(or (first (get-in % [:metadata :categories]))
                               "not categorised")
-                         (process/sort-and-filter html-maps))
+                         html-maps)
         cat->post-links (reduce-kv
                          (fn [m category posts]
                            (assoc m category (post-links posts)))
