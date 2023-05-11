@@ -19,7 +19,7 @@
 (defn copy-assets
   [opts]
   (let [public (create-assets (:public-dir opts) (:public-assets-dir-name opts))
-        local (create-assets (:favicon-dir opts) (:local-assets-dir-name opts))]
+        local (create-assets (:render-dir opts) (:local-assets-dir-name opts))]
     (println (str "Copying assets from: " local " to: " public))
     (fs/copy-tree local public {:replace-existing true})))
 

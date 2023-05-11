@@ -14,12 +14,10 @@
              [me.vedang.weblog.core :as weblog])
   :init (let [content-dir (-> "components/content/resources/content"
                               fs/create-dirs fs/real-path str)
-              favicon-dir (-> "components/render/resources"
+              render-dir (-> "components/render/resources"
                               fs/create-dirs fs/real-path str)
               public-dir (-> "projects/weblog/target/public"
-                             fs/create-dirs fs/real-path str)
-              templates-dir (-> "components/render/resources/templates"
-                                fs/create-dirs fs/real-path str)]
+                             fs/create-dirs fs/real-path str)]
           (def opts
             (merge
              {:blog-title "Vedang Manerikar"
@@ -27,9 +25,8 @@
               :blog-author "Vedang Manerikar"
               :blog-description "My corner on the Internet."
               :content-dir content-dir
-              :favicon-dir favicon-dir
+              :render-dir render-dir
               :public-dir public-dir
-              :templates-dir templates-dir
               :public-assets-dir-name "static"
               :local-assets-dir-name "static"
               :discuss-link "https://github.com/vedang/vedang.me/blob/master"}
@@ -44,7 +41,7 @@
             (println "Building the stylesheets using Tailwind Magic!")
             (bp/shell {:dir "projects/weblog"}
                       (str "npx tailwindcss -i "
-                           (fs/file (:templates-dir opts) "style.css")
+                           (fs/file (:render-dir opts) "style.css")
                            " -o "
                            (fs/file (:public-dir opts) "style.css")))))
 
@@ -85,7 +82,7 @@
 
   watch {:doc "Watch the directory for changes and re-render on change"
          :requires ([pod.babashka.fswatcher :as fw])
-         :task (do (fw/watch "components/render/resources/templates"
+         :task (do (fw/watch "components/render/src/me/vedang/render"
                              (fn [e]
                                (when (#{:write :write|chmod} (:type e))
                                  (build-site e)))
