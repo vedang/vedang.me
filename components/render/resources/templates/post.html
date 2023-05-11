@@ -7,11 +7,16 @@
 </p>
 
 {% if parents|not-empty %}
-<div id="post-parents">PARENTS EXIST</div>
+<hr>
+<div id="post-parents" class="prose md:prose-lg lg:prose-xl">
+  Parents: {{parents_str}}
+</div>
 {% endif %}
 {% if children|not-empty %}
-<div id="post-children">CHILDREN EXIST</div>
+<hr>
+<div id="post-children" class="prose md:prose-lg lg:prose-xl">Children: {{children_str}}</div>
 {% endif %}
 {% if tags|not-empty %}
-<div id="post-tags">TAGS EXIST</div>
+<hr>
+<div id="post-tags" class="prose md:prose-lg lg:prose-xl">Tags: {{tags_str}}</div>
 {% endif %}

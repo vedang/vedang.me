@@ -86,5 +86,5 @@
                              (fn [e]
                                (when (#{:write :write|chmod} (:type e))
                                  (build-site e)))
-                             {:delay-ms 50 :recursive true})
+                             {:delay-ms 500 :recursive true})
                    (deref (promise)))}}}

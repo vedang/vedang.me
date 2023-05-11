@@ -102,13 +102,18 @@
       id="post-body"
       class="prose prose-stone mx-auto px-2 prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl lg:px-0"
     >
-      {{body|safe }}
+      {{body|safe}}
 {% if not skip-archive %}
       <nav id="post-nav" class="bottom-0 right-0 float-right mb-6">
         <a href="{{relative-path | safe}}index.html">Archive</a>
         <a href="{{discuss-link}}" target="_blank">Discuss this post</a>
       </nav>
 {% endif %}
+      <nav id="copyright-nav" class="bottom-0 left-0 float-left mb-6">
+        <p>Except where otherwise noted, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.
+        </p>
+        <p>Built with love, using <a href="https://www.gnu.org/software/emacs/">Emacs</a>, <a href="https://orgmode.org/">Org-mode</a>, <a href="https://clojure.org/index">Clojure</a>, <a href="https://babashka.org/">Babashka</a>, <a href="https://tailwindcss.com/">TailwindCSS</a>, <a href="https://prismjs.com/">PrismJS</a></p>
+      </nav>
     </div>
   </body>
 </html>
