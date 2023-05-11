@@ -8,7 +8,7 @@
       rel="alternate"
       href="{{relative-path | safe}}atom.xml"
       title="{{blog-title}}"
-    />
+      />
     <link href="{{relative-path | safe}}style.css" rel="stylesheet" type="text/css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
@@ -16,14 +16,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       type="application/javascript"
-    ></script>
+      ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clojure.min.js"
       integrity="sha512-BrJeu0wD2TAYh1Vb3N0BSn/7t43FfeEkDNof6XUX5wFLmFb1z3tS/8bbr1XZqDg96KjtfmuSyI0AUCayDMQYNw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       type="application/javascript"
-    ></script>
+      ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
@@ -31,14 +31,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       type="text/css"
-    />
+      />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"
       integrity="sha512-st608h+ZqzliahyzEpETxzU0f7z7a9acN6AFvYmHvpFhmcFuKT8a22TT5TpKpjDa3pt3Wv7Z3SdQBCBdDPhyWA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       type="application/javascript"
-    ></script>
+      ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css"
@@ -46,16 +46,40 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       type="text/css"
-    />
+      />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"
       integrity="sha512-/kVH1uXuObC0iYgxxCKY41JdWOkKOxorFVmip+YVifKsJ4Au/87EisD1wty7vxN2kAhnWh6Yc8o/dSAXj6Oz7A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       type="application/javascript"
-    ></script>
+      ></script>
     <title>{{title}}</title>
-    {% if favicon-tags %}{{favicon-tags | safe}}{% endif %}
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{relative-path}}{{public-assets-dir-name}}/apple-touch-icon.png"
+      />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{relative-path}}{{public-assets-dir-name}}/favicon-32x32.png"
+      />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{relative-path}}{{public-assets-dir-name}}/favicon-16x16.png"
+      />
+    <link rel="manifest" href="{{relative-path}}{{public-assets-dir-name}}/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="{{relative-path}}{{favicon-dir}}/safari-pinned-tab.svg"
+      color="#5bbad5"
+      />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
 
   <body>
@@ -75,24 +99,24 @@
               class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out"
               href="/atom.xml"
               >Feed</a
-            >
+                     >
             <a
               class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out"
               href="https://twitter.com/vedang"
               target="_blank"
               >Twitter</a
-            >
+                        >
             <a
               class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out"
               href="https://fosstodon.org/@vedang"
               target="_blank"
               >Mastodon</a
-            >
+                         >
             <a
               class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out"
               href="{{relative-path|safe}}about.html"
               >About</a
-            >
+                      >
           </nav>
         </div>
       </div>
@@ -101,14 +125,14 @@
     <div
       id="post-body"
       class="prose prose-stone mx-auto px-2 prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl lg:px-0"
-    >
+      >
       {{body|safe}}
-{% if not skip-archive %}
+      {% if not skip-archive %}
       <nav id="post-nav" class="bottom-0 right-0 float-right mb-6">
         <a href="{{relative-path | safe}}index.html">Archive</a>
         <a href="{{discuss-link}}" target="_blank">Discuss this post</a>
       </nav>
-{% endif %}
+      {% endif %}
       <nav id="copyright-nav" class="bottom-0 left-0 float-left mb-6">
         <p>Except where otherwise noted, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.
         </p>

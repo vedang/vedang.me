@@ -9,6 +9,7 @@
   (when (:print-logs opts) (logger/activate-logging!))
   (logger/log (str "Options Map: " opts))
   (content/copy-assets opts)
+  (render/copy-assets opts)
   (let [id->html-map (render/build-posts opts)]
     (render/build-index (vals id->html-map) opts)
     (render/build-atom-feed opts)))

@@ -14,6 +14,8 @@
              [me.vedang.weblog.core :as weblog])
   :init (let [content-dir (-> "components/content/resources/content"
                               fs/create-dirs fs/real-path str)
+              favicon-dir (-> "components/render/resources"
+                              fs/create-dirs fs/real-path str)
               public-dir (-> "projects/weblog/target/public"
                              fs/create-dirs fs/real-path str)
               templates-dir (-> "components/render/resources/templates"
@@ -25,6 +27,7 @@
               :blog-author "Vedang Manerikar"
               :blog-description "My corner on the Internet."
               :content-dir content-dir
+              :favicon-dir favicon-dir
               :public-dir public-dir
               :templates-dir templates-dir
               :public-assets-dir-name "static"
