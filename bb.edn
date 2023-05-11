@@ -29,7 +29,7 @@
               :templates-dir templates-dir
               :public-assets-dir-name "static"
               :local-assets-dir-name "static"
-              :discuss-link "https://github.com/vedang/vedang.me/blob/master/"}
+              :discuss-link "https://github.com/vedang/vedang.me/blob/master"}
              (cli/parse-opts *command-line-args*)))
 
           (defn build-site [msg]
@@ -82,5 +82,9 @@
 
   watch {:doc "Watch the directory for changes and re-render on change"
          :requires ([pod.babashka.fswatcher :as fw])
-         :task (do (fw/watch "components/render" build-site {:delay-ms 50})
+         :task (do (fw/watch "components/render/resources/templates"
+                             (fn [e]
+                               (when (#{:write :write|chmod} (:type e))
+                                 (build-site e)))
+                             {:delay-ms 50 :recursive true})
                    (deref (promise)))}}}

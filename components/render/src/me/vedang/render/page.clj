@@ -3,16 +3,20 @@
   (:require
    [babashka.fs :as fs]
    [me.vedang.logger.interface :as logger]
+   [me.vedang.render.process :as process]
    [me.vedang.render.util :as util]
    [selmer.parser :as selmer]))
 
 (defn render-file
-  [{:keys [metadata body]} opts]
-  (let [page-opts (merge opts
-                         metadata
-                         {:body body
-                          :discuss-link (str (:discuss-link opts)
-                                             (:md-filename metadata))})
+  [{:keys [metadata body] :as html-map} opts]
+  (let [page-opts (cond-> opts
+                    true (merge metadata)
+
+                    (seq (str body)) (assoc :body body)
+
+                    (seq (:md-filename metadata))
+                    (assoc :discuss-link (str (:discuss-link opts)
+                                              (process/get-content-path html-map))))
         page-html (-> opts
                       :templates-dir
                       (util/read-template "base.html")
