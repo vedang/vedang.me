@@ -21,19 +21,18 @@
 
 (defn add-tag-links
   [tags]
-  (when (seq tags)
-    (let [last-tag (last tags)]
-      [:div {:id "post-tags" :class "prose md:prose-lg lg:prose-xl"}
-       [:h3 {:class "links-header"} "Tags"]
-       [:div {:class "flex"}
-        (for [t tags]
-          (if (= t last-tag)
-            [:div
-             [:a {:href (str "/tags/" t ".html")} t]
-             [:p {:class "inline-flex mx-2"} ""]]
-            [:div
-             [:a {:href (str "/tags/" t ".html")} t]
-             [:p {:class "inline-flex mx-2"} "|"]]))]])))
+  (when-let [last-tag (last tags)]
+    [:div {:id "post-tags" :class "prose md:prose-lg lg:prose-xl"}
+     [:h3 {:class "links-header"} "Tags"]
+     [:div {:class "flex"}
+      (for [t tags]
+        (if (= t last-tag)
+          [:div {:class "inline-flex"}
+           [:a {:href (str "/tags/" t ".html")} t]
+           [:span {:class "mx-2"} ""]]
+          [:div {:class "inline-flex"}
+           [:a {:href (str "/tags/" t ".html")} t]
+           [:span {:class "mx-2"} "|"]]))]]))
 
 (defn post-body
   "Return the Hiccup for the main post"
@@ -42,7 +41,7 @@
   (hiccup/html {:mode :xhtml}
    [:h1 title]
    (hiccup/raw body)
-   [:p [:i (str "Published: " date)]]
+   [:p [:i (str "Last Updated: " date)]]
    (when (seq backlinks) [:hr])
    (add-post-links :backlinks backlinks id->html-map opts)
    (when (seq parents) [:hr])

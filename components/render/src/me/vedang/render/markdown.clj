@@ -38,15 +38,20 @@ workaround for https://github.com/yogthos/markdown-clj/issues/146"
   [markdown post-filename]
   (let [pre-process (pre-process-markdown markdown)]
     (post-process-html
-     (try (md/md-to-html-string-with-meta
-           pre-process
-           :code-style (fn [lang] (format "class=\"lang-%s\"" lang))
-           :footnotes? true
-           :heading-anchors true)
+     (try (let [html-map (md/md-to-html-string-with-meta
+                          pre-process
+                          :code-style (fn [lang] (format "class=\"lang-%s\"" lang))
+                          :footnotes? true
+                          :heading-anchors true)]
+            (if (and (empty? (:html html-map))
+                     (seq (:description (:metadata html-map))))
+              (let [html (:description (:metadata html-map))]
+                (-> html-map
+                    (assoc :html (md/md-to-html-string html))
+                    (assoc-in [:metadata :skip-archive] true)))
+              html-map))
           (catch java.lang.NullPointerException _
-            (logger/log (str "-- Looks like " post-filename " is empty!"))
-            (if-let [m (md/md-to-meta markdown)]
-              {:metadata m :html "" :stub? true}
-              ;; Looks like the whole file is empty.
-              (throw (ex-info "Encountered an empty file."
-                              {:md-filename post-filename}))))))))
+            (logger/log
+             (str "-- Looks like the whole " post-filename " is empty!"))
+            (throw (ex-info "Encountered an empty file."
+                            {:md-filename post-filename})))))))
