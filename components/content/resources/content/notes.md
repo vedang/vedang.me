@@ -8,5 +8,3 @@ draft: false
 featured_image: "/images/clevinger.jpg"
 skip-archive: true
 ---
-
-This is a container for the listings page for all notes posts.

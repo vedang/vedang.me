@@ -3,6 +3,7 @@ title: "Gitlab Private Pages + Running Docker containers in Gitlab CI/CD Pipelin
 author: ["Vedang Manerikar"]
 date: 2022-08-23T10:19:00
 slug: "gitlab-private-pages-docker"
+tags: ["cicd"]
 draft: false
 ---
 

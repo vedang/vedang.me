@@ -3,6 +3,7 @@ title: "Notes and Reading Material on the Mahabharata"
 author: ["Vedang Manerikar"]
 date: 2012-09-21T20:55:00
 aliases: ["/mahabharat/2012-09-21-notes-and-reading-material-on-the-mahabharata/"]
+slug: "notes-and-reading-material-on-the-mahabharata"
 tags: ["books"]
 draft: false
 ---

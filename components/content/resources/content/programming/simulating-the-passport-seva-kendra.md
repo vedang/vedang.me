@@ -63,7 +63,7 @@ Let me describe the process to you first.
     -   **Requiring Police Clearance (represented by P):** People who need clearance from the police (probably because they have criminal records, or work in sensitive departments in the government).
 -   Categories other than 'Normal' have a higher priority when it comes to processing their applications. For the purposes of this post, I assume that P has the highest priority, followed by S, T and N.
 
-![The workings of the Passport Seva Kendra. Illustration by Bhargava Chowdary (@renderkid)](./static/images/psk-renderkid.jpg)
+![](./static/images/psk-renderkid.jpg)
 
 In the rest of this post, we'll build this system as described above, and see if we can fix the flaw in it. We will use Clojure to write the solution. Clojure's concurrency primitives are fantastic, and helped me model this system in an elegant and readable way. As we go along, I'll explain these primitives in brief. [Eric Normand](https://twitter.com/ericnormand) has written an excellent guide to [understanding concurrency primitives](https://purelyfunctional.tv/guide/clojure-concurrency/) in Clojure, and [Rich Hickey](https://twitter.com/richhickey) has a [great talk about this](https://www.youtube.com/watch?v=nDAfZK8m5_8) as well. I highly recommend both these resources to the interested reader. The focus of this post will be on using these tools to implement a non-trivial system.
 

@@ -3,6 +3,7 @@ title: "Draupadi and the Pandavas"
 author: ["Vedang Manerikar"]
 date: 2012-09-21T19:17:00
 aliases: ["/mahabharat/2012-09-21-draupadi-and-the-pandavas/"]
+slug: "draupadi-and-the-pandavas"
 tags: ["krishna", "pandavas", "draupadi"]
 draft: false
 ---

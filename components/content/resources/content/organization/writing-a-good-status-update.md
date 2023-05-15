@@ -3,6 +3,7 @@ title: "Writing a good status update"
 author: ["Vedang Manerikar"]
 date: 2019-08-06T07:49:00
 aliases: ["/techlog/2019-08-06-writing-a-good-status-update/"]
+slug: "writing-a-good-status-update"
 tags: ["communication", "project-management", "engineering-management"]
 draft: false
 ---

@@ -1,8 +1,9 @@
 ---
 title: "TabFS and Automation"
 author: ["Vedang Manerikar"]
-tags: ["Status", "next"]
-draft: true
+date: 2022-09-20T22:20:00
+tags: ["orgmode", "babashka", "clojure", "tabfs", "webdev", "automation"]
+draft: false
 ---
 
 Hello all! This is a short update about the very cool [TabFS](https://omar.website/tabfs/), which is a browser extension that maps your open tabs to the filesystem using Fuse. Think `/proc` but for the browser. This is an excellent idea, because now I can run all the tools that I am already familiar with on my tabs!
@@ -83,4 +84,4 @@ Examples:
 
 Finally, this is the output, in Org Mode:
 
-![](./static~/Desktop/Screenshot 2022-09-20 at 3.42.23 PM.png)
+![](./static/images/tabfs.png)

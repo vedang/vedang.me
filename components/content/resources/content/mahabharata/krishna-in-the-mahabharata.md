@@ -3,6 +3,7 @@ title: "Krishna in the Mahabharat"
 author: ["Vedang Manerikar"]
 date: 2012-09-20T20:18:00
 aliases: ["/mahabharat/2012-09-21-krishna-in-the-mahabharata/"]
+slug: "krishna-in-the-mahabharata"
 tags: ["pandavas", "krishna"]
 draft: false
 ---

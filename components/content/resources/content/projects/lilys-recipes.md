@@ -4,6 +4,7 @@ author: ["Vedang Manerikar"]
 description: "A Grandmother Gives Her Grandson A Lifetime's Worth Of Recipes."
 date: 2020-04-05T19:03:00
 aliases: ["/recipes/"]
+slug: "lilys-recipes"
 draft: false
 featured_image: "projects/lilys-recipes/roastalmonds.jpg"
 ---
