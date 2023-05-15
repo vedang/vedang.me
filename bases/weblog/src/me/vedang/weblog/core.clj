@@ -10,6 +10,8 @@
   (logger/log (str "Options Map: " opts))
   (content/copy-assets opts)
   (render/copy-assets opts)
-  (let [id->html-map (render/build-posts opts)]
-    (render/build-index (vals id->html-map) opts)
-    (render/build-atom-feed opts)))
+  (let [id->html-map (render/build-posts opts)
+        html-maps (vals id->html-map)]
+    (render/build-index html-maps opts)
+    (render/build-tag-pages html-maps opts)
+    (render/build-atom-feed html-maps opts)))

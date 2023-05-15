@@ -8,7 +8,8 @@
    [me.vedang.render.page :as page]
    [me.vedang.render.post :as post]
    [me.vedang.render.process :as process]
-   [me.vedang.render.redirect :as redirect]))
+   [me.vedang.render.redirect :as redirect]
+   [me.vedang.render.tag :as tag]))
 
 (def create-assets
   "Return the assets directory that has been requested. Create it if it
@@ -33,25 +34,19 @@
       (update :metadata assoc :md-filename post-file)
       (update :metadata assoc :content-dir content-dir)))
 
-(defn render-post
-  "Given an `html-map`, write out the HTML for the post to the public folder."
-  [{:keys [metadata] :as html-map} id->html-map opts]
-  (when (or (not (:draft metadata)) (:publish-drafts opts))
-    (-> html-map
-        (post/add-html-body id->html-map opts)
-        (page/render-file opts))
-    (doseq [old-url (:aliases metadata)]
-      (redirect/render-file old-url (:html-filename metadata) opts))
-    html-map))
-
 (defn build-posts
   [opts]
   (let [html-maps (mapv (comp (partial post->html-map (:content-dir opts)) str)
                         (fs/glob (:content-dir opts) "**.md"))
         id->html-map (process/id->html-map html-maps)]
     (when-not (:no-output opts)
-      (doseq [[_id html-map] id->html-map]
-        (render-post html-map id->html-map opts)))
+      (doseq [[_id {:keys [metadata] :as html-map}] id->html-map]
+        (when (or (not (:draft metadata)) (:publish-drafts opts))
+          (-> html-map
+              (post/add-html-body id->html-map opts)
+              (page/render-file opts))
+          (doseq [old-url (:aliases metadata)]
+            (redirect/render-file old-url (:html-filename metadata) opts)))))
     id->html-map))
 
 (defn build-index
@@ -60,11 +55,23 @@
      (build-index (vals id->html-map) opts)))
   ([html-maps opts]
    (logger/log "Writing the Index Page HTML")
-   (let [index-body (index/body (process/sort-and-filter html-maps))]
-     (page/render-file {:body index-body}
-                       (assoc opts
-                              :skip-archive true
-                              :html-filename "index.html")))))
+   (-> html-maps
+       process/sort-and-filter
+       (index/add-html-body {:skip-archive true
+                             :html-filename "index.html"})
+       (page/render-file opts))))
+
+(defn build-tag-pages
+  ([opts]
+   (let [id->html-map (build-posts (assoc opts :no-output true))]
+     (build-tag-pages (vals id->html-map) opts)))
+  ([html-maps opts]
+   (logger/log "Writing Tag pages HTML")
+   (doseq [[tag posts] (process/tag->html-map html-maps)]
+     (-> posts
+         (tag/add-html-body {:html-filename (str "tags/" tag ".html")
+                             :title (str "Posts tagged with: " tag)})
+         (page/render-file opts)))))
 
 (defn build-atom-feed
   ([opts]

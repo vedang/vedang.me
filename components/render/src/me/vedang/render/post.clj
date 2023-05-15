@@ -22,13 +22,18 @@
 (defn add-tag-links
   [tags]
   (when (seq tags)
-    [:div {:id "post-tags" :class "prose md:prose-lg lg:prose-xl"}
-     [:h3 {:class "links-header"} "Tags"]
-     [:ul
-      (for [t tags]
-        [:li
-         [:a {:href (str "/tags/" t ".html")}
-          t]])]]))
+    (let [last-tag (last tags)]
+      [:div {:id "post-tags" :class "prose md:prose-lg lg:prose-xl"}
+       [:h3 {:class "links-header"} "Tags"]
+       [:div {:class "flex"}
+        (for [t tags]
+          (if (= t last-tag)
+            [:div
+             [:a {:href (str "/tags/" t ".html")} t]
+             [:p {:class "inline-flex mx-2"} ""]]
+            [:div
+             [:a {:href (str "/tags/" t ".html")} t]
+             [:p {:class "inline-flex mx-2"} "|"]]))]])))
 
 (defn post-body
   "Return the Hiccup for the main post"

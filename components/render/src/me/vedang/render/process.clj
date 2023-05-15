@@ -151,3 +151,14 @@ from it's slug."
     (sort-by (comp :date :metadata)
              (comp - compare)
              (into [] filter-xform html-maps))))
+
+(defn tag->html-map
+  "Build an in-mem data-structure of all the post content for later
+  processing, indexed by tag."
+  [html-maps]
+  (reduce (fn [tag->h {:keys [metadata] :as html-map}]
+            (reduce (fn [t->h t] (update t->h t conj html-map))
+                    tag->h
+                    (:tags metadata)))
+          {}
+          html-maps))
