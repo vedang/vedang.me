@@ -67,7 +67,9 @@
      (build-tag-pages (vals id->html-map) opts)))
   ([html-maps opts]
    (logger/log "Writing Tag pages HTML")
-   (doseq [[tag posts] (process/tag->html-map html-maps)]
+   (doseq [[tag posts] (-> html-maps
+                           process/sort-and-filter
+                           process/tag->html-map)]
      (-> posts
          (tag/add-html-body {:html-filename (str "tags/" tag ".html")
                              :title (str "Posts tagged with: " tag)})

@@ -1,16 +1,18 @@
 {:deps {weblog/site {:local/root "projects/weblog"}
-        org.babashka/cli {:mvn/version "0.7.51"}
         babashka/fs {:mvn/version "0.3.17"}
-        babashka/process {:mvn/version "0.5.18"}
-        org.babashka/http-server {:mvn/version "0.1.11"}
         babashka/babashka.pods {:git/url "https://github.com/babashka/pods"
-                                :git/sha "64ecb94de888a34aeb023eb7f50bfa1a34943f24"}}
+                                :git/sha "64ecb94de888a34aeb023eb7f50bfa1a34943f24"}
+        babashka/process {:mvn/version "0.5.18"}
+        org.babashka/cli {:mvn/version "0.7.51"}
+        org.babashka/http-server {:mvn/version "0.1.11"}
+        etaoin/etaoin {:mvn/version "1.0.40"}}
  :pods {clj-kondo/clj-kondo {:version "2022.05.31"}
         org.babashka/fswatcher {:version "0.0.3"}}
  :tasks
  {:requires ([babashka.fs :as fs]
              [babashka.cli :as cli]
              [babashka.process :as bp]
+             [etaoin.api :as eta]
              [me.vedang.weblog.core :as weblog])
   :init (let [content-dir (-> "components/content/resources/content"
                               fs/create-dirs fs/real-path str)
@@ -75,16 +77,18 @@
           :task (build-site "render command")}
 
   serve {:requires ([babashka.http-server :as http])
-         :depends [render]
          :doc "Start the http-server for local testing"
          :task (do (println "Serving assets from dir: " (:public-dir opts))
                    (http/exec {:port 1888 :dir (:public-dir opts)}))}
 
   watch {:doc "Watch the directory for changes and re-render on change"
          :requires ([pod.babashka.fswatcher :as fw])
-         :task (do (fw/watch "components/render/src/me/vedang/render"
+         :task (do (def browser (eta/firefox))
+                   (eta/go browser "localhost:1888/")
+                   (fw/watch "components/render/src/me/vedang/render"
                              (fn [e]
                                (when (#{:write :write|chmod} (:type e))
-                                 (build-site e)))
+                                 (build-site e)
+                                 (eta/refresh browser)))
                              {:delay-ms 500 :recursive true})
                    (deref (promise)))}}}
