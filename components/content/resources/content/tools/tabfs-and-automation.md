@@ -6,9 +6,9 @@ tags: ["orgmode", "babashka", "clojure", "tabfs", "webdev", "automation"]
 draft: false
 ---
 
-Hello all! This is a short update about the very cool [TabFS](https://omar.website/tabfs/), which is a browser extension that maps your open tabs to the filesystem using Fuse. Think `/proc` but for the browser. This is an excellent idea, because now I can run all the tools that I am already familiar with on my tabs!
+Hello reader! This is a short update about the very cool [TabFS](https://omar.website/tabfs/), which is a browser extension that maps your open tabs to the filesystem using Fuse. Think `/proc` but for the browser. This is an excellent idea, because now I can run all the tools that I am already familiar with on my tabs!
 
-As I was reading through the TabFS page (linked above), I thought to myself: "this is so much RC energy!". So I checked, and lo and behold, @\*\*Omar Rizwan (he) (W'13)\*\* is an RC Alum :D
+As I was reading through the TabFS page (linked above), I thought to myself: "this is so much RC energy!". So I checked, and lo and behold, Omar Rizwan is an RC Alum :D
 
 
 ## Why I wanted something like TabFS {#why-i-wanted-something-like-tabfs}
@@ -85,3 +85,5 @@ Examples:
 Finally, this is the output, in Org Mode:
 
 ![](./static/images/tabfs.png)
+
+I hope all the Emacs/Org-mode folks reading this find it useful! Thank you to Omar for the excellent [TabFS](https://omar.website/tabfs/) tool!

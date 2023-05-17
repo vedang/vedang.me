@@ -13,4 +13,4 @@ This poster captures timeless advice on programming, I keep a copy on my desk to
 
 {{&lt; tweet vedang 1292744222873853952 &gt;}}
 
-I collect such deeply useful and universal advice [under the tag wisdom](/tags/wisdom/), if you want to read more posts of this kind.
+I collect such deeply useful and universal advice [under the tag wisdom](/tags/wisdom.html/) if you want to read more posts of this kind.

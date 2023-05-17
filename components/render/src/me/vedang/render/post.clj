@@ -1,29 +1,30 @@
 (ns me.vedang.render.post
   (:require
    [clojure.string :as cstr]
-   [hiccup2.core :as hiccup]))
+   [hiccup2.core :as hiccup]
+   [me.vedang.render.process :as process]
+   [me.vedang.render.util :as util]))
 
 (defn add-post-links
   [section-name section-data id->html-map opts]
   (when (seq section-data)
-    [:div {:id (str "post-" (name section-name))
-           :class "prose md:prose-lg lg:prose-xl"}
-     [:h3 {:class "links-header"}
-      (cstr/capitalize (name section-name))]
-     [:ul
-      (for [s section-data
-            :when (or (not (get-in id->html-map [s :metadata :draft]))
-                      (:publish-drafts opts))]
-        [:li
-         [:a {:href (str "/"
-                         (get-in id->html-map [s :metadata :html-filename]))}
-          s]])]]))
+    (let [title (cstr/capitalize (name section-name))
+          div-id (str "post-" (name section-name))
+          opts (assoc opts :title title)]
+      ;; When rendering these post-links, we also want the pages that
+      ;; would normally skip the archive to show up.
+      [:div {:id div-id}
+       (util/post-links (->> section-data
+                             (map (comp #(assoc-in % [:metadata :skip-archive] false)
+                                        id->html-map))
+                             process/sort-and-filter)
+                        opts)])))
 
 (defn add-tag-links
   [tags]
   (when-let [last-tag (last tags)]
-    [:div {:id "post-tags" :class "prose md:prose-lg lg:prose-xl"}
-     [:h3 {:class "links-header"} "Tags"]
+    [:div {:id "post-tags"}
+     [:h1 {:class "links-header"} "Tags"]
      [:div {:class "flex"}
       (for [t tags]
         (if (= t last-tag)
