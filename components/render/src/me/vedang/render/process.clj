@@ -30,7 +30,7 @@ not already exist."
   (if (nil? (:slug metadata))
     (do
       (logger/log "No slug found! Using id as slug")
-      (logger/log (str "Title: " (:title metadata) ", Slug: " (:id metadata)))
+      (logger/log :info (str "Title: " (:title metadata) ", Slug: " (:id metadata)))
       (assoc metadata :slug (:id metadata)))
     ;; No change
     metadata))

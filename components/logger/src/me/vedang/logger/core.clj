@@ -2,13 +2,17 @@
 
 (def ^:dynamic *print-debug*
   "Helper variable to print debug messages when developing"
-  false)
+  :info)
 
 (defn log
-  [msg]
-  (when *print-debug* (println msg)))
+  ([msg]
+   (log :debug msg))
+  ([log-level msg]
+   (when (= *print-debug* log-level) (println msg))))
 
-(defn activate-logging!
-  []
-  (alter-var-root #'*print-debug* (constantly true))
-  (log "Logging is now activated!"))
+(let [log-levels [:trace :debug :info :warn :error :fatal]]
+  (defn set-log-level!
+    [log-level]
+    (assert ((set log-levels) log-level))
+    (alter-var-root #'*print-debug* (constantly log-level))
+    (log "Logging is now activated!")))
