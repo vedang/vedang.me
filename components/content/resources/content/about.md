@@ -3,6 +3,7 @@ title: "About Me"
 author: ["Vedang Manerikar"]
 description: "(Observations, Tech stuff, Learning, Stories)"
 aliases: ["/weblog/", "/techlog/"]
+slug: "about"
 draft: false
 featured_image: "/images/clevinger.jpg"
 skip-archive: true

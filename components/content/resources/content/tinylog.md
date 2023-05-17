@@ -2,6 +2,7 @@
 title: "Tiny snippets of useful information."
 author: ["Vedang Manerikar"]
 description: "(A Wiki of Commands)"
+slug: "tinylog"
 tags: ["tinylog"]
 categories: ["tinylog"]
 draft: false

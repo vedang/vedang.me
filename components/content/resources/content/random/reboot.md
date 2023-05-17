@@ -3,6 +3,7 @@ title: "Reboot"
 author: ["Vedang Manerikar"]
 date: 2011-07-30T14:25:00
 aliases: ["/weblog/2011-07-30-reboot/"]
+slug: "reboot"
 draft: false
 ---
 

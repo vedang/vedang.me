@@ -3,6 +3,7 @@ title: "Switch Statements in Python"
 author: ["Vedang Manerikar"]
 date: 2011-08-07T13:21:00
 aliases: ["/techlog/2011-08-07-switch-statements-in-python/"]
+slug: "switch-statements-in-python"
 tags: ["python"]
 draft: false
 ---

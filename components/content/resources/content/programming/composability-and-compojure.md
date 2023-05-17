@@ -3,6 +3,7 @@ title: "Composability and Compojure"
 author: ["Vedang Manerikar"]
 date: 2012-02-23T23:58:00
 aliases: ["/techlog/2012-02-23-composability-and-compojure/"]
+slug: "composability-and-compojure"
 tags: ["ring", "compojure", "clojure"]
 draft: false
 ---

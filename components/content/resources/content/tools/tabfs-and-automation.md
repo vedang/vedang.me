@@ -2,6 +2,7 @@
 title: "TabFS and Automation"
 author: ["Vedang Manerikar"]
 date: 2022-09-20T22:20:00
+slug: "tabfs-and-automation"
 tags: ["orgmode", "babashka", "clojure", "tabfs", "webdev", "automation"]
 draft: false
 ---

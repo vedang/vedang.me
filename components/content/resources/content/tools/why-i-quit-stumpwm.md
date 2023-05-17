@@ -3,6 +3,7 @@ title: "Why I Quit StumpWM"
 author: ["Vedang Manerikar"]
 date: 2011-08-04T13:41:00
 aliases: ["/techlog/2011-08-04-why-i-quit-stumpwm/"]
+slug: "why-i-quit-stumpwm"
 tags: ["window-managers", "stumpwm"]
 draft: false
 ---
