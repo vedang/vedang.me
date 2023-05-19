@@ -12,6 +12,7 @@
  {:requires ([babashka.fs :as fs]
              [babashka.cli :as cli]
              [babashka.process :as bp]
+             [clojure.string :as cstr]
              [etaoin.api :as eta]
              [me.vedang.weblog.core :as weblog])
   :init (let [root-dir (-> "." fs/create-dirs fs/real-path str)
@@ -21,20 +22,19 @@
                               fs/create-dirs fs/real-path str)
               public-dir (-> "projects/weblog/target/public"
                              fs/create-dirs fs/real-path str)
-              circle-branch (or (->> "bb -e '(System/getenv \"CIRCLE_BRANCH\")'"
-                                     (bp/shell {:out :string})
-                                     :out
-                                     seq)
+              run-cmd (fn [cmd]
+                        (when-let [res (->> cmd
+                                            (bp/shell {:out :string})
+                                            :out
+                                            cstr/split-lines
+                                            first
+                                            seq)]
+                          (apply str res)))
+              circle-branch (or (run-cmd "bb -e '(System/getenv \"CIRCLE_BRANCH\")'")
                                 "master")
-              circle-build-num (or (->> "bb -e '(System/getenv \"CIRCLE_BUILD_NUM\")'"
-                                        (bp/shell {:out :string})
-                                        :out
-                                        seq)
+              circle-build-num (or (run-cmd "bb -e '(System/getenv \"CIRCLE_BUILD_NUM\")'")
                                    (str "local-run-"
-                                        (->> "git rev-list HEAD --count"
-                                             (bp/shell {:out :string})
-                                             :out
-                                             seq)))]
+                                        (run-cmd "git rev-list HEAD --count")))]
           (def opts
             (merge
              {:blog-title "Vedang Manerikar"
