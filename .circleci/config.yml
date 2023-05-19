@@ -120,11 +120,14 @@ jobs:
           name: Synchronize new public files
           command: rsync -arv ./artifacts/public/ pagespublic --delete --exclude ".git"
       - run:
+          name: Create a CNAME file
+          command: touch pagespublic/CNAME && echo "vedang.me" > pagespublic/CNAME
+      - run:
           name: Create a new commit with the new changes
-          command: git add -A && git commit -m "[skip ci] Pushing from CircleCI Build #${CIRCLE_BUILD_NUM} on ${CIRCLE_BRANCH}" --allow-empty
+          command: cd pagespublic && git add -A && git commit -m "[skip ci] Pushing from CircleCI Build #${CIRCLE_BUILD_NUM} on ${CIRCLE_BRANCH}" --allow-empty
       - run:
           name: Push the new changes to gh-pages
-          command: git push origin gh-pages
+          command: cd pagespublic && git push origin gh-pages
 
 workflows:
   version: 2
