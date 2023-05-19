@@ -2,6 +2,7 @@
 title: "How to use the Clojure REBL with Leiningen, Cider and Emacs"
 author: ["Vedang Manerikar"]
 date: 2020-10-28T23:18:00
+aliases: ["/blog/clj-rebl-lein-cider-emacs"]
 slug: "clj-rebl-lein-cider-emacs"
 tags: ["clojure", "cognitect", "rebl", "leiningen", "cider", "emacs"]
 draft: false
