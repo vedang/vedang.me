@@ -71,7 +71,9 @@
                            process/sort-and-filter
                            process/tag->html-map)]
      (-> posts
+         process/sort-and-filter ;; we need this only for sorting actually
          (tag/add-html-body {:html-filename (str "tags/" tag ".html")
+                             :public-assets-dir-name (str "../" (:public-assets-dir-name opts))
                              :title (str "Posts tagged with: " tag)})
          (page/render-file opts)))))
 
