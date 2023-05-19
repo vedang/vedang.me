@@ -1,0 +1,326 @@
+<html><head><meta charset="UTF-8" content="My corner on the Internet." /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link href="/atom.xml" rel="alternate" title="Vedang Manerikar" type="application/atom+xml" /><link href="/style.css" rel="stylesheet" type="text/css" /><script crossorigin="anonymous" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" type="application/javascript"></script><script crossorigin="anonymous" integrity="sha512-BrJeu0wD2TAYh1Vb3N0BSn/7t43FfeEkDNof6XUX5wFLmFb1z3tS/8bbr1XZqDg96KjtfmuSyI0AUCayDMQYNw==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clojure.min.js" type="application/javascript"></script><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" referrerpolicy="no-referrer" rel="stylesheet" type="text/css" /><script crossorigin="anonymous" integrity="sha512-st608h+ZqzliahyzEpETxzU0f7z7a9acN6AFvYmHvpFhmcFuKT8a22TT5TpKpjDa3pt3Wv7Z3SdQBCBdDPhyWA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js" type="application/javascript"></script><link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" integrity="sha512-Dqf5696xtofgH089BgZJo2lSWTvev4GFo+gA2o4GullFY65rzQVQLQVlzLvYwTo0Bb2Gpb6IqwxYWtoMonfdhQ==" referrerpolicy="no-referrer" rel="stylesheet" type="text/css" /><script crossorigin="anonymous" integrity="sha512-/kVH1uXuObC0iYgxxCKY41JdWOkKOxorFVmip+YVifKsJ4Au/87EisD1wty7vxN2kAhnWh6Yc8o/dSAXj6Oz7A==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" type="application/javascript"></script><title>Simulating the Passport Seva Kendra using Clojure</title><link href="static/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" /><link href="static/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /><link href="static/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /><link href="static/site.webmanifest" rel="manifest" /><link color="#5bbad5" href="static/safari-pinned-tab.svg" rel="mask-icon" /><meta content="#da532c" name="msapplication-TileColor" /><meta content="#ffffff" name="theme-color" /></head><body><div class="m-2 border-b-2 border-gray-300" id="site-header"><div class="prose prose-stone mx-auto grid grid-cols-2" id="site-title"><div><h1 class="m-0 lg:text-2xl"><a href="/index.html">Vedang Manerikar</a></h1><p class="font-semi-bold mt-1 text-xl text-gray-800">My corner on the Internet.</p></div><div><nav id="site-nav"><a class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out" href="/atom.xml">Feed</a><a class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out" href="https://twitter.com/vedang" target="_blank">Twitter</a><a class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out" href="https://fosstodon.org/@vedang" target="_blank">Mastodon</a><a class="p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out" href="/about.html">About</a></nav></div></div></div><div class="prose prose-stone mx-auto px-2 prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl lg:px-0" id="post-body"><h1>Simulating the Passport Seva Kendra using Clojure</h1><p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#the-problem-statement'>The Problem Statement</a><ul><li><a href='#so-what-is-the-problem-with-the-system'>So what is the problem with the system?</a></li></ul></li><li><a href='#representing-all-the-information-about-the-psk'>Representing all the information about the PSK</a></li><li><a href='#letting-people-into-the-psk-and-generating-token-numbers-for-them-dot'>Letting people into the PSK, and generating token numbers for them.</a><ul><li><a href='#clojure-concurrency-primitive-atoms'>Clojure Concurrency Primitive - Atoms</a></li><li><a href='#clojure-concurrency-primitive-futures'>Clojure Concurrency Primitive - Futures</a></li></ul></li><li><a href='#queuing-up-people-and-simulating-the-work-done-at-every-stage'>Queuing up people and simulating the work done at every stage</a></li><li><a href='#keeping-track-of-people-and-the-display-board'>Keeping track of people and the display board</a><ul><li><a href='#clojure-concurrency-primitive-refs&ndash;and-transactions'>Clojure Concurrency Primitive - Refs (and transactions)</a></li></ul></li><li><a href='#processing-people-concurrently-across-all-open-counters'>Processing people concurrently across all open counters</a><ul><li><a href='#clojure-concurrency-primitive-agents'>Clojure Concurrency Primitive - Agents</a></li></ul></li><li><a href='#tying-everything-together-the-main-function'>Tying everything together - the main function</a></li><li><a href='#with-me-so-far-some-thoughts'>With me so far? Some thoughts</a></li><li><a href='#can-we-see-the-problem'>Can we see the problem?</a><ul><li><a href='#solution-1-use-priority-queues'>Solution 1: Use priority queues</a></li><li><a href='#solution-2-new-token-numbers-per-stage'>Solution 2: New token numbers per stage</a></li><li><a href='#solution-3-where-am-i-estimated-wait-time'>Solution 3: "Where am I?" Estimated Wait Time</a></li></ul></li><li><a href='#final-thoughts'>Final Thoughts</a></li><li><a href='#references'>References</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p><i>Cross-posted from my post on the <a href='https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c'>Helpshift Engineering Blog</a></i></p><p>A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune to get my passport renewed. At the time, the government had revamped this process and made it a simple, step-in/step-out painless affair. Unfortunately for me, I hit an edge-case in the system and took much longer than expected to complete. I was there for close to 4 hours. I used this time to observe the behavior of the PSK and think about ways to improve the applicant experience. I thought it was an interesting problem to solve and write about.</p><p>Recently, my wife booked an appointment at the PSK to renew <span class="underline">her</span> passport and this provided the spark I needed to write about it. So here we are, a year later, talking about the passport renewal process at the PSK.</p><p><!&ndash;more&ndash;></p><h2 id="the-problem-statement">The Problem Statement</h2><p>Let me describe the process to you first.</p><ul><li>The PSK has appointment slots every 15 minutes, and there are ~25 people in each slot.</li><li>Once you enter the PSK, there are 4 to 6 counters to verify your documents.</li><li>On verification, you are assigned a unique token number. We'll talk about this in a bit.</li><li>Token numbers are displayed on an electronic display-board. The board indicates which counter the person should go to. You are to wait in the waiting area and look at the display. You will soon be scheduled against a counter, where a PSK employee will help you with that particular stage of the process.</li><li>There are 3 stages in the process. The first is 'Biometrics' (Stage A). At this counter, the PSK employee collects your fingerprints and takes your photo. Your online form is updated with this information. There are 36 counters serving this stage (A-1, A-2 ... A-36).</li><li>The second stage is 'Form Check' (Stage B). At this point, the PSK employee checks the details in your form. If he finds any problems, he will redirect you to the Corrections counter. During my visit, counters A-34, A-35 and A-36 were reserved for corrections. After corrections, you have to come back to this stage. There are 12 counters (B-1, B-2 ... B-12).</li><li>The final stage is 'Form Re-Check' (Stage C). At this point, the agent double-checks the work of the previous counters and takes your form. If there are any corrections you have to go back to the corrections counters and start again. Once the form is checked, your reissue request has been processed. You are free to leave the PSK and go home. There are 10 counters (C-1, C-2 ... C-10).</li><li>Coming back to the token numbers. These are of the form N-10, S-4 etc. The alphabet represents the applicant category. These categories are as follows:<ul><li><strong>Normal (represented by N):</strong> Most people fall into this category.</li><li><strong>Senior (represented by S):</strong> For people older than 60</li><li><strong>Tatkal (represented by T):</strong> For people who want speedy processing of their passport (and have paid extra for this benefit)</li><li><strong>Requiring Police Clearance (represented by P):</strong> People who need clearance from the police (probably because they have criminal records, or work in sensitive departments in the government).</li></ul></li><li>Categories other than 'Normal' have a higher priority when it comes to processing their applications. For the purposes of this post, I assume that P has the highest priority, followed by S, T and N.</li></ul><p><img src="./static/images/psk-renderkid.jpg" alt="" /></p><p>In the rest of this post, we'll build this system as described above, and see if we can fix the flaw in it. We will use Clojure to write the solution. Clojure's concurrency primitives are fantastic, and helped me model this system in an elegant and readable way. As we go along, I'll explain these primitives in brief. <a href='https://twitter.com/ericnormand'>Eric Normand</a> has written an excellent guide to <a href='https://purelyfunctional.tv/guide/clojure-concurrency/'>understanding concurrency primitives</a> in Clojure, and <a href='https://twitter.com/richhickey'>Rich Hickey</a> has a <a href='https://www.youtube.com/watch?v=nDAfZK8m5_8'>great talk about this</a> as well. I highly recommend both these resources to the interested reader. The focus of this post will be on using these tools to implement a non-trivial system.</p><h3 id="so-what-is-the-problem-with-the-system">So what is the problem with the system?</h3><p>First, let's get the flaw out of the way. The problem with this system is that <span class="underline">the applicant has no idea when he'll be scheduled with an agent</span>. He must keep staring at the display board. For example, if you are N-30 and stage A took a particularly long time for you, others have moved past you to the next stage (B and beyond). The display board may read that N-41, N-42 etc are at counters B-1, B-2 etc. However, this does not mean that N-30 will show up next. The display board may go all the way to N-60 before N-30 shows up. As there is no certainty about when your number will show up, you have no option but to continuously stare at the board. This gets really irritating after a while.</p><p>Here are some ways to deal with this problem:</p><ol><li>Instead of using simple queues between the stages, use a priority queue. This means that even if N-30 took a long time on stage A, and the board had moved on to N-40s and above for stage B, as soon as N-30 is done with stage A he will be moved to the top of the queue for B. In this way, the applicant can look at the board and always tell whether he'll be up next or not.</li><li>Generate new token numbers between each stage. This will give the applicant a clear idea of the number of people ahead of him at any given point in time.</li><li>Provide the person with a new display board, where he can enter his token and see where he is in the queue for his stage.</li></ol><p>We will see these in action in our simulation program.</p><h2 id="representing-all-the-information-about-the-psk">Representing all the information about the PSK</h2><p>Everything describing the behaviour of the PSK can be captured in code. For our simulation, the data looks like this:</p><pre><code class="lang-clojure">&#40;def stages
+  &quot;The various stages in the PSK, and transition from one stage to the other.
+
+  - `processing-time-range` represents the amount of time spent at the
+  counter in this stage &#40;in mins&#41;.
+  - `next` represents the next stage for the person.
+  - `counters` represent the number of counters/agents serving this stage.&quot;
+
+  ;; Actual Values:
+  ;; 4 Doc verification Counters
+  ;; 33 counters for Biometrics
+  ;; 12 for form checking
+  ;; 10 for final checking
+  ;; 3 for corrections
+  ;; Using different values here so that the display board is
+  ;; human-readable.
+
+  {::enter {:next ::doc-verification}
+   ::doc-verification {:next ::biometrics
+                       :counters 10
+                       :display-str &quot;0-&quot;
+                       :processing-time-range &#91;1 5&#93;}
+   ::biometrics {:next ::form-check
+                 :counters 4
+                 :display-str &quot;A-&quot;
+                 :processing-time-range &#91;3 15&#93;}
+   ::form-check {:next ::final-check
+                 :counters 3
+                 :display-str &quot;B-&quot;
+                 :processing-time-range &#91;2 4&#93;
+                 :failure ::corrections}
+   ::final-check {:next ::exit
+                  :counters 2
+                  :display-str &quot;C-&quot;
+                  :processing-time-range &#91;2 4&#93;}
+   ::corrections {:next ::form-check
+                  :counters 1
+                  :display-str &quot;D-&quot;
+                  :processing-time-range &#91;5 15&#93;}}&#41;
+
+&#40;def waiting-room-capacity 500&#41; ; max number of waiting people
+
+&#40;def total-capacity
+  &quot;number of people that can be in the PSK at max&quot;
+  &#40;apply + waiting-room-capacity &#40;keep :counters &#40;vals stages&#41;&#41;&#41;&#41;
+
+&#40;def processing-batch-size
+  &quot;no of people entering the center at one time.&quot;
+  25&#41;
+
+&#40;def new-batch-in-mins
+  &quot;time between one batch and the next&quot;
+  15&#41;
+
+&#40;def stage-status
+  &quot;For the given stage, the map of possible states that a person can be
+  in.&quot;
+  &#91;;; Person is in the waiting area, looking at the display to see
+   ;; when he's called to a counter.
+   ::waiting
+   ;; Counter is assigned to the person
+   ::in-process
+   ;; Person is done with the counter and heading to the next stage.
+   ::done&#93;&#41;
+</code></pre><p>We use a simple map - <code>stages</code> - to represent all the stages in the PSK, the number of counters per stage, the amount of time per stage and the next stage after this one. A person is either waiting (looking at the display board), or is at a counter, or is done with a stage (<code>done</code> triggers a move to the next stage). From the point of view of the person, he is either waiting or at a counter.</p><h2 id="letting-people-into-the-psk-and-generating-token-numbers-for-them-dot">Letting people into the PSK, and generating token numbers for them.</h2><p>The first thing we will build is the token generator, and we'll use the most intuitive Clojure concurrency primitive for this: the <code>atom</code>.</p><h3 id="clojure-concurrency-primitive-atoms">Clojure Concurrency Primitive - Atoms</h3><p>Atoms are useful when reading / writing a single piece of data (potentially across multiple threads). This is the common case for shared resources and atoms are what I've used in most of the concurrency code I've written.</p><pre><code class="lang-clojure">&#40;def token-generator
+  &quot;Give the next token number to the applicant.&quot;
+  &#40;atom {:normal 0
+         :senior 0
+         :tatkal 0
+         :police-clearance 0}&#41;&#41;
+
+;; Use the token generator to get the next token as follows:
+&#40;comment
+  &#40;get &#40;swap! token-generator
+              update
+              person-type
+              inc&#41;
+       person-type&#41;&#41;
+;; swap! is a way to atomically change the value held by the atom.
+;; This does an internal compare and set operation, and thus the function
+;; passed in to manipulate the value - in this case update - may be
+;; called multiple times. This function should be free of side effects.
+</code></pre><p>Clojure provides something more powerful - the <code>ref</code> - when you want to deal with multiple pieces of data that change together. We'll see it in action in the following sections.</p><p>If we choose some weights to represent the probability of an applicant belonging to a certain category, we can write some code to randomly generate applicants. The relevant code is <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d#file-psk-clj-L87-L131'>here</a>. We now have a way to assign increasing token numbers to each new person entering the PSK.</p><h3 id="clojure-concurrency-primitive-futures">Clojure Concurrency Primitive - Futures</h3><p>We'll use another Clojure concurrency primitive - a <code>future</code> - to continuously move people into the PSK. A future object invokes the body provided to it in a different thread.</p><p>In this case, we are starting an endless loop in a new thread. This code creates some people (representing people entering the PSK), sleeps for a bit, then repeats. We'll use our handy tool - an atom - to control when to stop the loop:</p><pre><code class="lang-clojure">&#40;def working-hours?
+  &quot;Am I working right now?&quot;
+  &#40;atom false&#41;&#41;
+
+&#40;defn let-people-through
+  &quot;Send people into the PSK in batches as defined by
+  `processing-batch-size` and `new-batch-in-mins`. Note that in our
+  code we use seconds to represent minutes.&quot;
+  &#91;active-applicants done-applicants&#93;
+  &#40;future
+    &#40;loop &#91;&#93;
+      &#40;if @working-hours?
+       &#40;do
+         ;; let new people through
+         ;; &lt;logic goes here&gt; ...
+         ;; then sleep for a while
+         &#40;Thread/sleep &#40;&#42; 1000 new-batch-in-mins&#41;&#41;
+         ;; repeat
+         &#40;recur&#41;&#41;
+
+       &#40;ctl/info &quot;&#91;Entry&#93; Working hours are over! Closing Shop! Come back later!&quot;&#41;&#41;&#41;&#41;&#41;
+</code></pre><h2 id="queuing-up-people-and-simulating-the-work-done-at-every-stage">Queuing up people and simulating the work done at every stage</h2><p>Now that people are coming into the PSK, we need a way to queue them up between stages. We also want to write a simulation for the work done at every counter. As described in the problem statement, the PSK is using simple FIFO queues between each stage. We will use the <code>LinkedBlockingQueue</code> data structure to represent these. This data structure is provided by the battle-tested <code>java.util.concurrent</code> package. Dropping down to Java when needed is a bonus Clojure superpower!</p><pre><code class="lang-clojure">&#40;defn create-kendra-queues
+  &quot;Given the counter-types / `stages` in the kendra, create the
+  appropriate queues.&quot;
+  &#91;kendra-stages q-capacity&#93;
+  &#40;let &#91;queues-we-need &#40;-&gt; kendra-stages
+                           keys
+                           set
+                           ;; Remove the stages where no queue of
+                           ;; people is needed.
+                           &#40;disj ::enter ::exit&#41;&#41;&#93;
+    &#40;reduce &#40;fn &#91;m s&#93;
+              &#40;assoc m
+                     s &#40;LinkedBlockingQueue. q-capacity&#41;&#41;&#41;
+            {}
+            queues-we-need&#41;&#41;&#41;
+</code></pre><p>Work at the counter involves the following:</p><ol><li>Pick the next person in the queue.</li><li>Call him to the counter by displaying his token number on the display.</li><li>Process the person, do the work.</li><li>Mark this stage as done. This will move him into the next queue.</li></ol><p>We can represent this in code as follows:</p><pre><code class="lang-clojure { hl_lines=["7-13"] }">&#40;defn process-applicant
+  &quot;Get a person from the queue. Process this person as per the rules
+  of the counter.&quot;
+  &#91;psk-agent my-queue notice-board&#93;
+  &#40;if @working-hours?
+
+    &#40;if-let &#91;person &#40;.poll my-queue 1 java.util.concurrent.TimeUnit/SECONDS&#41;&#93;
+      &#40;let &#91;stage &#40;:type psk-agent&#41;
+            stage-config &#40;:config psk-agent&#41;&#93;
+
+        &#40;call-person-to-counter stage notice-board psk-agent person&#41;
+        &#40;process-person stage stage-config psk-agent @person&#41;
+        &#40;mark-processing-as-complete stage notice-board psk-agent person&#41;
+
+        &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+        &#40;assoc psk-agent :last-processed &#40;person-representation @person&#41;&#41;&#41;
+
+      &#40;do &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+          psk-agent&#41;&#41;
+
+    &#40;ctl/info &#40;format &quot;&#91;Agent: %s&#93; Working hours are over! Closing Shop! Come back later!&quot;
+                      &#40;agent-representation psk-agent&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>As we saw previously, we control the running of the code using the <code>working-hours?</code> atom. We're seeing something new here - the <code>send-off</code> function used with Clojure Agents. Ignore this for the time being, we'll come to an explanation of this after seeing refs and transactions.</p><h2 id="keeping-track-of-people-and-the-display-board">Keeping track of people and the display board</h2><p>The tough part of this project is to keep track of the changes to each person's current state and the display board at every instant. These two views should always be consistent as multiple people are concurrently processed at different stages. Clojure makes this delightfully easy with refs and transactions.</p><h3 id="clojure-concurrency-primitive-refs&ndash;and-transactions">Clojure Concurrency Primitive - Refs (and transactions)</h3><p>Refs can be thought of as permanent pointers to mutable storage locations. The stored values can be safely changed - all together or none at all - using the functions <code>alter</code>, <code>ref-set</code> and <code>commute</code> within transactions. Clojure implements a Software Transactional Memory system<a href='#fn-1' id='fnref1'><sup>1</sup></a> and gives us A,C, and I of the famous ACID properties<a href='#fn-2' id='fnref2'><sup>2</sup></a>. (Since it's in-mem there is no Durability). Using these transactions in code will be familiar to anyone with experience of using DB transactions.</p><p>In practice, updating values looks like this:</p><pre><code class="lang-clojure">&#40;defn- call-person-to-counter
+  &quot;Announce that person should come to the processing counter. Takes
+  `person` and `notice-board` refs, performs a transactional update.&quot;
+  &#91;stage notice-board psk-agent person&#93;
+  &#40;dosync
+   &#40;alter person
+          assoc
+          :stage stage
+          :stage-status ::in-process
+          :psk-agent &#40;agent-representation psk-agent&#41;&#41;
+   &#40;store-stage-change person stage ::in-process&#41;
+   &#40;alter notice-board
+          assoc
+          &#40;person-representation @person&#41;
+          &#40;agent-representation psk-agent&#41;&#41;&#41;&#41;
+</code></pre><p>Look Ma, no locks! This is much simpler, in my opinion, than thinking about which lock to take around which piece of data. Let's also check out the <code>store-state-change</code> function in the code above. This is a small data-collection function I wrote to calculate statistics about how much time each person takes in each stage.</p><pre><code class="lang-clojure">&#40;defn- store-stage-change
+  &quot;For the given `Person` ref, store the change to their stage for later analysis.&quot;
+  &#40;&#91;person new-stage new-status&#93;
+   &#40;store-stage-change person new-stage new-status &#40;ct/now&#41;&#41;&#41;
+  &#40;&#91;person new-stage new-status time-instant&#93;
+   &#40;let &#91;stage-log &#40;-&gt;StageHistory new-stage new-status time-instant&#41;&#93;
+     &#40;dosync
+      &#40;alter person
+             update
+             :stage-history
+             conj
+             stage-log&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>Writing this function is simple: we know we want to modify an existing person, so we wrap it in a transaction. The calling code happens to already be in a transaction, but Clojure will deal with this correctly and collapse all the work into a single transaction. From our point of view, we know that anytime this function is called, it is going to safely and permanently modify the person and store the stage-change in it.</p><h2 id="processing-people-concurrently-across-all-open-counters">Processing people concurrently across all open counters</h2><p>The final piece of the puzzle is concurrently processing people on all the available counters. This is straightforward to do against a thread-pool, but Clojure provides another tool we can use: the <code>agent</code> .</p><h3 id="clojure-concurrency-primitive-agents">Clojure Concurrency Primitive - Agents</h3><p>Agents are another way to access/change mutable state, but they do this in an asynchronous manner. The functions <code>send</code> and <code>send-off</code> apply actions (functions) to the value held by the agent. The return value of the action becomes the new value of the agent. However, these actions execute in a different thread asynchronously. Clojure also guarantees execution in the order of submission. The value of the agent is inspectable at all times.</p><p>In our case, this allows us to represent processing counters as agents. The state of the agent is simply an identifier for it. Under the hood, each agent is spawning a thread from a thread-pool and executing a function. This function pulls the next person from the queue supplied to it, processes him, and sends another action to the current agent. We saw this function already, but let me post it again for clarity:</p><pre><code class="lang-clojure { hl_lines=["15-16","18-19"] }">&#40;defn process-applicant
+  &quot;Get a person from the queue. Process this person as per the rules
+  of the counter.&quot;
+  &#91;psk-agent my-queue notice-board&#93;
+  &#40;if @working-hours?
+
+    &#40;if-let &#91;person &#40;.poll my-queue 1 java.util.concurrent.TimeUnit/SECONDS&#41;&#93;
+      &#40;let &#91;stage &#40;:type psk-agent&#41;
+            stage-config &#40;:config psk-agent&#41;&#93;
+
+        &#40;call-person-to-counter stage notice-board psk-agent person&#41;
+        &#40;process-person stage stage-config psk-agent @person&#41;
+        &#40;mark-processing-as-complete stage notice-board psk-agent person&#41;
+
+        &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+        &#40;assoc psk-agent :last-processed &#40;person-representation @person&#41;&#41;&#41;
+
+      &#40;do &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+          psk-agent&#41;&#41;
+
+    &#40;ctl/info &#40;format &quot;&#91;Agent: %s&#93; Working hours are over! Closing Shop! Come back later!&quot;
+                      &#40;agent-representation psk-agent&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>We create Agents as follows:</p><pre><code class="lang-clojure { hl_lines=["7-8"] }">&#40;defrecord PSKAgent
+    &#91;id type config&#93;&#41;
+
+&#40;defn- create-agents
+  &quot;For the given `agent-type`, create the given `num` of agents.&quot;
+  &#91;agent-type stage-config num&#93;
+  &#40;map &#40;comp agent &#40;fn &#91;i&#93; &#40;PSKAgent. &#40;inc i&#41; agent-type stage-config&#41;&#41;&#41;
+       &#40;range num&#41;&#41;&#41;
+
+&#40;defn create-kendra-agents
+  &quot;Given the `stages` and their config for the kendra, create the
+  appropriate agents to work these counters.&quot;
+  &#91;kendra-stages&#93;
+  &#40;let &#91;stages-with-counters &#40;-&gt; kendra-stages
+                                 keys
+                                 set
+                                 ;; Remove the stages where no counter
+                                 ;; of agents is needed.
+                                 &#40;disj ::enter ::exit&#41;&#41;&#93;
+    &#40;mapcat &#40;fn &#91;s&#93;
+              &#40;let &#91;config &#40;get kendra-stages s&#41;&#93;
+                &#40;create-agents s config &#40;:counters config&#41;&#41;&#41;&#41;
+            stages-with-counters&#41;&#41;&#41;
+</code></pre><h2 id="tying-everything-together-the-main-function">Tying everything together - the main function</h2><p>We tie all the pieces of the code together in our main function <code>start-the-kendra!</code>. The comments explain what each step is doing, for those of you unfamiliar with Clojure syntax.</p><pre><code class="lang-clojure">&#40;defn start-the-kendra!
+  &quot;Setup our Passport Seva Kendra.&quot;
+  &#91;&#93;
+  &#40;let &#91;;; Create queues for the various stages, returns a map of
+        ;; stage-name -&gt; queue
+        stage-&gt;queue &#40;create-kendra-queues stages total-capacity&#41;
+        ;; Create all the agents
+        list-of-agents &#40;create-kendra-agents stages&#41;
+        ;; Create a display board for waiting members
+        notice-board &#40;ref &#40;sorted-map&#41;&#41;
+        ;; Track all the active applicants
+        active-applicants &#40;ref &#91;&#93;&#41;
+        ;; Track all the completed applicants &#40;for debugging /
+        ;; historical data purpose&#41;
+        done-applicants &#40;ref &#91;&#93;&#41;&#93;
+    &#40;ctl/info &quot;&#91;PSK&#93; Welcome, today is a good day.&quot;&#41;
+    ;; For each agent at each counter, start processing!
+    &#40;doseq &#91;a list-of-agents&#93;
+      ;; Get the stage this agent is working at, and the queue of
+      ;; people for that stage.
+      &#40;let &#91;s &#40;:type @a&#41;
+            q &#40;stage-&gt;queue s&#41;&#93;
+        ;; Start processing people from the queue concurrently in
+        ;; independent threads.
+        &#40;send-off a process-applicant q notice-board&#41;&#41;&#41;
+    ;; Start a continuous future for applicants to periodically enter
+    ;; the PSK.
+    &#40;let-people-through active-applicants done-applicants&#41;
+    ;; Start a helper process to move people from one stage to the
+    ;; other.
+    &#40;move-people-through stages stage-&gt;queue active-applicants&#41;
+    ;; Return the data. We'll use this to monitor our system.
+    &#91;notice-board active-applicants done-applicants&#93;&#41;&#41;
+</code></pre><p>We haven't seen the <code>move-people-through</code> helper function used above yet. This is a simple <code>future</code> which regularly sweeps through all the people and moves a person done with one stage to the other.</p><p>Originally, I wrote the code such that each agent was aware of an input queue as well as an output queue. The agent understood that he had to pick the next person from the input queue and move that person to the output queue on completion. I refactored that out to show that it is simple to add functions around existing concurrent code which modify existing shared resources. The code for <code>move-people-through</code> looks like this:</p><pre><code class="lang-clojure">&#40;defn move-people-through
+  &quot;Review all the active applicants and move them into appropriate stages.&quot;
+  &#91;kendra-stages stage-&gt;queue active-applicants&#93;
+  &#40;future
+    &#40;loop &#91;&#93;
+      &#40;if @working-hours?
+
+        &#40;let &#91;people @active-applicants&#93;
+          &#40;doseq &#91;person &#40;-&gt;&gt; people
+                              &#40;group-by &#40;comp :stage-status deref&#41;&#41;
+                              ::done&#41;&#93;
+            &#40;if &#40;= ::exit &#40;get-in kendra-stages &#91;&#40;:stage @person&#41; :next&#93;&#41;&#41;
+              &#40;mark-applicant-process-as-complete person&#41;
+              &#40;when-let &#91;next-stage &#40;get-in kendra-stages
+                                            &#91;&#40;:stage @person&#41; :next&#93;&#41;&#93;
+                &#40;move-applicant-to-next-stage stage-&gt;queue next-stage person&#41;&#41;&#41;&#41;
+
+          &#40;Thread/sleep guide-people-to-next-stage-ms&#41;
+          &#40;recur&#41;&#41;
+
+        &#40;ctl/info &quot;&#91;Guide&#93; Working hours are over! Closing Shop! Come back later!&quot;&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>Both <code>mark-applicant-process-as-complete</code> and <code>move-applicant-to-next-stage</code> are tiny transactional updates to the person:</p><pre><code class="lang-clojure">&#40;defn- mark-applicant-process-as-complete
+  &quot;Takes a `person` ref object and marks its processing as complete.&quot;
+  &#91;person&#93;
+  &#40;let &#91;time-instant &#40;ct/now&#41;&#93;
+    &#40;dosync
+     &#40;alter person
+            assoc
+            :stage ::exit
+            :exit-time time-instant
+            :total-time &#40;-&gt; @person
+                            :enter-time
+                            &#40;ct/interval time-instant&#41;
+                            ct/in-seconds&#41;&#41;
+     &#40;store-stage-change person ::exit ::done time-instant&#41;&#41;&#41;&#41;
+
+&#40;defn- move-applicant-to-next-stage
+  &quot;Given a `person` ref and the next stage they should go to, move
+  them to the stage. Does a transactional update.&quot;
+  &#91;stage-&gt;queue next-stage person&#93;
+  &#40;dosync
+   &#40;alter person
+          assoc
+          :stage next-stage
+          :stage-status ::waiting&#41;
+   &#40;store-stage-change person next-stage ::waiting&#41;&#41;
+  &#40;.put &#40;stage-&gt;queue next-stage&#41; person&#41;&#41;
+</code></pre><p>I also added a book-keeping function when letting people into the PSK. This function removes completed applicants from the list of active applicants. This frees up PSK capacity. I also move this data to a different list, because it's fun to go through it and look for interesting insights.</p><pre><code class="lang-clojure { hl_lines=["17-18"] }">&#40;defn- book-keeping-for-applicants
+  &quot;Remove all applicants who are completely done from
+  `active-applicants`. Store them in `done-applicants` for
+  book-keeping.
+
+  &#42;NOTE&#42; : Since this goes through the entire collection, it is slow.
+  Hence we run it when sending in new batches of people.&quot;
+  &#91;active-applicants done-applicants&#93;
+  &#40;dosync
+   &#40;let &#91;&#91;active-people done-people&#93; &#40;reduce &#40;fn &#91;&#91;aa da&#93; p&#93;
+                                               &#40;if &#40;and &#40;= &#40;:stage @p&#41; ::exit&#41;
+                                                        &#40;= &#40;:stage-status @p&#41; ::done&#41;&#41;
+                                                 &#91;aa &#40;conj da p&#41;&#93;
+                                                 &#91;&#40;conj aa p&#41; da&#93;&#41;&#41;
+                                             &#91;&#91;&#93; &#91;&#93;&#93;
+                                             @active-applicants&#41;&#93;
+     &#40;ref-set active-applicants active-people&#41;
+     &#40;alter done-applicants into done-people&#41;&#41;&#41;&#41;
+</code></pre><p>Here we use the <code>ref-set</code> and <code>alter</code> functions to reset the value of active-applicants and modify the value of the done-applicants.</p><h2 id="with-me-so-far-some-thoughts">With me so far? Some thoughts</h2><ul><li>Clojure's concurrency primitives make it simple for me to <strong>think</strong> about this problem. I wrote the code like I would write a high-level pseudo description of the problem, and it worked just fine. I think this simplification is a huge benefit when dealing with concurrent code.</li><li>The ability to write and test small bits of concurrent code is a big win. It was simple for me to modify the original code and devise experiments around it.</li><li>We haven't really looked at what this looks like when it's running! Let's do that now!</li></ul><h2 id="can-we-see-the-problem">Can we see the problem?</h2><p>Let's run this system! We're setting up a small loop to display the board. We're running much fewer counters than the actual PSK. This is in order to make the display board consumable.</p><p><img src="./static/images/psk-run-1.gif" alt="" /></p><p>Things look good in this loop, the board looks predictable. The problem occurs when someone gets unlucky at one stage, and spends much more time there than the average person. Let's repeat the run by marking someone as unlucky, and by increasing the number of counters processing earlier stages (which matches with reality)</p><pre><code class="lang-clojure { hl_lines=["1-3","10-14"] }">&#40;def unlucky-applicant?
+  &quot;Introduce a little anarchy!&quot;
+  &#40;atom #{&quot;N-3&quot; &quot;S-2&quot;}&#41;&#41;
+
+&#40;defn- process-person
+  &quot;Do the work for processing the given person. Takes a `person`
+  object and not a ref.&quot;
+  &#91;stage stage-config psk-agent person&#93;
+  &#40;let &#91;processing-time&#42; &#40;get-processing-time-for-stage stage-config&#41;
+        processing-time &#40;if &#40;@unlucky-applicant? &#40;person-representation person&#41;&#41;
+                          ;; You will need more time because the gods
+                          ;; are against you.
+                          &#40;&#42; 10 processing-time&#42;&#41;
+                          processing-time&#42;&#41;&#93;
+    &#40;Thread/sleep processing-time&#41;&#41;&#41;
+</code></pre><p>Here is what this looks like:</p><p><img src="./static/images/psk-run-2.gif" alt="" /></p><p>As you can see, there are a number of people ahead of N-3 by the time he's done with stage 0. N-40s are being processed in stage 0 at this point in time. He has no idea where he is in the queue of people, and must keep staring at the display board at all times.</p><p>I will speak briefly about the three solutions that we initially proposed.</p><h3 id="solution-1-use-priority-queues">Solution 1: Use priority queues</h3><p>Using priority queues between each stage solves the problem of the applicant not knowing when he is next. However, there are two points to think about:</p><ol><li>The priority queue solves the problem within a given category, but not across categories. You know that you are the next N- category person at counter B, but you don't know when that will be because of all the S/T/P category people that will be served first.</li><li>A potential drawback of this may be: if a certain set of applicants are always slow at each stage, then in this model they will bring down the average number of people who will be served by the PSK (since we will prioritize serving them over people who have moved ahead of them).</li></ol><p>Making the change to use priority queues in our code is trivial. We go back to <code>java.util.concurrent</code> and swap out our <code>LinkedBlockingQueue</code> in favor of a <code>PriorityBlockingQueue</code>. Now all we have to do is provide a comparator function. The code for this is <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d#file-psk-clj-L393-L420'>here</a> We can also generate timing samples across people through repeated runs of the program. This will give us an idea of whether the average processing time is affected by using a Priority Queue or not.</p><h3 id="solution-2-new-token-numbers-per-stage">Solution 2: New token numbers per stage</h3><p>Using new token numbers solves the problem elegantly. This is probably not used because of the logistical difficulty of handing out new tokens to applicants again and again. In the real world, I'm sure that this process may cause confusion if not carefully designed. In our system, we already have a perfectly good way of getting the next token number - our atomic token generator. Implementing this solution is straight-forward and left as an exercise for the reader! (This blog post is already quite lengthy!)</p><h3 id="solution-3-where-am-i-estimated-wait-time">Solution 3: "Where am I?" Estimated Wait Time</h3><p>Another way the PSK can help the applicants is by providing a separate self-serve display. The applicant enters his token number and gets to see how many people are ahead of him for the given stage. Both <code>LinkedBlockingQueue</code> as well as <code>PriorityBlockingQueue</code> provide a <code>toArray</code> function which returns all the elements of the queue in order.</p><p>As we are tracking the time each person takes at each stage, we can also predict the estimated amount of time this person would have to wait. This could be an entire blog-post in itself<a href='#fn-3' id='fnref3'><sup>3</sup></a>.</p><p>I leave this as an exercise for the reader :)</p><h2 id="final-thoughts">Final Thoughts</h2><p>The complete code for this exercise can be found <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d'>here</a>. The <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d#file-psk-clj-L530-L545'>comment block</a> at the end of the gist explains how to run the program against a Clojure REPL. Note that this is not a trivial simulation of the PSK, I believe that the entire code can be actually used by them with a small set of changes. A list of things that we have not implemented:</p><ol><li>In the real world, we'd need to store each person's information in a DB along the way. Since the in-mem structures are guaranteed to be consistent, this is something we can achieve by periodically reading information about all applicants and committing it to the DB (similar to how <code>book-keeping-for-applicants</code> works).</li><li>We haven't implemented the error and corrections flow. Failure to pass a stage can be represented as another state (say <code>::error</code>). The <code>process-applicant</code> code will identify success/failure of the stage and set the appropriate state. <code>move-people-through</code> would need minor changes to deal with this. I leave this as an exercise for the reader.</li><li>In the real world, we'd need to build inputs for a real PSK employee to inform us that processing is done. This is nothing but a loop inside <code>process-applicant</code> which checks the DB to see if the work is done.</li></ol><p>I'd love to hear feedback about this post. Is there a better way to implement this? Tell me. Am I missing use-cases of the PSK and implementing a solution to a much simpler problem? Do tell! There may be drawbacks to solutions I've proposed that I cannot see, and there may be valid reasons the system is built the way it is. I'd love to understand the real-world problems that I've missed.</p><p>If you're interested in working with Clojure, on problems like Estimated Wait Time, <a href='https://jobs.lever.co/helpshift/'>we're hiring</a>! Send us an email at <a href='mailto:jobs@helpshift.com'>jobs@helpshift.com</a>.</p><p><i>A big thank you to the following people for reviewing initial drafts of this post: Kapil Reddy, Kiran Kulkarni, Mourjo Sen, Suvrat Apte, Dinesh Chhatani.</i></p><p><i>A big thank you to <a href='https://twitter.com/renderkid'>Bhargava Chowdary</a> for creating the illustration of the PSK.</i></p><h2 id="references">References</h2><ul><li>Eric Normand's post explaining all Clojure Concurrency primitives: <a href="https://purelyfunctional.tv/guide/clojure-concurrency/">https://purelyfunctional.tv/guide/clojure-concurrency/</a></li><li>Rich Hickey's talk on Clojure Concurrency: <a href="https://www.youtube.com/watch?v=nDAfZK8m5_8">https://www.youtube.com/watch?v=nDAfZK8m5_8</a></li><li>Atoms: <a href="https://clojure.org/reference/atoms">https://clojure.org/reference/atoms</a></li><li>Refs: <a href="https://clojure.org/reference/refs">https://clojure.org/reference/refs</a></li><li>Futures: <a href="https://clojuredocs.org/clojure.core/future">https://clojuredocs.org/clojure.core/future</a></li><li>Agents: <a href="https://clojure.org/reference/agents">https://clojure.org/reference/agents</a></li></ul><ol class='footnotes'><li id='fn-1'>STM: <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">http://en.wikipedia.org/wiki/Software_transactional_memory</a><a href='#fnref1'>&#8617;</a></li><li id='fn-2'>ACID: <a href="https://en.wikipedia.org/wiki/ACID_(computer_science)">https://en.wikipedia.org/wiki/ACID_(computer_science)</a><a href='#fnref2'>&#8617;</a></li><li id='fn-3'>Estimating wait-times: <a href="https://en.wikipedia.org/wiki/Queueing_theory">https://en.wikipedia.org/wiki/Queueing_theory</a><a href='#fnref3'>&#8617;</a></li></ol><p><i>Last Updated: 2018-12-15T19:56:00Z</i></p><hr /><div id="post-parents"><div id="post-links"><h1>Parents</h1><ul><li><span>2023-05-19</span><span> - </span><a href="/programming.html">Programming</a></li></ul></div></div><hr /><div id="post-tags"><h1 class="links-header">Tags</h1><div class="flex"><div class="inline-flex"><a href="/tags/clojure.html">clojure</a><span class="mx-2">|</span></div><div class="inline-flex"><a href="/tags/programming.html">programming</a><span class="mx-2">|</span></div><div class="inline-flex"><a href="/tags/concurrency.html">concurrency</a><span class="mx-2"></span></div></div></div><nav class="bottom-0 right-0 float-right mb-6" id="post-nav"><a class="px-2" href="/index.html">Archive</a><a class="px-2" href="https://github.com/vedang/vedang.me/blob/master/programming/simulating-the-passport-seva-kendra.md" target="_blank">Discuss this post</a></nav><nav class="bottom-0 left-0 float-left mb-6" id="copyright-nav"><p>Except where otherwise noted, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.</p><p>Built with love, using <a href="https://www.gnu.org/software/emacs/">Emacs</a>, <a href="https://orgmode.org/">Org-mode</a>, <a href="https://clojure.org/index">Clojure</a>, <a href="https://babashka.org/">Babashka</a>, <a href="https://tailwindcss.com/">TailwindCSS</a>, <a href="https://prismjs.com/">PrismJS</a></p></nav></div></body></html>

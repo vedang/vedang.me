@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Vedang Manerikar</title>
+  <link href="https://vedang.me/atom.xml" rel="self"/>
+  <link href="https://vedang.me/"/>
+  <updated>2023-05-19T21:10:45+05:30</updated>
+  <id>https://vedang.me/</id>
+  <author>
+    <name>Vedang Manerikar</name>
+  </author>
+  <entry>
+    <id>tabfs-and-automation.html</id>
+    <link href="tabfs-and-automation.html"/>
+    <title>TabFS and Automation</title>
+    <updated>2022-09-20T22:20:00+00:00</updated>
+    <content type="html"><![CDATA[<p>Hello reader! This is a short update about the very cool <a href='https://omar.website/tabfs/'>TabFS</a>, which is a browser extension that maps your open tabs to the filesystem using Fuse. Think <code>/proc</code> but for the browser. This is an excellent idea, because now I can run all the tools that I am already familiar with on my tabs!</p><p>As I was reading through the TabFS page (linked above), I thought to myself: "this is so much RC energy!". So I checked, and lo and behold, Omar Rizwan is an RC Alum :D</p><h2 id="why-i-wanted-something-like-tabfs">Why I wanted something like TabFS</h2><p>The internet is full of interesting stuff that hijacks my attention. I end up getting completely distracted from my planned tasks. My solution to this is: I open all the links I want, but I don't read anything immediately. Instead, I capture the link in Org-Mode and schedule it for later (generally tomorrow). This way, when I am planning the day, I have a bunch of links in my Agenda. I choose which ones I want to read on any given day and defer / delete the rest. I use the excellent <a href='https://orgmode.org/manual/Agenda-Commands.html'>Bulk Scatter</a> tool built into Org Agenda for this.</p><p>I thought: Why do this manually? Enter TabFS</p><h2 id="a-small-babashka-script">A small Babashka script</h2><p>With TabFS installed, it was a small step to go from there to <code>org-mode</code>. My go-to scripting tool is <a href='https://book.babashka.org/'>Babashka</a>. Here is the meat of the code:</p><pre><code class="lang-clojure">&#40;require '&#91;babashka.fs :as fs&#93;
+         '&#91;clojure.string :as cs&#93;&#41;
+
+&#40;defn build-tab-info
+  &quot;Collects the title and URL for all open tabs using TabFS.&quot;
+  &#91;opts&#93;
+  &#40;map &#40;fn &#91;t&#93;
+         {:title &#40;first &#40;fs/read-all-lines &#40;str t &quot;/title.txt&quot;&#41;&#41;&#41;
+          :url &#40;first &#40;fs/read-all-lines &#40;str t &quot;/url.txt&quot;&#41;&#41;&#41;}&#41;
+       &#40;fs/list-dir &#40;:tab-dir opts&#41;&#41;&#41;&#41;
+
+&#40;def plain-text-template
+  &quot;The template for creating the org-mode plain-text entry. Placeholders
+are for the following items &#40;in order&#41;:
+  1. Org-Mode Heading level: default value is 1.
+  2. URL of the link to the stored.
+  3. Title of the link to be stored.
+  4. Date when the Tab is scheduled for reading: default is tomorrow.
+  5. Date when the Tab was captured.&quot;
+  &quot;%s TODO &#91;&#91;%s&#93;&#91;%s&#93;&#93;\nSCHEDULED: %s\n%s&quot;&#41;
+
+&#40;defn tabs-&gt;text
+  &quot;Convert the list of open tabs to a wall of text that can be stored in
+  Plain-Text.&quot;
+  &#91;opts&#93;
+  &#40;-&gt;&gt; &#40;build-tab-info opts&#41;
+       &#40;map &#40;fn &#91;t&#93;
+              &#40;format plain-text-template
+                      &#40;apply str &#40;repeat &#40;:org-mode-heading-level opts&#41; &quot;&#42;&quot;&#41;&#41;
+                      &#40;:url t&#41;
+                      &#40;:title t&#41;
+                      &#40;:scheduled-on opts&#41;
+                      &#40;:captured-on opts&#41;&#41;&#41;&#41;
+       &#40;cs/join \newline&#41;&#41;&#41;
+</code></pre><p>I wrote a <a href='https://github.com/vedang/bb-scripts#bb-plain-text-tabs'>CLI script</a> for the code, here is what the <code>help</code> command looks like:</p><pre><code class="lang-text">✦ ➜ bb-plain-text-tabs --help
+Convert all open tabs to plain text Org Mode format. Optionally, close the open tabs.
+
+Usage: bb-plain-text-tabs &#91;options&#93;
+
+Options:
+  -fs,  --tabfs-mnt-path                &#42;REQUIRED&#42; TabFS mount path. The path on the filesystem where TabFS is mounted.
+  -hl,  --org-mode-heading-level        1                            The heading level at which link headings will be stored in Org Mode.
+  -s,   --scheduled-on           &lt;date&gt; tomorrow                     Date on which to schedule reading this batch of links, in yyyy-MM-dd format.
+  -del, --delete-tabs            &lt;del&gt;  false                        Boolean value to indicate if browser tabs should be closed
+
+Examples:
+   bb-plain-text-tabs -fs &lt;TabFS Mount Path&gt; # Convert Open Tabs to Plain Text
+   bb-plain-text-tabs -fs &lt;TabFS Mount Path&gt; --delete-tabs # Delete tabs and print plain text
+   bb-plain-text-tabs -fs &lt;TabFS Mount Path&gt; | tee tabs.org # Capture Plain Text output to file
+</code></pre><h2 id="what-it-looks-like">What it looks like</h2><p>Finally, this is the output, in Org Mode:</p><p><img src="./static/images/tabfs.png" alt="" /></p><p>I hope all the Emacs/Org-mode folks reading this find it useful! Thank you to Omar for the excellent <a href='https://omar.website/tabfs/'>TabFS</a> tool!</p>]]></content>
+  </entry>
+  <entry>
+    <id>gitlab-private-pages-docker.html</id>
+    <link href="gitlab-private-pages-docker.html"/>
+    <title>Gitlab Private Pages + Running Docker containers in Gitlab CI/CD Pipelines</title>
+    <updated>2022-08-23T10:19:00+00:00</updated>
+    <content type="html"><![CDATA[<h2 id="private-pages-on-gitlab">Private pages on Gitlab</h2><p>Did you know that <a href='https://docs.gitlab.com/ee/user/project/pages/'>Gitlab Pages</a> supports private / auth-based static sites? Basically, you add people you want to share your site with as Project Members to the repository. Gitlab then enforces Gitlab Login on the website, so you can only see the content if you are logged into Gitlab (and have been given access to the repository).</p><p>This is a very cool way to host private static sites freely (vs, for example, self-hosting + HTTP Basic Auth).</p><h2 id="moving-from-github-actions-to-gitlab-ci-cd-pipelines&ndash;plus-running-docker-containers-in-ci-cd-scripts">Moving from Github Actions to Gitlab CI/CD Pipelines (+ running Docker containers in CI/CD scripts)</h2><p>It's ridiculously hard to Google for the right way to run a dockerized tool in CI/CD environments.</p><p>Github Actions makes this a nobrainer because their images (example: <code>ubuntu-latest</code>) have <code>docker</code> clients and servers baked in already. So you just write your command (say <code>docker run hello-world</code>) directly into your YAML file and you are done.</p><p>Gitlab CI/CD does not have this. They expect you to search + use images from Dockerhub / Gitlab Container Registry. To make matters worse, it isn't enough to use the official Docker in Docker image (which is <code>docker:latest</code> btw). Using this image only gives you the <code>docker</code> client. You still need to run the <code>docker</code> server separately. If you don't, your pipeline will fail with the following error:</p><pre><code class="lang-text">docker: error during connect: Post &quot;http://docker:2375/v1.24/containers/create&quot;: dial tcp: lookup docker on 169.254.169.254:53: no such host.
+</code></pre><p>To run the server, you need to understand the <a href='https://docs.gitlab.com/ee/ci/services/'>Services</a> concept of Gitlab CI/CD. In short, this is a way to run services that your main job might need to access when it runs. You can use it, for example, to run database instances that your test job would connect to. In our case, we need a docker daemon service, which is provided by the <code>docker:dind</code> image.</p><p>Once you have this, then your entire pipeline will finally run. It took me a frustratingly long time to figure it all out. Here is what my final <code>.gitlab-ci.yml</code> file looks like:</p><pre><code class="lang-yaml">workflow:
+  rules:
+    - if: $CI&#95;COMMIT&#95;BRANCH
+
+before&#95;script:
+  - mkdir -p .neuron/output &amp;&amp; touch .neuron/output/.nojekyll
+
+pages:
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker run -v $PWD/content:/notes sridca/neuron neuron gen --pretty-urls
+    - cp -R content/.neuron/output public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI&#95;COMMIT&#95;BRANCH == &quot;master&quot;
+</code></pre><p>The <code>pages</code> job-name is special. Gitlab understands that it is meant for hosting, and expects HTML / assets in a top-level directory called <code>public</code>.</p><p>I hope this helps someone else waste less time.</p>]]></content>
+  </entry>
+  <entry>
+    <id>clj-rebl-lein-cider-emacs.html</id>
+    <link href="clj-rebl-lein-cider-emacs.html"/>
+    <title>How to use the Clojure REBL with Leiningen, Cider and Emacs</title>
+    <updated>2020-10-28T23:18:00+00:00</updated>
+    <content type="html"><![CDATA[<p><strong>Note</strong>: This set of instructions only work on <strong>Clojure 1.10+</strong>, <strong>Lein 2.9+</strong> and <strong>JDK 11+</strong>. Also, REBL requires a license for commercial use.</p><p>I didn't find a handy reference to getting started with REBL if your primary workflow is Leiningen/nrepl, so here is the series of things I had to do to get the REBL up and running for myself.</p><ol><li>Download the <a href='https://docs.datomic.com/cloud/other-tools/REBL.html'>REBL jar</a> from Cognitect.</li><li>Use <a href='https://github.com/kumarshantanu/lein-localrepo'>lein-localrepo</a> to install the REBL jar to your m2.<pre><code class="lang-shell-script">    lein localrepo install rebl-0.9.242/rebl-0.9.242.jar com.cognitect/rebl 0.9.242
+    </code></pre></li><li>Add the following code to your <code>profiles.clj</code> file (code below). This is based on the <a href='https://docs.datomic.com/cloud/other-tools/REBL.html#installation'>REBL installation guide</a> and <a href='https://github.com/RickMoynihan/nrebl.middleware'>Rick Moynihan's nrepl middleware</a>:<pre><code class="lang-clojure">    {
+     ;; ....
+     ;; You other profiles stuff
+     ;; ....
+     :rebl {:plugins &#91;&#91;cider/cider-nrepl &quot;0.25.3&quot;&#93;
+                      &#91;refactor-nrepl &quot;2.5.0&quot;&#93;
+                      &#91;nrepl &quot;0.8.2&quot;&#93;&#93;
+            :repl-options {:nrepl-middleware &#91;nrebl.middleware/wrap-nrebl&#93;}
+            :dependencies &#91;&#91;org.clojure/tools.deps.alpha &quot;0.7.511&quot;&#93;
+                           &#91;com.cognitect/rebl &quot;0.9.242&quot;&#93;
+                           &#91;org.clojure/core.async &quot;1.3.610&quot;&#93;
+                           &#91;cljfmt  &quot;0.6.4&quot;&#93;
+                           &#91;rickmoynihan/nrebl.middleware &quot;0.3.1&quot;&#93;
+                           &#91;org.openjfx/javafx-fxml &quot;15-ea+6&quot;&#93;
+                           &#91;org.openjfx/javafx-controls &quot;15-ea+6&quot;&#93;
+                           &#91;org.openjfx/javafx-swing &quot;15-ea+6&quot;&#93;
+                           &#91;org.openjfx/javafx-base &quot;15-ea+6&quot;&#93;
+                           &#91;org.openjfx/javafx-web &quot;15-ea+6&quot;&#93;&#93;}
+     ;; ....
+     ;; If you don't have anything in your profiles.clj right now, just
+     ;; remove the comments and copy the whole map over.
+     }
+    </code></pre></li><li>Start the REPL with the new profile<pre><code class="lang-shell-script">    lein with-profile +rebl repl :headless
+    </code></pre></li><li>Connect to the REPL from Emacs. Do this by opening up any Clojure file in your project and executing <code>M-x cider-connect</code> in the file.</li><li>Run the following commands in the REPL to spin up the REBL.<pre><code class="lang-clojure">    &#40;require '&#91;cognitect.rebl :as rebl&#93;&#41;
+    &#40;rebl/ui&#41;
+    </code></pre></li><li>At this point, anything that you evaluate when programming will be sent to your REPL as well as to your REBL and can be inspected from there. Anything you evaluate into the REPL will be sent over to the REBL as well.</li><li>Work on the REPL as you normally would. Your work is also being sent into the REBL for fancy viewing when you need it.</li></ol>]]></content>
+  </entry>
+  <entry>
+    <id>programmer-guide.html</id>
+    <link href="programmer-guide.html"/>
+    <title>The Programmer's Guide to Wisdom</title>
+    <updated>2020-08-22T17:15:00+00:00</updated>
+    <content type="html"><![CDATA[<p><img src="./static/images/programmer_guide.png" alt="" /></p><blockquote><p> Over the weekend, I created a poster for my desk. It captures timeless best practices and advice on programming and software design. Presenting it here, in the hopes that it'll be useful to others as well. Features: <a href='https://twitter.com/esrtweet'>@esrtweet</a>, Doug McIlroy, <a href='https://twitter.com/rob_pike'>@rob_pike</a> and <a href='https://twitter.com/RealGeneKim'>@RealGeneKim</a> </p><p><ul><li><a href='https://twitter.com/vedang/status/1292744222873853952'>@vedang</a>, <a href='https://twitter.com/vedang/status/1292744222873853952'>14:16 Aug, 10, 2020</a></li></ul></p></blockquote><p>I collect such deeply useful and universal advice <a href='/tags/wisdom.html/'>under the tag wisdom</a> if you want to read more posts of this kind.</p>]]></content>
+  </entry>
+  <entry>
+    <id>lilys-recipes.html</id>
+    <link href="lilys-recipes.html"/>
+    <title>Lily's Recipes</title>
+    <updated>2020-04-05T19:03:00+00:00</updated>
+    <content type="html"><![CDATA[<p><style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style></p><p><div class="org-center"></p><p><i>This post was originally written in 2017. I've updated it today (11th Jan 2022), after my Ajji passed away. May she enjoy endless runs of cooking shows in her afterlife.</i></p><p></div></p><p>Lily is a lifelong cooking enthusiast. She collected, cooked, commented on, and critiqued thousands of recipes over the years - and she did it before the age of the telephone (let alone the TV, the computer or the internet).</p><p><img src="./static/images/ajji.jpg" alt="" /></p><p>The photo you see here is of my ajji (grandmother) Leela Manerikar - lovingly referred to as Lily by her numerous grandchildren. She's 96 in the photo.</p><p>I moved out of my parents' home in 2015, and learnt two things quickly:</p><ol><li>I was an ungrateful son who never truly appreciated the work that goes into setting a dinner table everyday.</li><li>I liked cooking. I liked the ritual of it, I loved the flavours, and it helped me relax.</li></ol><p>My grandmother - and my parents - were pleasantly surprised to hear about my newfound love of cooking. And then Lily said, "Are you interested in checking out my collection of recipes?". My grandmother watched every cooking show she could ("Vegetarian only, mind you.") but I did not know that she collected recipes. I was more than happy to go through her recipes.</p><p>These last years have been harsh on Lily. She lost her eyesight, and has trouble moving around the house. She cannot cook anymore, but she is delighted that I enjoy it, and suggests improvements to my recipes when I describe my successes and missteps to her.</p><p>Sadly, we've lost all but one box of Lily's recipes over the years. Some to poor storage and some to bookworms. As she handed over this final box of recipes to me, she said:</p><blockquote><p> "I used to collect these recipes obsessively when I was young. You kids have it easy: look at your phone and it will tell you how to cook something, how it should look, what it should smell like. In my time, gathering this knowledge was harder. These scraps may or may not be useful to you, what with your fancy phone. If you find something useful, great. Otherwise, throw them away." </p></blockquote><p>That last bit about "throwing them away" comes from a sense of drama cultivated by watching a healthy dose of daily soaps and cooking shows for decades. None-the-less, these clippings are precious to me. They are a glimpse into the life of a person I've never known - a young woman who raised four kids on a teacher's salary. Someone who was a long way off from being my grandmother. There are scribbles on the sides, marking improvements and experiments over time. There are postcards of recipes exchanged between my grandmom and her daughter - studying cooking in a Banglorean college. There is the awe of looking at something that is older than I am, and represents a bygone era.</p><p>I want Lily's legacy to live on in a small way, and to be accessible to all her grandchildren and great-grandchildren. And so I'm moving these recipes online, out of reach of bookworms and moisture (I'll be on the lookout for bitworms). I plan to cook the dishes, expand on the annotations in the corners and raise a toast to my grandmother's health as often as I can!</p>]]></content>
+  </entry>
+  <entry>
+    <id>writing-a-good-status-update.html</id>
+    <link href="writing-a-good-status-update.html"/>
+    <title>Writing a good status update</title>
+    <updated>2019-08-06T07:49:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#what-is-the-purpose-of-status-updates'>What is the purpose of status updates?</a></li><li><a href='#properties-of-good-status-updates'>Properties of good status updates</a></li><li><a href='#writing-the-status-update'>Writing the status update</a></li><li><a href='#create-sections-for-your-updates'>Create sections for your updates</a><ul><li><a href='#name-the-project-you-are-currently-working-on'>Name the project you are currently working on</a></li><li><a href='#name-the-milestone-of-the-project-you-are-currently-working-on-dot'>Name the milestone of the project you are currently working on.</a></li><li><a href='#your-status-update-should-definitively-answer-the-following-questions'>Your status update should definitively answer the following questions:</a></li><li><a href='#example-status-update'>Example status update</a><ul><li><a href='#what-i-accomplished-this-last-week'>What I accomplished this last week:</a></li><li><a href='#what-didn-t-go-according-to-plan'>What didn't go according to plan:</a></li><li><a href='#what-i-plan-to-do-next-week'>What I plan to do next week:</a></li><li><a href='#questions-blockers-action-items'>Questions / Blockers / Action Items:</a></li></ul></li></ul></li><li><a href='#what-do-you-get-from-writing-a-good-update'>What do you get from writing a good update?</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p>We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it's useful enough to publish publicly. Here goes:</p><h2 id="what-is-the-purpose-of-status-updates">What is the purpose of status updates?</h2><ul><li>Let <strong>your manager</strong> know what you have achieved last week.</li><li>Let <strong>your co-workers</strong> know what you have achieved this week.</li><li><strong>Reflect</strong> on your progress and pace <strong>yourself</strong>.</li></ul><h2 id="properties-of-good-status-updates">Properties of good status updates</h2><ul><li><strong>Short</strong> and <strong>meaningful</strong>. (5 min reading time)</li><li>Communicate <strong>work in the previous week</strong>, <strong>highlight progress</strong>.</li><li>Communicate <strong>plan for the next week</strong>, <strong>help make yourself efficient</strong>.</li><li>Communicate <strong>open questions</strong> and <strong>blockers</strong>, <strong>highlight areas where we need to help you</strong>.</li></ul><h2 id="writing-the-status-update">Writing the status update</h2><p>Write the status update either as the last thing on Friday or as the first thing on Monday. Remember to review the status you had posted previously, so that you don't miss out on any updates. If you choose to write on Friday end-of-day, this can also be a great wind-down / logging-off ritual to wrap up the week and give yourself a sense of accomplishment.</p><h2 id="create-sections-for-your-updates">Create sections for your updates</h2><ul><li>Use the following sections:<ul><li>What I accomplished this last week</li><li>What didn't go according to plan</li><li>What I plan to do next week</li><li>Questions / Blockers / Action Items</li></ul></li><li>This makes it <strong>easy to parse</strong> your update.</li></ul><h3 id="name-the-project-you-are-currently-working-on">Name the project you are currently working on</h3><ul><li>Yes, your manager is supposed to know what you are working on. But you often do unplanned, extra tasks too. You help on other projects, handle production issues, discover interesting tidbits, get insights from analyzing logs. <strong>Highlight all of these activities!</strong>.</li><li>Help your manager by making it easy for them to compile project reports.</li><li>This makes your update very readable.</li></ul><h3 id="name-the-milestone-of-the-project-you-are-currently-working-on-dot">Name the milestone of the project you are currently working on.</h3><ul><li>Helps when the team needs to take a call about cutting or increasing scope on a project.</li><li>Highlights and reinforces upcoming co-ordination points.</li></ul><h3 id="your-status-update-should-definitively-answer-the-following-questions">Your status update should definitively answer the following questions:</h3><ul><li>What are you working on?</li><li>For each project that you are working on, where are you? What is the next date that you are committing to?</li><li>Are you on track for the current phase of the project or not? If not, what is the impact on the overall project?</li></ul><h3 id="example-status-update">Example status update</h3><h4 id="what-i-accomplished-this-last-week">What I accomplished this last week:</h4><ul><li>Completed final PRD review for <strong>Project X</strong>, no open questions at this point! :yay:. Project is <strong>on track</strong>!</li><li>Pushed a fix to <strong>ABC Service</strong> to production and closed <strong>Jira Ticket Z</strong>. Graphs show amazing reduction in network bandwidth! :epicwin: <i>link to graph or screenshot</i>.</li><li>Conducted the Enterprise initiative meeting, meeting notes are here: <i>link to meeting notes</i>.</li></ul><h4 id="what-didn-t-go-according-to-plan">What didn't go according to plan:</h4><ul><li>Working on dev of <strong>Project Y</strong>. Project is <strong>not on track</strong> :sad_face:. We had communicated that dev will be complete by <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-02 Fri&gt;</span></span> but I will need 3 more days. This pushes the <strong>new date to <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-07 Wed&gt;</span></span></strong> EOD.</li></ul><h4 id="what-i-plan-to-do-next-week">What I plan to do next week:</h4><ul><li>I will have the initial estimates for <strong>Project X</strong> by EOD <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-08 Thu&gt;</span></span>.</li><li>I will complete the Dev work on <strong>Project Y</strong> as mentioned above. <strong><span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-07 Wed&gt; </span></span> EOD</strong></li><li>I will create a document about <strong>DEF Topic</strong> as we had discussed by EOD <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-09 Fri&gt;</span></span>.</li></ul><h4 id="questions-blockers-action-items">Questions / Blockers / Action Items:</h4><ul><li>We need to sync up about ideas for implementing <strong>Project X</strong> before tomorrow EOD, but you don't have an empty meeting slot until day-after. What should we do?</li><li>I will inform <strong>Frontend team-member</strong> that <strong>Project Y</strong> integration testing cannot start tomorrow, instead it will start on <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-08 Thu&gt;</span></span>.</li></ul><h2 id="what-do-you-get-from-writing-a-good-update">What do you get from writing a good update?</h2><ul><li>A <strong>record of work for yourself</strong>. This is invaluable come performance review time. You only have to read through 26 updates and you have a thorough summary.</li><li><strong>Help your manager</strong> advocate for you during appraisals. You should care about your career more than anyone else.</li><li><strong>Help yourself</strong>. Writing the update should <strong>give you</strong> a clear idea of your own progress and what you need to work on.</li></ul>]]></content>
+  </entry>
+  <entry>
+    <id>problems-in-system76-oryx-pro.html</id>
+    <link href="problems-in-system76-oryx-pro.html"/>
+    <title>Problems in my brand new System76 Oryx Pro laptop</title>
+    <updated>2019-05-31T22:51:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#important-note'><strong>Important Note</strong></a></li><li><a href='#emacs-is-unusable-due-to-constant-movement-of-the-cursor-dot'>Emacs is unusable due to constant movement of the cursor.</a></li><li><a href='#the-space-key-is-weird-dot'>The space key is weird.</a></li><li><a href='#power-management-and-suspend-dot'>Power management and suspend.</a><ul><li><a href='#no-just-works-for-suspend-dot'>No "just works" for Suspend.</a></li><li><a href='#the-power-button-is-weird-dot'>The Power button is weird.</a></li></ul></li></ul><p></div> <!&ndash;endtoc&ndash;></p><h2 id="important-note"><strong>Important Note</strong></h2><p>I'm enjoying using a Linux laptop after years of development on the Macbook, and this post is more a list of issues I personally faced on moving to Linux after 7 years of development on the Macbook. I'd written a similar thing when I'd moved to the Macbook for the first time. Hopefully, this will help someone else moving to this particular laptop. This is not a "look, linux sux" post. The Oryx Pro is a great machine, and is a far better experience than the overall Linux experience I remember from 2012.</p><h2 id="emacs-is-unusable-due-to-constant-movement-of-the-cursor-dot">Emacs is unusable due to constant movement of the cursor.</h2><ul><li>The cursor constantly moves to the end of the first line on screen for no apparent reason.<ul><li>I'm convinced the reason that the cursor moves to the end of the first line on screen has to do with the position of the mouse-pointer. I confirmed this by changing &#8216;mouse-avoidance-mode' to &#8216;animate' (from &#8216;banish'). This stops the pointer from being moved to the top right corner on key press in Emacs. Now, the cursor does not move to the end of the first line like it used to, but to some other random place (wherever the mouse pointer happened to be last)</li></ul></li><li>Repeatedly performing certain key-bindings (like C-n) causes a buffer menu to pop up. I have no idea why this happens and how to reproduce it / stop it.<ul><li>Once the menu shows up, repeatedly pressing the same key-binding causes it to go away after some time. (This may be true only of C-n, which is what triggers this for me the most.)</li></ul></li><li><strong>Update</strong> : Both problems above are due to the awkward placing of the touchpad on the System 76 laptops. This touchpad is sensitive and registers "ghost clicks" during typing. I confirmed this by disabling my touchpad. The problem went away. This is an acceptable workaround for me as I don't need the mouse when I'm in Emacs (and disabling/enabling the touchpad is straightforward using <code>xinput</code>)<ul><li><code>xinput list</code> will list all the available input devices. Look for your touchpad and note the id of the device.</li><li><code>xinput disable &lt;id&gt;</code> will disable the device.</li><li><code>xinput enable &lt;id&gt;</code> will enable the device.</li></ul></li></ul><h2 id="the-space-key-is-weird-dot">The space key is weird.</h2><ul><li>More than any other key on the laptop, the space key needs a solid thump for it to register. This is especially irritating when typing out passphrases, since there is no visible feedback.</li><li><strong>Update</strong> : Over time, I've gotten used to this and no longer need to worry about whether my keypress has registered or not.</li></ul><h2 id="power-management-and-suspend-dot">Power management and suspend.</h2><h3 id="no-just-works-for-suspend-dot">No "just works" for Suspend.</h3><ul><li>Years of using the Mac have trained me to just shut the laptop lid when I'm done working. However, with Oryx, there is no predictable way to tell whether the battery will continue to be drained or not once the lid is down. I've left a fully charged laptop, come back to it 4 hours later to find that it was completely drained (to the point that it does not start unless you plug it into a power source). I have no clue why this happens.<ul><li><strong>Update</strong> : Apparently this is famous in the world of System76 as the 'suspend black screen of death' bug. :( These are the kind of things due to which 'year of the Linux desktop' is a broken promise.</li></ul></li><li><strong>Update 2</strong> : Suspend works okayish, it just drains the battery faster than I would have expected. I guess I'll have to learn to live with this (but it seriously hampers the use of this laptop as a carry-around device, which is something I'm grumpy about).</li><li><strong>Update 3</strong> : Prolonged use of this laptop really makes me appreciate the incredible power management of the Macbook. I love Oryx as a development environment, but the Macbook's power management is in a whole different class.</li></ul><h3 id="the-power-button-is-weird-dot">The Power button is weird.</h3><ul><li>I've gotten into the habit of shutting down my laptop when I'm unsure about battery and want to definitely conserve it (example when I'm traveling). There is no immediate feedback on pressing the power button. Due to this, it's hard to know if the keypress has registered or not. This is a small gripe in the big picture, but it gets annoying fast.</li></ul>]]></content>
+  </entry>
+  <entry>
+    <id>simulating-the-passport-seva-kendra.html</id>
+    <link href="simulating-the-passport-seva-kendra.html"/>
+    <title>Simulating the Passport Seva Kendra using Clojure</title>
+    <updated>2018-12-15T19:56:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#the-problem-statement'>The Problem Statement</a><ul><li><a href='#so-what-is-the-problem-with-the-system'>So what is the problem with the system?</a></li></ul></li><li><a href='#representing-all-the-information-about-the-psk'>Representing all the information about the PSK</a></li><li><a href='#letting-people-into-the-psk-and-generating-token-numbers-for-them-dot'>Letting people into the PSK, and generating token numbers for them.</a><ul><li><a href='#clojure-concurrency-primitive-atoms'>Clojure Concurrency Primitive - Atoms</a></li><li><a href='#clojure-concurrency-primitive-futures'>Clojure Concurrency Primitive - Futures</a></li></ul></li><li><a href='#queuing-up-people-and-simulating-the-work-done-at-every-stage'>Queuing up people and simulating the work done at every stage</a></li><li><a href='#keeping-track-of-people-and-the-display-board'>Keeping track of people and the display board</a><ul><li><a href='#clojure-concurrency-primitive-refs&ndash;and-transactions'>Clojure Concurrency Primitive - Refs (and transactions)</a></li></ul></li><li><a href='#processing-people-concurrently-across-all-open-counters'>Processing people concurrently across all open counters</a><ul><li><a href='#clojure-concurrency-primitive-agents'>Clojure Concurrency Primitive - Agents</a></li></ul></li><li><a href='#tying-everything-together-the-main-function'>Tying everything together - the main function</a></li><li><a href='#with-me-so-far-some-thoughts'>With me so far? Some thoughts</a></li><li><a href='#can-we-see-the-problem'>Can we see the problem?</a><ul><li><a href='#solution-1-use-priority-queues'>Solution 1: Use priority queues</a></li><li><a href='#solution-2-new-token-numbers-per-stage'>Solution 2: New token numbers per stage</a></li><li><a href='#solution-3-where-am-i-estimated-wait-time'>Solution 3: "Where am I?" Estimated Wait Time</a></li></ul></li><li><a href='#final-thoughts'>Final Thoughts</a></li><li><a href='#references'>References</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p><i>Cross-posted from my post on the <a href='https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c'>Helpshift Engineering Blog</a></i></p><p>A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune to get my passport renewed. At the time, the government had revamped this process and made it a simple, step-in/step-out painless affair. Unfortunately for me, I hit an edge-case in the system and took much longer than expected to complete. I was there for close to 4 hours. I used this time to observe the behavior of the PSK and think about ways to improve the applicant experience. I thought it was an interesting problem to solve and write about.</p><p>Recently, my wife booked an appointment at the PSK to renew <span class="underline">her</span> passport and this provided the spark I needed to write about it. So here we are, a year later, talking about the passport renewal process at the PSK.</p><p><!&ndash;more&ndash;></p><h2 id="the-problem-statement">The Problem Statement</h2><p>Let me describe the process to you first.</p><ul><li>The PSK has appointment slots every 15 minutes, and there are ~25 people in each slot.</li><li>Once you enter the PSK, there are 4 to 6 counters to verify your documents.</li><li>On verification, you are assigned a unique token number. We'll talk about this in a bit.</li><li>Token numbers are displayed on an electronic display-board. The board indicates which counter the person should go to. You are to wait in the waiting area and look at the display. You will soon be scheduled against a counter, where a PSK employee will help you with that particular stage of the process.</li><li>There are 3 stages in the process. The first is 'Biometrics' (Stage A). At this counter, the PSK employee collects your fingerprints and takes your photo. Your online form is updated with this information. There are 36 counters serving this stage (A-1, A-2 ... A-36).</li><li>The second stage is 'Form Check' (Stage B). At this point, the PSK employee checks the details in your form. If he finds any problems, he will redirect you to the Corrections counter. During my visit, counters A-34, A-35 and A-36 were reserved for corrections. After corrections, you have to come back to this stage. There are 12 counters (B-1, B-2 ... B-12).</li><li>The final stage is 'Form Re-Check' (Stage C). At this point, the agent double-checks the work of the previous counters and takes your form. If there are any corrections you have to go back to the corrections counters and start again. Once the form is checked, your reissue request has been processed. You are free to leave the PSK and go home. There are 10 counters (C-1, C-2 ... C-10).</li><li>Coming back to the token numbers. These are of the form N-10, S-4 etc. The alphabet represents the applicant category. These categories are as follows:<ul><li><strong>Normal (represented by N):</strong> Most people fall into this category.</li><li><strong>Senior (represented by S):</strong> For people older than 60</li><li><strong>Tatkal (represented by T):</strong> For people who want speedy processing of their passport (and have paid extra for this benefit)</li><li><strong>Requiring Police Clearance (represented by P):</strong> People who need clearance from the police (probably because they have criminal records, or work in sensitive departments in the government).</li></ul></li><li>Categories other than 'Normal' have a higher priority when it comes to processing their applications. For the purposes of this post, I assume that P has the highest priority, followed by S, T and N.</li></ul><p><img src="./static/images/psk-renderkid.jpg" alt="" /></p><p>In the rest of this post, we'll build this system as described above, and see if we can fix the flaw in it. We will use Clojure to write the solution. Clojure's concurrency primitives are fantastic, and helped me model this system in an elegant and readable way. As we go along, I'll explain these primitives in brief. <a href='https://twitter.com/ericnormand'>Eric Normand</a> has written an excellent guide to <a href='https://purelyfunctional.tv/guide/clojure-concurrency/'>understanding concurrency primitives</a> in Clojure, and <a href='https://twitter.com/richhickey'>Rich Hickey</a> has a <a href='https://www.youtube.com/watch?v=nDAfZK8m5_8'>great talk about this</a> as well. I highly recommend both these resources to the interested reader. The focus of this post will be on using these tools to implement a non-trivial system.</p><h3 id="so-what-is-the-problem-with-the-system">So what is the problem with the system?</h3><p>First, let's get the flaw out of the way. The problem with this system is that <span class="underline">the applicant has no idea when he'll be scheduled with an agent</span>. He must keep staring at the display board. For example, if you are N-30 and stage A took a particularly long time for you, others have moved past you to the next stage (B and beyond). The display board may read that N-41, N-42 etc are at counters B-1, B-2 etc. However, this does not mean that N-30 will show up next. The display board may go all the way to N-60 before N-30 shows up. As there is no certainty about when your number will show up, you have no option but to continuously stare at the board. This gets really irritating after a while.</p><p>Here are some ways to deal with this problem:</p><ol><li>Instead of using simple queues between the stages, use a priority queue. This means that even if N-30 took a long time on stage A, and the board had moved on to N-40s and above for stage B, as soon as N-30 is done with stage A he will be moved to the top of the queue for B. In this way, the applicant can look at the board and always tell whether he'll be up next or not.</li><li>Generate new token numbers between each stage. This will give the applicant a clear idea of the number of people ahead of him at any given point in time.</li><li>Provide the person with a new display board, where he can enter his token and see where he is in the queue for his stage.</li></ol><p>We will see these in action in our simulation program.</p><h2 id="representing-all-the-information-about-the-psk">Representing all the information about the PSK</h2><p>Everything describing the behaviour of the PSK can be captured in code. For our simulation, the data looks like this:</p><pre><code class="lang-clojure">&#40;def stages
+  &quot;The various stages in the PSK, and transition from one stage to the other.
+
+  - `processing-time-range` represents the amount of time spent at the
+  counter in this stage &#40;in mins&#41;.
+  - `next` represents the next stage for the person.
+  - `counters` represent the number of counters/agents serving this stage.&quot;
+
+  ;; Actual Values:
+  ;; 4 Doc verification Counters
+  ;; 33 counters for Biometrics
+  ;; 12 for form checking
+  ;; 10 for final checking
+  ;; 3 for corrections
+  ;; Using different values here so that the display board is
+  ;; human-readable.
+
+  {::enter {:next ::doc-verification}
+   ::doc-verification {:next ::biometrics
+                       :counters 10
+                       :display-str &quot;0-&quot;
+                       :processing-time-range &#91;1 5&#93;}
+   ::biometrics {:next ::form-check
+                 :counters 4
+                 :display-str &quot;A-&quot;
+                 :processing-time-range &#91;3 15&#93;}
+   ::form-check {:next ::final-check
+                 :counters 3
+                 :display-str &quot;B-&quot;
+                 :processing-time-range &#91;2 4&#93;
+                 :failure ::corrections}
+   ::final-check {:next ::exit
+                  :counters 2
+                  :display-str &quot;C-&quot;
+                  :processing-time-range &#91;2 4&#93;}
+   ::corrections {:next ::form-check
+                  :counters 1
+                  :display-str &quot;D-&quot;
+                  :processing-time-range &#91;5 15&#93;}}&#41;
+
+&#40;def waiting-room-capacity 500&#41; ; max number of waiting people
+
+&#40;def total-capacity
+  &quot;number of people that can be in the PSK at max&quot;
+  &#40;apply + waiting-room-capacity &#40;keep :counters &#40;vals stages&#41;&#41;&#41;&#41;
+
+&#40;def processing-batch-size
+  &quot;no of people entering the center at one time.&quot;
+  25&#41;
+
+&#40;def new-batch-in-mins
+  &quot;time between one batch and the next&quot;
+  15&#41;
+
+&#40;def stage-status
+  &quot;For the given stage, the map of possible states that a person can be
+  in.&quot;
+  &#91;;; Person is in the waiting area, looking at the display to see
+   ;; when he's called to a counter.
+   ::waiting
+   ;; Counter is assigned to the person
+   ::in-process
+   ;; Person is done with the counter and heading to the next stage.
+   ::done&#93;&#41;
+</code></pre><p>We use a simple map - <code>stages</code> - to represent all the stages in the PSK, the number of counters per stage, the amount of time per stage and the next stage after this one. A person is either waiting (looking at the display board), or is at a counter, or is done with a stage (<code>done</code> triggers a move to the next stage). From the point of view of the person, he is either waiting or at a counter.</p><h2 id="letting-people-into-the-psk-and-generating-token-numbers-for-them-dot">Letting people into the PSK, and generating token numbers for them.</h2><p>The first thing we will build is the token generator, and we'll use the most intuitive Clojure concurrency primitive for this: the <code>atom</code>.</p><h3 id="clojure-concurrency-primitive-atoms">Clojure Concurrency Primitive - Atoms</h3><p>Atoms are useful when reading / writing a single piece of data (potentially across multiple threads). This is the common case for shared resources and atoms are what I've used in most of the concurrency code I've written.</p><pre><code class="lang-clojure">&#40;def token-generator
+  &quot;Give the next token number to the applicant.&quot;
+  &#40;atom {:normal 0
+         :senior 0
+         :tatkal 0
+         :police-clearance 0}&#41;&#41;
+
+;; Use the token generator to get the next token as follows:
+&#40;comment
+  &#40;get &#40;swap! token-generator
+              update
+              person-type
+              inc&#41;
+       person-type&#41;&#41;
+;; swap! is a way to atomically change the value held by the atom.
+;; This does an internal compare and set operation, and thus the function
+;; passed in to manipulate the value - in this case update - may be
+;; called multiple times. This function should be free of side effects.
+</code></pre><p>Clojure provides something more powerful - the <code>ref</code> - when you want to deal with multiple pieces of data that change together. We'll see it in action in the following sections.</p><p>If we choose some weights to represent the probability of an applicant belonging to a certain category, we can write some code to randomly generate applicants. The relevant code is <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d#file-psk-clj-L87-L131'>here</a>. We now have a way to assign increasing token numbers to each new person entering the PSK.</p><h3 id="clojure-concurrency-primitive-futures">Clojure Concurrency Primitive - Futures</h3><p>We'll use another Clojure concurrency primitive - a <code>future</code> - to continuously move people into the PSK. A future object invokes the body provided to it in a different thread.</p><p>In this case, we are starting an endless loop in a new thread. This code creates some people (representing people entering the PSK), sleeps for a bit, then repeats. We'll use our handy tool - an atom - to control when to stop the loop:</p><pre><code class="lang-clojure">&#40;def working-hours?
+  &quot;Am I working right now?&quot;
+  &#40;atom false&#41;&#41;
+
+&#40;defn let-people-through
+  &quot;Send people into the PSK in batches as defined by
+  `processing-batch-size` and `new-batch-in-mins`. Note that in our
+  code we use seconds to represent minutes.&quot;
+  &#91;active-applicants done-applicants&#93;
+  &#40;future
+    &#40;loop &#91;&#93;
+      &#40;if @working-hours?
+       &#40;do
+         ;; let new people through
+         ;; &lt;logic goes here&gt; ...
+         ;; then sleep for a while
+         &#40;Thread/sleep &#40;&#42; 1000 new-batch-in-mins&#41;&#41;
+         ;; repeat
+         &#40;recur&#41;&#41;
+
+       &#40;ctl/info &quot;&#91;Entry&#93; Working hours are over! Closing Shop! Come back later!&quot;&#41;&#41;&#41;&#41;&#41;
+</code></pre><h2 id="queuing-up-people-and-simulating-the-work-done-at-every-stage">Queuing up people and simulating the work done at every stage</h2><p>Now that people are coming into the PSK, we need a way to queue them up between stages. We also want to write a simulation for the work done at every counter. As described in the problem statement, the PSK is using simple FIFO queues between each stage. We will use the <code>LinkedBlockingQueue</code> data structure to represent these. This data structure is provided by the battle-tested <code>java.util.concurrent</code> package. Dropping down to Java when needed is a bonus Clojure superpower!</p><pre><code class="lang-clojure">&#40;defn create-kendra-queues
+  &quot;Given the counter-types / `stages` in the kendra, create the
+  appropriate queues.&quot;
+  &#91;kendra-stages q-capacity&#93;
+  &#40;let &#91;queues-we-need &#40;-&gt; kendra-stages
+                           keys
+                           set
+                           ;; Remove the stages where no queue of
+                           ;; people is needed.
+                           &#40;disj ::enter ::exit&#41;&#41;&#93;
+    &#40;reduce &#40;fn &#91;m s&#93;
+              &#40;assoc m
+                     s &#40;LinkedBlockingQueue. q-capacity&#41;&#41;&#41;
+            {}
+            queues-we-need&#41;&#41;&#41;
+</code></pre><p>Work at the counter involves the following:</p><ol><li>Pick the next person in the queue.</li><li>Call him to the counter by displaying his token number on the display.</li><li>Process the person, do the work.</li><li>Mark this stage as done. This will move him into the next queue.</li></ol><p>We can represent this in code as follows:</p><pre><code class="lang-clojure { hl_lines=["7-13"] }">&#40;defn process-applicant
+  &quot;Get a person from the queue. Process this person as per the rules
+  of the counter.&quot;
+  &#91;psk-agent my-queue notice-board&#93;
+  &#40;if @working-hours?
+
+    &#40;if-let &#91;person &#40;.poll my-queue 1 java.util.concurrent.TimeUnit/SECONDS&#41;&#93;
+      &#40;let &#91;stage &#40;:type psk-agent&#41;
+            stage-config &#40;:config psk-agent&#41;&#93;
+
+        &#40;call-person-to-counter stage notice-board psk-agent person&#41;
+        &#40;process-person stage stage-config psk-agent @person&#41;
+        &#40;mark-processing-as-complete stage notice-board psk-agent person&#41;
+
+        &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+        &#40;assoc psk-agent :last-processed &#40;person-representation @person&#41;&#41;&#41;
+
+      &#40;do &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+          psk-agent&#41;&#41;
+
+    &#40;ctl/info &#40;format &quot;&#91;Agent: %s&#93; Working hours are over! Closing Shop! Come back later!&quot;
+                      &#40;agent-representation psk-agent&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>As we saw previously, we control the running of the code using the <code>working-hours?</code> atom. We're seeing something new here - the <code>send-off</code> function used with Clojure Agents. Ignore this for the time being, we'll come to an explanation of this after seeing refs and transactions.</p><h2 id="keeping-track-of-people-and-the-display-board">Keeping track of people and the display board</h2><p>The tough part of this project is to keep track of the changes to each person's current state and the display board at every instant. These two views should always be consistent as multiple people are concurrently processed at different stages. Clojure makes this delightfully easy with refs and transactions.</p><h3 id="clojure-concurrency-primitive-refs&ndash;and-transactions">Clojure Concurrency Primitive - Refs (and transactions)</h3><p>Refs can be thought of as permanent pointers to mutable storage locations. The stored values can be safely changed - all together or none at all - using the functions <code>alter</code>, <code>ref-set</code> and <code>commute</code> within transactions. Clojure implements a Software Transactional Memory system<a href='#fn-1' id='fnref1'><sup>1</sup></a> and gives us A,C, and I of the famous ACID properties<a href='#fn-2' id='fnref2'><sup>2</sup></a>. (Since it's in-mem there is no Durability). Using these transactions in code will be familiar to anyone with experience of using DB transactions.</p><p>In practice, updating values looks like this:</p><pre><code class="lang-clojure">&#40;defn- call-person-to-counter
+  &quot;Announce that person should come to the processing counter. Takes
+  `person` and `notice-board` refs, performs a transactional update.&quot;
+  &#91;stage notice-board psk-agent person&#93;
+  &#40;dosync
+   &#40;alter person
+          assoc
+          :stage stage
+          :stage-status ::in-process
+          :psk-agent &#40;agent-representation psk-agent&#41;&#41;
+   &#40;store-stage-change person stage ::in-process&#41;
+   &#40;alter notice-board
+          assoc
+          &#40;person-representation @person&#41;
+          &#40;agent-representation psk-agent&#41;&#41;&#41;&#41;
+</code></pre><p>Look Ma, no locks! This is much simpler, in my opinion, than thinking about which lock to take around which piece of data. Let's also check out the <code>store-state-change</code> function in the code above. This is a small data-collection function I wrote to calculate statistics about how much time each person takes in each stage.</p><pre><code class="lang-clojure">&#40;defn- store-stage-change
+  &quot;For the given `Person` ref, store the change to their stage for later analysis.&quot;
+  &#40;&#91;person new-stage new-status&#93;
+   &#40;store-stage-change person new-stage new-status &#40;ct/now&#41;&#41;&#41;
+  &#40;&#91;person new-stage new-status time-instant&#93;
+   &#40;let &#91;stage-log &#40;-&gt;StageHistory new-stage new-status time-instant&#41;&#93;
+     &#40;dosync
+      &#40;alter person
+             update
+             :stage-history
+             conj
+             stage-log&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>Writing this function is simple: we know we want to modify an existing person, so we wrap it in a transaction. The calling code happens to already be in a transaction, but Clojure will deal with this correctly and collapse all the work into a single transaction. From our point of view, we know that anytime this function is called, it is going to safely and permanently modify the person and store the stage-change in it.</p><h2 id="processing-people-concurrently-across-all-open-counters">Processing people concurrently across all open counters</h2><p>The final piece of the puzzle is concurrently processing people on all the available counters. This is straightforward to do against a thread-pool, but Clojure provides another tool we can use: the <code>agent</code> .</p><h3 id="clojure-concurrency-primitive-agents">Clojure Concurrency Primitive - Agents</h3><p>Agents are another way to access/change mutable state, but they do this in an asynchronous manner. The functions <code>send</code> and <code>send-off</code> apply actions (functions) to the value held by the agent. The return value of the action becomes the new value of the agent. However, these actions execute in a different thread asynchronously. Clojure also guarantees execution in the order of submission. The value of the agent is inspectable at all times.</p><p>In our case, this allows us to represent processing counters as agents. The state of the agent is simply an identifier for it. Under the hood, each agent is spawning a thread from a thread-pool and executing a function. This function pulls the next person from the queue supplied to it, processes him, and sends another action to the current agent. We saw this function already, but let me post it again for clarity:</p><pre><code class="lang-clojure { hl_lines=["15-16","18-19"] }">&#40;defn process-applicant
+  &quot;Get a person from the queue. Process this person as per the rules
+  of the counter.&quot;
+  &#91;psk-agent my-queue notice-board&#93;
+  &#40;if @working-hours?
+
+    &#40;if-let &#91;person &#40;.poll my-queue 1 java.util.concurrent.TimeUnit/SECONDS&#41;&#93;
+      &#40;let &#91;stage &#40;:type psk-agent&#41;
+            stage-config &#40;:config psk-agent&#41;&#93;
+
+        &#40;call-person-to-counter stage notice-board psk-agent person&#41;
+        &#40;process-person stage stage-config psk-agent @person&#41;
+        &#40;mark-processing-as-complete stage notice-board psk-agent person&#41;
+
+        &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+        &#40;assoc psk-agent :last-processed &#40;person-representation @person&#41;&#41;&#41;
+
+      &#40;do &#40;send-off &#42;agent&#42; process-applicant my-queue notice-board&#41;
+          psk-agent&#41;&#41;
+
+    &#40;ctl/info &#40;format &quot;&#91;Agent: %s&#93; Working hours are over! Closing Shop! Come back later!&quot;
+                      &#40;agent-representation psk-agent&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>We create Agents as follows:</p><pre><code class="lang-clojure { hl_lines=["7-8"] }">&#40;defrecord PSKAgent
+    &#91;id type config&#93;&#41;
+
+&#40;defn- create-agents
+  &quot;For the given `agent-type`, create the given `num` of agents.&quot;
+  &#91;agent-type stage-config num&#93;
+  &#40;map &#40;comp agent &#40;fn &#91;i&#93; &#40;PSKAgent. &#40;inc i&#41; agent-type stage-config&#41;&#41;&#41;
+       &#40;range num&#41;&#41;&#41;
+
+&#40;defn create-kendra-agents
+  &quot;Given the `stages` and their config for the kendra, create the
+  appropriate agents to work these counters.&quot;
+  &#91;kendra-stages&#93;
+  &#40;let &#91;stages-with-counters &#40;-&gt; kendra-stages
+                                 keys
+                                 set
+                                 ;; Remove the stages where no counter
+                                 ;; of agents is needed.
+                                 &#40;disj ::enter ::exit&#41;&#41;&#93;
+    &#40;mapcat &#40;fn &#91;s&#93;
+              &#40;let &#91;config &#40;get kendra-stages s&#41;&#93;
+                &#40;create-agents s config &#40;:counters config&#41;&#41;&#41;&#41;
+            stages-with-counters&#41;&#41;&#41;
+</code></pre><h2 id="tying-everything-together-the-main-function">Tying everything together - the main function</h2><p>We tie all the pieces of the code together in our main function <code>start-the-kendra!</code>. The comments explain what each step is doing, for those of you unfamiliar with Clojure syntax.</p><pre><code class="lang-clojure">&#40;defn start-the-kendra!
+  &quot;Setup our Passport Seva Kendra.&quot;
+  &#91;&#93;
+  &#40;let &#91;;; Create queues for the various stages, returns a map of
+        ;; stage-name -&gt; queue
+        stage-&gt;queue &#40;create-kendra-queues stages total-capacity&#41;
+        ;; Create all the agents
+        list-of-agents &#40;create-kendra-agents stages&#41;
+        ;; Create a display board for waiting members
+        notice-board &#40;ref &#40;sorted-map&#41;&#41;
+        ;; Track all the active applicants
+        active-applicants &#40;ref &#91;&#93;&#41;
+        ;; Track all the completed applicants &#40;for debugging /
+        ;; historical data purpose&#41;
+        done-applicants &#40;ref &#91;&#93;&#41;&#93;
+    &#40;ctl/info &quot;&#91;PSK&#93; Welcome, today is a good day.&quot;&#41;
+    ;; For each agent at each counter, start processing!
+    &#40;doseq &#91;a list-of-agents&#93;
+      ;; Get the stage this agent is working at, and the queue of
+      ;; people for that stage.
+      &#40;let &#91;s &#40;:type @a&#41;
+            q &#40;stage-&gt;queue s&#41;&#93;
+        ;; Start processing people from the queue concurrently in
+        ;; independent threads.
+        &#40;send-off a process-applicant q notice-board&#41;&#41;&#41;
+    ;; Start a continuous future for applicants to periodically enter
+    ;; the PSK.
+    &#40;let-people-through active-applicants done-applicants&#41;
+    ;; Start a helper process to move people from one stage to the
+    ;; other.
+    &#40;move-people-through stages stage-&gt;queue active-applicants&#41;
+    ;; Return the data. We'll use this to monitor our system.
+    &#91;notice-board active-applicants done-applicants&#93;&#41;&#41;
+</code></pre><p>We haven't seen the <code>move-people-through</code> helper function used above yet. This is a simple <code>future</code> which regularly sweeps through all the people and moves a person done with one stage to the other.</p><p>Originally, I wrote the code such that each agent was aware of an input queue as well as an output queue. The agent understood that he had to pick the next person from the input queue and move that person to the output queue on completion. I refactored that out to show that it is simple to add functions around existing concurrent code which modify existing shared resources. The code for <code>move-people-through</code> looks like this:</p><pre><code class="lang-clojure">&#40;defn move-people-through
+  &quot;Review all the active applicants and move them into appropriate stages.&quot;
+  &#91;kendra-stages stage-&gt;queue active-applicants&#93;
+  &#40;future
+    &#40;loop &#91;&#93;
+      &#40;if @working-hours?
+
+        &#40;let &#91;people @active-applicants&#93;
+          &#40;doseq &#91;person &#40;-&gt;&gt; people
+                              &#40;group-by &#40;comp :stage-status deref&#41;&#41;
+                              ::done&#41;&#93;
+            &#40;if &#40;= ::exit &#40;get-in kendra-stages &#91;&#40;:stage @person&#41; :next&#93;&#41;&#41;
+              &#40;mark-applicant-process-as-complete person&#41;
+              &#40;when-let &#91;next-stage &#40;get-in kendra-stages
+                                            &#91;&#40;:stage @person&#41; :next&#93;&#41;&#93;
+                &#40;move-applicant-to-next-stage stage-&gt;queue next-stage person&#41;&#41;&#41;&#41;
+
+          &#40;Thread/sleep guide-people-to-next-stage-ms&#41;
+          &#40;recur&#41;&#41;
+
+        &#40;ctl/info &quot;&#91;Guide&#93; Working hours are over! Closing Shop! Come back later!&quot;&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>Both <code>mark-applicant-process-as-complete</code> and <code>move-applicant-to-next-stage</code> are tiny transactional updates to the person:</p><pre><code class="lang-clojure">&#40;defn- mark-applicant-process-as-complete
+  &quot;Takes a `person` ref object and marks its processing as complete.&quot;
+  &#91;person&#93;
+  &#40;let &#91;time-instant &#40;ct/now&#41;&#93;
+    &#40;dosync
+     &#40;alter person
+            assoc
+            :stage ::exit
+            :exit-time time-instant
+            :total-time &#40;-&gt; @person
+                            :enter-time
+                            &#40;ct/interval time-instant&#41;
+                            ct/in-seconds&#41;&#41;
+     &#40;store-stage-change person ::exit ::done time-instant&#41;&#41;&#41;&#41;
+
+&#40;defn- move-applicant-to-next-stage
+  &quot;Given a `person` ref and the next stage they should go to, move
+  them to the stage. Does a transactional update.&quot;
+  &#91;stage-&gt;queue next-stage person&#93;
+  &#40;dosync
+   &#40;alter person
+          assoc
+          :stage next-stage
+          :stage-status ::waiting&#41;
+   &#40;store-stage-change person next-stage ::waiting&#41;&#41;
+  &#40;.put &#40;stage-&gt;queue next-stage&#41; person&#41;&#41;
+</code></pre><p>I also added a book-keeping function when letting people into the PSK. This function removes completed applicants from the list of active applicants. This frees up PSK capacity. I also move this data to a different list, because it's fun to go through it and look for interesting insights.</p><pre><code class="lang-clojure { hl_lines=["17-18"] }">&#40;defn- book-keeping-for-applicants
+  &quot;Remove all applicants who are completely done from
+  `active-applicants`. Store them in `done-applicants` for
+  book-keeping.
+
+  &#42;NOTE&#42; : Since this goes through the entire collection, it is slow.
+  Hence we run it when sending in new batches of people.&quot;
+  &#91;active-applicants done-applicants&#93;
+  &#40;dosync
+   &#40;let &#91;&#91;active-people done-people&#93; &#40;reduce &#40;fn &#91;&#91;aa da&#93; p&#93;
+                                               &#40;if &#40;and &#40;= &#40;:stage @p&#41; ::exit&#41;
+                                                        &#40;= &#40;:stage-status @p&#41; ::done&#41;&#41;
+                                                 &#91;aa &#40;conj da p&#41;&#93;
+                                                 &#91;&#40;conj aa p&#41; da&#93;&#41;&#41;
+                                             &#91;&#91;&#93; &#91;&#93;&#93;
+                                             @active-applicants&#41;&#93;
+     &#40;ref-set active-applicants active-people&#41;
+     &#40;alter done-applicants into done-people&#41;&#41;&#41;&#41;
+</code></pre><p>Here we use the <code>ref-set</code> and <code>alter</code> functions to reset the value of active-applicants and modify the value of the done-applicants.</p><h2 id="with-me-so-far-some-thoughts">With me so far? Some thoughts</h2><ul><li>Clojure's concurrency primitives make it simple for me to <strong>think</strong> about this problem. I wrote the code like I would write a high-level pseudo description of the problem, and it worked just fine. I think this simplification is a huge benefit when dealing with concurrent code.</li><li>The ability to write and test small bits of concurrent code is a big win. It was simple for me to modify the original code and devise experiments around it.</li><li>We haven't really looked at what this looks like when it's running! Let's do that now!</li></ul><h2 id="can-we-see-the-problem">Can we see the problem?</h2><p>Let's run this system! We're setting up a small loop to display the board. We're running much fewer counters than the actual PSK. This is in order to make the display board consumable.</p><p><img src="./static/images/psk-run-1.gif" alt="" /></p><p>Things look good in this loop, the board looks predictable. The problem occurs when someone gets unlucky at one stage, and spends much more time there than the average person. Let's repeat the run by marking someone as unlucky, and by increasing the number of counters processing earlier stages (which matches with reality)</p><pre><code class="lang-clojure { hl_lines=["1-3","10-14"] }">&#40;def unlucky-applicant?
+  &quot;Introduce a little anarchy!&quot;
+  &#40;atom #{&quot;N-3&quot; &quot;S-2&quot;}&#41;&#41;
+
+&#40;defn- process-person
+  &quot;Do the work for processing the given person. Takes a `person`
+  object and not a ref.&quot;
+  &#91;stage stage-config psk-agent person&#93;
+  &#40;let &#91;processing-time&#42; &#40;get-processing-time-for-stage stage-config&#41;
+        processing-time &#40;if &#40;@unlucky-applicant? &#40;person-representation person&#41;&#41;
+                          ;; You will need more time because the gods
+                          ;; are against you.
+                          &#40;&#42; 10 processing-time&#42;&#41;
+                          processing-time&#42;&#41;&#93;
+    &#40;Thread/sleep processing-time&#41;&#41;&#41;
+</code></pre><p>Here is what this looks like:</p><p><img src="./static/images/psk-run-2.gif" alt="" /></p><p>As you can see, there are a number of people ahead of N-3 by the time he's done with stage 0. N-40s are being processed in stage 0 at this point in time. He has no idea where he is in the queue of people, and must keep staring at the display board at all times.</p><p>I will speak briefly about the three solutions that we initially proposed.</p><h3 id="solution-1-use-priority-queues">Solution 1: Use priority queues</h3><p>Using priority queues between each stage solves the problem of the applicant not knowing when he is next. However, there are two points to think about:</p><ol><li>The priority queue solves the problem within a given category, but not across categories. You know that you are the next N- category person at counter B, but you don't know when that will be because of all the S/T/P category people that will be served first.</li><li>A potential drawback of this may be: if a certain set of applicants are always slow at each stage, then in this model they will bring down the average number of people who will be served by the PSK (since we will prioritize serving them over people who have moved ahead of them).</li></ol><p>Making the change to use priority queues in our code is trivial. We go back to <code>java.util.concurrent</code> and swap out our <code>LinkedBlockingQueue</code> in favor of a <code>PriorityBlockingQueue</code>. Now all we have to do is provide a comparator function. The code for this is <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d#file-psk-clj-L393-L420'>here</a> We can also generate timing samples across people through repeated runs of the program. This will give us an idea of whether the average processing time is affected by using a Priority Queue or not.</p><h3 id="solution-2-new-token-numbers-per-stage">Solution 2: New token numbers per stage</h3><p>Using new token numbers solves the problem elegantly. This is probably not used because of the logistical difficulty of handing out new tokens to applicants again and again. In the real world, I'm sure that this process may cause confusion if not carefully designed. In our system, we already have a perfectly good way of getting the next token number - our atomic token generator. Implementing this solution is straight-forward and left as an exercise for the reader! (This blog post is already quite lengthy!)</p><h3 id="solution-3-where-am-i-estimated-wait-time">Solution 3: "Where am I?" Estimated Wait Time</h3><p>Another way the PSK can help the applicants is by providing a separate self-serve display. The applicant enters his token number and gets to see how many people are ahead of him for the given stage. Both <code>LinkedBlockingQueue</code> as well as <code>PriorityBlockingQueue</code> provide a <code>toArray</code> function which returns all the elements of the queue in order.</p><p>As we are tracking the time each person takes at each stage, we can also predict the estimated amount of time this person would have to wait. This could be an entire blog-post in itself<a href='#fn-3' id='fnref3'><sup>3</sup></a>.</p><p>I leave this as an exercise for the reader :)</p><h2 id="final-thoughts">Final Thoughts</h2><p>The complete code for this exercise can be found <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d'>here</a>. The <a href='https://gist.github.com/vedang/969a726e1f49f5fc550268a22c4e4b0d#file-psk-clj-L530-L545'>comment block</a> at the end of the gist explains how to run the program against a Clojure REPL. Note that this is not a trivial simulation of the PSK, I believe that the entire code can be actually used by them with a small set of changes. A list of things that we have not implemented:</p><ol><li>In the real world, we'd need to store each person's information in a DB along the way. Since the in-mem structures are guaranteed to be consistent, this is something we can achieve by periodically reading information about all applicants and committing it to the DB (similar to how <code>book-keeping-for-applicants</code> works).</li><li>We haven't implemented the error and corrections flow. Failure to pass a stage can be represented as another state (say <code>::error</code>). The <code>process-applicant</code> code will identify success/failure of the stage and set the appropriate state. <code>move-people-through</code> would need minor changes to deal with this. I leave this as an exercise for the reader.</li><li>In the real world, we'd need to build inputs for a real PSK employee to inform us that processing is done. This is nothing but a loop inside <code>process-applicant</code> which checks the DB to see if the work is done.</li></ol><p>I'd love to hear feedback about this post. Is there a better way to implement this? Tell me. Am I missing use-cases of the PSK and implementing a solution to a much simpler problem? Do tell! There may be drawbacks to solutions I've proposed that I cannot see, and there may be valid reasons the system is built the way it is. I'd love to understand the real-world problems that I've missed.</p><p>If you're interested in working with Clojure, on problems like Estimated Wait Time, <a href='https://jobs.lever.co/helpshift/'>we're hiring</a>! Send us an email at <a href='mailto:jobs@helpshift.com'>jobs@helpshift.com</a>.</p><p><i>A big thank you to the following people for reviewing initial drafts of this post: Kapil Reddy, Kiran Kulkarni, Mourjo Sen, Suvrat Apte, Dinesh Chhatani.</i></p><p><i>A big thank you to <a href='https://twitter.com/renderkid'>Bhargava Chowdary</a> for creating the illustration of the PSK.</i></p><h2 id="references">References</h2><ul><li>Eric Normand's post explaining all Clojure Concurrency primitives: <a href="https://purelyfunctional.tv/guide/clojure-concurrency/">https://purelyfunctional.tv/guide/clojure-concurrency/</a></li><li>Rich Hickey's talk on Clojure Concurrency: <a href="https://www.youtube.com/watch?v=nDAfZK8m5_8">https://www.youtube.com/watch?v=nDAfZK8m5_8</a></li><li>Atoms: <a href="https://clojure.org/reference/atoms">https://clojure.org/reference/atoms</a></li><li>Refs: <a href="https://clojure.org/reference/refs">https://clojure.org/reference/refs</a></li><li>Futures: <a href="https://clojuredocs.org/clojure.core/future">https://clojuredocs.org/clojure.core/future</a></li><li>Agents: <a href="https://clojure.org/reference/agents">https://clojure.org/reference/agents</a></li></ul><ol class='footnotes'><li id='fn-1'>STM: <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">http://en.wikipedia.org/wiki/Software_transactional_memory</a><a href='#fnref1'>&#8617;</a></li><li id='fn-2'>ACID: <a href="https://en.wikipedia.org/wiki/ACID_(computer_science)">https://en.wikipedia.org/wiki/ACID_(computer_science)</a><a href='#fnref2'>&#8617;</a></li><li id='fn-3'>Estimating wait-times: <a href="https://en.wikipedia.org/wiki/Queueing_theory">https://en.wikipedia.org/wiki/Queueing_theory</a><a href='#fnref3'>&#8617;</a></li></ol>]]></content>
+  </entry>
+  <entry>
+    <id>mbsync-channel-is-locked.html</id>
+    <link href="mbsync-channel-is-locked.html"/>
+    <title>Tinylog: Mbsync: Error: Channel &lt;x&gt; Is Locked</title>
+    <updated>2017-10-11T19:22:00+00:00</updated>
+    <content type="html"><![CDATA[<p>You may come across the following error when running <code>mbsync</code> :</p><pre><code class="lang-text">Error: channel :&lt;channel-name&gt;-remote:&lt;folder&gt;-:&lt;channel-name&gt;-local:&lt;folder&gt; is locked
+</code></pre><p>This happens when there is another <code>mbsync</code> instance running in parallel and it has taken a lock on the particular folder. In my case, I am running <code>mbsync</code> via a cron-job, and it tends to leave dead instances around if the laptop sleeps during a run. Kill all instances of <code>mbsync</code> and restart the process and you should be fine!</p>]]></content>
+  </entry>
+  <entry>
+    <id>imagine-working-in-engineering-at-helpshift.html</id>
+    <link href="imagine-working-in-engineering-at-helpshift.html"/>
+    <title>Imagine Working in Engineering at Helpshift</title>
+    <updated>2017-09-07T07:27:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#what-does-your-day-to-day-at-helpshift-look-like'>What does your day-to-day at Helpshift look like?</a></li><li><a href='#what-has-been-your-favorite-off-site-team-oriented-event-and-why'>What has been your favorite off-site team oriented event, and why?</a></li><li><a href='#what-role&ndash;s&ndash;did-you-start-in-at-helpshift-and-how-have-you-graduated-migrated-into-different-roles'>What role(s) did you start in at Helpshift and how have you graduated/migrated into different roles?</a></li><li><a href='#favorite-thing-about-working-for-an-sf-tech-startup'>Favorite thing about working for an SF tech startup:</a></li><li><a href='#what-advice-would-you-have-for-prospective-helpshift-candidates'>What advice would you have for prospective Helpshift candidates?</a></li><li><a href='#what-is-your-proudest-moment-at-helpshift'>What is your proudest moment at Helpshift?</a></li><li><a href='#how-would-you-describe-the-company-culture-and-what-do-you-like-most-about-it'>How would you describe the company culture and what do you like most about it?</a></li><li><a href='#superpower&ndash;real-or-fake&ndash;obscure-emacs-shortcuts-dot'>Superpower (real or fake): Obscure Emacs shortcuts.</a></li><li><a href='#slightly-addicted-to-tea-dot'>Slightly addicted to: Tea.</a></li><li><a href='#always-on-the-search-for-the-perfect-new-book-to-read-dot'>Always on the search for the perfect: new book to read.</a></li><li><a href='#if-you-could-interview-one-person-dead-or-alive-who-would-it-be-and-why'>If you could interview one person, dead or alive, who would it be and why?</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p><i>Cross-posted from my interview published on <a href='https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188'>Helpshift's Medium blog</a></i></p><ul><li>Name: Vedang Manerikar</li><li>Current Role: Principal Engineering Manager, Backend</li><li>How long you have been with Helpshift?: 7 years</li></ul><p><!&ndash;more&ndash;></p><h2 id="what-does-your-day-to-day-at-helpshift-look-like">What does your day-to-day at Helpshift look like?</h2><p>My day-to-day is unblocking people and getting things done!</p><p>I review architecture, read code, enable customer service, help product guys understand the engineering pros and cons of their product decisions and prioritize work for maximum productivity. I work with an amazing team. They make all of this possible and achievable.</p><p>That means I also get to hang out with my best friends, catch up on their day-to-day, laugh at inside jokes that have been running for years and overall have a blast. Seven years at a place lets you build deep relationships and puts a smile on your face when you think about work!</p><h2 id="what-has-been-your-favorite-off-site-team-oriented-event-and-why">What has been your favorite off-site team oriented event, and why?</h2><p>When we were cash-strapped and raising funds, a team off-site was the running joke of the company. "After Series A!", we would raise our glasses and say. As time went on without funding in sight, every request turned into "After Series A!".</p><p>So when we did raise our first round, we treated ourselves to a long weekend at a spectacular villa in Goa. It was a heady celebration and the world was our oyster. It remains my favorite off-site because the funding felt like validation.</p><h2 id="what-role&ndash;s&ndash;did-you-start-in-at-helpshift-and-how-have-you-graduated-migrated-into-different-roles">What role(s) did you start in at Helpshift and how have you graduated/migrated into different roles?</h2><p>I came to Helpshift with a strong systems background: writing kernel modules and working on storage replication. I started writing Python at Helpshift and then graduated to Clojure (in 2011, when almost no one else was writing Clojure). I've since written and helped design large chunks of the Helpshift architecture, and have learnt interesting things about distributed systems through trial-by-fire. Today, I make an impact by making sure my team has clear, unambiguous goals and all the resources to achieve these goals.</p><h2 id="favorite-thing-about-working-for-an-sf-tech-startup">Favorite thing about working for an SF tech startup:</h2><p>I have a lot of "favorite things" about working at Helpshift (We keep our workplace fun!). A small example of this is that on any given day someone or the other will bring home-made snacks and goodies for the others to enjoy.</p><h2 id="what-advice-would-you-have-for-prospective-helpshift-candidates">What advice would you have for prospective Helpshift candidates?</h2><p>We're still a small enough company that everyone knows everyone else by name. If you're the kind of person who wants to get in on the ground floor and grow with a company, we're perfect for you. Come with a no-nonsense, no-bullshit attitude. Be a kind person.</p><h2 id="what-is-your-proudest-moment-at-helpshift">What is your proudest moment at Helpshift?</h2><p>My colleagues and I have taken this company from serving 0 requests per second to serving 50,000 requests per second. We're installed in over 2 Billion devices in the world. That means that there's a 50% chance that you (reader) have us installed in one of the apps on your phone. That sentence is a source of great pride for me.</p><h2 id="how-would-you-describe-the-company-culture-and-what-do-you-like-most-about-it">How would you describe the company culture and what do you like most about it?</h2><p>As a company, we've always looked for attitude over smarts. We want people who are good listeners and good communicators. We want people who are passionate and hold strong opinions. We want people who care about quality. This is the culture that we've always striven to maintain at Helpshift.</p><h2 id="superpower&ndash;real-or-fake&ndash;obscure-emacs-shortcuts-dot">Superpower (real or fake): Obscure Emacs shortcuts.</h2><p>Give a man Emacs and he'll get some programming done. Teach a man how to tweak it and play with it and he'll happily shave yaks for the rest of his life.</p><h2 id="slightly-addicted-to-tea-dot">Slightly addicted to: Tea.</h2><p>Walking out of the office to have road-side tea in the evening is an old Helpshift tradition. I'm always on the lookout for great Masala Chai, and if you come to my home I'll whip up a fantastic cup of tea for us to chat over!</p><h2 id="always-on-the-search-for-the-perfect-new-book-to-read-dot">Always on the search for the perfect: new book to read.</h2><p>Reading is one of my favorite ways to unwind. I read anything that I can get my hands on: fantasies, travelogues, thrillers, pop psychology, autobiographies, technical books, comics, you name it!</p><h2 id="if-you-could-interview-one-person-dead-or-alive-who-would-it-be-and-why">If you could interview one person, dead or alive, who would it be and why?</h2><p>Isaac Newton or Albert Einstein or Alan Turing! (Sorry I cheated.) These were phenomenal people with world-changing ideas. How did they get them? How did they remain productive all their life? What did "work" mean for them? What was their work day like? What did they do to unwind? What did they do for leisure? Who did <span class="underline">they</span> look up to? I'd love to know these answers!</p>]]></content>
+  </entry>
+  <entry>
+    <id>notes-and-reading-material-on-the-mahabharata.html</id>
+    <link href="notes-and-reading-material-on-the-mahabharata.html"/>
+    <title>Notes and Reading Material on the Mahabharata</title>
+    <updated>2012-09-21T20:55:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#introductory-books'>Introductory books</a></li><li><a href='#point-of-view&ndash;pov&ndash;narrations'>Point of View (POV) Narrations</a></li><li><a href='#short-stories-and-analyses-dot&ndash;intermediate-level'>Short stories and analyses. (Intermediate level)</a></li><li><a href='#short-stories-and-analyses-dot&ndash;expert-level'>Short stories and analyses. (Expert Level)</a></li><li><a href='#don-t-touch-these-books-with-a-10-foot-pole&ndash;personal-opinion'>Don't touch these books with a 10-foot pole (Personal Opinion)</a></li><li><a href='#the-reference-book'>The Reference Book</a></li><li><a href='#books-i-want-to-read'>Books I want to read</a></li><li><a href='#crowd-sourced-books'>Crowd-sourced Books</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p><i>Cross-posted from my note: <a href='http://www.quora.com/Vedang-Manerikar/The-Mahabharata/Notes-and-Reading-material-on-the-Mahabharata'>Notes and Reading Material on the Mahabharata</a> on <a href='http://quora.com'>Quora</a></i></p><p>People have shown some interest in reading material for the Mahabharata, this post should save me from repeatedly typing the same things.</p><p><!&ndash;more&ndash;></p><h2 id="introductory-books">Introductory books</h2><p>These books are straight-forward narrations of the Mahabharata. They introduce the reader to all the major characters and plot turns. In my experience, people are not even aware of the major players in the Mahabharata. To them, it's simply the story of 5 good Pandavas vs 100 evil Kauravas. If you have never read the Mahabharata, or are unsure about what you have read, one of these books is a good place to start.</p><ul><li><strong>The Mahabharata - Amar Chitra Katha. [English, Comic]</strong>: This book, accompanied by my grandfather's stories, is my introduction to the Mahabharata. If you read this book, be sure to also read one of the two other books listed here. This book is a bit too simplistic, it's here because of nostalgic value.</li><li><strong>The Mahabharata - Ramesh Menon [English]</strong></li><li><strong>The Mahabharata - Kamala Subramaniam [English]</strong>: I recommend reading this book.</li></ul><h2 id="point-of-view&ndash;pov&ndash;narrations">Point of View (POV) Narrations</h2><p>Now we come to the interesting part of the Mahabharata. If you choose to abandon a Sanjaya-esque all-knowing view of the Mahabharata, and read it from the point of view of a single character as it interacts with the Mahabharata world, you will discover that every character was right in every action they took. This is the real beauty of the Mahabharata. The whole is greater than the sum of it's parts. The characters behave as human beings would behave. They make decisions based on incomplete/incorrect knowledge. They are driven by lust, ambition, revenge and other human emotions. Unfortunately, I've come across precious few English books that take this approach. The bulk of the great writing related to the Mahabharata is in regional languages. (In my case, Marathi, my mother-tongue)</p><ul><li><strong>Bhimsen - Prem Panicker [English]</strong>: (from the POV of Bhima) This book is a loose English translation of M. T. Vasudevan Nair's Malayalam master-piece Randaamoozham (meaning 'Second Turn'). It is freely available on the Internet. (I recommend reading this book)</li><li><strong>Mrityunjaya - Shivaji Sawant [Marathi]</strong> 'Conqueror of Death' (from the POV of Karna)</li><li><strong>Dhananjaya - Rajendra Kher [Marathi]</strong> 'Conqueror of wealth', one of Arjuna's names. (from the POV of Arjuna)</li><li><strong>Duryodhana - Kaka Vidhate [Marathi]</strong> (from the POV of Duryodhana) (I recommend reading this book)</li><li><strong>Yugandhar - Shivaji Sawant [Marathi]</strong> 'Leader of an Era' (from the POV of Krishna) (I recommend reading this book)</li><li><strong>Radheya - Ranjit Desai [Marathi]</strong> 'Son of Radha' (from the POV of Karna)</li><li><strong>Parva - S L Bhyrappa [Kannada]</strong> A masterful retelling of the Mahabharata that eliminates all divine elements. I read the Marathi translation, which was brilliant. I assume the original work is even better.</li></ul><h2 id="short-stories-and-analyses-dot&ndash;intermediate-level">Short stories and analyses. (Intermediate level)</h2><p>We should now turn to books that explain the Mahabharata (or parts of it) in detail.</p><ul><li><strong>Yugant - Irawati Karve [Marathi]</strong> 'The End of an Era' (I recommend reading this book). The English translation of this book is also written by Prof. Karve herself and is very good.</li><li><strong>Jaya - Devadutt Pattanaik [English]</strong> 'Victory'</li><li><strong>Karna khara kon hota? - Daji Panashikar [Marathi]</strong> 'Who was Karna?'</li><li><strong>Kapatneeti - Daji Panashikar [Marathi]</strong> 'Politics of treachery'</li></ul><h2 id="short-stories-and-analyses-dot&ndash;expert-level">Short stories and analyses. (Expert Level)</h2><p>I've separated these books from those in the previous section because I think they are better books. This is my personal opinion.</p><ul><li><strong>Mahabharat: Ek Sudacha Pravas - Daji Panashikar [Marathi]</strong> 'A Journey of Revenge' (I recommend reading this book)</li><li><strong>The Lore of Mahabharata - Amaleśa Bhaṭṭācārya [English]</strong> (Translated from the original in Bengali) (I recommend reading this book)</li></ul><h2 id="don-t-touch-these-books-with-a-10-foot-pole&ndash;personal-opinion">Don't touch these books with a 10-foot pole (Personal Opinion)</h2><p>These books are utter bunkum. Do yourself a favor and don't read them.</p><ul><li><strong>The Mahabharat - C Rajgopalachari [English]</strong> This book is the number one reason why people think of the Mahabharat as 5 good Pandavas vs 100 evil Kauravas. Throw it away if you have a copy.</li><li><strong>Palace of Illusions - Chitra Banerjee Divakaruni [English]</strong> I hate this book. Here is a balanced review of this book, one which I agree with: <a href='http://jaiarjun.blogspot.in/2008/04/palace-of-illusions-good-bad-and.html'>Palace of Illusions: The Good, Bad and Ugly</a> Jai Arjun Singh has been kind to it. We consider books sacred in my house, so I didn't burn it, but I gave it away as fast as I could when I finished reading it.</li></ul><h2 id="the-reference-book">The Reference Book</h2><p><strong>Kisari Mohan Ganguly</strong> [1883-1896] translated the Sanskrit texts into English word-for-word. He has done a great service to idiots like me, providing a ready reference that I can look up anytime I want. You can find the translated text here: <a href='http://www.sacred-texts.com/hin/maha/mahatxt.zip'>The Mahabharata</a></p><p>You can also find the entire text of the Mahabharata in Sanskrit here (Note: this is not the <strong>critical edition</strong> printed by BORI, which is considered the authoritative version): <a href='http://www.sacred-texts.com/hin/mbs/index.htm'>The Mahabharata - Sanskrit</a></p><h2 id="books-i-want-to-read">Books I want to read</h2><p>These books are gems in Mahabharata literature (from what I've heard), and they are all inaccessible to me either because they are out of print or because they are in an unknown language. If someone has read one of these books and is willing to explain the salient points to me, I will pay for dinner and drinks.</p><ul><li><strong>Yajnaseni - Pratibha Ray [Oriya]</strong> 'Daughter of Fire' (from the POV of Draupadi)</li><li><strong>Ini ñān ur̲aṅṅaṭṭe - P Kesavan Balakrishnan [Malayalam]</strong> 'And now let me sleep' (from the POV of Draupadi AND Karna - interleaving sections)</li><li><strong>Randaamoozham - M.T. Vasudevan Nair [Malayalam]</strong> 'The Second Turn' (from the POV of Bhima)</li><li><strong>The Stone Women and other stories - Shashi Deshpande [English]</strong></li><li><strong>Krishnavatara - Dr K M Munshi [Hindi]</strong> (on the life of Krishna)</li></ul><h2 id="crowd-sourced-books">Crowd-sourced Books</h2><ul><li><strong>Jyeshtha - Anant Manohar [Marathi]</strong> 'Eldest' From the POV of Yudhishthira (Suggested by Sushrut Bidwai)</li><li><strong>The Mahabharata - Bibek Debroy [English]</strong> (Suggested by Makarand Sahasrabuddhe)</li><li><strong>Vyasaparva - Durgabai Bhagwat [Marathi]</strong> (Suggested by Aditya Kulkarni)</li><li><strong>Mahabharata na Patro - Moolshanker Bhatt [Gujrathi]</strong> (Suggested by Rachana Sudharshan) A series of stories from the POV of various characters</li></ul>]]></content>
+  </entry>
+  <entry>
+    <id>draupadi-and-the-pandavas.html</id>
+    <link href="draupadi-and-the-pandavas.html"/>
+    <title>Draupadi and the Pandavas</title>
+    <updated>2012-09-21T19:17:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#draupadi-and-arjuna'>Draupadi and Arjuna</a></li><li><a href='#draupadi-and-yudhisthir'>Draupadi and Yudhisthir</a></li><li><a href='#draupadi-and-bhima'>Draupadi and Bhima</a></li><li><a href='#draupadi-with-nakul-and-sahadev'>Draupadi with Nakul and Sahadev</a></li><li><a href='#some-references-for-further-reading-clarification'>Some references for further reading, clarification:</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p><i>Cross-posted from my answer to the question: <a href='http://www.quora.com/Mythology/What-was-the-relationship-between-Draupadi-and-the-Pandavas-like/answer/Vedang-Manerikar'>What was the relationship between Draupadi and the Pandavas like?</a> on <a href='http://quora.com'>Quora</a></i></p><p>Draupadi's relationship with the Pandavas is complex and at the heart of the Mahabharat.</p><p><!&ndash;more&ndash;></p><h2 id="draupadi-and-arjuna">Draupadi and Arjuna</h2><p>Let's jump right in with the most important relationship: Draupadi and Arjuna.</p><p>Of the five Pandavas, Draupadi favors Arjuna the most. She is in love with him, whereas the others are in love with her. Arjuna has won her in the Swayamvar, Arjuna is her Lord, and she is devoted to him.&nbsp;<a href='#fn-1' id='fnref1'><sup>1</sup></a></p><p>On the other hand, she is not Arjuna's favorite wife. Arjuna does not like sharing her with 4 other men (conjecture on my part). Arjuna's favorite wife is Subadhra, Krishna's half-sister. He also dotes on Abhimanyu (his son with Subadhra) over and above his sons from Draupadi and Chitrangada (Here is a quick question: Can you name his sons from Draupadi and Chitrangada? Off the top of your head? Exactly). All of Draupadi's husbands married other women, but the only time Draupadi gets upset and distraught is when she learns of Arjuna's marriage to Subadhra. Subadhra has to go to Draupadi dressed as a maid, just to assure her that she (Subadhra) will always be beneath Draupadi in status.&nbsp;<a href='#fn-2' id='fnref2'><sup>2</sup></a></p><h2 id="draupadi-and-yudhisthir">Draupadi and Yudhisthir</h2><p>Now let's see the reason why Draupadi's life is a shambles, why she is the most cursed woman of her time, and one of the most important reasons behind the Mahabharat war: Draupadi's marriage to Yudhisthir.</p><p>Here is something we need to understand first: Yudhisthir is a bastard. This is not to be held against him - all Mahabharat characters are gray - but people tend to forget this bit. Yudhisthir <span class="underline">does not</span> win Draupadi in the Swayamvar, he has no right to her. He lusts for her, he cannot bear seeing her everyday and not be able to have her. So he takes a small chance that fate throws his way, when Kunti says, "Share whatever you have between yourselves", and bullies Draupadi and his brothers into the weird "Lets all marry her" situation. Bhima does not like this, he claims that it is not right and that people will laugh at them. Yudhisthir tells him of Rishis who have done this before, and that it is accepted in Dharma.<a href='#fn-3' id='fnref3'><sup>3</sup></a> He then rushes forward and says that since he is the eldest, he must get "first dibs" with Draupadi. (Sorry to be crude here, but I tell it like I read it.) The brothers marry her according to age, eldest to youngest.</p><p>Then, Yudhisthir calls an assembly with his brothers and tells them the story of 2 powerful rakshasas, Sunda and Upasunda&nbsp;<a href='#fn-4' id='fnref4'><sup>4</sup></a>, whose love for the same woman led them to destroy each other. He says that the lesson to learn here is that the brothers must be careful when sharing Draupadi. She must be with one brother for a set period of time, and during this period the other brothers cannot touch her (carnally, that is). Yudhisthir decides that Draupadi will live for 1 year with each brother and that since he is the eldest, she will start the cycle with him.</p><p>Yudhisthir doesn't stop with this. He knows that Draupadi loves Arjuna. He does not want her to tempt him into breaking the rules. Hence he says that the brother who breaks this rule will have to go into exile for 12 years (seriously?). Further, the same punishment will apply if any brother happens to disturb another when he is carnally engaged with Draupadi. Ouch. This punishment actually comes into play when Arjuna disturbs Yudhisthir and Draupadi. Arjuna has to retrieve his weapons from the armory, in order to help a poor Brahmin whose cows have been stolen by thieves. Guess where Yudhisthir and Draupadi are doing it? That's right. The Armory.<a href='#fn-5' id='fnref5'><sup>5</sup></a></p><p>Arjuna departs on his 12 year tour of India, where he visits his father Indra, gets cursed by Urvashi, learns a lot of new skills from multiple teachers (Shiva, Indra etc), meets and marries Subadhra, followed by Chitrangada, etc. However, what happens to the year that he is to spend with Draupadi? It reverts back to Yudhisthir, who promises to care for Draupadi on Arjuna's behalf. Naturally.</p><h2 id="draupadi-and-bhima">Draupadi and Bhima</h2><p>After that morose tale of manipulation, let's visit to a slightly more cheerful tale of manipulation: Draupadi and Bhima</p><p>Bhima is silly putty in Draupadi's hands. Of all her husbands, he is the one who loves her the most. He fulfills her every request, he cannot bear to see her hurt.</p><p>Who brings her flowers from Kuber's garden? Bhima. Who cries because his beautiful wife will have to serve as a Sairandhri (maid) to Queen Sudeshna of Matsya? Bhima. Who kills a 100 Kauravas to avenge the insult to Draupadi? Bhima. Who does Draupadi run to when she is molested by Keechak in Matsya kingdom? Bhima.</p><p>The other Pandavas are not under Draupadi's thumb. She is prone to outbursts of rage, she makes unreasonable, unwise demands. When she wants Keechak killed for molesting her, Yudhisthir tells her that it would expose their presence in Matsya kingdom, and advises her to "live with it". (Model husband that). Bhima simply walks up to Keechak in the middle of the night and tears him limb from limb. No questions asked.<a href='#fn-6' id='fnref6'><sup>6</sup></a></p><p>Draupadi shows us Bhima's human side. He is a savage monster with others, but he is always and only tender when it comes to Draupadi.</p><h2 id="draupadi-with-nakul-and-sahadev">Draupadi with Nakul and Sahadev</h2><p>As with most of the Mahabharat, Nakul and Sahadev don't really matter here. I haven't read any version of the Mahabharat where Nakul and Sahadev have any role of substance. In reality, Nakul and Sahadev are more loyal to Yudhisthir than anyone else. They don't share father or mother with Yudhisthir, yet they follow him everywhere and do exactly as he asks. They could have gone and ruled over Madradesh (their birthright through Madri), and lived a life of luxury and ease, but they stuck with their brother through thick and thin. Makes one appreciate them a little bit more.</p><p>In summary, Draupadi's curse is the curse of beauty. She is the object of every man's lust, but no one cares much for what she desires or feels. Her husbands gamble her away as if she were property. When Dusshasana strips her in view of a full court, she has to beg Krishna to save her. Her husbands don't lift a finger. Even at the end of their 13 year exile, the Pandavas are not intent on war. They worry that the losses in the Kurukshetra war will be too big to warrant it. Draupadi has to turn to her friend, Krishna, to heal her soul. Krishna promises her:<a href='#fn-7' id='fnref7'><sup>7</sup></a></p><blockquote><p> "Soon wilt thou, O Draupadi, behold the ladies of Bharata's race weep as thou dost. Even they, O timid one, will weep like thee, their kinsmen and friends being slain. They with whom, O lady, thou art angry, have their kinsmen and warriors already slain.... I will accomplish all this." </p></blockquote><p>And thus comes about the Mahabharat war.</p><h2 id="some-references-for-further-reading-clarification">Some references for further reading, clarification:</h2><ol class='footnotes'><li id='fn-1'>: <a href='http://pastebin.com/bgbrjnne'>Draupadi favors Arjuna</a>. Note that it is Bhima who questions why Draupadi fell, not Arjuna.<a href='#fnref1'>&#8617;</a></li><li id='fn-2'>: <a href='http://pastebin.com/ngMNJiFP'>Subadhra pacifies Draupadi</a><a href='#fnref2'>&#8617;</a></li><li id='fn-3'>: <a href='http://pastebin.com/TiW5w3zi'>Conformable to virtue</a>. Note his sentence construction: "My mother commands it, and my heart approves"<a href='#fnref3'>&#8617;</a></li><li id='fn-4'>: <a href='http://pastebin.com/WbMLtEmM'>The Story of Sunda and Upasunda</a>.<a href='#fnref4'>&#8617;</a></li><li id='fn-5'>: <a href='http://pastebin.com/qvBBEB52'>Arjun Vanavasa</a>.<a href='#fnref5'>&#8617;</a></li><li id='fn-6'>: <a href='http://pastebin.com/REfrvaWy'>Keechak Vadha</a>. If you don't read any of the other footnotes, read this one. It throws light on the true nature of Yudhisthir and Bhima.<a href='#fnref6'>&#8617;</a></li><li id='fn-7'>: <a href='http://pastebin.com/fxTzA7Dc'>Krishna promises revenge</a>. Read this too, because Krishna is awesome.<a href='#fnref7'>&#8617;</a></li></ol>]]></content>
+  </entry>
+  <entry>
+    <id>krishna-in-the-mahabharata.html</id>
+    <link href="krishna-in-the-mahabharata.html"/>
+    <title>Krishna in the Mahabharat</title>
+    <updated>2012-09-20T20:18:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#introduction-and-back-story'>Introduction and back-story</a></li><li><a href='#jarasandh-vadh-and-the-rajsuya-yagna'>Jarasandh vadh and the Rajsuya yagna</a></li><li><a href='#subhadhra-and-samba'>Subhadhra and Samba</a></li><li><a href='#preparations-for-the-kurukshetra-war'>Preparations for the Kurukshetra war</a></li><li><a href='#machinations-in-the-war'>Machinations in the War</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p><i>Cross-posted from my answer to the question: <a href='http://www.quora.com/Mahabharata/Why-is-Lord-Krishna-called-the-master-of-finesse-in-the-Mahabharat/answer/Vedang-Manerikar'>Why is Lord Krishna called the master of finesse in the Mahabharat?</a> on <a href='http://quora.com'>Quora</a></i></p><p>I will attempt to answer this, but my answer is going to be controversial. Please keep in mind that it is not my intention to offend anyone.</p><p><!&ndash;more&ndash;></p><p>Alright, let's start with some ground rules. For the length of this answer, consider that Krishna is not Lord Krishna, the god and that the Mahabharat is not a religious text revered by millions. Instead, let us analyze the Mahabharat as if it is a (ridiculously good) fantasy story, and Krishna is a central character in this story.</p><h2 id="introduction-and-back-story">Introduction and back-story</h2><p>Krishna is introduced to us early on, as a cousin of the Pandavas. He is accomplished, wise, and powerful in his own right (unlike Pandavas or Kauravas at this point, who are squabbling children). This is because he has overthrown Kamsa, the King of Surasena kingdom, native land of the Yadavas. However, he has multiple problems of his own. Firstly, he is a cowherd, not royalty. The Yadavas rule by council, not by king. Thus, even though Krishna is the leader of the Yadavas, he is not equal to royalty. Further, Kamsa was Jarasandh's Senapati. Jarasandh is the emperor of India. Every other dynasty, including the Kurus, pays obeisance to him. This doesn't leave Krishna with very many allies. That Krishna is capable and a political genius (at such a young age) is evident because Jarasandh has been unable to crush him outright. But Krishna has now fought 18 wars with Jarasandh, and has slowly lost territory to him. He has been forced to leave his land and move to the island of Dwarka. He needs help.</p><p>Guess who else need help? The Pandavas. They are staking a claim to the throne of Hastinapur on extremely untenable grounds: It is an open secret that Pandu was impotent. Who then, are these children, arrived from nowhere? Here is Krishna's opportunity. The Pandavas will oppose Duryodhana, who is Dhritarashtra's son. Dhritarashtra is politically aligned with Jarasandh. Thus, Pandavas are going against Jarasandh himself. Krishna aligns himself with the Pandavas.</p><h2 id="jarasandh-vadh-and-the-rajsuya-yagna">Jarasandh vadh and the Rajsuya yagna</h2><p>I'll skip some details here, because I don't intend to reproduce the Mahabharat entirely. Suffice to say that Krishna and Arjuna are the closest of friends now. Krishna has helped Arjuna earn multiple celestial weapons, he has convinced Drupad to let Draupadi marry the Pandavas, he has orchestrated the building of the Mayasabha in Indraprastha.</p><p>The Rajsuya yagna is his chance to strike against Jarasandh. He convinces Yudhisthir that he needs to perform the yagna to establish his supremacy over India. Who stands in Yudhishthir's way? The current emperor of India, Jarasandh. So do they declare war on Magadh? No. Krishna, Arjuna and Bhima sneak into Magadh, and challenge Jarasandh to single combat. Bhima kills Jarasandh, after which Krishna installs Jarasandh's son Sahadev onto the throne of Magadh. Thus, he eliminates his biggest enemy, gains access to a sizeable army, and makes multiple allies when he frees the political prisoners of Jarasandh. Who else stands in his way? Shishupal, king of Chedi, his lifelong enemy, and the Senapati of Jarasandh's army. Yudhishthir invites Shishupal to the Rajsuya yagna. Krishna is the guest of honor for this yagna, over and above celebrated people like Bhisma and Drona. Krishna lets Shishupal berate and belittle him for a long time&ndash;long enough to convince everyone that Shishupal is an asshole of the first degree. Then he calmly beheads him. No battle, no challenge to fight to the death, nothing. In a single stroke, in front of enough witnesses to assert that Shishupal truly deserved it, the Senapati of Jarasandh is gone.</p><p>Who else is Krishna's enemy? Duryodhan, friend of Jarasandh, and a political genius in his own right. Duryodhan has befriended Balaram, Krishna's elder brother and the most important person on the Yadava council after Krishna himself. Krishna did not foresee this, but Balaram teaches the mace to Bhima and Duryodhana, and he is impressed with Duryodhana. Duryodhan will not be so easy to eliminate. We will deal with him later.</p><h2 id="subhadhra-and-samba">Subhadhra and Samba</h2><p>Balaram promises Subhadhra to Duryodhana in marriage. If this comes to pass, the two families will be much too closely linked for Krishna's liking. Lucky then, that Arjuna is there to whisk her away.</p><p>However, this is one instance where Krishna's intentions do not come to pass. Krishna's own son, Samba, is fool enough to fall in love with Duryodhana's daughter Laxamani. He tries to whisk her away just like Arjuna did with Subhadhra. However, he is no Arjuna, and Duryodhana is no fool. He is caught and put behind bars. Duryodhana announces that Samba will be put to death. Even in this situation, Krishna cannot come to negotiate with Duryodhan. This is a political loss, he stands to lose face. Instead he pleads with Balaram to go on his behalf. Balaram successfully negotiates with Duryodhana, promising him support in battle, and brings Samba and Laxamani back to Dwarka. The families are intertwined. Krishna will face a much tougher task getting support from the Yadavas against Duryodhana now.</p><h2 id="preparations-for-the-kurukshetra-war">Preparations for the Kurukshetra war</h2><p>Krishna does not have an option. He is over-ruled by his council, and pledges his army to Duryodhana. However he says that he will fight on behalf of the Pandavas, because they have asked him for help too. He makes it sound as innocuous as possible: "I will only be a charioteer. I will not take up arms. I only wish to accompany my friend Arjuna. What can little old me do?" And now Duryodhana makes a fatal mistake. He underestimates Krishna. He agrees to Krishna's conditions.</p><p>Krishna plays his master-stroke early on. He is fully aware of the capabilities of his army. If Balaram enters the battlefield on Duryodhana's side, it is game over for the Pandavas. So Krishna convinces Balaram that this war will be full of adharma (he is not wrong on that count). A man of Balaram's accomplishments should not taint his soul by participating in such a war. He should instead go on a pilgrimage to the holy sites in India. <span class="underline">This</span> is Krishna's greatest political maneuver in the Mahabharat. With Balaram gone, Kritivarma becomes the Senapati of the Yadava army. It is a testament to the quality of Yadava soldiers that Kritivarma and Satyaki (who is the only Yadava to fight for the Pandavas) are two of the 10 people to survive the war.</p><p>When Krishna goes to Hastinapur to sue for peace, one last time, he plays another closely guarded card. He takes Karna aside and tells him of his parentage. He then tries to sway Karna by promises of power and rule. He even offers Draupadi as a final perquisite. Karna turns him down. Luckily for Krishna, Bhishma too has his own agenda. He knows the truth of Karna's birth, and does not wish for him to fight his brothers. So he insults Karna in the war council, and tells him he is only fit to fight ardha-rathis. Karna swears not to enter the battlefield until Bhishma falls. Thus the Pandavas are free of the terror of Karna for 10 days. When Karna will finally enter the battlefield on the 11th day, Krishna will try again. He will send Kunti to Karna, to convince Karna to switch, and when that fails, to beg for the lives of her sons. Thus, Krishna will ensure that 4 sons of Kunti are safe from the wrath of Karna.</p><h2 id="machinations-in-the-war">Machinations in the War</h2><p>There are many, many things that Krishna does on the battlefield, but most people are already aware of them. Quickly then, the highlights:</p><ul><li>Convince Arjuna to fight.</li><li>Convince the Pandavas that Bhishma is slaughtering their armies and needs to fall</li><li>Protect Arjuna from himself (the Abhimanyu/Jayadrath incident)</li><li>Formulate and execute the plan to slay Drona (<i>naro va kunjaro va</i>)</li><li>Tell the Pandavas how to counter Ashwatthama's multiple celestial weapons</li><li>Stop the Pandavas from infighting on multiple occasions<ul><li>When Dhrishtadyumna chops off Drona's head, Arjuna sees red.</li><li>When Karna defeats and humiliates Yudhisthir, Yudhisthir runs back to his tent. He blames Arjuna of incompetence in killing Karna with such vigor, that Arjuna pulls out Gandiva to kill Yudhishthir himself. Krishna cools things down.</li></ul></li><li>Use Ghatotkach as a pawn to rid Karna of his celestial Shakti.<ul><li>When Ghatotkach dies, the Pandava camp is in mourning. Not Krishna though. He dances in joy, claiming that "finally, Karna is surmountable"</li></ul></li><li>Convince Arjuna to kill Karna when he is unarmed and on foot</li><li>Gesture Bhima to hit Duryodhana in the thigh, blatantly against the rules of mace battle.</li><li>Stop Balaram from slaughtering Bhima on the spot for cheating.<ul><li>Balaram is back from his pilgrimage in time to watch the battle between Duryodhana and Bhima. Krishna has to hold him in a bear hug when Bhima breaks Duryodhana's thigh.</li></ul></li></ul><p>In summary, the Pandavas are bumbling fools who do not stand a snowball's chance in hell without Krishna to guide them on every step. In return, they revere Krishna, and proclaim that he is their god, their spiritual leader. Krishna enters the fray to be royalty, ends up becoming a God.</p>]]></content>
+  </entry>
+  <entry>
+    <id>composability-and-compojure.html</id>
+    <link href="composability-and-compojure.html"/>
+    <title>Composability and Compojure</title>
+    <updated>2012-02-23T23:58:00+00:00</updated>
+    <content type="html"><![CDATA[<p><i>Caveat</i>: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don't understand what that means, then you should probably head over to the <a href='https://github.com/weavejester/compojure/wiki'>Compojure docs</a>.</p><p>Compojure exposes us to a beautifully <span class="underline">composable</span> abstraction, and this post is an attempt to show why that is a great thing.</p><p><!&ndash;more&ndash;></p><p>In order to understand the Compojure framework, let us write a small <code>cello world</code> app. The code snippets in this post are a means to explain a concept, they may not work as-is. The full, working code is available at <a href='https://gist.github.com/1893532/'>this</a> gist. Okay then, let's get started.</p><p>Here is what the basic routes function would look like:</p><pre><code class="lang-clojure">&#40;cc/defroutes main-routes
+  &#40;cc/GET &quot;/&quot; &#91;&#93; &#40;fn &#91;req&#93;
+                   &#40;rur/response &quot;&lt;h1&gt;Cello World&lt;/h1&gt;&quot;&#41;&#41;&#41;
+  &#40;cc/GET &quot;/bye/&quot; &#91;&#93; &#40;fn &#91;req&#93;
+                       &#40;rur/response &quot;&lt;h1&gt;Goodbye World&lt;/h1&gt;&quot;&#41;&#41;&#41;
+  &#40;route/not-found &quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;&#41;&#41;
+</code></pre><p>Compojure uses Ring to handle requests and responses. These terms (request/response) don't mean 'objects' (to those of you from the OOP world) of any kind, they are just hash-maps used to <span class="underline">represent</span> the idea. They are data, and as such, can be manipulated in any way we want. Ring has a simple philosophy: write functions which accept a request and return a response. Such functions are called <span class="underline">handlers</span>.</p><p>The <code>cc/GET</code> helper macro - and it's ilk - asks the user for a request-method (specified by the GET in the name <code>cc/GET</code>), a route (string representing uri), and a handler(H1). The macro becomes a handler (H2) which returns the result of <code>&#40;H1 req&#41;</code> if the route and the method of the incoming request match the specified route and request-method, otherwise it returns nil. This is our first introduction to composability in Compojure. We have a macro that takes a handler and gives us another handler. As long as we are dealing in handlers, composability allows us to ignore any implementation complexity.</p><p>The <code>cc/defroutes</code> macro takes a name and a list of handlers and returns a handler (H3) which runs all the handlers in the list on the request until one of them returns a non-nil value, else it returns nil. Finally, it binds the name to the handler so that we can call it. Simple, isn't it?</p><p>So if you think you've understood it so far, tell me if adding this route to our main routes will work or not:</p><pre><code class="lang-clojure">&#40;cc/GET &quot;/hello&#42;&quot; &#91;&#93; &#40;cc/defroutes hello-routes
+                       &#40;cc/GET &quot;/hello/name/&quot; &#91;&#93;
+                               &#40;fn &#91;req&#93;
+                                 &#40;rur/response &quot;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&quot;&#41;&#41;&#41;
+                       &#40;cc/GET &quot;/hello/city/&quot; &#91;&#93;
+                               &#40;fn &#91;req&#93;
+                                 &#40;rur/response &quot;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&quot;&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>Well, yes! <code>cc/defroutes</code> gives us a handler<a href='#fn-1' id='fnref1'><sup>1</sup></a>, and that's really all <code>cc/GET</code> cares about!</p><p>Having an abstraction of this form allows us to do many things easily, knowing that stuff <span class="underline">just works</span>. For example, let us write some <span class="underline">middleware</span>. What is middleware? Middleware modifies the incoming request or outgoing response in some way that makes us happy. How does this fit into our abstraction? - As a function that takes a handler(H1) and, wait for it, returns another handler(H2). Boom! Confused? Here is what a middleware function looks like:</p><pre><code class="lang-clojure">&#40;defn verify-secret
+  &quot;Verify that secret-key has been sent as a parameter s in the request&quot;
+  &#91;handler&#93;
+  &#40;fn &#91;request&#93;
+    &#40;if &#40;= &quot;s=please&quot; &#40;:query-string request&#41;&#41;
+      &#40;handler request&#41;
+      {:status 403
+       :body &quot;You don't know the secret word&quot;}&#41;&#41;&#41;
+</code></pre><p>This function gets a handler(H1). It doesn't know or care what that handler is going to do to the request. It returns a new handler(H2) which does the following: it checks to see if the incoming request knows that the secret word s is "please". If it does, great. Execute H1 on the request and call it a day. Otherwise, return a nil - meaning the request in not valid. Now H2 could go through as many other middleware functions as we want, all of them agnostic of any other middleware functions. Each middleware will return a modified handler(H3, H4, ... Hn), and we will run the final handler on the request.</p><p>Here is what the final code would look like:</p><pre><code class="lang-clojure">;; Define some Hello routes
+&#40;cc/defroutes hello-routes
+  &#40;cc/GET &quot;/hello/name/&quot; &#91;&#93;
+          &#40;fn &#91;req&#93;
+            &#40;rur/response &quot;&lt;h1&gt;Cello Vedang&lt;/h1&gt;&quot;&#41;&#41;&#41;
+  &#40;cc/GET &quot;/hello/city/&quot; &#91;&#93;
+          &#40;fn &#91;req&#93;
+            &#40;rur/response &quot;&lt;h1&gt;Cello from Pune!&lt;/h1&gt;&quot;&#41;&#41;&#41;&#41;
+
+;; Our main routes function.
+&#40;cc/defroutes main-routes&#42;
+  &#40;cc/GET &quot;/&quot; &#91;&#93; &#40;fn &#91;req&#93;
+                   &#40;rur/response &quot;&lt;h1&gt;Cello World&lt;/h1&gt;&quot;&#41;&#41;&#41;
+  &#40;cc/GET &quot;/bye/&quot; &#91;&#93; &#40;fn &#91;req&#93;
+                       &#40;rur/response &quot;&lt;h1&gt;Goodbye World&lt;/h1&gt;&quot;&#41;&#41;&#41;
+  &#40;cc/GET &quot;/hello&#42;&quot; &#91;&#93; hello-routes&#41;
+  &#40;route/not-found &quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;&#41;&#41;
+
+;; A middleware function
+&#40;defn verify-secret
+  &quot;Verify that secret-key has been sent as a parameter s in the request&quot;
+  &#91;handler&#93;
+  &#40;fn &#91;request&#93;
+    &#40;if &#40;= &quot;s=please&quot; &#40;:query-string request&#41;&#41;
+      &#40;handler request&#41;
+      {:status 403
+       :body &quot;You don't know the secret word&quot;}&#41;&#41;&#41;
+
+;;; Wrap my main routes in middleware
+&#40;def main-routes &#40;-&gt; #'main-routes&#42;
+                     verify-secret&#41;&#41;
+
+;;; Start app with main routes
+&#40;run-jetty #'main-routes {:port port :join? false}&#41;
+</code></pre><p><code>main-routes&#42;</code> is a handler which matches the incoming uris to ones we support, <code>verify-secret</code> will make sure that the incoming requests know the secret word. We can go a really long way with functions that take a request and return a response. Compojure gives us a great DSL to deal with the web. It's composability facilitates building elegant systems and frameworks.</p><h2 id="footnotes">Footnotes:</h2><ol class='footnotes'><li id='fn-1'>: Actually, we got lucky in this case. <code>cc/defroutes</code> is a macro. When we say <code>&#40;cc/defroutes name &amp; handlers&#41;</code> the code is replaced to become <code>&#40;def name handlerfn&#41;</code>. Luckily for us though, def returns the variable which was just defined, and it works out okay in the end. The aim was to show composability in action, not to espouse a coding style. Never do this in actual code.<a href='#fnref1'>&#8617;</a></li></ol>]]></content>
+  </entry>
+  <entry>
+    <id>switch-statements-in-python.html</id>
+    <link href="switch-statements-in-python.html"/>
+    <title>Switch Statements in Python</title>
+    <updated>2011-08-07T13:21:00+00:00</updated>
+    <content type="html"><![CDATA[<p>Today I went through some old Python code and noticed this pattern through out:</p><pre><code class="lang-python">response, data = somefunc&#40;&#41;
+if response == &quot;this&quot;:
+    do&#95;this&#95;with&#40;data&#41;
+elif response == &quot;that&quot;:
+    do&#95;that&#95;with&#40;data&#41;
+elif response == &quot;huh&quot;:
+    duh&#40;data&#41;
+    ;; lots more elifs.
+else:
+    prevent&#95;horrible&#95;crash&#40;data&#41;
+</code></pre><p>This code should ideally have been a switch-case, but Python does not support a <code>switch</code> statement.</p><p><!&ndash;more&ndash;></p><p>Proponents of OOP believe that <code>switch</code> is <strong>bad</strong> - second only to <code>goto</code>. This is not strictly true - both goto and switch can be used elegantly and with great effect. Goto, for example, is great for undoing stacked changes and switch's fall-through behavior allows nicely for 'do things according to the stage I'm at'. However, if you're doing OOP, consider using polymorphism instead.</p><p>I'm not doing OOP, so polymorphism does not apply to me, but I was looking for a way to optimize this code. I was on a code-cleanup spree, in the "flow", and I thought, "Why don't I use maps to do this?". Brilliant! It was a really neat idea. Later I found out that this is the accepted way of doing switch-case in Python and I'd done nothing special. So anyway, the code now looked like this:</p><pre><code class="lang-python">response&#95;map = {&quot;this&quot;: do&#95;this&#95;with,
+                &quot;that&quot;: do&#95;that&#95;with,
+                &quot;huh&quot;: duh}
+response&#95;map.get&#40;response, prevent&#95;horrible&#95;crash&#41;&#40;data&#41;
+</code></pre><p>And that would have been that, had I not suddenly developed a conscience. I had replaced perfectly working, mostly readable code with some other code. What if my map solution was slower? What if it was <span class="underline">much slower</span>? I'd done a sizable amount of refactoring, and I did not relish throwing it away. I needed to test my solution, so I wrote some sample code:</p><pre><code class="lang-python">from timeit import Timer
+from random import randint
+
+
+def switch&#95;if&#40;&#41;:
+    value = randint&#40;1, 10&#41;
+    if value == 1:
+        return '1'
+    elif value == 2:
+        return '2'
+    elif value == 3:
+        return '3'
+    elif value == 4:
+        return '4'
+    elif value == 5:
+        return '5'
+    elif value == 6:
+        return '6'
+    elif value == 7:
+        return '7'
+    elif value == 8:
+        return '8'
+    elif value == 9:
+        return '9'
+    else:
+        return '10'
+
+
+def switch&#95;map&#40;&#41;:
+    value = randint&#40;1, 10&#41;
+    smap = {1: '1',
+            2: '2',
+            3: '3',
+            4: '4',
+            5: '5',
+            6: '6',
+            7: '7',
+            8: '8',
+            9: '9',
+            10: '10'}
+    return smap&#91;value&#93;
+
+
+t = Timer&#40;setup='from &#95;&#95;main&#95;&#95; import switch&#95;if', stmt='switch&#95;if&#40;&#41;'&#41;
+print &quot;if - &quot;, t.timeit&#40;&#41;
+
+t = Timer&#40;setup='from &#95;&#95;main&#95;&#95; import switch&#95;map', stmt='switch&#95;map&#40;&#41;'&#41;
+print &quot;map - &quot;, t.timeit&#40;&#41;
+</code></pre><p>The results were disheartening. My replacement code was slower - though only just.</p><pre><code class="lang-text">$ python switch-speed.py ;=&gt;
+;=&gt; if  - 2.08906793594
+;=&gt; map - 2.88215684891
+</code></pre><p>I tweaked the code a little and moved the creation of the map outside of the <code>switch&#95;map</code> function. Python can access local variables faster than it can access global variables, but I figured a global dict would still beat the cost of creating the dict every time.</p><pre><code class="lang-text">$ python switch-speed.py ;=&gt;
+;=&gt; if  -  2.08955693245
+;=&gt; map -  2.00381493568
+</code></pre><p>I breathed a sigh of relief. There was a lesson to be learnt here - test/profile <span class="underline">before</span> you optimize!</p>]]></content>
+  </entry>
+  <entry>
+    <id>why-i-quit-stumpwm.html</id>
+    <link href="why-i-quit-stumpwm.html"/>
+    <title>Why I Quit StumpWM</title>
+    <updated>2011-08-04T13:41:00+00:00</updated>
+    <content type="html"><![CDATA[<p><div class="ox-hugo-toc toc"></p><p><div class="heading">Table of Contents</div></p><ul><li><a href='#pinky-hell'>Pinky Hell</a></li><li><a href='#what-you-gain-in-functionality-you-lose-in-integration'>What you gain in Functionality, you lose in Integration</a></li><li><a href='#dead-processes-high-temperatures'>Dead processes, High temperatures</a></li><li><a href='#how-i-got-over-the-withdrawal-symptoms'>How I got over the Withdrawal Symptoms:</a></li><li><a href='#references'>References:</a></li></ul><p></div> <!&ndash;endtoc&ndash;></p><p>After using <a href='<a' title=href="http://www.nongnu.org/stumpwm/">http://www.nongnu.org/stumpwm/</a>>StumpWM</a> for nearly a year, I'm finally quitting and moving back to Gnome. I came to love StumpWM's minimalistic approach, and this isn't an easy decision. So why am I doing it?</p><p><!&ndash;more&ndash;></p><h2 id="pinky-hell">Pinky Hell</h2><p>I am (was) a heavy user of Emacs, Tmux and StumpWM. These programs rely heavily on the <code>Ctrl</code> key. This means that the <code>Ctrl</code> key and my left pinky finger are pretty much destroyed at this point. With the spectre of RSI looming over my head, StumpWM is the easiest tool to get rid off. I might have less screen-space now, but my fingers will thank me for it.</p><h2 id="what-you-gain-in-functionality-you-lose-in-integration">What you gain in Functionality, you lose in Integration</h2><p>StumpWM is infinitely configurable. If you have the patience, you can get it to do things that are simply impossible with other Windows Managers. For example, there is a <code>mpd.lisp</code> module inside the contrib directory which converts StumpWM into a MPD client. A <span class="underline">full-fledged client</span>. This means that all music operations are entirely unobtrusive and <span class="underline">always</span> at your beck and call. MPD with StumpWM has without a doubt been the best music setup I've ever used.</p><p>However, I missed Gnome's integration with Ubuntu - Ubuntu One, Gwibber, Pidgin, event notifications. Even if I <span class="underline">could</span> configure StumpWM for these things, there was too much effort involved.</p><h2 id="dead-processes-high-temperatures">Dead processes, High temperatures</h2><p><span class="underline">Disclaimer</span> : Everything I'm about to say now is conjecture. There is no proof that StumpWM is responsible for any of this.</p><p>At 5 days uptime, my system load was touching 2, and my system temperature was at 65 degrees C. <a href='http://about.me/kiran_kulkarni/'>KK</a> had a similar number of programs running on his system - this is a guy who uses full-blown <a href='http://www.compiz.org/'>compiz</a> effects - his system temperature was 36 degrees and load average was around 1.15. Furthermore, he had a 48 day uptime. KK gleefully told me that it had to be StumpWM that was the problem! He was kidding, but some inquiry around the office showed that my laptop was much worse than the other guys on Ubuntu.</p><p>I also found that Chrome was leaving behind loads of defunct processes on my machine. There were 41 defunct chromium-browser processes when I decided to reboot the laptop and do some monitoring. Within an hour of the reboot, I had 7 defunct processes, CPU temperature was at 45 degrees and the load average was hovering around 1.8. That was the proverbial straw that broke the camel's back. I switched back to Gnome. Later in the day, I thought about actually investigating the behavior of my laptop, but it's been behaving well on Gnome. As I write, I have a day's uptime, a load average of 1.03 and CPU temperature at 37.5 degrees C. Unscientific, but fine by me.</p><h2 id="how-i-got-over-the-withdrawal-symptoms">How I got over the Withdrawal Symptoms:</h2><p>Of all the StumpWM features, there was just one that I simply could not do without - 'run-or-raise'. On StumpWM, you can define hot-keys to behave as follows:</p><ol><li>Launch the program if it is not running</li><li>Move focus to the program if it is already running.</li></ol><p>I use one Emacs instance, one terminal instance (tmux'ed) and one Chrome instance. I <span class="underline">need</span> to be able to access them with minimal friction. Turns out, a little hackery on compiz is all we need - <code>compiz-send.py</code> is a nifty little script that sends messages to DBus and interacts with compiz. I can use it along with <code>xdtool</code> to implement my run-or-raise behavior. Here is a look at my <code>run-or-raise-emacs.sh</code> script:</p><p>{{&lt; gist vedang 1130303 &gt;}}</p><p>You can download <code>compiz-send</code> from <a href='http://wiki.compiz.org/Plugins/Dbus?action=AttachFile&do=get&target=compiz-send.py'>here</a></p><p>So there you have it. At the moment, life is back to Gnome+Compiz. If you know any nifty hacks for Gnome+Compiz, please let me know in the comments.</p><h2 id="references">References:</h2><p><a href='http://wiki.compiz.org/Plugins/Dbus'>wiki.compiz.org</a></p>]]></content>
+  </entry>
+  <entry>
+    <id>reboot.html</id>
+    <link href="reboot.html"/>
+    <title>Reboot</title>
+    <updated>2011-07-30T14:25:00+00:00</updated>
+    <content type="html"><![CDATA[<p>Once upon a time I had a blog. Then one day I ran out of motivation, inclination, desire, drive, whatnot to post to that blog. I never really ran out of content though. At least, I think not.</p><p><!&ndash;more&ndash;></p><p><img src="./static/images/garfield.gif" alt="" /></p><p>I worried that I'd drown this world in my drivel, but lately I've come to realise that no one gives a shit. So I'm going to write for the right reasons: Because it makes me happy. Stick around, and I'll try not to bore you. Or leave. I don't give a shit.</p>]]></content>
+  </entry>
+</feed>
