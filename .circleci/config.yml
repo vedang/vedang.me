@@ -1,0 +1,150 @@
+version: 2.0
+
+jobs:
+  test:
+    docker:
+      - image: cimg/clojure:1.11.1
+    working_directory: ~/website
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - website-{{ checksum "deps.edn" }}-{{ checksum "projects/weblog/deps.edn" }}
+            - website-
+      - run:
+          name: Create polylith config if it does not exist
+          command: mkdir -p ~/.polylith && echo "{}" > ~/.polylith/config.edn
+      - run:
+          name: Force clojure to resolve dependencies
+          command: clojure -A:dev:test -P
+      - run:
+          name: Check Polylith workspace
+          command: clojure -M:poly check
+      - run:
+          name: Run tests for Polylith workspace
+          command: clojure -M:poly test :project
+      - save_cache:
+          key: website-{{ checksum "deps.edn" }}-{{ checksum "projects/weblog/deps.edn" }}
+          paths:
+            - ~/.polylith
+            - ~/.m2
+            - ~/.gitlibs
+            - ~/.clojure
+            - ~/website/.cpcache
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  build-static:
+    docker:
+      - image: cimg/clojure:1.11.1
+    working_directory: ~/website
+    steps:
+      - attach_workspace:
+          at: ~/website
+      - restore_cache:
+          keys:
+            - website-{{ checksum "deps.edn" }}-{{ checksum "projects/weblog/deps.edn" }}
+      - run:
+          name: Build all the files of our static site
+          command: bb render
+      - run:
+          name: Copy artifact to artifacts folder
+          command: |
+            mkdir -p artifacts
+
+            cp -R projects/weblog/target/public artifacts/.
+      - store_artifacts:
+          path: ./artifacts
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  mark-as-stable:
+    docker:
+      - image: cimg/clojure:1.11.1
+    working_directory: ~/website
+    steps:
+      - attach_workspace:
+          at: ~/website
+      - add_ssh_keys:
+          fingerprints:
+            - "3d:7a:60:40:26:8e:a8:4e:9c:22:fe:77:3f:84:fb:ec"
+      - restore_cache:
+          keys:
+            - website-{{ checksum "deps.edn" }}-{{ checksum "projects/weblog/deps.edn" }}
+      - run:
+          name: Add github.com to known hosts
+          command: mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run:
+          name: Add global git user email
+          command: git config --global user.email "circleci@vedang.me"
+      - run:
+          name: Add global git user name
+          command: git config --global user.name "CircleCI"
+      - run:
+          name: Add git tag to mark this stable point
+          command: git tag -f -a "stable-$CIRCLE_BRANCH" -m "[skip ci] Added Stable Polylith tag"
+      - run:
+          name: Push the new tag
+          command: git push origin $CIRCLE_BRANCH --tags --force
+
+  deploy-to-gh-pages:
+    docker:
+      - image: cimg/clojure:1.11.1
+    working_directory: ~/website
+    steps:
+      - attach_workspace:
+          at: ~/website
+      - add_ssh_keys:
+          fingerprints:
+            - "3d:7a:60:40:26:8e:a8:4e:9c:22:fe:77:3f:84:fb:ec"
+      - restore_cache:
+          keys:
+            - website-{{ checksum "deps.edn" }}-{{ checksum "projects/weblog/deps.edn" }}
+      - run:
+          name: Add github.com to known hosts
+          command: mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run:
+          name: Add global git user email
+          command: git config --global user.email "circleci@vedang.me"
+      - run:
+          name: Add global git user name
+          command: git config --global user.name "CircleCI"
+      - run:
+          name: Checkout gh-pages branch
+          command: git clone --single-branch --branch gh-pages git@github.com:vedang/vedang.me pagespublic
+      - run:
+          name: Synchronize new public files
+          command: rsync -arv ./artifacts/public/ pagespublic --delete --exclude ".git"
+      - run:
+          name: Create a new commit with the new changes
+          command: git add -A && git commit -m "[skip ci] Pushing from CircleCI Build #${CIRCLE_BUILD_NUM} on ${CIRCLE_BRANCH}" --allow-empty
+      - run:
+          name: Push the new changes to gh-pages
+          command: git push origin gh-pages
+
+workflows:
+  version: 2
+  validate-test-build:
+    jobs:
+      - test
+      - build-static:
+          requires:
+            - test
+      - mark-as-stable:
+          requires:
+            - build-static
+          filters:
+            branches:
+              only:
+                - master
+      - deploy-to-gh-pages:
+          requires:
+            - build-static
+          filters:
+            branches:
+              only:
+                - master
