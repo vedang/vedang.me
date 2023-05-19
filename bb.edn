@@ -34,12 +34,12 @@
               :discuss-link "https://github.com/vedang/vedang.me/blob/master"}
              (cli/parse-opts *command-line-args*)))
 
-          (defn build-site [msg]
+          (defn build-site! [msg]
             (println (str "Rendering the site, executing "
                           msg
                           "! Here we go!"))
             (println "Cranking out crisp HTML for you!")
-            (weblog/build-site opts)
+            (weblog/build-site! opts)
             (println "Building the stylesheets using Tailwind Magic!")
             (bp/shell {:dir "projects/weblog"}
                       (str "npx tailwindcss -i "
@@ -71,10 +71,10 @@
   prep-content {:doc "Create the content and assets directories. (Necessary before export)."
                 :depends [clean-content]
                 :requires ([me.vedang.content.interface :as content])
-                :task (content/copy-assets opts)}
+                :task (content/copy-assets! opts)}
 
   render {:doc "Build the HTML and CSS files in the public directory."
-          :task (build-site "render command")}
+          :task (build-site! "render command")}
 
   serve {:requires ([babashka.http-server :as http])
          :doc "Start the http-server for local testing"
@@ -88,7 +88,7 @@
                    (fw/watch "components/render/src/me/vedang/render"
                              (fn [e]
                                (when (#{:write :write|chmod} (:type e))
-                                 (build-site e)
+                                 (build-site! e)
                                  (eta/refresh browser)))
                              {:delay-ms 500 :recursive true})
                    (deref (promise)))}}}

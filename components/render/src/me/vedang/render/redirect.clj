@@ -7,7 +7,7 @@
    [hiccup2.core :as hiccup]
    [me.vedang.logger.interface :as logger]))
 
-(defn render-file
+(defn render-file!
   "Given the `old-url` and the `new-url`, write out the redirect HTML page."
   [old-url new-url opts]
   ;; Assumptions:

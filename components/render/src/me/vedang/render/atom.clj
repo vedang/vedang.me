@@ -35,7 +35,7 @@
         xml/sexp-as-element
         xml/indent-str)))
 
-(defn feed
+(defn feed!
   "Build an atom feed of all the provided `html-maps`."
   [html-maps opts]
   (let [xml-str (atom-xml html-maps opts)

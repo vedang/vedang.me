@@ -153,7 +153,7 @@
        ", "
        [:a {:href "https://prismjs.com/"} "PrismJS"]]]]]])
 
-(defn render-file
+(defn render-file!
   [{:keys [metadata body] :as html-map} opts]
   (let [page-opts (cond-> opts
                     true (merge metadata)
