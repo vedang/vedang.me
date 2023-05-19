@@ -97,11 +97,15 @@ workflows:
     jobs:
       - test
       - mark-as-stable:
+          requires:
+            - test
           filters:
             branches:
               only:
                 - master
       - deploy-to-gh-pages:
+          requires:
+            - test
           filters:
             branches:
               only:
