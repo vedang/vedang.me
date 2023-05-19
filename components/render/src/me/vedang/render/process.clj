@@ -79,7 +79,7 @@ from it's slug."
   "Given an `html-map` object, return the relative path of the content."
   [html-map]
   (cstr/replace-first (:md-filename (:metadata html-map))
-                      (:content-dir (:metadata html-map))
+                      (:root-dir (:metadata html-map))
                       ""))
 
 (def local-parent-child-pairs-xform

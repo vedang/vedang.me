@@ -14,24 +14,42 @@
              [babashka.process :as bp]
              [etaoin.api :as eta]
              [me.vedang.weblog.core :as weblog])
-  :init (let [content-dir (-> "components/content/resources/content"
+  :init (let [root-dir (-> "." fs/create-dirs fs/real-path str)
+              content-dir (-> "components/content/resources/content"
                               fs/create-dirs fs/real-path str)
               render-dir (-> "components/render/resources"
                               fs/create-dirs fs/real-path str)
               public-dir (-> "projects/weblog/target/public"
-                             fs/create-dirs fs/real-path str)]
+                             fs/create-dirs fs/real-path str)
+              circle-branch (or (->> "bb -e '(System/getenv \"CIRCLE_BRANCH\")'"
+                                     (bp/shell {:out :string})
+                                     :out
+                                     seq)
+                                "master")
+              circle-build-num (or (->> "bb -e '(System/getenv \"CIRCLE_BUILD_NUM\")'"
+                                        (bp/shell {:out :string})
+                                        :out
+                                        seq)
+                                   (str "local-run-"
+                                        (->> "git rev-list HEAD --count"
+                                             (bp/shell {:out :string})
+                                             :out
+                                             seq)))]
           (def opts
             (merge
              {:blog-title "Vedang Manerikar"
               :blog-root "https://vedang.me/"
               :blog-author "Vedang Manerikar"
               :blog-description "My corner on the Internet."
+              :root-dir root-dir
               :content-dir content-dir
               :render-dir render-dir
               :public-dir public-dir
               :public-assets-dir-name "static"
               :local-assets-dir-name "static"
-              :discuss-link "https://github.com/vedang/vedang.me/blob/master"}
+              :discuss-link "https://github.com/vedang/vedang.me/blob/master"
+              :circle-branch circle-branch
+              :circle-build-num circle-build-num}
              (cli/parse-opts *command-line-args*)))
 
           (defn build-site! [msg]
@@ -91,4 +109,30 @@
                                  (build-site! e)
                                  (eta/refresh browser)))
                              {:delay-ms 500 :recursive true})
-                   (deref (promise)))}}}
+                   (deref (promise)))}
+
+  clone-gh-pages {:doc "Clone the gh-pages dir locally"
+                  :task (if (fs/exists? "projects/weblog/target/gh-pages-dir")
+                          (do (bp/shell {:dir "projects/weblog/target/gh-pages-dir"}
+                                        "git fetch origin")
+                              (bp/shell {:dir "projects/weblog/target/gh-pages-dir"}
+                                        "git merge origin/gh-pages"))
+                          (bp/shell {:dir "projects/weblog/target"}
+                                    "git clone --single-branch --branch gh-pages git@github.com:vedang/vedang.me gh-pages-dir"))}
+
+  deploy {:doc "Deploy the public dir to gh-pages"
+          :depends [render clone-gh-pages]
+          :task (let [commit-msg (str "[skip ci] Publish from Build #"
+                                      (:circle-build-num opts)
+                                      " on "
+                                      (:circle-branch opts))]
+                    (bp/shell {:dir "projects/weblog/target"}
+                              "rsync -arv ./public/ gh-pages-dir --delete --exclude '.git'")
+                    (spit (fs/file "projects/weblog/target/gh-pages-dir/CNAME")
+                          "vedang.me")
+                    (bp/shell {:dir "projects/weblog/target/gh-pages-dir"}
+                              "git add -A")
+                    (bp/shell {:dir "projects/weblog/target/gh-pages-dir"}
+                              (str "git commit -m '" commit-msg "'"))
+                    (bp/shell {:dir "projects/weblog/target/gh-pages-dir"}
+                              "git push origin gh-pages"))}}}

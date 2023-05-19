@@ -3,7 +3,7 @@ version: 2.0
 jobs:
   test:
     docker:
-      - image: cimg/clojure:1.11.1
+      - image: cimg/clojure:1.11.1-node
     working_directory: ~/website
     steps:
       - checkout
@@ -36,32 +36,6 @@ jobs:
           paths:
             - .
 
-  build-static:
-    docker:
-      - image: cimg/clojure:1.11.1
-    working_directory: ~/website
-    steps:
-      - attach_workspace:
-          at: ~/website
-      - restore_cache:
-          keys:
-            - website-{{ checksum "deps.edn" }}-{{ checksum "projects/weblog/deps.edn" }}
-      - run:
-          name: Build all the files of our static site
-          command: bb render
-      - run:
-          name: Copy artifact to artifacts folder
-          command: |
-            mkdir -p artifacts
-
-            cp -R projects/weblog/target/public artifacts/.
-      - store_artifacts:
-          path: ./artifacts
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-
   mark-as-stable:
     docker:
       - image: cimg/clojure:1.11.1
@@ -86,7 +60,7 @@ jobs:
           command: git config --global user.name "CircleCI"
       - run:
           name: Add git tag to mark this stable point
-          command: git tag -f -a "stable-$CIRCLE_BRANCH" -m "[skip ci] Added Stable Polylith tag"
+          command: git tag -f -a "stable-$CIRCLE_BRANCH" -m "[skip ci] Add Stable Polylith tag"
       - run:
           name: Push the new tag
           command: git push origin $CIRCLE_BRANCH --tags --force
@@ -114,39 +88,20 @@ jobs:
           name: Add global git user name
           command: git config --global user.name "CircleCI"
       - run:
-          name: Checkout gh-pages branch
-          command: git clone --single-branch --branch gh-pages git@github.com:vedang/vedang.me pagespublic
-      - run:
-          name: Synchronize new public files
-          command: rsync -arv ./artifacts/public/ pagespublic --delete --exclude ".git"
-      - run:
-          name: Create a CNAME file
-          command: touch pagespublic/CNAME && echo "vedang.me" > pagespublic/CNAME
-      - run:
-          name: Create a new commit with the new changes
-          command: cd pagespublic && git add -A && git commit -m "[skip ci] Pushing from CircleCI Build #${CIRCLE_BUILD_NUM} on ${CIRCLE_BRANCH}" --allow-empty
-      - run:
-          name: Push the new changes to gh-pages
-          command: cd pagespublic && git push origin gh-pages
+          name: Deploy to GH Pages
+          command: bb deploy
 
 workflows:
   version: 2
   validate-test-build:
     jobs:
       - test
-      - build-static:
-          requires:
-            - test
       - mark-as-stable:
-          requires:
-            - build-static
           filters:
             branches:
               only:
                 - master
       - deploy-to-gh-pages:
-          requires:
-            - build-static
           filters:
             branches:
               only:
