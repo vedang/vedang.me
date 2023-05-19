@@ -162,7 +162,7 @@
 
                     (seq (:md-filename metadata))
                     (assoc :discuss-link (str (:discuss-link opts)
-                                              (process/get-content-path html-map))))
+                                              (process/strip-root-dir html-map))))
         page-html (hiccup/html (base-html page-opts))
         html-file (fs/file (:public-dir page-opts) (:html-filename page-opts))]
     (logger/log (str "Writing HTML to public-dir: " html-file))

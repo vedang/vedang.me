@@ -26,17 +26,18 @@
 
 (defn post->html-map
   "Convert `post-file` from md format to HTML format"
-  [content-dir post-file]
+  [opts post-file]
   (logger/log (str "Converting from Markdown to HTML: " post-file))
   (-> post-file
       slurp
       (markdown/md-to-html post-file)
-      (update :metadata assoc :md-filename post-file)
-      (update :metadata assoc :content-dir content-dir)))
+      (assoc-in [:metadata :md-filename] post-file)
+      (assoc-in [:metadata :root-dir] (:root-dir opts))
+      (assoc-in [:metadata :content-dir] (:content-dir opts))))
 
 (defn build-posts!
   [opts]
-  (let [html-maps (mapv (comp (partial post->html-map (:content-dir opts)) str)
+  (let [html-maps (mapv (comp (partial post->html-map opts) str)
                         (fs/glob (:content-dir opts) "**.md"))
         id->html-map (process/id->html-map html-maps)]
     (when-not (:no-output opts)
