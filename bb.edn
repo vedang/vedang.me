@@ -1,5 +1,5 @@
 {:deps {weblog/site {:local/root "projects/weblog"}
-        babashka/fs {:mvn/version "0.3.17"}
+        babashka/fs {:mvn/version "0.4.18"}
         babashka/babashka.pods {:git/url "https://github.com/babashka/pods"
                                 :git/sha "64ecb94de888a34aeb023eb7f50bfa1a34943f24"}
         babashka/process {:mvn/version "0.5.18"}
