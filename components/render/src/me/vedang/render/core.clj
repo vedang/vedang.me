@@ -24,20 +24,9 @@
     (println (str "Copying assets from: " local " to: " public))
     (fs/copy-tree local public {:replace-existing true})))
 
-(defn post->html-map
-  "Convert `post-file` from md format to HTML format"
-  [opts post-file]
-  (logger/log (str "Converting from Markdown to HTML: " post-file))
-  (-> post-file
-      slurp
-      (markdown/md-to-html post-file)
-      (assoc-in [:metadata :md-filename] post-file)
-      (assoc-in [:metadata :root-dir] (:root-dir opts))
-      (assoc-in [:metadata :content-dir] (:content-dir opts))))
-
 (defn build-posts!
   [opts]
-  (let [html-maps (mapv (comp (partial post->html-map opts) str)
+  (let [html-maps (mapv (comp (partial post/->html-map opts) str)
                         (fs/glob (:content-dir opts) "**.md"))
         id->html-map (process/id->html-map html-maps)]
     (when-not (:no-output opts)

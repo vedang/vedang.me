@@ -2,8 +2,21 @@
   (:require
    [clojure.string :as cstr]
    [hiccup2.core :as hiccup]
+   [me.vedang.logger.interface :as logger]
+   [me.vedang.render.markdown :as markdown]
    [me.vedang.render.process :as process]
    [me.vedang.render.util :as util]))
+
+(defn ->html-map
+  "Convert `post-file` from md format to HTML format"
+  [opts post-file]
+  (logger/log (str "Converting from Markdown to HTML: " post-file))
+  (-> post-file
+      slurp
+      (markdown/md-to-html post-file)
+      (assoc-in [:metadata :md-filename] post-file)
+      (assoc-in [:metadata :root-dir] (:root-dir opts))
+      (assoc-in [:metadata :content-dir] (:content-dir opts))))
 
 (defn add-post-links
   [section-name section-data id->html-map opts]
@@ -39,10 +52,11 @@
   "Return the Hiccup for the main post"
   [id->html-map
    {:keys [title body date parents children tags backlinks] :as opts}]
-  (hiccup/html {:mode :xhtml}
-   [:h1 title]
-   (hiccup/raw body)
-   [:p [:i (str "Last Updated: " date)]]
+  (hiccup/html
+   [:div {:id "post-body"}
+    (hiccup/raw body)]
+   [:div {:id "post-last-updated"}
+    [:p [:i (str "Last Updated: " date)]]]
    (when (seq backlinks) [:hr])
    (add-post-links :backlinks backlinks id->html-map opts)
    (when (seq parents) [:hr])

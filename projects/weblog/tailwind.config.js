@@ -1,23 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
-
 module.exports = {
+  darkMode: "class",
   content: ["./target/public/*.{html,js}"],
+  safelist: ['dark'],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ["Fira Sans", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      serif: ["PT Serif", "serif"],
+      mono: ["Fira Mono", "monospace"]
+    }
   },
-  plugins: [
-    plugin(function ({ addComponents }) {
-      addComponents({
-        ".toc .heading": {
-          "font-weight": 1000,
-          "font-size": "1.25em",
-        },
-      });
-    }),
-    require("@tailwindcss/typography"),
-    // require('@tailwindcss/forms'),
-    // require('@tailwindcss/line-clamp'),
-    // require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

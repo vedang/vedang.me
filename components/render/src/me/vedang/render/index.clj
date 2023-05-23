@@ -18,7 +18,8 @@
                                                               :title (cstr/capitalize (or category "Archive"))))))
                          {}
                          groups)]
-    (hiccup/html [:div {:id "index-links"}
+    (hiccup/html [:div {:id "index-links"
+                        :class "xl:mx-32 xl:mt-8 xl:px-4 mx-16 mt-4"}
                   (get cat->post-links "programming")
                   (get cat->post-links "tools")
                   (get cat->post-links "tinylog")

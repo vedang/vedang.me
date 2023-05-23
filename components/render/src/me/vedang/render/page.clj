@@ -99,11 +99,11 @@
    [:body
     [:div {:id "site-header" :class "m-2 border-b-2 border-gray-300"}
      [:div {:id "site-title"
-            :class "prose prose-stone mx-auto grid grid-cols-2"}
+            :class "prose prose-stone dark:prose-inverted mx-auto grid grid-cols-2"}
       [:div
        [:h1 {:class "m-0 lg:text-2xl"}
         [:a {:href "/index.html"} blog-title]]
-       [:p {:class "font-semi-bold mt-1 text-xl text-gray-800"}
+       [:p {:class "font-semi-bold mt-1 text-lg text-gray-800"}
         blog-description]]
       [:div
        [:nav {:id "site-nav"}
@@ -125,8 +125,8 @@
          {:class "p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out",
           :href "/about.html"}
          "About"]]]]]
-    [:div {:id "post-body",
-           :class "prose prose-stone mx-auto px-2 prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl lg:px-0"}
+    [:div {:id "post-container",
+           :class "prose prose-stone dark:prose-invert xl:max-w-6xl mx-auto prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl"}
      body
      (when-not skip-archive
        [:nav
@@ -140,7 +140,7 @@
        [:a {:href "https://creativecommons.org/licenses/by/4.0/"}
         "Creative Commons Attribution 4.0 International license"]
        "."]
-      [:p "Built with love, using "
+      [:p "Built with ❤️, using "
        [:a {:href "https://www.gnu.org/software/emacs/"} "Emacs"]
        ", "
        [:a {:href "https://orgmode.org/"} "Org-mode"]
