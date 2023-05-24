@@ -7,6 +7,11 @@ tags: ["cicd"]
 draft: false
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Gitlab Private Pages + Running Docker containers in Gitlab CI/CD Pipelines</h1>
+<div class="ox-neuron-article-contents">
+
 ## Private pages on Gitlab {#private-pages-on-gitlab}
 
 Did you know that [Gitlab Pages](https://docs.gitlab.com/ee/user/project/pages/) supports private / auth-based static sites? Basically, you add people you want to share your site with as Project Members to the repository. Gitlab then enforces Gitlab Login on the website, so you can only see the content if you are logged into Gitlab (and have been given access to the repository).
@@ -55,3 +60,7 @@ pages:
 The `pages` job-name is special. Gitlab understands that it is meant for hosting, and expects HTML / assets in a top-level directory called `public`.
 
 I hope this helps someone else waste less time.
+
+</div>
+</div>
+</div>

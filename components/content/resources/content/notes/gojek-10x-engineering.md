@@ -9,10 +9,11 @@ draft: false
 featured_image: "blog/gojek-10x-engineering/gofigure6.jpg"
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [Summary](#summary)
 - [Introductions](#introductions)
 - [How do you get so much done with so few engineers](#how-do-you-get-so-much-done-with-so-few-engineers)
@@ -26,11 +27,13 @@ featured_image: "blog/gojek-10x-engineering/gofigure6.jpg"
 - [Differences between good engineers and 10x engineers](#differences-between-good-engineers-and-10x-engineers)
 - [How do you spot red flags in a new hire?](#how-do-you-spot-red-flags-in-a-new-hire)
 - [Onboarding / Engineering bootcamp](#onboarding-engineering-bootcamp)
-- [Gojek culture](#gojek-culture)
-
+- [Gojek culture](#gojek-culture)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Lazy Weekend Viewing: GOJEK's 10x Engineer - Truth or Myth?</h1>
+<div class="ox-neuron-article-contents">
 
 ## Summary {#summary}
 
@@ -211,3 +214,7 @@ featured_image: "blog/gojek-10x-engineering/gofigure6.jpg"
         -   If you are burned out, or your team mate is burned out then there is going to be a huge negative spiral.
     -   To harness creativity, you need balance and psychological safety. The hours that you put in, you need to be in a state of flow. This requires you to take short breaks after days of intense activity.
 -   You can have a 10x engineer amidst you, but you may never know it because you did not give them sufficient leeway to unleash their art.
+
+</div>
+</div>
+</div>

@@ -8,19 +8,22 @@ tags: ["window-managers", "stumpwm"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [Pinky Hell](#pinky-hell)
 - [What you gain in Functionality, you lose in Integration](#what-you-gain-in-functionality-you-lose-in-integration)
 - [Dead processes, High temperatures](#dead-processes-high-temperatures)
 - [How I got over the Withdrawal Symptoms:](#how-i-got-over-the-withdrawal-symptoms)
-- [References:](#references)
-
+- [References:](#references)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Why I Quit StumpWM</h1>
+<div class="ox-neuron-article-contents">
 After using [StumpWM](<http://www.nongnu.org/stumpwm/>) for nearly a year, I'm finally quitting and moving back to Gnome. I came to love StumpWM's minimalistic approach, and this isn't an easy decision. So why am I doing it?
 
 <!--more-->
@@ -66,3 +69,7 @@ So there you have it. At the moment, life is back to Gnome+Compiz. If you know a
 ## References: {#references}
 
 [wiki.compiz.org](http://wiki.compiz.org/Plugins/Dbus)
+
+</div>
+</div>
+</div>

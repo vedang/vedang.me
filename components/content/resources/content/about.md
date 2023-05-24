@@ -9,6 +9,10 @@ featured_image: "/images/clevinger.jpg"
 skip-archive: true
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">About Me</h1>
+<div class="ox-neuron-article-contents">
 Hi! I'm Vedang. I live in Pune, India and work at [Helpshift](https://helpshift.com). Now a days, I work in improving Developer Productivity inside Helpshift. Previously, I was an Engineering leader working on improving processes and workflows within the Helpshift backend team with the help of my team mates. I helped design and write some of the code that runs Helpshift.
 
 I'm passionate about programming, and some of my work can be found on [GitHub](https://github.com/vedang). I use Emacs as my editor-for-everything, and blog about it from time to time.
@@ -48,3 +52,7 @@ Some useful things on my Github account:
 -   [emacs-up](https://github.com/helpshift/emacs-up) : A bare-bones config for Clojure programming in Emacs.
 -   [cheatsheets](https://github.com/vedang/csaoid) : Some common commands / ways to do things. The Git one is especially useful.
 -   [nginx-nonewlines](https://github.com/vedang/nginx-nonewlines) : A Nginx module to strip out all whitespace. (This was my Helpshift Interview task)
+
+</div>
+</div>
+</div>

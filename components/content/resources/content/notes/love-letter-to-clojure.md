@@ -8,19 +8,22 @@ tags: ["clojure"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [General software philosophy](#general-software-philosophy)
 - [Specific Programming Practices](#specific-programming-practices)
 - [The Joy of Clojure](#the-joy-of-clojure)
 - [Other notes](#other-notes)
-- [Resources:](#resources)
-
+- [Resources:](#resources)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Lazy Weekend Reading: A love letter to Clojure</h1>
+<div class="ox-neuron-article-contents">
 I had no idea that _Gene Kim_, author of three books that have garnered wide-spread public acclaim, was doing Clojure programming. (They are DevOps Handbook, Phoenix Project, and Accelerate -- we've ordered them recently for the Helpshift Library). He published [a love-letter to Clojure](https://itrevolution.com/love-letter-to-clojure-part-1/) this weekend, and I think it is an absolute must-read for **all programmers** (whether you write Clojure or not). The blog-post covers the following areas:
 
 
@@ -107,3 +110,7 @@ I had no idea that _Gene Kim_, author of three books that have garnered wide-spr
 -   Clojure tutorials:
     -   Eric Normand: [Purely Functional](https://purelyfunctional.tv)
     -   Arne Brasseur: [Lambda Island](https://lambdaisland.com)
+
+</div>
+</div>
+</div>

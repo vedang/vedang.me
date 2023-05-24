@@ -6,6 +6,11 @@ tags: ["constraint-propagation", "clojure"]
 draft: true
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Using Constraint Propagation to solve the team Oncall rotation</h1>
+<div class="ox-neuron-article-contents">
+
 ## Notation {#notation}
 
 -   Weeks of the calendar are represented by numbers
@@ -29,3 +34,7 @@ draft: true
 
 -   The next oncall rotation for any person should be as far away from their previous rotation as possible.
 -   A person should not be oncall if they have even a single leave planned in the week.
+
+</div>
+</div>
+</div>

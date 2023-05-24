@@ -8,6 +8,10 @@ tags: ["python"]
 draft: false
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Switch Statements in Python</h1>
+<div class="ox-neuron-article-contents">
 Today I went through some old Python code and noticed this pattern through out:
 
 ```python
@@ -108,3 +112,7 @@ $ python switch-speed.py ;=>
 ```
 
 I breathed a sigh of relief. There was a lesson to be learnt here - test/profile <span class="underline">before</span> you optimize!
+
+</div>
+</div>
+</div>

@@ -9,6 +9,10 @@ draft: false
 featured_image: "projects/lilys-recipes/roastalmonds.jpg"
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Lily's Recipes</h1>
+<div class="ox-neuron-article-contents">
 <style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
 
 <div class="org-center">
@@ -39,3 +43,7 @@ Sadly, we've lost all but one box of Lily's recipes over the years. Some to poor
 That last bit about "throwing them away" comes from a sense of drama cultivated by watching a healthy dose of daily soaps and cooking shows for decades. None-the-less, these clippings are precious to me. They are a glimpse into the life of a person I've never known - a young woman who raised four kids on a teacher's salary. Someone who was a long way off from being my grandmother. There are scribbles on the sides, marking improvements and experiments over time. There are postcards of recipes exchanged between my grandmom and her daughter - studying cooking in a Banglorean college. There is the awe of looking at something that is older than I am, and represents a bygone era.
 
 I want Lily's legacy to live on in a small way, and to be accessible to all her grandchildren and great-grandchildren. And so I'm moving these recipes online, out of reach of bookworms and moisture (I'll be on the lookout for bitworms). I plan to cook the dishes, expand on the annotations in the corners and raise a toast to my grandmother's health as often as I can!
+
+</div>
+</div>
+</div>

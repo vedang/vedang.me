@@ -7,6 +7,10 @@ slug: "reboot"
 draft: false
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Reboot</h1>
+<div class="ox-neuron-article-contents">
 Once upon a time I had a blog. Then one day I ran out of motivation, inclination, desire, drive, whatnot to post to that blog. I never really ran out of content though. At least, I think not.
 
 <!--more-->
@@ -14,3 +18,7 @@ Once upon a time I had a blog. Then one day I ran out of motivation, inclination
 ![](./static/images/garfield.gif)
 
 I worried that I'd drown this world in my drivel, but lately I've come to realise that no one gives a shit. So I'm going to write for the right reasons: Because it makes me happy. Stick around, and I'll try not to bore you. Or leave. I don't give a shit.
+
+</div>
+</div>
+</div>

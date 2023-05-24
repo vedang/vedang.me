@@ -8,27 +8,22 @@ tags: ["communication", "project-management", "engineering-management"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [What is the purpose of status updates?](#what-is-the-purpose-of-status-updates)
 - [Properties of good status updates](#properties-of-good-status-updates)
 - [Writing the status update](#writing-the-status-update)
 - [Create sections for your updates](#create-sections-for-your-updates)
-    - [Name the project you are currently working on](#name-the-project-you-are-currently-working-on)
-    - [Name the milestone of the project you are currently working on.](#name-the-milestone-of-the-project-you-are-currently-working-on-dot)
-    - [Your status update should definitively answer the following questions:](#your-status-update-should-definitively-answer-the-following-questions)
-    - [Example status update](#example-status-update)
-        - [What I accomplished this last week:](#what-i-accomplished-this-last-week)
-        - [What didn't go according to plan:](#what-didn-t-go-according-to-plan)
-        - [What I plan to do next week:](#what-i-plan-to-do-next-week)
-        - [Questions / Blockers / Action Items:](#questions-blockers-action-items)
-- [What do you get from writing a good update?](#what-do-you-get-from-writing-a-good-update)
-
+- [What do you get from writing a good update?](#what-do-you-get-from-writing-a-good-update)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Writing a good status update</h1>
+<div class="ox-neuron-article-contents">
 We share written status updates within the team on a weekly basis (every Monday). I wrote this article to explain what these status updates should look like, and I think it's useful enough to publish publicly. Here goes:
 
 
@@ -115,3 +110,7 @@ Write the status update either as the last thing on Friday or as the first thing
 -   A **record of work for yourself**. This is invaluable come performance review time. You only have to read through 26 updates and you have a thorough summary.
 -   **Help your manager** advocate for you during appraisals. You should care about your career more than anyone else.
 -   **Help yourself**. Writing the update should **give you** a clear idea of your own progress and what you need to work on.
+
+</div>
+</div>
+</div>

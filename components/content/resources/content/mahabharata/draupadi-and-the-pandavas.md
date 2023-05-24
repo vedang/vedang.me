@@ -8,19 +8,21 @@ tags: ["krishna", "pandavas", "draupadi"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [Draupadi and Arjuna](#draupadi-and-arjuna)
 - [Draupadi and Yudhisthir](#draupadi-and-yudhisthir)
 - [Draupadi and Bhima](#draupadi-and-bhima)
-- [Draupadi with Nakul and Sahadev](#draupadi-with-nakul-and-sahadev)
-- [Some references for further reading, clarification:](#some-references-for-further-reading-clarification)
-
+- [Draupadi with Nakul and Sahadev](#draupadi-with-nakul-and-sahadev)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Draupadi and the Pandavas</h1>
+<div class="ox-neuron-article-contents">
 _Cross-posted from my answer to the question: [What was the relationship between Draupadi and the Pandavas like?](http://www.quora.com/Mythology/What-was-the-relationship-between-Draupadi-and-the-Pandavas-like/answer/Vedang-Manerikar) on [Quora](http://quora.com)_
 
 Draupadi's relationship with the Pandavas is complex and at the heart of the Mahabharat.
@@ -73,13 +75,17 @@ In summary, Draupadi's curse is the curse of beauty. She is the object of every 
 
 And thus comes about the Mahabharat war.
 
-
-## Some references for further reading, clarification: {#some-references-for-further-reading-clarification}
-
-[^fn:1]: : [Draupadi favors Arjuna](http://pastebin.com/bgbrjnne). Note that it is Bhima who questions why Draupadi fell, not Arjuna.
-[^fn:2]: : [Subadhra pacifies Draupadi](http://pastebin.com/ngMNJiFP)
-[^fn:3]: : [Conformable to virtue](http://pastebin.com/TiW5w3zi). Note his sentence construction: "My mother commands it, and my heart approves"
-[^fn:4]: : [The Story of Sunda and Upasunda](http://pastebin.com/WbMLtEmM).
-[^fn:5]: : [Arjun Vanavasa](http://pastebin.com/qvBBEB52).
-[^fn:6]: : [Keechak Vadha](http://pastebin.com/REfrvaWy). If you don't read any of the other footnotes, read this one. It throws light on the true nature of Yudhisthir and Bhima.
-[^fn:7]: : [Krishna promises revenge](http://pastebin.com/fxTzA7Dc). Read this too, because Krishna is awesome.
+</div>
+</div>
+<div class="ox-neuron-footnotes">
+<div class="ox-neuron-footnotes-contents">
+[^fn:1]: [Draupadi favors Arjuna](http://pastebin.com/bgbrjnne). Note that it is Bhima who questions why Draupadi fell, not Arjuna.
+[^fn:2]: [Subadhra pacifies Draupadi](http://pastebin.com/ngMNJiFP)
+[^fn:3]: [Conformable to virtue](http://pastebin.com/TiW5w3zi). Note his sentence construction - "My mother commands it, and my heart approves"
+[^fn:4]: [The Story of Sunda and Upasunda](http://pastebin.com/WbMLtEmM).
+[^fn:5]: [Arjun Vanavasa](http://pastebin.com/qvBBEB52).
+[^fn:6]: [Keechak Vadha](http://pastebin.com/REfrvaWy). If you don't read any of the other footnotes, read this one. It throws light on the true nature of Yudhisthir and Bhima.
+[^fn:7]: [Krishna promises revenge](http://pastebin.com/fxTzA7Dc). Read this too, because Krishna is awesome.
+</div>
+</div>
+</div>

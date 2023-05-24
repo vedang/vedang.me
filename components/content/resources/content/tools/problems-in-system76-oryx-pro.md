@@ -2,26 +2,27 @@
 title: "Problems in my brand new System76 Oryx Pro laptop"
 author: ["Vedang Manerikar"]
 date: 2019-05-31T22:51:00
-aliases: ["/weblog/2019-05-31-problems-in-system76-oryx-pro/"]
+aliases: ["/weblog/2019-05-31-problems-in-system76-oryx-pro/", "/blog/problems-in-system76-oryx-pro/"]
 slug: "problems-in-system76-oryx-pro"
 tags: ["laptops", "system76", "popos", "linux"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [**Important Note**](#important-note)
 - [Emacs is unusable due to constant movement of the cursor.](#emacs-is-unusable-due-to-constant-movement-of-the-cursor-dot)
 - [The space key is weird.](#the-space-key-is-weird-dot)
-- [Power management and suspend.](#power-management-and-suspend-dot)
-    - [No "just works" for Suspend.](#no-just-works-for-suspend-dot)
-    - [The Power button is weird.](#the-power-button-is-weird-dot)
-
+- [Power management and suspend.](#power-management-and-suspend-dot)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Problems in my brand new System76 Oryx Pro laptop</h1>
+<div class="ox-neuron-article-contents">
 
 ## **Important Note** {#important-note}
 
@@ -60,3 +61,7 @@ I'm enjoying using a Linux laptop after years of development on the Macbook, and
 ### The Power button is weird. {#the-power-button-is-weird-dot}
 
 -   I've gotten into the habit of shutting down my laptop when I'm unsure about battery and want to definitely conserve it (example when I'm traveling). There is no immediate feedback on pressing the power button. Due to this, it's hard to know if the keypress has registered or not. This is a small gripe in the big picture, but it gets annoying fast.
+
+</div>
+</div>
+</div>

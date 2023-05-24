@@ -8,10 +8,11 @@ tags: ["culture", "helpshift"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [What does your day-to-day at Helpshift look like?](#what-does-your-day-to-day-at-helpshift-look-like)
 - [What has been your favorite off-site team oriented event, and why?](#what-has-been-your-favorite-off-site-team-oriented-event-and-why)
 - [What role(s) did you start in at Helpshift and how have you graduated/migrated into different roles?](#what-role--s--did-you-start-in-at-helpshift-and-how-have-you-graduated-migrated-into-different-roles)
@@ -22,11 +23,13 @@ draft: false
 - [Superpower (real or fake): Obscure Emacs shortcuts.](#superpower--real-or-fake--obscure-emacs-shortcuts-dot)
 - [Slightly addicted to: Tea.](#slightly-addicted-to-tea-dot)
 - [Always on the search for the perfect: new book to read.](#always-on-the-search-for-the-perfect-new-book-to-read-dot)
-- [If you could interview one person, dead or alive, who would it be and why?](#if-you-could-interview-one-person-dead-or-alive-who-would-it-be-and-why)
-
+- [If you could interview one person, dead or alive, who would it be and why?](#if-you-could-interview-one-person-dead-or-alive-who-would-it-be-and-why)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Imagine Working in Engineering at Helpshift</h1>
+<div class="ox-neuron-article-contents">
 _Cross-posted from my interview published on [Helpshift's Medium blog](https://medium.com/@helpshift/image-ine-working-in-engineering-at-helpshift-8818247e2188)_
 
 -   Name: Vedang Manerikar
@@ -95,3 +98,7 @@ Reading is one of my favorite ways to unwind. I read anything that I can get my 
 ## If you could interview one person, dead or alive, who would it be and why? {#if-you-could-interview-one-person-dead-or-alive-who-would-it-be-and-why}
 
 Isaac Newton or Albert Einstein or Alan Turing! (Sorry I cheated.) These were phenomenal people with world-changing ideas. How did they get them? How did they remain productive all their life? What did "work" mean for them? What was their work day like? What did they do to unwind? What did they do for leisure? Who did <span class="underline">they</span> look up to? I'd love to know these answers!
+
+</div>
+</div>
+</div>

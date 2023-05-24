@@ -10,21 +10,24 @@ syndication:
   twitter: 1249325252594642944
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [Summary](#summary)
 - [Technology degrades over time](#technology-degrades-over-time)
 - [Thesis: Software Robustness is in decline right now](#thesis-software-robustness-is-in-decline-right-now)
 - [Thesis: Programmer Productivity is in decline right now](#thesis-programmer-productivity-is-in-decline-right-now)
 - [If Robustness and Productivity are both declining, Software cannot be advancing](#if-robustness-and-productivity-are-both-declining-software-cannot-be-advancing)
 - [Complexity accelerates knowledge loss](#complexity-accelerates-knowledge-loss)
-- [Resources:](#resources)
-
+- [Resources:](#resources)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Lazy Weekend Viewing: Preventing the collapse of civilization</h1>
+<div class="ox-neuron-article-contents">
 "[Preventing the Collapse of Civilization](https://www.youtube.com/watch?v=pW-SOdj4Kkk)" is an excellent talk by Jonathan Blow (of Braid fame) at DevGAMM 2019. It's inspiring and I recommend you make the time to see it. My notes below:
 
 
@@ -104,3 +107,7 @@ syndication:
     -   Casey Muratori: [The Thirty Million Line Problem](https://www.youtube.com/watch?v=kZRE7HIO3vk)
     -   Samo Burja: [Civilization: Institutions, Knowledge and the Future](https://www.youtube.com/watch?v=OiNmTVThNEY)
     -   Eric Cline: [1177 BC: The Year Civilization Collapsed](https://www.youtube.com/watch?v=hyry8mgXiTk)
+
+</div>
+</div>
+</div>

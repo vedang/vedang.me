@@ -8,6 +8,10 @@ tags: ["ring", "compojure", "clojure"]
 draft: false
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Composability and Compojure</h1>
+<div class="ox-neuron-article-contents">
 _Caveat_: This post needs some rudimentary knowledge of Compojure. Compojure is a web framework for Clojure, and if you don't understand what that means, then you should probably head over to the [Compojure docs](https://github.com/weavejester/compojure/wiki).
 
 Compojure exposes us to a beautifully <span class="underline">composable</span> abstraction, and this post is an attempt to show why that is a great thing.
@@ -106,4 +110,11 @@ Here is what the final code would look like:
 
 ## Footnotes: {#footnotes}
 
+</div>
+</div>
+<div class="ox-neuron-footnotes">
+<div class="ox-neuron-footnotes-contents">
 [^fn:1]: : Actually, we got lucky in this case. `cc/defroutes` is a macro. When we say `(cc/defroutes name & handlers)` the code is replaced to become `(def name handlerfn)`. Luckily for us though, def returns the variable which was just defined, and it works out okay in the end. The aim was to show composability in action, not to espouse a coding style. Never do this in actual code.
+</div>
+</div>
+</div>

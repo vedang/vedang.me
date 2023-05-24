@@ -8,10 +8,11 @@ tags: ["books"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [Introductory books](#introductory-books)
 - [Point of View (POV) Narrations](#point-of-view--pov--narrations)
 - [Short stories and analyses. (Intermediate level)](#short-stories-and-analyses-dot--intermediate-level)
@@ -19,11 +20,13 @@ draft: false
 - [Don't touch these books with a 10-foot pole (Personal Opinion)](#don-t-touch-these-books-with-a-10-foot-pole--personal-opinion)
 - [The Reference Book](#the-reference-book)
 - [Books I want to read](#books-i-want-to-read)
-- [Crowd-sourced Books](#crowd-sourced-books)
-
+- [Crowd-sourced Books](#crowd-sourced-books)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Notes and Reading Material on the Mahabharata</h1>
+<div class="ox-neuron-article-contents">
 _Cross-posted from my note: [Notes and Reading Material on the Mahabharata](http://www.quora.com/Vedang-Manerikar/The-Mahabharata/Notes-and-Reading-material-on-the-Mahabharata) on [Quora](http://quora.com)_
 
 People have shown some interest in reading material for the Mahabharata, this post should save me from repeatedly typing the same things.
@@ -123,3 +126,7 @@ These books are gems in Mahabharata literature (from what I've heard), and they 
 -   **Vyasaparva - Durgabai Bhagwat [Marathi]** (Suggested by Aditya Kulkarni)
 
 -   **Mahabharata na Patro - Moolshanker Bhatt [Gujrathi]** (Suggested by Rachana Sudharshan) A series of stories from the POV of various characters
+
+</div>
+</div>
+</div>

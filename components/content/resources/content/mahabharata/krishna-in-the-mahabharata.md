@@ -8,19 +8,22 @@ tags: ["pandavas", "krishna"]
 draft: false
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [Introduction and back-story](#introduction-and-back-story)
 - [Jarasandh vadh and the Rajsuya yagna](#jarasandh-vadh-and-the-rajsuya-yagna)
 - [Subhadhra and Samba](#subhadhra-and-samba)
 - [Preparations for the Kurukshetra war](#preparations-for-the-kurukshetra-war)
-- [Machinations in the War](#machinations-in-the-war)
-
+- [Machinations in the War](#machinations-in-the-war)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Krishna in the Mahabharat</h1>
+<div class="ox-neuron-article-contents">
 _Cross-posted from my answer to the question: [Why is Lord Krishna called the master of finesse in the Mahabharat?](http://www.quora.com/Mahabharata/Why-is-Lord-Krishna-called-the-master-of-finesse-in-the-Mahabharat/answer/Vedang-Manerikar) on [Quora](http://quora.com)_
 
 I will attempt to answer this, but my answer is going to be controversial. Please keep in mind that it is not my intention to offend anyone.
@@ -82,3 +85,7 @@ There are many, many things that Krishna does on the battlefield, but most peopl
     -   Balaram is back from his pilgrimage in time to watch the battle between Duryodhana and Bhima. Krishna has to hold him in a bear hug when Bhima breaks Duryodhana's thigh.
 
 In summary, the Pandavas are bumbling fools who do not stand a snowball's chance in hell without Krishna to guide them on every step. In return, they revere Krishna, and proclaim that he is their god, their spiritual leader. Krishna enters the fray to be royalty, ends up becoming a God.
+
+</div>
+</div>
+</div>

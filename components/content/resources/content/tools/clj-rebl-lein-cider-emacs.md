@@ -2,12 +2,16 @@
 title: "How to use the Clojure REBL with Leiningen, Cider and Emacs"
 author: ["Vedang Manerikar"]
 date: 2020-10-28T23:18:00
-aliases: ["/blog/clj-rebl-lein-cider-emacs"]
+aliases: ["/blog/clj-rebl-lein-cider-emacs/"]
 slug: "clj-rebl-lein-cider-emacs"
 tags: ["clojure", "cognitect", "rebl", "leiningen", "cider", "emacs"]
 draft: false
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">How to use the Clojure REBL with Leiningen, Cider and Emacs</h1>
+<div class="ox-neuron-article-contents">
 **Note**: This set of instructions only work on **Clojure 1.10+**, **Lein 2.9+** and **JDK 11+**. Also, REBL requires a license for commercial use.
 
 I didn't find a handy reference to getting started with REBL if your primary workflow is Leiningen/nrepl, so here is the series of things I had to do to get the REBL up and running for myself.
@@ -54,3 +58,7 @@ I didn't find a handy reference to getting started with REBL if your primary wor
     ```
 7.  At this point, anything that you evaluate when programming will be sent to your REPL as well as to your REBL and can be inspected from there. Anything you evaluate into the REPL will be sent over to the REBL as well.
 8.  Work on the REPL as you normally would. Your work is also being sent into the REBL for fancy viewing when you need it.
+
+</div>
+</div>
+</div>

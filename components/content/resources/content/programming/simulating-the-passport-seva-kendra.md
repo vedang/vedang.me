@@ -2,40 +2,35 @@
 title: "Simulating the Passport Seva Kendra using Clojure"
 author: ["Vedang Manerikar"]
 date: 2018-12-15T19:56:00
-aliases: ["/techlog/2018-12-15-simulating-the-passport-seva-kendra/"]
+aliases: ["/techlog/2018-12-15-simulating-the-passport-seva-kendra/", "/blog/simulating-the-passport-seva-kendra/"]
 slug: "simulating-the-passport-seva-kendra"
 tags: ["concurrency", "clojure"]
 draft: false
 featured_image: "blog/simulating-the-passport-seva-kendra/psk-renderkid.jpg"
 ---
 
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
+<div class="ox-neuron-main">
+<div class="ox-neuron-toc">
+<div class="ox-neuron-toc-contents">
+<div class="ox-neuron-toc-heading">Table of Contents</div>
+<div class="ox-neuron-toc-items">
 - [The Problem Statement](#the-problem-statement)
-    - [So what is the problem with the system?](#so-what-is-the-problem-with-the-system)
 - [Representing all the information about the PSK](#representing-all-the-information-about-the-psk)
 - [Letting people into the PSK, and generating token numbers for them.](#letting-people-into-the-psk-and-generating-token-numbers-for-them-dot)
-    - [Clojure Concurrency Primitive - Atoms](#clojure-concurrency-primitive-atoms)
-    - [Clojure Concurrency Primitive - Futures](#clojure-concurrency-primitive-futures)
 - [Queuing up people and simulating the work done at every stage](#queuing-up-people-and-simulating-the-work-done-at-every-stage)
 - [Keeping track of people and the display board](#keeping-track-of-people-and-the-display-board)
-    - [Clojure Concurrency Primitive - Refs (and transactions)](#clojure-concurrency-primitive-refs--and-transactions)
 - [Processing people concurrently across all open counters](#processing-people-concurrently-across-all-open-counters)
-    - [Clojure Concurrency Primitive - Agents](#clojure-concurrency-primitive-agents)
 - [Tying everything together - the main function](#tying-everything-together-the-main-function)
 - [With me so far? Some thoughts](#with-me-so-far-some-thoughts)
 - [Can we see the problem?](#can-we-see-the-problem)
-    - [Solution 1: Use priority queues](#solution-1-use-priority-queues)
-    - [Solution 2: New token numbers per stage](#solution-2-new-token-numbers-per-stage)
-    - [Solution 3: "Where am I?" Estimated Wait Time](#solution-3-where-am-i-estimated-wait-time)
 - [Final Thoughts](#final-thoughts)
-- [References](#references)
-
+- [References](#references)</div>
 </div>
-<!--endtoc-->
+</div>
 
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Simulating the Passport Seva Kendra using Clojure</h1>
+<div class="ox-neuron-article-contents">
 _Cross-posted from my post on the [Helpshift Engineering Blog](https://medium.com/helpshift-engineering/simulating-the-passport-seva-kendra-using-clojure-fd88c12dde8c)_
 
 A year ago, I went to the Passport Seva Kendra (PSK) in Mundhwa, Pune to get my passport renewed. At the time, the government had revamped this process and made it a simple, step-in/step-out painless affair. Unfortunately for me, I hit an edge-case in the system and took much longer than expected to complete. I was there for close to 4 hours. I used this time to observe the behavior of the PSK and think about ways to improve the applicant experience. I thought it was an interesting problem to solve and write about.
@@ -611,6 +606,13 @@ _A big thank you to [Bhargava Chowdary](https://twitter.com/renderkid) for creat
 -   Futures: <https://clojuredocs.org/clojure.core/future>
 -   Agents: <https://clojure.org/reference/agents>
 
+</div>
+</div>
+<div class="ox-neuron-footnotes">
+<div class="ox-neuron-footnotes-contents">
 [^fn:1]: STM: <http://en.wikipedia.org/wiki/Software_transactional_memory>
 [^fn:2]: ACID: <https://en.wikipedia.org/wiki/ACID_(computer_science)>
 [^fn:3]: Estimating wait-times: <https://en.wikipedia.org/wiki/Queueing_theory>
+</div>
+</div>
+</div>
