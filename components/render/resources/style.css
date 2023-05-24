@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.ox-neuron-main { @apply grid grid-cols-12 gap-x-4 xl:max-w-none; }
+.ox-neuron-main { @apply grid grid-cols-12 gap-x-4 max-w-prose xl:max-w-none; }
 .ox-neuron-main p:empty { display: none; }
 
-.ox-neuron-toc { @apply col-span-4 col-start-1 justify-self-start hidden xl:block sticky top-12 pb-20; }
+.ox-neuron-toc { @apply col-span-4 col-start-1 justify-self-start hidden xl:block; }
 .ox-neuron-toc-contents { @apply sticky top-12 pb-20; }
 .ox-neuron-toc-heading {
   font-weight: 1000;
@@ -18,7 +18,7 @@
 .ox-neuron-toc-items li { @apply m-0; }
 .ox-neuron-toc:empty { display: none; }
 
-.ox-neuron-article { @apply col-span-full xl:col-span-8 xl:col-start-5 first:col-span-full; }
+.ox-neuron-article { @apply col-span-full first:col-span-full xl:col-span-8 xl:col-start-5; }
 
 .ox-neuron-footnotes { @apply col-span-1 col-start-12 hidden; }
 .ox-neuron-footnotes:empty { display: none; }

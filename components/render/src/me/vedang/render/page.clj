@@ -101,12 +101,12 @@
      [:div {:id "site-title"
             :class "prose prose-stone dark:prose-inverted mx-auto grid grid-cols-2"}
       [:div
-       [:h1 {:class "m-0 lg:text-2xl"}
+       [:h1 {:class "m-0 text-base sm:text-lg md:text-xl lg:text-2xl"}
         [:a {:href "/index.html"} blog-title]]
-       [:p {:class "font-semi-bold mt-1 text-lg text-gray-800"}
+       [:p {:class "font-semi-bold mt-1 text-gray-800 xl:text-lg"}
         blog-description]]
       [:div
-       [:nav {:id "site-nav"}
+       [:nav {:id "site-nav" :class "overflow-auto lg:overflow-hidden"}
         [:a
          {:class "p-2 font-medium text-gray-700 transition duration-200 hover:bg-gray-100 hover:text-gray-900 hover:ease-in-out"
           :href "/atom.xml"}
@@ -126,7 +126,7 @@
           :href "/about.html"}
          "About"]]]]]
     [:div {:id "post-container",
-           :class "prose prose-stone dark:prose-invert xl:max-w-6xl mx-auto prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl"}
+           :class "prose prose-stone dark:prose-invert max-w-prose xl:max-w-6xl mx-auto prose-ul:list-none prose-img:rounded-xl prose-img:shadow-xl"}
      body
      (when-not skip-archive
        [:nav

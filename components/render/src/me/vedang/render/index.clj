@@ -19,7 +19,7 @@
                          {}
                          groups)]
     (hiccup/html [:div {:id "index-links"
-                        :class "xl:mx-32 xl:mt-8 xl:px-4 mx-16 mt-4"}
+                        :class " mx-8 mt-2 xl:mx-32 xl:mt-8 xl:px-4"}
                   (get cat->post-links "programming")
                   (get cat->post-links "tools")
                   (get cat->post-links "tinylog")
