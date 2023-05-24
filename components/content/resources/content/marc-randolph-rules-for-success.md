@@ -8,6 +8,10 @@ categories: ["notes"]
 draft: false
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Marc Randolph: Rules for Success</h1>
+<div class="ox-neuron-article-contents">
 _Snippet from [That Will Never Work](https://www.amazon.com/That-Will-Never-Work-Netflix/dp/0316530204)_
 
 1.  Do at least 10% more than you are asked.
@@ -18,3 +22,7 @@ _Snippet from [That Will Never Work](https://www.amazon.com/That-Will-Never-Work
 6.  Quantify where possible.
 7.  Be open-minded but skeptical.
 8.  Be prompt.
+
+</div>
+</div>
+</div>

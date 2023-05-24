@@ -9,42 +9,50 @@ categories: ["notes"]
 draft: false
 ---
 
+<div class="ox-neuron-main">
+<div class="ox-neuron-article">
+<h1 class="ox-neuron-article-heading">Tim Peters: The Python Way</h1>
+<div class="ox-neuron-article-contents">
 _Snippet from: [The Python Mailing List](https://mail.python.org/pipermail/python-list/1999-June/001951.html)_
 
--   Beautiful is better than ugly.
+1.  Beautiful is better than ugly.
 
--   Explicit is better than implicit.
+2.  Explicit is better than implicit.
 
--   Simple is better than complex.
+3.  Simple is better than complex.
 
--   Complex is better than complicated.
+4.  Complex is better than complicated.
 
--   Flat is better than nested.
+5.  Flat is better than nested.
 
--   Sparse is better than dense.
+6.  Sparse is better than dense.
 
--   Readability counts.
+7.  Readability counts.
 
--   Special cases aren't special enough to break the rules.
+8.  Special cases aren't special enough to break the rules.
 
--   Although practicality beats purity.
+9.  Although practicality beats purity.
 
--   Errors should never pass silently.
+10. Errors should never pass silently.
 
--   Unless explicitly silenced.
+11. Unless explicitly silenced.
 
--   In the face of ambiguity, refuse the temptation to guess.
+12. In the face of ambiguity, refuse the temptation to guess.
 
--   There should be one - and preferably only one - obvious way to do it.
+13. There should be one - and preferably only one - obvious way to do it.
 
--   Although that way may not be obvious at first unless you're Dutch.
+14. Although that way may not be obvious at first unless you're Dutch.
 
--   Now is better than never.
+15. Now is better than never.
 
--   Although never is often better than **right** now.
+16. Although never is often better than **right** now.
 
--   If the implementation is hard to explain, it's a bad idea.
+17. If the implementation is hard to explain, it's a bad idea.
 
--   If the implementation is easy to explain, it may be a good idea.
+18. If the implementation is easy to explain, it may be a good idea.
 
--   Namespaces are one honking great idea -- let's do more of those!
+19. Namespaces are one honking great idea -- let's do more of those!
+
+</div>
+</div>
+</div>
