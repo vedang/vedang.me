@@ -18,7 +18,7 @@ draft: false
 >
 > -   [@vedang](https://twitter.com/vedang/status/1292744222873853952), [14:16 Aug, 10, 2020](https://twitter.com/vedang/status/1292744222873853952)
 
-I collect such deeply useful and universal advice [under the tag wisdom](/tags/wisdom.html/) if you want to read more posts of this kind.
+I collect such deeply useful and universal advice [under the tag wisdom](/tags/wisdom.html) if you want to read more posts of this kind.
 
 </div>
 </div>
