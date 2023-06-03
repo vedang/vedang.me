@@ -51,7 +51,7 @@
 (defn post-body
   "Return the Hiccup for the main post"
   [id->html-map
-   {:keys [title body date parents children tags backlinks] :as opts}]
+   {:keys [body date parents children tags backlinks] :as opts}]
   (hiccup/html
    [:div {:id "post-body"}
     (hiccup/raw body)]
