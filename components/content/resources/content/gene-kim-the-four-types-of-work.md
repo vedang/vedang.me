@@ -19,7 +19,7 @@ _Snippet from: [The Phoenix Project](https://www.amazon.in/Phoenix-Project-DevOp
 
 -   **Internal IT Projects** : Release Automation, QA Automation, Developer Tooling and other internal enablers. Mostly un-tracked and invisible, but crucial to long-term success.
 
--   **Updates and Changes** : Generally generated from above to categories of work. Introduces delay as breadth of existing surface area increases.
+-   **Updates and Changes** : Generally generated from above two categories of work. Introduces delay as breadth of existing surface area increases.
 
 -   **Unplanned Work** : Fire-fighting at all levels of the company. Ruins planned work, so root causes need to be aggressively remediated.
 
