@@ -10,7 +10,8 @@
                 weblog/weblog  {:local/root "bases/weblog"}
 
                 ;; Development dependencies
-                org.clojure/clojure {:mvn/version "1.11.1"}}}
+                org.clojure/clojure {:mvn/version "1.11.1"}
+                io.github.nextjournal/clerk {:mvn/version "0.13.842"}}}
 
   :cider
   {:extra-deps {nrepl/nrepl                          {:mvn/version "1.0.0"}
