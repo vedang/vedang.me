@@ -5,6 +5,7 @@
         ;; Components
         weblog/content {:local/root "../../components/content"}
         weblog/logger  {:local/root "../../components/logger"}
+        weblog/notebooks {:local/root "../../components/notebooks"}
         weblog/render  {:local/root "../../components/render"}
 
         ;; Bases
