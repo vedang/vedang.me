@@ -19,7 +19,7 @@ I'm passionate about programming, and some of my work can be found on [GitHub](h
 
 I love talking about technology. If you're talking about distributed systems, programming languages, performance, data structures, Emacs, Git, do call me over!
 
-I love reading books, and I write book reviews once in a while. I also have strong personal [opinions on mythology](https://vedang.me/categories/mythology/) and culture, and I use this space to try and convert random strangers to my point of view.
+I love reading books, and I write book reviews once in a while. I also have strong personal [opinions on mythology](https://vedang.me/mahabharata.html) and culture, and I use this space to try and convert random strangers to my point of view.
 
 If you want to get in touch, please send me a message at vedang.manerikar on Google's email service.
 
