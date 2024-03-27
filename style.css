@@ -1105,6 +1105,10 @@ video {
   display: none;
 }
 
+.max-w-prose {
+  max-width: 65ch;
+}
+
 .grow {
   flex-grow: 1;
 }
@@ -1178,6 +1182,7 @@ video {
 
 .ox-neuron-main {
   display: grid;
+  max-width: 65ch;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   -moz-column-gap: 1rem;
        column-gap: 1rem;
